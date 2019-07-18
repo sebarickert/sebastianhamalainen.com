@@ -23,24 +23,9 @@ const Header = () => (
 			<nav aria-label="Main Navigation">
 				<ul className="menu-main">
 					<li className="menu-main__item">
-						<a href="#start" className="menu-main__link is-active">
-							Start
-						</a>
-					</li>
-					<li className="menu-main__item">
-						<a href="#about" className="menu-main__link">
-							About
-						</a>
-					</li>
-					<li className="menu-main__item">
-						<a href="#work" className="menu-main__link">
-							Work
-						</a>
-					</li>
-					<li className="menu-main__item">
-						<a href="#contact" className="menu-main__link">
-							Contact
-						</a>
+						<Link to="/blog" className="menu-main__link is-active">
+							Blog
+						</Link>
 					</li>
 				</ul>
 			</nav>
