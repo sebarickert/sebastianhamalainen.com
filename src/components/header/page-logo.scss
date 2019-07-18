@@ -1,0 +1,42 @@
+$bp-small: 480px;
+$bp-medium: 600px;
+$bp-medium-wide: 768px;
+$bp-wide: 960px;
+$bp-extra-wide: 1200px;
+
+$gutter: 16px;
+
+.page-logo {
+	display: flex;
+	justify-content: center;
+	margin-bottom: $gutter * 2;
+
+	@media screen and (min-width: $bp-medium) {
+		margin-bottom: 0;
+	}
+}
+
+.page-logo__link {
+	display: inline-block;
+	width: 2.5rem;
+	height: 2.5rem;
+
+	svg {
+		width: 100%;
+		height: 100%;
+	}
+
+	.a,
+	.b,
+	.c,
+	.d,
+	.e,
+	.f {
+		fill: #2d373f;
+	}
+	.a,
+	.c,
+	.e {
+		opacity: 0.5;
+	}
+}
