@@ -1,15 +1,8 @@
-$bp-small: 480px;
-$bp-medium: 600px;
-$bp-medium-wide: 768px;
-$bp-wide: 960px;
-$bp-extra-wide: 1200px;
-
-$gutter: 16px;
+@import 'lib';
 
 .page-logo {
 	display: flex;
 	justify-content: center;
-	margin-bottom: $gutter * 2;
 
 	@media screen and (min-width: $bp-medium) {
 		margin-bottom: 0;

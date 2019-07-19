@@ -1,24 +1,21 @@
-$bp-small: 480px;
-$bp-medium: 600px;
-$bp-medium-wide: 768px;
-$bp-wide: 960px;
-$bp-extra-wide: 1200px;
-
-$gutter: 16px;
+@import 'lib';
 
 .header {
 	padding-top: $gutter * 2;
 	padding-bottom: $gutter * 2;
+
+	@media screen and (max-width: $bp-wide) {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		background-color: rgba($white, .75);
+	}
 }
 
 .header__content {
 	display: flex;
-	flex-direction: column;
-	justify-content: center;
-
-	@media screen and (min-width: $bp-medium) {
-		flex-direction: row;
-		justify-content: space-between;
-		align-items: center;
-	}
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
 }

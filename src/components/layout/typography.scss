@@ -1,3 +1,5 @@
+@import "lib";
+
 body {
 	@include font-size($base-font-size, $base-font-size-mobile);
 	font-family: $base-font-family;
