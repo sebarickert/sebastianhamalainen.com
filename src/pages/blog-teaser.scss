@@ -16,6 +16,10 @@
 				}
 			}
 		}
+
+		.blog-teaser__lead {
+			color: $black;
+		}
 	}
 }
 
@@ -46,4 +50,6 @@
 	margin-top: $gutter;
 	margin-bottom: 0;
 	font-weight: 400;
+	color: $silver;
+	transition: color 0.25s ease-in-out;
 }
