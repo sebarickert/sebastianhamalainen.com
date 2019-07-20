@@ -15,7 +15,7 @@ const BlogListingPage = () => {
 					node {
 						frontmatter {
 							title
-							published
+							date(formatString: "MMMM DD, YYYY")
 						}
 						id
 						excerpt
@@ -42,7 +42,7 @@ const BlogListingPage = () => {
 								<h2 className="blog-teaser__heading">
 									<span>{e.node.frontmatter.title} </span>
 								</h2>
-								<span className="blog-teaser__published">{e.node.frontmatter.published}</span>
+								<span className="blog-teaser__published">{e.node.frontmatter.date}</span>
 								<p className="blog-teaser__lead">{e.node.excerpt}</p>
 							</Link>
 						</li>
