@@ -101,26 +101,19 @@ strong {
 
 p {
 	@include font-size(16px);
-	margin-bottom: 1rem;
 	word-break: break-word;
 	max-width: 700px;
 
-	@media screen and (mind-width: $bp-small) {
+	@media screen and (min-width: $bp-small) {
 		@include font-size(18px);
-		letter-spacing: 0.05rem;
-		margin-bottom: 2rem;
 	}
 
-	@media screen and (mind-width: $bp-medium) {
+	@media screen and (min-width: $bp-medium) {
 		@include font-size(20px);
 	}
 
-	@media screen and (mind-width: $bp-wide) {
+	@media screen and (min-width: $bp-wide) {
 		@include font-size(22px);
-	}
-
-	@media screen and (mind-width: $bp-extra-wide) {
-		@include font-size(24px);
 	}
 }
 
@@ -128,38 +121,41 @@ p,
 ul,
 ol {
 	+ h2 {
-		margin-top: 1.5rem;
+		margin-top: $gutter * 1.5;
 	}
 
 	+ h3 {
-		margin-top: 1rem;
+		margin: $gutter 0;
 	}
 
 	+ h4 {
-		margin-top: 0.75rem;
+		margin: $gutter * .75 0;
 	}
 }
 
 ul,
 ol {
-	ul,
-	ol {
-		margin: 0.375rem 0;
+	@include font-size(16px);
+	word-break: break-word;
+	max-width: 700px;
+	padding-left: $gutter * 1.5;
+	font-weight: 400;
+
+	@media screen and (min-width: $bp-small) {
+		@include font-size(18px);
 	}
 
-	+ p {
-		margin-top: 1rem;
+	@media screen and (min-width: $bp-medium) {
+		@include font-size(20px);
 	}
-}
 
-ul,
-ol {
-	padding-left: 1.25rem;
-	font-weight: 300;
-}
+	@media screen and (min-width: $bp-wide) {
+		@include font-size(22px);
+	}
 
-ol {
-	padding-left: 1.275rem;
+	li {
+		margin-bottom: $gutter * .5;
+	}
 }
 
 blockquote,
@@ -186,5 +182,48 @@ q {
 		margin: 0;
 		padding: 0;
 		color: inherit;
+	}
+}
+
+pre {
+	@include font-size(16px);
+	background-color: #f6f8fa;
+	border-radius: 3px;
+	line-height: 1.45;
+	overflow: auto;
+	padding: $gutter;
+
+	@media screen and (min-width: $bp-medium-wide) {
+		@include font-size(18px);
+	}
+
+	code {
+		background-color: transparent;
+		border: 0;
+		display: inline;
+		line-height: inherit;
+		margin: 0;
+		overflow: visible;
+		padding: 0;
+		word-wrap: normal;
+	}
+}
+
+code {
+	font-size: inherit;
+	background-color: rgba(27, 31, 35, .05);
+	border-radius: 3px;
+	margin: 0;
+	padding: .2em .4em;
+}
+
+p a {
+	font-size: inherit;
+	background-color: rgba(27, 31, 35, .05);
+	border-radius: 3px;
+	margin: 0;
+	padding: .2em .4em;
+	&:hover {
+		opacity: .5;
 	}
 }

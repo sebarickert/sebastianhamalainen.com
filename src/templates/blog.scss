@@ -1,0 +1,10 @@
+@import "lib";
+
+.blog__published {
+	@include font-size(18px);
+	color: $silver;
+}
+
+.blog__content {
+	max-width: 700px;
+}
