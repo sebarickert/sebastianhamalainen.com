@@ -1,11 +1,14 @@
 import React from 'react';
 
-import Header from '../components/header/header';
+import Layout from '../components/layout/layout';
+import Container from '../components/container/container';
 
 const IndexPage = () => (
-	<React.Fragment>
-		<Header />
-	</React.Fragment>
+	<Layout>
+		<Container>
+			<h1>Frontpage</h1>
+		</Container>
+	</Layout>
 );
 
 export default IndexPage;
