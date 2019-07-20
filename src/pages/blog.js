@@ -31,7 +31,7 @@ const BlogListingPage = () => {
 	return (
 		<Layout>
 			<Container>
-				<PageHeader>
+				<PageHeader title="Blog">
 					Here I'll dabble into different kind of topics, but most likely relating to tech and web
 					development.
 				</PageHeader>
