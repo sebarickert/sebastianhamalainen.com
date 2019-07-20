@@ -17,22 +17,22 @@ const Menu = () => {
 			<nav className={`overlay-menu js-overlay-menu ${isOpen ? 'is-open' : ''}`} aria-label="Main Navigation">
 				<ul className="menu-main">
 					<li className="menu-main__item">
-						<Link to="/" className="menu-main__link">
+						<Link to="/" className="menu-main__link" activeClassName="is-active">
 							Home
 						</Link>
 					</li>
 					<li className="menu-main__item">
-						<Link to="/about" className="menu-main__link">
+						<Link to="/about" className="menu-main__link" activeClassName="is-active">
 							About
 						</Link>
 					</li>
 					<li className="menu-main__item">
-						<Link to="/blog" className="menu-main__link">
+						<Link to="/blog" className="menu-main__link" activeClassName="is-active">
 							Blog
 						</Link>
 					</li>
 					<li className="menu-main__item">
-						<Link to="/" className="menu-main__link">
+						<Link to="/" className="menu-main__link" activeClassName="is-active">
 							Portfolio
 						</Link>
 					</li>
