@@ -16,29 +16,35 @@ module.exports.onCreateNode = ({ node, actions }) => {
 
 module.exports.createPages = async ({ graphql, actions }) => {
 	const { createPage } = actions;
+
 	const blogTemplate = path.resolve('./src/templates/blog.js');
 
 	const res = await graphql(`
-    {
-      allMarkdownRemark {
-        edges {
-          node {
-            fields {
-              slug
-            }
-          }
-        }
-      }
-    }
+		{
+			allMarkdownRemark {
+				edges {
+					node {
+						frontmatter {
+							type
+						}
+						fields {
+							slug
+						}
+					}
+				}
+			}
+		}	
   `);
 
 	res.data.allMarkdownRemark.edges.forEach((e) => {
-		createPage({
-			component: blogTemplate,
-			path: `/blog/${e.node.fields.slug}`,
-			context: {
-				slug: e.node.fields.slug
-			}
-		});
+		if (e.node.frontmatter.type === 'blog') {
+			createPage({
+				component: blogTemplate,
+				path: `/blog/${e.node.fields.slug}`,
+				context: {
+					slug: e.node.fields.slug
+				}
+			});
+		}
 	});
 };

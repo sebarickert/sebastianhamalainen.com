@@ -1,9 +1,10 @@
 import React from 'react';
-import { Link, graphql, useStaticQuery } from 'gatsby';
+import { graphql, useStaticQuery } from 'gatsby';
 
 import Layout from '../components/layout/layout';
 import Container from '../components/container/container';
 import PageHeader from '../components/pageHeader/pageHeader';
+import BlogTeaser from '../components/blogTeaser/blogTeaser';
 import './listing.scss';
 import './blog-teaser.scss';
 
@@ -16,6 +17,7 @@ const BlogListingPage = () => {
 						frontmatter {
 							title
 							date(formatString: "MMMM DD, YYYY")
+							type
 						}
 						id
 						excerpt
@@ -37,15 +39,15 @@ const BlogListingPage = () => {
 				</PageHeader>
 				<ul className="listing">
 					{data.allMarkdownRemark.edges.map((e) => (
-						<li className="listing__item blog-teaser" key={e.node.id}>
-							<Link to={`/blog/${e.node.fields.slug}`} className="blog-teaser__link">
-								<h2 className="blog-teaser__heading">
-									<span>{e.node.frontmatter.title} </span>
-								</h2>
-								<span className="blog-teaser__published">{e.node.frontmatter.date}</span>
-								<p className="blog-teaser__lead">{e.node.excerpt}</p>
-							</Link>
-						</li>
+						<React.Fragment>
+							{e.node.frontmatter.type === 'blog' ? (
+								<li className="listing__item">
+									<BlogTeaser data={e.node} />
+								</li>
+							) : (
+								''
+							)}
+						</React.Fragment>
 					))}
 				</ul>
 			</Container>
