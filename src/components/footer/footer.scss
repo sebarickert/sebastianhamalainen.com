@@ -1,0 +1,43 @@
+@import "lib";
+
+.footer {
+	border-top: 1px solid #f2f2f2;
+	padding: $gutter * 4 0;
+}
+
+.footer__copyright {
+	color: $silver;
+	width: 100%;
+	margin-top: $gutter;
+}
+
+.footer__link {
+	@include font-size(18px);
+	background-color: rgba(27, 31, 35, .05);
+	border-radius: 3px;
+	margin: 0;
+	padding: .2em .4em;
+	&:hover {
+		opacity: .5;
+	}
+}
+
+.footer__content {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+
+	@media screen and (min-width: $bp-medium-wide) {
+		flex-direction: row;
+	}
+}
+
+.footer__item {
+	margin-bottom: $gutter * 2;
+
+	&:first-child {
+		@media screen and (min-width: $bp-medium-wide) {
+			width: 40%;
+		}
+	}
+}
