@@ -3,6 +3,7 @@ import { Link, graphql, useStaticQuery } from 'gatsby';
 
 import Layout from '../components/layout/layout';
 import Container from '../components/container/container';
+import PageHeader from '../components/pageHeader/pageHeader';
 
 const BlogListingPage = () => {
 	const data = useStaticQuery(graphql`
@@ -28,7 +29,10 @@ const BlogListingPage = () => {
 	return (
 		<Layout>
 			<Container>
-				<h1 className="page-title">Blog</h1>
+				<PageHeader>
+					Here I'll dabble into different kind of topics, but most likely relating to tech and web
+					development.
+				</PageHeader>
 				<ul className="blog-listing">
 					{data.allMarkdownRemark.edges.map((e) => (
 						<li className="blog-listing__item blog" key={e.node.id}>
