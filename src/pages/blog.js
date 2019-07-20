@@ -4,6 +4,8 @@ import { Link, graphql, useStaticQuery } from 'gatsby';
 import Layout from '../components/layout/layout';
 import Container from '../components/container/container';
 import PageHeader from '../components/pageHeader/pageHeader';
+import './listing.scss';
+import './blog-teaser.scss';
 
 const BlogListingPage = () => {
 	const data = useStaticQuery(graphql`
@@ -33,13 +35,15 @@ const BlogListingPage = () => {
 					Here I'll dabble into different kind of topics, but most likely relating to tech and web
 					development.
 				</PageHeader>
-				<ul className="blog-listing">
+				<ul className="listing">
 					{data.allMarkdownRemark.edges.map((e) => (
-						<li className="blog-listing__item blog" key={e.node.id}>
-							<Link to={`/blog/${e.node.fields.slug}`}>
-								<h2 className="blog__heading">{e.node.frontmatter.title}</h2>
-								<span className="blog__published">{e.node.frontmatter.published}</span>
-								<p className="blog__lead">{e.node.excerpt}</p>
+						<li className="listing__item blog-teaser" key={e.node.id}>
+							<Link to={`/blog/${e.node.fields.slug}`} className="blog-teaser__link">
+								<h2 className="blog-teaser__heading">
+									<span>{e.node.frontmatter.title} </span>
+								</h2>
+								<span className="blog-teaser__published">{e.node.frontmatter.published}</span>
+								<p className="blog-teaser__lead">{e.node.excerpt}</p>
 							</Link>
 						</li>
 					))}

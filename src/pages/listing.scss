@@ -1,0 +1,19 @@
+@import "lib";
+
+.listing {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.listing__item {
+	margin-bottom: $gutter * 2;
+
+	@media screen and (min-width: $bp-medium-wide) {
+		margin-bottom: $gutter * 4;
+	}
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+}

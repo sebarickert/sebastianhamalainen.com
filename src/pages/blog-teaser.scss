@@ -1,0 +1,49 @@
+@import "lib";
+
+.blog-teaser {
+	max-width: 700px;
+}
+
+.blog-teaser__link {
+	display: block;
+
+	&:hover,
+	&:focus {
+		.blog-teaser__heading {
+			span {
+				&:after {
+					width: 100%;
+				}
+			}
+		}
+	}
+}
+
+.blog-teaser__heading {
+	span {
+		position: relative;
+		&:after {
+			content: '';
+			position: absolute;
+			bottom: -.3rem;
+			width: 0;
+			height: 2px;
+			background-color: $black;
+			left: 0;
+			right: 0;
+			transition: width 0.25s ease-in-out;
+		}
+	}
+}
+
+.blog-teaser__published {
+	@include font-size(18px);
+	color: $silver;
+}
+
+.blog-teaser__lead {
+	@include font-size(20px);
+	margin-top: $gutter;
+	margin-bottom: 0;
+	font-weight: 400;
+}
