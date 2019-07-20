@@ -4,6 +4,12 @@ require('dotenv').config({
 });
 
 module.exports = {
+	siteMetadata: {
+		email: 'contact@hamse.fi',
+		twitter: 'https://twitter.com/iamsebh',
+		linkedin: 'https://www.linkedin.com/in/sebastianhamalainen/',
+		github: 'https://github.com/shamalainen'
+	},
 	plugins: [
 		'gatsby-plugin-sass',
 		{
