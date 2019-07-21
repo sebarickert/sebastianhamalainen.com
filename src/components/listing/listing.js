@@ -2,12 +2,13 @@ import React from 'react';
 
 import './listing.scss';
 
-const Listing = (props) => {
-	const ListingComponent = props.listingComponent;
+const Listing = ({ listingComponent, arrayOfContent }) => {
+	const ListingComponent = listingComponent;
 	return (
 		<ul className="listing">
-			{props.arrayOfContent.map((e) => (
+			{arrayOfContent.map((e) => (
 				<li className="listing__item">
+					{console.log(e)}
 					<ListingComponent data={e} />
 				</li>
 			))}

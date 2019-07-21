@@ -5,10 +5,10 @@ import Footer from '../footer/footer';
 import './base.scss';
 import './typography.scss';
 
-const Layout = (props) => (
+const Layout = ({ children }) => (
 	<React.Fragment>
 		<Header />
-		<main>{props.children}</main>
+		<main>{children}</main>
 		<Footer />
 	</React.Fragment>
 );
