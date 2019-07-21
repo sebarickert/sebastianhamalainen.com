@@ -6,7 +6,6 @@ import Container from '../components/container/container';
 import PageHeader from '../components/pageHeader/pageHeader';
 import BlogTeaser from '../components/blogTeaser/blogTeaser';
 import './listing.scss';
-import './blog-teaser.scss';
 
 const BlogListingPage = () => {
 	const data = useStaticQuery(graphql`

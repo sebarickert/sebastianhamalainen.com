@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'gatsby';
 
+import './blog-teaser.scss';
+
 const BlogTeaser = (props) => {
 	return (
 		<div className="blog-teaser">
