@@ -5,12 +5,15 @@ import Layout from '../components/layout/layout';
 import Container from '../components/container/container';
 import PageHeader from '../components/pageHeader/pageHeader';
 import BlogTeaser from '../components/blogTeaser/blogTeaser';
-import './listing.scss';
+import Listing from '../components/listing/listing';
 
 const BlogListingPage = () => {
 	const data = useStaticQuery(graphql`
 		{
-			allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+			allMarkdownRemark(
+				sort: { fields: [frontmatter___date], order: DESC }
+				filter: { frontmatter: { type: { eq: "blog" } } }
+			) {
 				edges {
 					node {
 						frontmatter {
@@ -36,19 +39,7 @@ const BlogListingPage = () => {
 					Here I'll dabble into different kind of topics, but most likely relating to tech and web
 					development.
 				</PageHeader>
-				<ul className="listing">
-					{data.allMarkdownRemark.edges.map((e) => (
-						<React.Fragment>
-							{e.node.frontmatter.type === 'blog' ? (
-								<li className="listing__item">
-									<BlogTeaser data={e.node} />
-								</li>
-							) : (
-								''
-							)}
-						</React.Fragment>
-					))}
-				</ul>
+				<Listing arrayOfContent={data.allMarkdownRemark.edges} listingComponent={BlogTeaser} />
 			</Container>
 		</Layout>
 	);

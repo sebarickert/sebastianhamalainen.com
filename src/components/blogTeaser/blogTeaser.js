@@ -6,12 +6,12 @@ import './blog-teaser.scss';
 const BlogTeaser = (props) => {
 	return (
 		<div className="blog-teaser">
-			<Link to={`/blog/${props.data.fields.slug}`} className="blog-teaser__link">
+			<Link to={`/blog/${props.data.node.fields.slug}`} className="blog-teaser__link">
 				<h2 className="blog-teaser__heading">
-					<span>{props.data.frontmatter.title} </span>
+					<span>{props.data.node.frontmatter.title} </span>
 				</h2>
-				<span className="blog-teaser__published">{props.data.frontmatter.date}</span>
-				<p className="blog-teaser__lead">{props.data.excerpt}</p>
+				<span className="blog-teaser__published">{props.data.node.frontmatter.date}</span>
+				<p className="blog-teaser__lead">{props.data.node.excerpt}</p>
 			</Link>
 		</div>
 	);
