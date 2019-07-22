@@ -20,20 +20,24 @@ export const query = graphql`
 	}
 `;
 
-const Blog = (props) => (
-	<Layout>
-		<SEO
-			title={`${props.data.markdownRemark.frontmatter.title} | Blog`}
-			description={props.data.markdownRemark.excerpt}
-		/>
-		<Container>
-			<h1 className="blog__heading">{props.data.markdownRemark.frontmatter.title}</h1>
-			<span className="blog__published">
-				{props.data.markdownRemark.frontmatter.date} – {props.data.markdownRemark.timeToRead} min read
-			</span>
-			<div className="blog__content" dangerouslySetInnerHTML={{ __html: props.data.markdownRemark.html }} />
-		</Container>
-	</Layout>
-);
+const Blog = ({ data }) => {
+	const { markdownRemark } = data;
+	const { frontmatter, excerpt, timeToRead, html } = markdownRemark;
+	const { title, date } = frontmatter;
+
+	console.log(data);
+	return (
+		<Layout>
+			<SEO title={`${title} | Blog`} description={excerpt} />
+			<Container>
+				<h1 className="blog__heading">{title}</h1>
+				<span className="blog__published">
+					{date} – {timeToRead} min read
+				</span>
+				<div className="blog__content" dangerouslySetInnerHTML={{ __html: html }} />
+			</Container>
+		</Layout>
+	);
+};
 
 export default Blog;
