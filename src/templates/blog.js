@@ -24,8 +24,6 @@ const Blog = ({ data }) => {
 	const { markdownRemark } = data;
 	const { frontmatter, excerpt, timeToRead, html } = markdownRemark;
 	const { title, date } = frontmatter;
-
-	console.log(data);
 	return (
 		<Layout>
 			<SEO title={`${title} | Blog`} description={excerpt} />

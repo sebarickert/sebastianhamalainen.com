@@ -8,7 +8,6 @@ const Listing = ({ listingComponent, arrayOfContent }) => {
 		<ul className="listing">
 			{arrayOfContent.map((e) => (
 				<li className="listing__item" key={e.node.id}>
-					{console.log(e)}
 					<ListingComponent data={e} />
 				</li>
 			))}
