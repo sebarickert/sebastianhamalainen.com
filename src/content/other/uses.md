@@ -1,4 +1,6 @@
 ---
+title: "Uses"
+description: "The following is a list of the tools and software that I use on a daily basis to help me build the internet."
 type: "uses"
 ---
 ## Hardware

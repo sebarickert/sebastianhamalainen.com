@@ -3,6 +3,7 @@ import { graphql } from 'gatsby';
 
 import Layout from '../components/layout/layout';
 import Container from '../components/container/container';
+import SEO from '../components/seo';
 import './blog.scss';
 
 export const query = graphql`
@@ -14,12 +15,17 @@ export const query = graphql`
 			}
 			html
 			timeToRead
+			excerpt
 		}
 	}
 `;
 
 const Blog = (props) => (
 	<Layout>
+		<SEO
+			title={`${props.data.markdownRemark.frontmatter.title} | Blog`}
+			description={props.data.markdownRemark.excerpt}
+		/>
 		<Container>
 			<h1 className="blog__heading">{props.data.markdownRemark.frontmatter.title}</h1>
 			<span className="blog__published">

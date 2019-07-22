@@ -4,6 +4,7 @@ import { graphql, useStaticQuery } from 'gatsby';
 import Layout from '../components/layout/layout';
 import Container from '../components/container/container';
 import PageHeader from '../components/pageHeader/pageHeader';
+import SEO from '../components/seo';
 
 const UsesPage = () => {
 	const data = useStaticQuery(graphql`
@@ -11,6 +12,10 @@ const UsesPage = () => {
 			allMarkdownRemark(filter: { frontmatter: { type: { eq: "uses" } } }) {
 				edges {
 					node {
+						frontmatter {
+							title
+							description
+						}
 						html
 					}
 				}
@@ -20,15 +25,12 @@ const UsesPage = () => {
 
 	return (
 		<Layout>
+			<SEO title={data.allMarkdownRemark.edges[0].node.frontmatter.title} />
 			<Container>
-				<PageHeader title="Uses">
-					The following is a list of the tools and software that I use on a daily basis to help me build the
-					internet.
+				<PageHeader title={data.allMarkdownRemark.edges[0].node.frontmatter.title}>
+					{data.allMarkdownRemark.edges[0].node.frontmatter.description}
 				</PageHeader>
-				<div
-					className="uses__content"
-					dangerouslySetInnerHTML={{ __html: data.allMarkdownRemark.edges[0].node.html }}
-				/>
+				<div dangerouslySetInnerHTML={{ __html: data.allMarkdownRemark.edges[0].node.html }} />
 			</Container>
 		</Layout>
 	);

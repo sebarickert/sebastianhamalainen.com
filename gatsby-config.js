@@ -8,7 +8,12 @@ module.exports = {
 		email: 'contact@hamse.fi',
 		twitter: 'https://twitter.com/iamsebh',
 		linkedin: 'https://www.linkedin.com/in/sebastianhamalainen/',
-		github: 'https://github.com/shamalainen'
+		github: 'https://github.com/shamalainen',
+		website: 'https://sebastianhamalainen.com',
+		author: '@iamsebh',
+		title: 'Sebastian',
+		description:
+			'Front-end Developer. Web Design and JS enthusiast, also a so-called gym rat. I like to play around with CSS.'
 	},
 	plugins: [
 		'gatsby-plugin-sass',

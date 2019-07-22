@@ -6,6 +6,7 @@ import Container from '../components/container/container';
 import PageHeader from '../components/pageHeader/pageHeader';
 import BlogTeaser from '../components/blogTeaser/blogTeaser';
 import Listing from '../components/listing/listing';
+import SEO from '../components/seo';
 
 const BlogListingPage = () => {
 	const data = useStaticQuery(graphql`
@@ -34,6 +35,7 @@ const BlogListingPage = () => {
 
 	return (
 		<Layout>
+			<SEO title="Blog" />
 			<Container>
 				<PageHeader title="Blog">
 					Here I'll dabble into different kind of topics, but most likely relating to tech and web

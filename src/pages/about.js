@@ -4,6 +4,7 @@ import { graphql, useStaticQuery } from 'gatsby';
 import Layout from '../components/layout/layout';
 import Container from '../components/container/container';
 import PageHeader from '../components/pageHeader/pageHeader';
+import SEO from '../components/seo';
 
 const AboutPage = () => {
 	const data = useStaticQuery(graphql`
@@ -11,6 +12,10 @@ const AboutPage = () => {
 			allMarkdownRemark(filter: { frontmatter: { type: { eq: "about" } } }) {
 				edges {
 					node {
+						frontmatter {
+							title
+							description
+						}
 						html
 					}
 				}
@@ -20,15 +25,12 @@ const AboutPage = () => {
 
 	return (
 		<Layout>
+			<SEO title={data.allMarkdownRemark.edges[0].node.frontmatter.title} />
 			<Container>
-				<PageHeader title="About">
-					Hi, I'm Sebastian. Front-end Developer. Web Design and JS enthusiast, also a so-called gym rat. I
-					like to play around with CSS.
+				<PageHeader title={data.allMarkdownRemark.edges[0].node.frontmatter.title}>
+					{data.allMarkdownRemark.edges[0].node.frontmatter.description}
 				</PageHeader>
-				<div
-					className="about__content"
-					dangerouslySetInnerHTML={{ __html: data.allMarkdownRemark.edges[0].node.html }}
-				/>
+				<div dangerouslySetInnerHTML={{ __html: data.allMarkdownRemark.edges[0].node.html }} />
 			</Container>
 		</Layout>
 	);
