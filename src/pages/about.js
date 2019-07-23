@@ -3,7 +3,7 @@ import { graphql, useStaticQuery } from 'gatsby';
 
 import Layout from '../components/layout/layout';
 import Container from '../components/container/container';
-import PageHeader from '../components/pageHeader/pageHeader';
+import Hero from '../components/hero/hero';
 import SEO from '../components/seo';
 
 const AboutPage = () => {
@@ -25,11 +25,14 @@ const AboutPage = () => {
 
 	return (
 		<Layout>
-			<SEO title={data.allMarkdownRemark.edges[0].node.frontmatter.title} description={data.allMarkdownRemark.edges[0].node.frontmatter.description} />
+			<SEO
+				title={data.allMarkdownRemark.edges[0].node.frontmatter.title}
+				description={data.allMarkdownRemark.edges[0].node.frontmatter.description}
+			/>
+			<Hero title={data.allMarkdownRemark.edges[0].node.frontmatter.title}>
+				{data.allMarkdownRemark.edges[0].node.frontmatter.description}
+			</Hero>
 			<Container>
-				<PageHeader title={data.allMarkdownRemark.edges[0].node.frontmatter.title}>
-					{data.allMarkdownRemark.edges[0].node.frontmatter.description}
-				</PageHeader>
 				<div dangerouslySetInnerHTML={{ __html: data.allMarkdownRemark.edges[0].node.html }} />
 			</Container>
 		</Layout>

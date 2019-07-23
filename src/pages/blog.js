@@ -3,8 +3,8 @@ import { graphql, useStaticQuery } from 'gatsby';
 
 import Layout from '../components/layout/layout';
 import Container from '../components/container/container';
-import PageHeader from '../components/pageHeader/pageHeader';
 import BlogTeaser from '../components/blogTeaser/blogTeaser';
+import Hero from '../components/hero/hero';
 import Listing from '../components/listing/listing';
 import SEO from '../components/seo';
 
@@ -39,11 +39,10 @@ const BlogListingPage = () => {
 				title="Blog"
 				description="Here I'll dabble into different kind of topics, but most likely relating to tech and web development."
 			/>
+			<Hero title="Blog">
+				Here I'll dabble into different kind of topics, but most likely relating to tech and web development.
+			</Hero>
 			<Container>
-				<PageHeader title="Blog">
-					Here I'll dabble into different kind of topics, but most likely relating to tech and web
-					development.
-				</PageHeader>
 				<Listing arrayOfContent={data.allMarkdownRemark.edges} listingComponent={BlogTeaser} />
 			</Container>
 		</Layout>

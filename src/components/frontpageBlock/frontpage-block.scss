@@ -3,6 +3,11 @@
 .frontpage-block {
 	padding: $gutter * 2 0;
 	border-bottom: 1px solid $concrete;
+	display: block;
+
+	&:first-child {
+		margin-top: -$gutter * 4;
+	}
 
 	@media screen and (min-width: $bp-wide) {
 		padding: $gutter * 4 0;

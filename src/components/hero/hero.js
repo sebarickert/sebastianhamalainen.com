@@ -3,8 +3,8 @@ import React from 'react';
 import Container from '../container/container';
 import './hero.scss';
 
-const Hero = ({ title, children }) => (
-	<div className="hero">
+const Hero = ({ title, children, heroClass }) => (
+	<div className={`hero ${heroClass ? heroClass : ''}`}>
 		<Container>
 			<h1 className="hero__title">
 				<span>{title}</span>
