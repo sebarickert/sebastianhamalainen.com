@@ -1,0 +1,33 @@
+@import "lib";
+
+.button {
+	@include font-size(16px);
+	display: inline-block;
+	padding: 0;
+	border-radius: 3px;
+	font-weight: 500;
+	position: relative;
+
+	&:hover,
+	&:focus {
+		&:after {
+			width: 100%;
+		}
+	}
+
+	&:after {
+		content: '';
+		position: absolute;
+		bottom: -0.15rem;
+		width: 0;
+		height: 2px;
+		background-color: $black;
+		left: 0;
+		right: 0;
+		transition: width 0.2s ease-in-out;
+	}
+}
+
+.button--cta {
+	margin-top: $gutter * 4;
+}

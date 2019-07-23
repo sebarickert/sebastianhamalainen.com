@@ -1,0 +1,18 @@
+@import "lib";
+
+.frontpage-block {
+	padding: $gutter * 2 0;
+	border-bottom: 1px solid $concrete;
+
+	@media screen and (min-width: $bp-wide) {
+		padding: $gutter * 4 0;
+	}
+
+	&:last-child {
+		border-bottom: 0;
+	}
+}
+
+.frontpage-block__heading {
+	margin-bottom: $gutter * 4;
+}
