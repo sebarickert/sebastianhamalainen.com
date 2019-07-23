@@ -35,7 +35,10 @@ const BlogListingPage = () => {
 
 	return (
 		<Layout>
-			<SEO title="Blog" />
+			<SEO
+				title="Blog"
+				description="Here I'll dabble into different kind of topics, but most likely relating to tech and web development."
+			/>
 			<Container>
 				<PageHeader title="Blog">
 					Here I'll dabble into different kind of topics, but most likely relating to tech and web

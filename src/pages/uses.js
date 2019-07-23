@@ -25,7 +25,10 @@ const UsesPage = () => {
 
 	return (
 		<Layout>
-			<SEO title={data.allMarkdownRemark.edges[0].node.frontmatter.title} />
+			<SEO
+				title={data.allMarkdownRemark.edges[0].node.frontmatter.title}
+				description={data.allMarkdownRemark.edges[0].node.frontmatter.description}
+			/>
 			<Container>
 				<PageHeader title={data.allMarkdownRemark.edges[0].node.frontmatter.title}>
 					{data.allMarkdownRemark.edges[0].node.frontmatter.description}
