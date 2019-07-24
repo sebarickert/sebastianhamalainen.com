@@ -32,7 +32,7 @@ const Menu = () => {
 						</Link>
 					</li>
 					<li className="menu-main__item">
-						<Link to="/" className="menu-main__link" activeClassName="is-active">
+						<Link to="/portfolio" className="menu-main__link" activeClassName="is-active">
 							Portfolio
 						</Link>
 					</li>
