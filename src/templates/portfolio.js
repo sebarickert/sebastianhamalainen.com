@@ -5,9 +5,8 @@ import Layout from '../components/layout/layout';
 import Container from '../components/container/container';
 import Hero from '../components/hero/hero';
 import SEO from '../components/seo';
-import Button from '../components/button/button';
-
-import './blog.scss';
+import LinkContainer from '../components/linkContainer/linkContainer';
+import LinkContainerLink from '../components/linkContainer/linkContainer.link';
 
 export const query = graphql`
 	query($slug: String!) {
@@ -43,9 +42,10 @@ const Portfolio = ({ data }) => {
 			<Hero title={title}>{lead}</Hero>
 			<Container>
 				<div className="portfolio__content" dangerouslySetInnerHTML={{ __html: html }} />
-				<a href={url_web}>Visit site</a>
-				<a href={url_source}>Visit source code</a>
-				<h1 />
+				<LinkContainer>
+					{url_web ? <LinkContainerLink linkTarget={url_web}>Visit site</LinkContainerLink> : ''}
+					{url_source ? <LinkContainerLink linkTarget={url_source}>Visit source code</LinkContainerLink> : ''}
+				</LinkContainer>
 			</Container>
 		</Layout>
 	);
