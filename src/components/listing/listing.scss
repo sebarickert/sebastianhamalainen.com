@@ -17,3 +17,21 @@
 		margin-bottom: 0;
 	}
 }
+
+.listing--col-2 {
+	max-width: none;
+
+	@media screen and (min-width: $bp-wide) {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+	}
+
+	.listing__item {
+		margin-bottom: $gutter;
+
+		@media screen and (min-width: $bp-wide) {
+			width: calc(100% / 2 - calc(#{$gutter} * .5));
+		}
+	}
+}
