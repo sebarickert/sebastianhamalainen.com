@@ -1,6 +1,6 @@
 ---
 title: "About"
-description: "Hi, I'm Sebastian. Front-end Developer. Web Design and JS enthusiast, also a so-called gym rat. I like to play around with CSS."
+description: "Here you'll find bits and pieces of information about me, my past professional experience and education."
 type: "about"
 ---
 ## Experience
