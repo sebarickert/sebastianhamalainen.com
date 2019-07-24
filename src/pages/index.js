@@ -3,6 +3,7 @@ import React from 'react';
 import Layout from '../components/layout/layout';
 import SEO from '../components/seo';
 import BlogLiftupListing from '../components/blogLiftupListing/blogLiftupListing';
+import PortfolioLiftupListing from '../components/portfolioListingLiftup/portfolioListingLiftup';
 import FrontpageBlock from '../components/frontpageBlock/frontpageBlock';
 import Hero from '../components/hero/hero';
 
@@ -14,6 +15,7 @@ const IndexPage = () => (
 			like to play around with CSS.
 		</Hero>
 		<div className="frontpage-block-container">
+			<FrontpageBlock blockComponent={PortfolioLiftupListing}>Latest portfolio showcases</FrontpageBlock>
 			<FrontpageBlock blockComponent={BlogLiftupListing}>Latest blogs</FrontpageBlock>
 		</div>
 	</Layout>
