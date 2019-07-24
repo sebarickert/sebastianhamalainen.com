@@ -6,10 +6,6 @@
 	max-width: $bp-extra-wide;
 
 	&--inset {
-		padding: 0 $gutter;
-
-		@media screen and (min-width: $bp-medium) {
-			padding: 0 calc(#{$gutter} * 2);
-		}
+		padding: 0 $gutter * 2;
 	}
 }

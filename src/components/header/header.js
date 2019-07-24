@@ -2,15 +2,16 @@ import React from 'react';
 
 import Logo from '../logo/logo';
 import Menu from '../menu/menu';
+import Container from '../container/container';
 
 import './header.scss';
 
 const Header = () => (
 	<header className="header" role="banner">
-		<div className="header__content container container--inset">
+		<Container containerClass="header__content">
 			<Logo />
 			<Menu />
-		</div>
+		</Container>
 	</header>
 );
 
