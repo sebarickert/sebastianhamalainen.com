@@ -39,12 +39,17 @@ const PortfolioListingPage = () => {
 
 	return (
 		<Layout>
+			<SEO
+				title="Portfolio"
+				description="Below I've compiled a list of stuff that I have created over the years, professional and free-time
+				projects."
+			/>
 			<Hero title="Portfolio">
 				Below I've compiled a list of stuff that I have created over the years, professional and free-time
 				projects.
 			</Hero>
 			<Container>
-				<h2 class="h1 main-subheading">All portfolio showcases</h2>
+				<h2 className="h1 main-subheading">All portfolio showcases</h2>
 				<Listing
 					arrayOfContent={data.allMarkdownRemark.edges}
 					listingComponent={PortfolioTeaser}
