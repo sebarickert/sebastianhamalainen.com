@@ -16,7 +16,7 @@ export const query = graphql`
 				lead
 				teaser_image {
 					childImageSharp {
-						fluid(maxWidth: 600, maxHeight: 340) {
+						fluid(maxWidth: 800, maxHeight: 453, quality: 100) {
 							src
 						}
 					}
