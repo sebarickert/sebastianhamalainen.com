@@ -26,24 +26,26 @@ export const query = graphql`
 				url_web
 			}
 			html
+			excerpt
 		}
 	}
 `;
 
 const Portfolio = ({ data }) => {
 	const { markdownRemark } = data;
-	const { frontmatter, html } = markdownRemark;
+	const { frontmatter, html, excerpt } = markdownRemark;
 	const { title, lead, teaser_image, url_source, url_web } = frontmatter;
 	const { childImageSharp } = teaser_image;
 	const { fluid } = childImageSharp;
 	return (
 		<Layout>
-			<SEO title={`${title} | Portfolio`} description={lead} image={fluid.src} />
+			<SEO title={`${title} | Portfolio`} description={excerpt} image={fluid.src} />
 			<Hero title={title}>{lead}</Hero>
 			<Container>
 				<div className="portfolio__content" dangerouslySetInnerHTML={{ __html: html }} />
 				<a href={url_web}>Visit site</a>
 				<a href={url_source}>Visit source code</a>
+				<h1 />
 			</Container>
 		</Layout>
 	);
