@@ -9,7 +9,7 @@ const FrontpageBlock = ({ blockComponent, children }) => {
 	return (
 		<div className="frontpage-block">
 			<Container>
-				<h2 className="h1 frontpage-block__heading">{children}</h2>
+				<h2 className="h1 main-subheading">{children}</h2>
 				<BlockComponent />
 			</Container>
 		</div>

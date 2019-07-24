@@ -43,6 +43,7 @@ const BlogListingPage = () => {
 				Here I'll dabble into different kind of topics, but most likely relating to tech and web development.
 			</Hero>
 			<Container>
+				<h2 class="h1 main-subheading">All blogs</h2>
 				<Listing arrayOfContent={data.allMarkdownRemark.edges} listingComponent={BlogTeaser} />
 			</Container>
 		</Layout>
