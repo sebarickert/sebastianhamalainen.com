@@ -2,7 +2,7 @@
 title: "Shell Helmisimpukka"
 date: 2016-08-01
 type: "portfolio"
-teaser_image: ../images/portfolio/portfolio-druidfi.jpeg
+teaser_image: ../images/portfolio/portfolio-shell-helmisimpukka.jpeg
 lead: "Shell Helmisimpukka is a well known finnish service station chain that has over 100 stations across Finland."
 url_source: ""
 url_web: "https://www.helmisimpukka.fi/"
