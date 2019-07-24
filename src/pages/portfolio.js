@@ -19,7 +19,7 @@ const PortfolioListingPage = () => {
 					node {
 						frontmatter {
 							title
-							image {
+							teaser_image {
 								childImageSharp {
 									fluid(maxWidth: 600, maxHeight: 340) {
 										src

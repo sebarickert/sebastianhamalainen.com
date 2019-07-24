@@ -6,8 +6,8 @@ import './portfolio-teaser.scss';
 const PortfolioTeaser = ({ data }) => {
 	const { node } = data;
 	const { frontmatter, fields } = node;
-	const { title, image } = frontmatter;
-	const { childImageSharp } = image;
+	const { title, teaser_image } = frontmatter;
+	const { childImageSharp } = teaser_image;
 	const { fluid } = childImageSharp;
 	return (
 		<div className="portfolio-teaser">
