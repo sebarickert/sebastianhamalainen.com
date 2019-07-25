@@ -1,5 +1,5 @@
 ---
-title: "Druid.fi"
+title: "Druid"
 date: 2016-02-05
 type: "portfolio"
 teaser_image: ../images/portfolio/portfolio-druidfi.jpeg
