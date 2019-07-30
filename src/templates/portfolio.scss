@@ -1,0 +1,16 @@
+@import "lib";
+
+.portfolio__showcase {
+	margin-top: $gutter * 4;
+	margin-bottom: -$gutter * 4;
+	background: $alabaster;
+	padding: 64px 0;
+	display: flex;
+	justify-content: center;
+	border-top: 1px solid $concrete;
+}
+
+.portfolio__showcase-image {
+	width: 100%;
+	box-shadow: 0 2px 4px rgba(19, 19, 19, .1);
+}

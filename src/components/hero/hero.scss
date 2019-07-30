@@ -27,6 +27,7 @@
 	font-weight: 400;
 	padding: $gutter * 2;
 	background-color: $white;
+	display: inline-block;
 
 	@media screen and (min-width: $bp-wide) {
 		@include font-size(28px);

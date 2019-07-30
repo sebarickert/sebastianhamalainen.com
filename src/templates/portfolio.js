@@ -7,6 +7,7 @@ import Hero from '../components/hero/hero';
 import SEO from '../components/seo';
 import LinkContainer from '../components/linkContainer/linkContainer';
 import LinkContainerLink from '../components/linkContainer/linkContainer.link';
+import './portfolio.scss';
 
 export const query = graphql`
 	query($slug: String!) {
@@ -17,6 +18,13 @@ export const query = graphql`
 				teaser_image {
 					childImageSharp {
 						fluid(maxWidth: 800, maxHeight: 453, quality: 100) {
+							src
+						}
+					}
+				}
+				showcase_image {
+					childImageSharp {
+						fluid(maxWidth: 1200, quality: 100) {
 							src
 						}
 					}
@@ -33,20 +41,37 @@ export const query = graphql`
 const Portfolio = ({ data }) => {
 	const { markdownRemark } = data;
 	const { frontmatter, html, excerpt } = markdownRemark;
-	const { title, lead, teaser_image, url_source, url_web } = frontmatter;
-	const { childImageSharp } = teaser_image;
-	const { fluid } = childImageSharp;
+	const { title, lead, teaser_image, showcase_image, url_source, url_web } = frontmatter;
+	const teaserImage = teaser_image.childImageSharp.fluid.src;
+	const showcaseImage = showcase_image ? showcase_image.childImageSharp.fluid.src : '';
 	return (
 		<Layout>
-			<SEO title={`${title} | Portfolio`} description={excerpt} image={fluid.src} />
+			<SEO title={`${title} | Portfolio`} description={excerpt} image={teaserImage} />
 			<Hero title={title}>{lead}</Hero>
 			<Container>
 				<div className="portfolio__content" dangerouslySetInnerHTML={{ __html: html }} />
-				<LinkContainer>
-					{url_web ? <LinkContainerLink linkTarget={url_web}>Visit site</LinkContainerLink> : ''}
-					{url_source ? <LinkContainerLink linkTarget={url_source}>Visit source code</LinkContainerLink> : ''}
-				</LinkContainer>
+				{url_web || url_source ? (
+					<LinkContainer>
+						{url_web ? <LinkContainerLink linkTarget={url_web}>Visit site</LinkContainerLink> : ''}
+						{url_source ? (
+							<LinkContainerLink linkTarget={url_source}>Visit source code</LinkContainerLink>
+						) : (
+							''
+						)}
+					</LinkContainer>
+				) : (
+					''
+				)}
 			</Container>
+			{showcaseImage ? (
+				<div className="portfolio__showcase" role="presentation">
+					<Container>
+						<img src={showcaseImage} alt="" className="portfolio__showcase-image" />
+					</Container>
+				</div>
+			) : (
+				''
+			)}
 		</Layout>
 	);
 };
