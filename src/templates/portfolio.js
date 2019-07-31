@@ -42,7 +42,7 @@ const Portfolio = ({ data }) => {
 	const { markdownRemark } = data;
 	const { frontmatter, html, excerpt } = markdownRemark;
 	const { title, lead, teaser_image, showcase_image, url_source, url_web } = frontmatter;
-	const teaserImage = teaser_image.childImageSharp.fluid.src;
+	const teaserImage = teaser_image ? teaser_image.childImageSharp.fluid.src : '';
 	const showcaseImage = showcase_image ? showcase_image.childImageSharp.fluid.src : '';
 	return (
 		<Layout>
