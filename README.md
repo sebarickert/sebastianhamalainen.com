@@ -1,10 +1,5 @@
 ## 🚀 Quick start
 
-    ```sh
-    # create a new Gatsby site using the hello-world starter
-    gatsby new my-hello-world-starter https://github.com/gatsbyjs/gatsby-starter-hello-world
-    ```
-
 1.  **Set up local**
 
     Clone this reposity
