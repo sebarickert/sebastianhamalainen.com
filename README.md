@@ -2,7 +2,7 @@
 
 1.  **Set up local**
 
-    Clone this reposity
+    Clone this repository
 
     ```sh
     # If you haven't set up ssh, use https
