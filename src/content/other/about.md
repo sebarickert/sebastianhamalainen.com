@@ -18,17 +18,6 @@ Over the years I have provided the following for clients:
 
 I have extensive knowledge of working with CMS systems and experience in large-scale web service projects. I mostly have been responsible for user interface design and accessibility.
 
-Technologies that I use and am familiar with:
-- CSS / Sass
-- HTML5
-- PHP
-- JavaScript
-- React
-- Twig
-- Drupal 7 & 8
-- Git
-- Gulp
-
 
 ## Education
 

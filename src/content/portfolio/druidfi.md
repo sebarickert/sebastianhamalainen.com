@@ -2,10 +2,11 @@
 title: "Druid"
 date: 2016-02-05
 type: "portfolio"
-teaser_image: ../images/portfolio/portfolio-druidfi.jpeg
-lead: "Druid is one of Finland's leading Drupal houses and a top expert in agile development."
+teaser_image: "../images/portfolio/portfolio-druidfi.jpg"
+lead: "Druid is on of the top experts on the Drupal publishing system and agile software development processes in Finland."
 url_source: ""
 url_web: "https://www.druid.fi/"
+showcase_image: "../images/portfolio/showcase/ss-druid.jpg"
 ---
 
 ## What did I do?
