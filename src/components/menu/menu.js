@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'gatsby';
 
 import './menu-main.scss';
@@ -8,9 +8,11 @@ const Menu = () => {
 	const [ isOpen, setIsOpen ] = useState(false);
 	const toggle = () => setIsOpen(!isOpen);
 
-	// Lock page scrolling when mobile menu is open.
-	const bodyElement = document.querySelector('body');
-	bodyElement.style.overflow = isOpen ? 'hidden' : 'initial';
+	useEffect(() => {
+		// Lock page scrolling when mobile menu is open.
+		const bodyElement = document.querySelector('body');
+		bodyElement.style.overflow = isOpen ? 'hidden' : 'initial';
+	});
 
 	return (
 		<React.Fragment>
