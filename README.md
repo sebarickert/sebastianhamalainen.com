@@ -15,6 +15,7 @@
 
     ```sh
     cd sebastianhamalainencom/
+    yarn install
     yarn run develop
     ```
 
