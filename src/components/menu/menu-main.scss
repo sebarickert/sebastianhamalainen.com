@@ -3,7 +3,8 @@
 .overlay-menu {
 	@media screen and (max-width: $bp-wide) {
 		width: 100%;
-		background-color: $black;
+		background-color: $cod-gray;
+		background-image: url("data:image/svg+xml,%3Csvg width='52' height='26' viewBox='0 0 52 26' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23FFFFFF' fill-opacity='0.05'%3E%3Cpath d='M10 10c0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6h2c0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4v2c-3.314 0-6-2.686-6-6 0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6zm25.464-1.95l8.486 8.486-1.414 1.414-8.486-8.486 1.414-1.414z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
 		height: 100%;
 		margin-left: auto;
 		position: fixed;
@@ -59,21 +60,25 @@
 	@include font-size(16px);
 	font-weight: 500;
 	position: relative;
-	padding: $gutter * .25;
 
-	&:after {
-		content: '';
-		position: absolute;
-		bottom: -0.15rem;
-		width: 0;
-		height: 2px;
-		background-color: $black;
-		left: 0;
-		right: 0;
-		transition: width 0.2s ease-in-out;
+	span {
+		padding: $gutter * .25;
+		position: relative;
 
-		@media screen and (max-width: $bp-wide) {
-			background-color: $white;
+		&:after {
+			content: '';
+			position: absolute;
+			bottom: -0.15rem;
+			width: 0;
+			height: 2px;
+			background-color: $black;
+			left: 0;
+			right: 0;
+			transition: width 0.2s ease-in-out;
+
+			@media screen and (max-width: $bp-wide) {
+				background-color: $white;
+			}
 		}
 	}
 
@@ -81,7 +86,7 @@
 	&:hover {
 		color: $black;
 
-		&:after {
+		span:after {
 			width: 100%;
 		}
 
@@ -93,7 +98,7 @@
 	&.is-active {
 		color: $black;
 
-		&:after {
+		span:after {
 			width: 100%;
 		}
 
