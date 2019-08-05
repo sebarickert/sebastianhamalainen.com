@@ -1,16 +1,19 @@
 @import 'lib';
 
 .header {
-	padding-top: $gutter * 2;
-	padding-bottom: $gutter * 2;
+	background-color: $white;
+	left: 0;
+	padding-bottom: $gutter;
+	padding-top: $gutter;
+	position: fixed;
+	top: 0;
+	width: 100%;
 	z-index: 100;
+	transition: box-shadow .2s;
 
-	@media screen and (max-width: $bp-wide) {
-		position: fixed;
-		top: 0;
-		left: 0;
-		width: 100%;
-		background-color: rgba($white, .75);
+	@media screen and (min-width: $bp-wide) {
+		padding-top: $gutter * 2;
+		padding-bottom: $gutter * 2;
 	}
 }
 
@@ -19,4 +22,8 @@
 	flex-direction: row;
 	justify-content: space-between;
 	align-items: center;
+}
+
+.header--shadow {
+	box-shadow: 0 2px 20px 0 rgba(0, 0, 0, .08);
 }

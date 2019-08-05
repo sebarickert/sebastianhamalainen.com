@@ -8,11 +8,11 @@
 		height: 100%;
 		margin-left: auto;
 		position: fixed;
-		left: 0;
+		right: 0;
 		top: 0;
 		width: 100%;
-		transform: translateX(-100%);
-		padding: $gutter * 5 $gutter $gutter $gutter;
+		transform: translateX(100%);
+		padding: 72px $gutter $gutter $gutter;
 		transition: transform 0.35s;
 	}
 
