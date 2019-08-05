@@ -2,7 +2,6 @@
 
 .header {
 	background-color: $white;
-	box-shadow: 0 2px 20px 0 rgba(0, 0, 0, .08);
 	left: 0;
 	padding-bottom: $gutter;
 	padding-top: $gutter;
@@ -10,6 +9,7 @@
 	top: 0;
 	width: 100%;
 	z-index: 100;
+	transition: box-shadow .2s;
 
 	@media screen and (min-width: $bp-wide) {
 		padding-top: $gutter * 2;
@@ -22,4 +22,8 @@
 	flex-direction: row;
 	justify-content: space-between;
 	align-items: center;
+}
+
+.header--shadow {
+	box-shadow: 0 2px 20px 0 rgba(0, 0, 0, .08);
 }
