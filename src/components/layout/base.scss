@@ -45,7 +45,7 @@ img {
 }
 
 main {
-	padding: calc(104px + calc(#{$gutter} * 2)) 0 calc(#{$gutter} * 4);
+	padding: calc(72px + calc(#{$gutter} * 2)) 0 calc(#{$gutter} * 4);
 
 	@media screen and (min-width: $bp-wide) {
 		padding: $gutter * 2 0 $gutter * 4;
