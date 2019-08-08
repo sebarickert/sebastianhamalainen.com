@@ -16,7 +16,9 @@ const IndexPage = () => (
 		</Hero>
 		<div className="frontpage-block-container">
 			<FrontpageBlock blockComponent={PortfolioLiftupListing}>Latest portfolio showcases</FrontpageBlock>
-			<FrontpageBlock blockComponent={BlogLiftupListing}>Latest blogs</FrontpageBlock>
+			<FrontpageBlock blockComponent={BlogLiftupListing} blockComponentClass="black">
+				Latest blogs
+			</FrontpageBlock>
 		</div>
 	</Layout>
 );

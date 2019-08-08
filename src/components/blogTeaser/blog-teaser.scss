@@ -2,6 +2,27 @@
 
 .blog-teaser {
 	max-width: 700px;
+
+	.black & {
+		.blog-teaser__heading {
+			color: $white;
+
+			span {
+				&:after {
+					background-color: $white;
+				}
+			}
+		}
+
+		.blog-teaser__link {
+			&:hover,
+			&:focus {
+				.blog-teaser__lead {
+					color: $silver;
+				}
+			}
+		}
+	}
 }
 
 .blog-teaser__link {
