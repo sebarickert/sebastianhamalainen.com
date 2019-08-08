@@ -26,6 +26,14 @@
 		right: 0;
 		transition: width 0.2s ease-in-out;
 	}
+
+	.black & {
+		color: $white;
+
+		&:after {
+			background-color: $white;
+		}
+	}
 }
 
 .button--cta {
