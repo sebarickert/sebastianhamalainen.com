@@ -82,6 +82,12 @@ module.exports = {
 				// Any invalid keyword or empty string defaults to `anonymous`
 				crossOrigin: `use-credentials`
 			}
+		},
+		{
+			resolve: `gatsby-plugin-google-analytics`,
+			options: {
+				trackingId: 'UA-73411608-1'
+			}
 		}
 	]
 };
