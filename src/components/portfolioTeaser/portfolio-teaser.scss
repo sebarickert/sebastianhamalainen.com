@@ -48,6 +48,7 @@
 
 .portfolio-teaser__content {
 	padding: $gutter * 2 $gutter 0 0;
+	position: relative;
 }
 
 .portfolio-teaser__lead {
@@ -60,4 +61,12 @@
 
 .portfolio-teaser__image {
 	width: 100%;
+}
+
+.portfolio-teaser__date {
+	@include font-size(14px);
+	color: $silver;
+	position: absolute;
+	top: $gutter * .5;
+	right: 0;
 }
