@@ -20,18 +20,12 @@
 
 .listing--col-2 {
 	max-width: none;
-
-	@media screen and (min-width: $bp-wide) {
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: space-between;
-	}
+	display: grid;
+	grid-gap: $gutter * 2;
+	grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+	grid-row-gap: $gutter * 2;
 
 	.listing__item {
-		margin-bottom: $gutter;
-
-		@media screen and (min-width: $bp-wide) {
-			width: calc(100% / 2 - calc(#{$gutter} * .5));
-		}
+		margin-bottom: 0;
 	}
 }
