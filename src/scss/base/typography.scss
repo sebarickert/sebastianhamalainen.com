@@ -230,3 +230,11 @@ p a {
 	margin-bottom: $gutter * 4;
 	color: $silver;
 }
+
+.text--center {
+	text-align: center;
+}
+
+.mb--2 {
+	margin-bottom: $gutter * 2 !important;
+}
