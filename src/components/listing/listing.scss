@@ -22,8 +22,12 @@
 	max-width: none;
 	display: grid;
 	grid-gap: $gutter * 2;
-	grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+	grid-template-columns: repeat(auto-fit, minmax(265px, 1fr));
 	grid-row-gap: $gutter * 2;
+
+	@media screen and (min-width: $bp-medium) {
+		grid-template-columns: repeat(auto-fit, minmax(375px, 1fr));
+	}
 
 	.listing__item {
 		margin-bottom: 0;
