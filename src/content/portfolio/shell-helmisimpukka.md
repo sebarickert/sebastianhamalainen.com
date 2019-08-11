@@ -3,7 +3,7 @@ title: "Shell Helmisimpukka"
 date: 2016-08-01
 type: "portfolio"
 teaser_image: "../images/portfolio/portfolio-shell-helmisimpukka.jpg"
-lead: "Shell Helmisimpukka is a well known finnish service station chain that has over 100 stations across Finland."
+lead: "Website rebuild with the Drupal 8 platform with extensive use of the paragraphs module. Design refresh."
 url_source: ""
 url_web: "https://www.helmisimpukka.fi/"
 showcase_image: "../images/portfolio/showcase/ss-helmisimpukka.jpg"

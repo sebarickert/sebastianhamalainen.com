@@ -3,7 +3,7 @@ title: "Countries App"
 date: 2018-12-10
 type: "portfolio"
 teaser_image: "../images/portfolio/portfolio-countries.jpg"
-lead: "React App that makes use of a public API fetching all countries of the globe with their basic data."
+lead: "Application build with React. Making use of a public API fetching all countries' basic data."
 url_source: "https://github.com/shamalainen/countries-app"
 url_web: ""
 showcase_image: "../images/portfolio/showcase/ss-countries.png"

@@ -3,7 +3,7 @@ title: "Movescount Redirect App"
 date: 2018-11-15
 type: "portfolio"
 teaser_image: "../images/portfolio/portfolio-movescount.jpg"
-lead: "App that lets you to choose a timeframe of your workout logs and redirect to the correct page, showcasing the workouts of the date range."
+lead: "Application built with React. Using an API for data to choose from a dropdown list."
 url_source: ""
 url_web: ""
 showcase_image: "../images/portfolio/showcase/ss-movescount.png"

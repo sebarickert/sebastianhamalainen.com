@@ -3,7 +3,7 @@ title: "Itis"
 date: 2018-08-01
 type: "portfolio"
 teaser_image: "../images/portfolio/portfolio-itis.jpg"
-lead: "Itis is among the largest shopping centers in Finland with over 120 stores, over 40 restaurants and services ranging from private to public."
+lead: "Website rebuild with the Drupal 8 platform. Extensive use of the Group contrib module."
 url_source: ""
 url_web: "https://www.itis.fi/fi"
 showcase_image: "../images/portfolio/showcase/ss-itis.jpg"

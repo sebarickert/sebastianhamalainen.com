@@ -3,7 +3,7 @@ title: "Personal Website"
 date: 2019-08-01
 type: "portfolio"
 teaser_image: "../images/portfolio/portfolio-shcom.jpg"
-lead: "Personal Website finally built on GatsbyJS and making use of its markdown templating possibility."
+lead: "Personal Website built on GatsbyJS (React). Using markdown templates for content on the site."
 url_source: "https://github.com/shamalainen/sebastianhamalainencom"
 url_web: "/"
 showcase_image: "../images/portfolio/showcase/ss-personal-website.png"
