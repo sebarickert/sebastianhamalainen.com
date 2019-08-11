@@ -224,3 +224,9 @@ p a {
 .main-subheading {
 	margin-bottom: $gutter * 4;
 }
+
+.main-subheading-lead {
+	margin-top: calc(-#{$gutter} * 4 + #{$gutter});
+	margin-bottom: $gutter * 4;
+	color: $silver;
+}

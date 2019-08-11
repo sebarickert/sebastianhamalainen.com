@@ -3,7 +3,7 @@ title: "Touring Cars"
 date: 2019-03-30
 type: "portfolio"
 teaser_image: "../images/portfolio/portfolio-touringcars.jpg"
-lead: "Touring Cars is a Motorhome Hire - Rental RV - Camper rental, and is leading in Europe."
+lead: "Website rebuild with the Drupal 8 commerce platform. Using React for the booking pipeline."
 url_source: ""
 url_web: "https://touringcars.eu"
 showcase_image: "../images/portfolio/showcase/ss-touringcars.jpg"

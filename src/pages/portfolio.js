@@ -19,6 +19,8 @@ const PortfolioListingPage = () => {
 					node {
 						frontmatter {
 							title
+							lead
+							date(formatString: "MMMM DD, YYYY")
 							teaser_image {
 								childImageSharp {
 									fluid(maxWidth: 800, maxHeight: 453, quality: 100) {

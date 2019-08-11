@@ -3,7 +3,7 @@ title: "Druid"
 date: 2016-02-05
 type: "portfolio"
 teaser_image: "../images/portfolio/portfolio-druidfi.jpg"
-lead: "Druid is on of the top experts on the Drupal publishing system and agile software development processes in Finland."
+lead: "Website rebuild on the newly released Drupal 8 platform and brand re-design."
 url_source: ""
 url_web: "https://www.druid.fi/"
 showcase_image: "../images/portfolio/showcase/ss-druid.jpg"

@@ -3,7 +3,7 @@ title: "Todo App"
 date: 2019-01-30
 type: "portfolio"
 teaser_image: "../images/portfolio/portfolio-todo-app.jpg"
-lead: "Todo App created with React and with a clean design."
+lead: "Application built with React. Designed to be clean and minimalistic."
 url_source: "https://github.com/shamalainen/todo-app"
 url_web: ""
 showcase_image: "../images/portfolio/showcase/ss-todo.png"

@@ -3,7 +3,7 @@ title: "Vilkas"
 date: 2019-04-24
 type: "portfolio"
 teaser_image: "../images/portfolio/portfolio-vilkas.jpg"
-lead: "Vilkas offers both a versatile and easy-to-use webshop solution for online shopping."
+lead: "Website maintenance and frontpage rebuild on a new design. Extensive refactoring."
 url_source: ""
 url_web: "https://www.vilkas.fi/"
 showcase_image: "../images/portfolio/showcase/ss-vilkas.png"
