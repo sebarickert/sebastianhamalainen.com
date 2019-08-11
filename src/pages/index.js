@@ -6,6 +6,7 @@ import BlogLiftupListing from '../components/blogLiftupListing/blogLiftupListing
 import PortfolioLiftupListing from '../components/portfolioListingLiftup/portfolioListingLiftup';
 import FrontpageBlock from '../components/frontpageBlock/frontpageBlock';
 import Hero from '../components/hero/hero';
+import '../scss/base.scss';
 
 const IndexPage = () => (
 	<Layout>
