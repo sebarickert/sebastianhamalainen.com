@@ -49,6 +49,11 @@ const Portfolio = ({ data }) => {
 			<SEO title={`${title} | Portfolio`} description={excerpt} image={teaserImage} />
 			<Hero title={title}>{lead}</Hero>
 			<Container>
+				<LinkContainer>
+					<LinkContainerLink linkTarget="/portfolio" linkContainerLinkClass="mb--2">
+						Go back
+					</LinkContainerLink>
+				</LinkContainer>
 				<div className="portfolio__content" dangerouslySetInnerHTML={{ __html: html }} />
 				{url_web || url_source ? (
 					<LinkContainer>
