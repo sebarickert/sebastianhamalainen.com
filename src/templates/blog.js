@@ -4,6 +4,8 @@ import { graphql } from 'gatsby';
 import Layout from '../components/layout/layout';
 import Container from '../components/container/container';
 import SEO from '../components/seo';
+import LinkContainer from '../components/linkContainer/linkContainer';
+import LinkContainerLink from '../components/linkContainer/linkContainer.link';
 import './blog.scss';
 
 export const query = graphql`
@@ -28,6 +30,9 @@ const Blog = ({ data }) => {
 		<Layout>
 			<SEO title={`${title} | Blog`} description={excerpt} />
 			<Container>
+				<LinkContainerLink linkTarget="/blog" linkContainerLinkClass="mb--2">
+					Go back to Blog
+				</LinkContainerLink>
 				<h1 className="blog__heading">{title}</h1>
 				<span className="blog__published">
 					{date} – {timeToRead} min read

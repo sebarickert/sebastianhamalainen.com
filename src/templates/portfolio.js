@@ -51,7 +51,7 @@ const Portfolio = ({ data }) => {
 			<Container>
 				<LinkContainer>
 					<LinkContainerLink linkTarget="/portfolio" linkContainerLinkClass="mb--2">
-						Go back
+						Go back to Portfolio
 					</LinkContainerLink>
 				</LinkContainer>
 				<div className="portfolio__content" dangerouslySetInnerHTML={{ __html: html }} />
