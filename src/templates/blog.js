@@ -30,9 +30,11 @@ const Blog = ({ data }) => {
 		<Layout>
 			<SEO title={`${title} | Blog`} description={excerpt} />
 			<Container>
-				<LinkContainerLink linkTarget="/blog" linkContainerLinkClass="mb--2">
-					Go back to Blog
-				</LinkContainerLink>
+				<LinkContainer>
+					<LinkContainerLink linkTarget="/blog" linkContainerLinkClass="mb--2">
+						Go back to Blog
+					</LinkContainerLink>
+				</LinkContainer>
 				<h1 className="blog__heading">{title}</h1>
 				<span className="blog__published">
 					{date} – {timeToRead} min read
