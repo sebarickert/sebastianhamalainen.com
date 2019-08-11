@@ -37,17 +37,27 @@ const Menu = () => {
 						</Link>
 					</li>
 					<li className="menu-main__item">
-						<Link to="/about" className="menu-main__link" activeClassName="is-active">
+						<Link
+							to="/about"
+							className="menu-main__link"
+							activeClassName="is-active"
+							partiallyActive={true}
+						>
 							<span>About</span>
 						</Link>
 					</li>
 					<li className="menu-main__item">
-						<Link to="/blog" className="menu-main__link" activeClassName="is-active">
+						<Link to="/blog" className="menu-main__link" activeClassName="is-active" partiallyActive={true}>
 							<span>Blog</span>
 						</Link>
 					</li>
 					<li className="menu-main__item">
-						<Link to="/portfolio" className="menu-main__link" activeClassName="is-active">
+						<Link
+							to="/portfolio"
+							className="menu-main__link"
+							activeClassName="is-active"
+							partiallyActive={true}
+						>
 							<span>Portfolio</span>
 						</Link>
 					</li>
