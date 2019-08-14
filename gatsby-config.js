@@ -10,6 +10,7 @@ module.exports = {
 		linkedin: 'https://www.linkedin.com/in/sebastianhamalainen/',
 		github: 'https://github.com/shamalainen',
 		website: 'https://sebastianhamalainen.com',
+		siteUrl: 'https://sebastianhamalainen.com',
 		author: '@iamsebh',
 		title: 'Sebastian',
 		description:
@@ -88,6 +89,7 @@ module.exports = {
 			options: {
 				trackingId: 'UA-73411608-1'
 			}
-		}
+		},
+		'gatsby-plugin-sitemap'
 	]
 };
