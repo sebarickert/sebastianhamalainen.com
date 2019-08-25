@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'gatsby';
 
 import './portfolio-teaser.scss';
+import ArrowRightIcon from '../../assets/right-arrow.svg';
 
 const PortfolioTeaser = ({ data }) => {
 	const { node } = data;
@@ -12,7 +13,12 @@ const PortfolioTeaser = ({ data }) => {
 	return (
 		<div className="portfolio-teaser">
 			<Link to={`/portfolio/${fields.slug}`} className="portfolio-teaser__link">
-				<img className="portfolio-teaser__image" src={fluid.src} alt="" role="presentation" />
+				<div className="portfolio-teaser__container">
+					<img className="portfolio-teaser__image" src={fluid.src} alt="" role="presentation" />
+					<div className="portfolio-teaser__overlay">
+						<ArrowRightIcon className="portfolio-teaser__icon" />
+					</div>
+				</div>
 				<div className="portfolio-teaser__content">
 					<h2 className="portfolio-teaser__heading">
 						<span>{title}</span>

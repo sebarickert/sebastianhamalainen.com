@@ -94,6 +94,14 @@ module.exports = {
 				trackingId: 'UA-73411608-1'
 			}
 		},
-		'gatsby-plugin-sitemap'
+		'gatsby-plugin-sitemap',
+		{
+			resolve: 'gatsby-plugin-react-svg',
+			options: {
+				rule: {
+					include: /assets/
+				}
+			}
+		}
 	]
 };
