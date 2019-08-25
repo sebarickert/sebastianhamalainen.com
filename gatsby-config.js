@@ -62,6 +62,10 @@ module.exports = {
 					{
 						family: `Rubik`,
 						variants: [ `400`, `500` ]
+					},
+					{
+						family: `Lexend Deca`,
+						variants: [ `400` ]
 					}
 				]
 			}
