@@ -11,7 +11,7 @@ const PortfolioListingLiftup = () => {
 			allMarkdownRemark(
 				sort: { fields: [frontmatter___date], order: DESC }
 				filter: { frontmatter: { type: { eq: "portfolio" } } }
-				limit: 2
+				limit: 3
 			) {
 				edges {
 					node {

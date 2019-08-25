@@ -6,16 +6,9 @@
 
 	&:hover,
 	&:focus {
-		.portfolio-teaser__heading {
-			span {
-				&:after {
-					width: 100%;
-				}
-			}
-		}
-
-		.portfolio-teaser__lead {
-			color: $black;
+		.portfolio-teaser__overlay {
+			opacity: 1;
+			visibility: visible;
 		}
 	}
 }
@@ -26,21 +19,6 @@
 
 	@media screen and (min-width: $bp-small) {
 		@include font-size(26px);
-	}
-
-	span {
-		position: relative;
-		&:after {
-			content: '';
-			position: absolute;
-			bottom: -.3rem;
-			width: 0;
-			height: 3px;
-			background-color: $black;
-			left: 0;
-			right: 0;
-			transition: width 0.25s ease-in-out;
-		}
 	}
 }
 
@@ -53,7 +31,7 @@
 	@include font-size(16px);
 	margin-bottom: 0;
 	max-width: 400px;
-	color: $silver;
+	color: $boulder;
 	transition: color 0.25s ease-in-out;
 }
 
@@ -61,9 +39,32 @@
 	width: 100%;
 }
 
+.portfolio-teaser__container {
+	position: relative;
+}
+
+.portfolio-teaser__overlay {
+	position: absolute;
+	background: rgba($black, .75);
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	opacity: 0;
+	transition: all .2s ease-in-out;
+	visibility: hidden;
+}
+
+.portfolio-teaser__icon {
+	width: $gutter * 3;
+}
+
 .portfolio-teaser__date {
 	@include font-size(14px);
-	color: $silver;
+	color: $boulder;
 	position: absolute;
 	top: $gutter * .5;
 	right: 0;
