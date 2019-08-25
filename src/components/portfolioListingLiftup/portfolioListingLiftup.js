@@ -42,7 +42,7 @@ const PortfolioListingLiftup = () => {
 			<Listing
 				arrayOfContent={data.allMarkdownRemark.edges}
 				listingComponent={PortfolioTeaser}
-				listingClass="listing--col-2"
+				listingClass="listing--col-3"
 			/>
 			<Button linkTo="/portfolio" buttonClass="button--cta">
 				See all portfolio showcases
