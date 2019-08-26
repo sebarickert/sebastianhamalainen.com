@@ -16,11 +16,11 @@ $hamburger-width: 2rem;
 		.hamburger,
 		.hamburger:before,
 		.hamburger:after {
-			background-color: $white !important;
+			background-color: $black !important;
 		}
 
 		.overlay-toggle-label {
-			color: $white;
+			color: $black;
 		}
 	}
 }
@@ -28,7 +28,7 @@ $hamburger-width: 2rem;
 .overlay-toggle-label {
 	@include font-size(14px);
 	margin-right: 0.5rem;
-	color: $black;
+	color: $white;
 	display: inline-block;
 	position: relative;
 	text-decoration: none;
@@ -70,7 +70,7 @@ $hamburger-width: 2rem;
 	.hamburger,
 	.hamburger:before,
 	.hamburger:after {
-		background-color: $black;
+		background-color: $white;
 		border-radius: 2px;
 		height: $hamburger-dash-height;
 		transition-duration: 0.15s;
@@ -103,7 +103,7 @@ $hamburger-width: 2rem;
 
 	&.is-active {
 		.hamburger {
-			background-color: $black;
+			background-color: $white;
 			transform: rotate(45deg);
 			transition-delay: 0.12s;
 			transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
@@ -115,7 +115,7 @@ $hamburger-width: 2rem;
 			}
 
 			&:after {
-				background-color: $black;
+				background-color: $white;
 				bottom: 0;
 				transition: bottom 75ms ease, transform 75ms cubic-bezier(0.215, 0.61, 0.355, 1) 0.12s;
 				transform: rotate(-90deg);
