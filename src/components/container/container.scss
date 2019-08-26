@@ -6,7 +6,7 @@
 	max-width: $bp-ultra-wide;
 
 	&--inset {
-		padding: 0 $gutter;
+		padding: 0 $gutter * 1.25;
 
 		@media screen and (min-width: $bp-small) {
 			padding: 0 $gutter * 2;
