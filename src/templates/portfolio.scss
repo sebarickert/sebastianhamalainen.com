@@ -2,12 +2,16 @@
 
 .portfolio__showcase {
 	margin-top: $gutter * 4;
-	margin-bottom: -$gutter * 4;
+	margin-bottom: -$gutter * 6;
 	background: $alabaster;
 	padding: 64px 0;
 	display: flex;
 	justify-content: center;
 	border-top: 1px solid $concrete;
+
+	@media screen and (min-width: $bp-wide) {
+		margin-bottom: -$gutter * 8;
+	}
 }
 
 .portfolio__showcase-image {
