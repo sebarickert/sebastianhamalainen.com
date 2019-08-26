@@ -11,7 +11,11 @@
 
 	&:last-child {
 		border-bottom: 0;
-		margin-bottom: -$gutter * 4;
+		margin-bottom: -$gutter * 6;
+
+		@media screen and (min-width: $bp-wide) {
+			margin-bottom: -$gutter * 8;
+		}
 	}
 
 	&.black {
@@ -21,5 +25,9 @@
 }
 
 .frontpage-block-container {
-	margin-top: -$gutter * 4;
+	margin-top: -$gutter * 6;
+
+	@media screen and (min-width: $bp-wide) {
+		margin-top: -$gutter * 8;
+	}
 }
