@@ -47,7 +47,7 @@ const PortfolioListingPage = () => {
 				projects."
 			/>
 			<Hero title="Portfolio">
-				Below I've compiled a list of stuff that I have created over the years, professional and free-time
+				Here you’ll find a curated selection of my work over the years, including professional work and side
 				projects.
 			</Hero>
 			<Container>
