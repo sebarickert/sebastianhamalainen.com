@@ -2,7 +2,7 @@
 title: "Shell Helmisimpukka"
 date: 2016-08-01
 type: "portfolio"
-teaser_image: "../images/portfolio/portfolio-shell-helmisimpukka.jpg"
+teaser_image: "../images/portfolio/portfolio-showcase-helmisimpukka.jpg"
 lead: "Website rebuild with the Drupal 8 platform with extensive use of the paragraphs module. Design refresh."
 url_source: ""
 url_web: "https://www.helmisimpukka.fi/"

@@ -2,7 +2,7 @@
 title: "Finnish Eletricity Company"
 date: 2018-12-01
 type: "portfolio"
-teaser_image: "../images/portfolio/portfolio-finnish-eletric-company.jpg"
+teaser_image: "../images/portfolio/portfolio-showcase-finnish-eletricity-company.jpg"
 lead: "Project is under NDA."
 url_source: ""
 url_web: ""

@@ -2,7 +2,7 @@
 title: "Itis"
 date: 2018-08-01
 type: "portfolio"
-teaser_image: "../images/portfolio/portfolio-itis.jpg"
+teaser_image: "../images/portfolio/portfolio-showcase-itis.jpg"
 lead: "Website rebuild with the Drupal 8 platform. Extensive use of the Group contrib module."
 url_source: ""
 url_web: "https://www.itis.fi/fi"
