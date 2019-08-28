@@ -11,7 +11,7 @@ import Helmet from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
 import path from 'path';
 
-import defaultImage from '../images/me.jpg';
+import defaultImage from '../images/website-default-image.jpg';
 
 const SEO = ({ description, lang, meta, title, image }) => {
 	const { site } = useStaticQuery(
@@ -26,6 +26,7 @@ const SEO = ({ description, lang, meta, title, image }) => {
 						title
 						description
 						website
+						siteUrl
 					}
 				}
 			}
@@ -35,6 +36,7 @@ const SEO = ({ description, lang, meta, title, image }) => {
 	const metaDescription = description || site.siteMetadata.description;
 	const metaTitle = title ? `${title} | ${site.siteMetadata.title}` : `Welcome | ${site.siteMetadata.title}`;
 	const metaImage = image || defaultImage;
+	const siteUrl = site.siteMetadata.siteUrl;
 
 	return (
 		<Helmet
@@ -57,7 +59,7 @@ const SEO = ({ description, lang, meta, title, image }) => {
 				},
 				{
 					name: 'og:image',
-					content: path.resolve(metaImage)
+					content: `${siteUrl}${path.resolve(metaImage)}`
 				},
 				{
 					property: `og:type`,
@@ -85,7 +87,7 @@ const SEO = ({ description, lang, meta, title, image }) => {
 				},
 				{
 					name: 'twitter:image',
-					content: path.resolve(metaImage)
+					content: `${siteUrl}${path.resolve(metaImage)}`
 				},
 				{
 					name: `og:site_name`,
