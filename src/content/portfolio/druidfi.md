@@ -2,7 +2,7 @@
 title: "Druid"
 date: 2016-02-05
 type: "portfolio"
-teaser_image: "../images/portfolio/portfolio-druidfi.jpg"
+teaser_image: "../images/portfolio/portfolio-showcase-druid.jpg"
 lead: "Website rebuild on the newly released Drupal 8 platform and brand re-design."
 url_source: ""
 url_web: "https://www.druid.fi/"

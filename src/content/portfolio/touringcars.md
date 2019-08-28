@@ -2,7 +2,7 @@
 title: "Touring Cars"
 date: 2019-03-30
 type: "portfolio"
-teaser_image: "../images/portfolio/portfolio-touringcars.jpg"
+teaser_image: "../images/portfolio/portfolio-showcase-touring-cars.jpg"
 lead: "Website rebuild with the Drupal 8 commerce platform. Using React for the booking pipeline."
 url_source: ""
 url_web: "https://touringcars.eu"

@@ -2,7 +2,7 @@
 title: "Vilkas"
 date: 2019-04-24
 type: "portfolio"
-teaser_image: "../images/portfolio/portfolio-vilkas.jpg"
+teaser_image: "../images/portfolio/portfolio-showcase-vilkas.jpg"
 lead: "Website maintenance and frontpage rebuild on a new design. Extensive refactoring."
 url_source: ""
 url_web: "https://www.vilkas.fi/"
