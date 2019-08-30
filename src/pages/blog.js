@@ -21,6 +21,13 @@ const BlogListingPage = () => {
 							title
 							date(formatString: "MMMM DD, YYYY")
 							type
+							image {
+								childImageSharp {
+									fluid(maxWidth: 1000, maxHeight: 450, quality: 100) {
+										src
+									}
+								}
+							}
 						}
 						id
 						excerpt
@@ -43,8 +50,12 @@ const BlogListingPage = () => {
 				Here I'll dabble into different kind of topics, but most likely relating to tech and web development.
 			</Hero>
 			<Container>
-				<h2 className="h1 main-subheading">All blogs</h2>
-				<Listing arrayOfContent={data.allMarkdownRemark.edges} listingComponent={BlogTeaser} />
+				<h2 className="h1 main-subheading">All blog posts</h2>
+				<Listing
+					arrayOfContent={data.allMarkdownRemark.edges}
+					listingComponent={BlogTeaser}
+					listingClass="listing--col-2"
+				/>
 			</Container>
 		</Layout>
 	);
