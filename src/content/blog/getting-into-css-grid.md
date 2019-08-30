@@ -2,6 +2,7 @@
 title: "Getting into CSS Grid"
 date: 2019-07-31
 type: "blog"
+image: "../images/portfolio/portfolio-showcase-vilkas.jpg"
 ---
 
 From the first time I heard about flexbox, I was hooked on it. It was finally really enjoyable to create layouts with CSS without hacking with floats and other methods. I haven't allocated time to really get into Grid, because of flexbox - but that is about to change.
