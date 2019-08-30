@@ -29,7 +29,7 @@ const Blog = ({ data }) => {
 	return (
 		<Layout>
 			<SEO title={`${title} | Blog`} description={excerpt} />
-			<Container>
+			<Container containerClass="container--small">
 				<LinkContainer>
 					<LinkContainerLink linkTarget="/blog" linkContainerLinkClass="mb--2">
 						Go back to Blog
