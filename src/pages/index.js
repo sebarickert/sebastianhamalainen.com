@@ -23,8 +23,13 @@ const IndexPage = () => (
 			>
 				Latest portfolio showcases
 			</FrontpageBlock>
-			<FrontpageBlock blockComponent={BlogLiftupListing} blockComponentClass="black">
-				Latest blogs
+			<FrontpageBlock
+				blockComponent={BlogLiftupListing}
+				blockComponentClass="black"
+				blockHeadingClass="text--center"
+				blockSubHeadingLead="Click on them to read more"
+			>
+				Latest blog posts
 			</FrontpageBlock>
 		</div>
 	</Layout>
