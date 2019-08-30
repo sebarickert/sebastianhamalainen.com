@@ -12,4 +12,8 @@
 			padding: 0 $gutter * 2;
 		}
 	}
+
+	&--small {
+		max-width: $bp-medium-wide;
+	}
 }
