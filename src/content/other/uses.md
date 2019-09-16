@@ -8,7 +8,7 @@ type: "uses"
 - OnePlus 5T
 
 ## Software
-- VS Code 
+- VS Code
 - iTerm2 with Oh My ZSH!
 - Docker
 - Spectacle (a must on my MacBook)
@@ -18,6 +18,19 @@ type: "uses"
 - Sequel Pro
 - Adobe Photoshop
 - Sketch
+
+## VSCode Extensions
+- Auto Close Tag
+- Auto Rename Tag
+- Beautify
+- Bracket Pair Colorizer
+- DarkCode Theme Adopted Python and Markdown
+- Gitlens – Git supercharged
+- JavaScript Booster
+- Material Icon Theme
+- Prettier Now
+- Trailing Spaces
+- Twig Language 2
 
 ## Chrome Extensions
 - axe
