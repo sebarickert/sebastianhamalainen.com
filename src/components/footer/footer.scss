@@ -1,43 +1,46 @@
 @import "lib";
 
-.footer {
-	border-top: 1px solid $concrete;
-	padding: $gutter * 4 0;
+.divider {
+  border-bottom: 1px solid $concrete;
+  width: 100%;
+}
+
+.footer__heading {
+  @include font-size(18px);
+  margin: 0;
+
+  @media screen and (min-width: $bp-small) {
+    @include font-size(20px);
+  }
+
+  @media screen and (min-width: $bp-medium-wide) {
+    @include font-size(22px);
+  }
+
+  @media screen and (min-width: $bp-wide) {
+    @include font-size(24px);
+  }
+}
+
+.footer__item--top {
+  padding-top: $gutter * 4;
+  padding-bottom: $gutter * 4;
+}
+
+.footer__item--bottom {
+  padding-top: $gutter;
+  padding-bottom: $gutter;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 .footer__copyright {
-	color: $silver;
-	width: 100%;
-	margin-top: $gutter;
-}
+  @include font-size(14px);
+  color: $boulder;
 
-.footer__link {
-	@include font-size(18px);
-	background-color: rgba(27, 31, 35, .05);
-	border-radius: 3px;
-	margin: 0;
-	padding: .2em .4em;
-	&:hover {
-		opacity: .5;
-	}
-}
-
-.footer__content {
-	display: flex;
-	flex-direction: column;
-	flex-wrap: wrap;
-
-	@media screen and (min-width: $bp-medium-wide) {
-		flex-direction: row;
-	}
-}
-
-.footer__item {
-	margin-bottom: $gutter * 2;
-
-	&:first-child {
-		@media screen and (min-width: $bp-medium-wide) {
-			width: 40%;
-		}
-	}
+  @media screen and (min-width: $bp-wide) {
+    @include font-size(16px);
+  }
 }
