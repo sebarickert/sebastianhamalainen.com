@@ -1,7 +1,6 @@
 import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 
-import Button from '../button/button';
 import Divider from '../divider/divider';
 
 import './footer.scss';
@@ -34,19 +33,19 @@ const Footer = () => {
         <div className="footer__item footer__item--bottom container container--inset">
           <ul className="menu-footer">
             <li className="menu-footer__item">
-              <Button linkTo={data.site.siteMetadata.twitter} buttonClass="footer__link">
+              <a href={data.site.siteMetadata.twitter} className="footer__link button">
                 Twitter
-              </Button>
+              </a>
             </li>
             <li className="menu-footer__item">
-              <Button linkTo={data.site.siteMetadata.github} buttonClass="footer__link">
+              <a href={data.site.siteMetadata.github} className="footer__link button">
                 Github
-              </Button>
+              </a>
             </li>
             <li className="menu-footer__item">
-              <Button linkTo={data.site.siteMetadata.linkedin} buttonClass="footer__link">
+              <a href={data.site.siteMetadata.linkedin} className="footer__link button">
                 LinkedIn
-              </Button>
+              </a>
             </li>
           </ul>
           <span className="footer__copyright">© 2019 Sebastian. All Rights Reserved.</span>
