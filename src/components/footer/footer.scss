@@ -1,5 +1,9 @@
 @import "lib";
 
+.footer {
+  background-color: $alabaster;
+}
+
 .footer__heading {
   @include font-size(18px);
   margin: 0;

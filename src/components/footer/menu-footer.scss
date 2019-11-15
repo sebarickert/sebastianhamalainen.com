@@ -10,21 +10,21 @@
 }
 
 .menu-footer__item {
-  @include font-size(14px);
   font-family: $heading-font-family;
   margin-bottom: 0;
   margin-right: $gutter;
-
-  @media screen and (min-width: $bp-wide) {
-    @include font-size(16px);
-  }
 
   &:last-child {
     margin-right: 0;
   }
 
   .footer__link {
+    @include font-size(14px);
     color: $boulder;
+
+    @media screen and (min-width: $bp-wide) {
+      @include font-size(16px);
+    }
 
     &:after {
       background-color: $boulder;
