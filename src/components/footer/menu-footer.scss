@@ -14,7 +14,6 @@
   font-family: $heading-font-family;
   margin-bottom: 0;
   margin-right: $gutter;
-  line-height: 2;
 
   @media screen and (min-width: $bp-wide) {
     @include font-size(16px);
@@ -26,5 +25,9 @@
 
   .footer__link {
     color: $boulder;
+
+    &:after {
+      background-color: $boulder;
+    }
   }
 }
