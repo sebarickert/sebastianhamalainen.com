@@ -1,47 +1,78 @@
 @import "lib";
 
 .listing {
-	list-style: none;
-	padding: 0;
-	margin: 0;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .listing__item {
-	margin-bottom: $gutter * 4;
+  margin-bottom: $gutter * 4;
 
-	&:last-child {
-		margin-bottom: 0;
-	}
+  &:last-child {
+    margin-bottom: 0;
+  }
 }
 
 .listing--col-2 {
-	max-width: none;
-	display: grid;
-	grid-gap: $gutter * 2;
-	grid-template-columns: repeat(auto-fit, minmax(245px, 1fr));
-	grid-row-gap: $gutter * 4;
+  max-width: none;
 
-	@media screen and (min-width: $bp-medium) {
-		grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-	}
+  @media screen and (min-width: $bp-medium-wide) {
+    display: flex;
+    flex-wrap: wrap;
+  }
 
-	.listing__item {
-		margin-bottom: 0;
-	}
+  .listing__item {
+    margin-bottom: $gutter * 4;
+
+    @media screen and (min-width: $bp-medium-wide) {
+      width: calc(100% / 2 - #{$gutter});
+    }
+
+    &:nth-child(2n + 1) {
+      @media screen and (min-width: $bp-medium-wide) {
+        margin-right: $gutter * 2;
+      }
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
 }
 
 .listing--col-3 {
-	max-width: none;
-	display: grid;
-	grid-gap: $gutter * 2;
-	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-	grid-row-gap: $gutter * 4;
+  max-width: none;
 
-	@media screen and (min-width: $bp-medium) {
-		grid-template-columns: repeat(auto-fit, minmax(365px, 1fr));
-	}
+  @media screen and (min-width: $bp-medium-wide) {
+    display: flex;
+    flex-wrap: wrap;
+  }
 
-	.listing__item {
-		margin-bottom: 0;
-	}
+  @media screen and (min-width: $bp-medium-wide) and (max-width: $bp-extra-wide) {
+    justify-content: space-between;
+  }
+
+  .listing__item {
+    margin-bottom: $gutter * 4;
+
+    @media screen and (min-width: $bp-medium-wide) {
+      width: calc(100% / 2 - #{$gutter});
+    }
+
+    @media screen and (min-width: $bp-extra-wide) {
+      width: calc(100% / 3 - calc(#{$gutter * 1.35}));
+    }
+
+    &:nth-child(3n + 2) {
+      @media screen and (min-width: $bp-extra-wide) {
+        margin-left: $gutter * 2;
+        margin-right: $gutter * 2;
+      }
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
 }
