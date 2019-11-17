@@ -44,7 +44,7 @@ const Blog = ({ data }) => {
       </Container>
       <Container containerClass="container--small">
         <LinkContainer>
-          <LinkContainerLink linkTarget="/blog" linkContainerLinkClass="mb--2">
+          <LinkContainerLink linkTarget="/blog" linkContainerLinkClass="">
             Go back to Blog
           </LinkContainerLink>
         </LinkContainer>
