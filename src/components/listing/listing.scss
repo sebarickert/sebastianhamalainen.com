@@ -39,6 +39,14 @@
       margin-bottom: 0;
     }
   }
+
+  .listing--one-liner & {
+    .listing__item {
+      @media screen and (min-width: $bp-medium-wide) {
+        margin-bottom: 0;
+      }
+    }
+  }
 }
 
 .listing--col-3 {
@@ -73,6 +81,14 @@
 
     &:last-child {
       margin-bottom: 0;
+    }
+  }
+
+  .listing--one-liner & {
+    .listing__item {
+      @media screen and (min-width: $bp-extra-wide) {
+        margin-bottom: 0;
+      }
     }
   }
 }

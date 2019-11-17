@@ -16,8 +16,12 @@ const IndexPage = () => (
       to play around with CSS.
     </Hero>
     <div className="frontpage-block-container">
-      <FrontpageBlock blockComponent={PortfolioLiftupListing}>Latest portfolio showcases</FrontpageBlock>
-      <FrontpageBlock blockComponent={BlogLiftupListing}>Latest blog posts</FrontpageBlock>
+      <FrontpageBlock blockComponent={PortfolioLiftupListing} blockComponentClass="listing--one-liner">
+        Latest portfolio showcases
+      </FrontpageBlock>
+      <FrontpageBlock blockComponent={BlogLiftupListing} blockComponentClass="listing--one-liner">
+        Latest blog posts
+      </FrontpageBlock>
     </div>
   </Layout>
 );
