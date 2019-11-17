@@ -1,6 +1,12 @@
 @import "lib";
 
 .blog-teaser {
+  border-radius: 6px;
+  overflow: hidden;
+  background-color: $alabaster;
+  border: 1px solid $gallery;
+  height: 100%;
+
   .black & {
     .blog-teaser__heading {
       color: $white;
@@ -22,7 +28,7 @@
 
 .blog-teaser__published {
   @include font-size(18px);
-  color: $boulder;
+  color: $scorpion;
 }
 
 .blog-teaser__heading {
@@ -38,7 +44,7 @@
   margin-top: $gutter;
   margin-bottom: 0;
   font-weight: 400;
-  color: $boulder;
+  color: $scorpion;
   transition: color 0.25s ease-in-out;
 }
 
@@ -46,8 +52,12 @@
   position: relative;
 }
 
+.blog-teaser__content {
+  border-top: 1px solid $gallery;
+  padding: $gutter * 2;
+}
+
 .blog-teaser__image {
-  margin-bottom: $gutter * 2;
   width: 100%;
 }
 

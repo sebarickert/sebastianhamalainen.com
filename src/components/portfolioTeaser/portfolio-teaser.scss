@@ -1,71 +1,71 @@
 @import "lib";
 
 .portfolio-teaser__link {
-	position: relative;
-	display: block;
+  position: relative;
+  display: block;
 
-	&:hover,
-	&:focus {
-		.portfolio-teaser__overlay {
-			opacity: 1;
-			visibility: visible;
-		}
-	}
+  &:hover,
+  &:focus {
+    .portfolio-teaser__overlay {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
 }
 
 .portfolio-teaser__heading {
-	@include font-size(20px);
-	margin: 0;
+  @include font-size(20px);
+  margin: 0;
 
-	@media screen and (min-width: $bp-small) {
-		@include font-size(26px);
-	}
+  @media screen and (min-width: $bp-small) {
+    @include font-size(26px);
+  }
 }
 
 .portfolio-teaser__content {
-	padding: $gutter * 2 $gutter 0 0;
-	position: relative;
+  padding: $gutter * 2 $gutter 0 0;
+  position: relative;
 }
 
 .portfolio-teaser__lead {
-	@include font-size(16px);
-	margin-bottom: 0;
-	max-width: 400px;
-	color: $boulder;
-	transition: color 0.25s ease-in-out;
+  @include font-size(16px);
+  margin-bottom: 0;
+  max-width: 400px;
+  color: $scorpion;
+  transition: color 0.25s ease-in-out;
 }
 
 .portfolio-teaser__image {
-	width: 100%;
+  width: 100%;
 }
 
 .portfolio-teaser__container {
-	position: relative;
+  position: relative;
 }
 
 .portfolio-teaser__overlay {
-	position: absolute;
-	background: rgba($black, .95);
-	height: 100%;
-	width: 100%;
-	top: 0;
-	left: 0;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	opacity: 0;
-	transition: all .2s ease-in-out;
-	visibility: hidden;
+  position: absolute;
+  background: rgba($black, .95);
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: all .2s ease-in-out;
+  visibility: hidden;
 }
 
 .portfolio-teaser__icon {
-	width: $gutter * 3;
+  width: $gutter * 3;
 }
 
 .portfolio-teaser__date {
-	@include font-size(14px);
-	color: $boulder;
-	position: absolute;
-	top: $gutter * .5;
-	right: 0;
+  @include font-size(14px);
+  color: $scorpion;
+  position: absolute;
+  top: $gutter * .5;
+  right: 0;
 }
