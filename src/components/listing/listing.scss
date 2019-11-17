@@ -23,7 +23,7 @@
   }
 
   .listing__item {
-    margin-bottom: $gutter * 4;
+    margin-bottom: $gutter * 2;
 
     @media screen and (min-width: $bp-medium-wide) {
       width: calc(100% / 2 - #{$gutter});
