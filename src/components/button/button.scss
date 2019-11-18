@@ -1,41 +1,42 @@
 @import "lib";
 
 .button {
-	@include font-size(16px);
-	display: inline-block;
-	padding: 0;
-	border-radius: 3px;
-	font-family: $heading-font-family;
-	position: relative;
+  @include font-size(16px);
+  display: inline-block;
+  padding: 0;
+  border-radius: 3px;
+  font-family: $heading-font-family;
+  position: relative;
 
-	&:hover,
-	&:focus {
-		&:after {
-			width: 100%;
-		}
-	}
+  &:hover,
+  &:focus {
+    &:after {
+      width: 100%;
+    }
+  }
 
-	&:after {
-		content: '';
-		position: absolute;
-		bottom: -0.15rem;
-		width: 0;
-		height: 2px;
-		background-color: $black;
-		left: 0;
-		right: 0;
-		transition: width 0.2s ease-in-out;
-	}
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: -0.15rem;
+    width: 0;
+    height: 2px;
+    background-color: $black;
+    left: 0;
+    right: 0;
+    transition: width 0.2s ease-in-out;
+  }
 
-	.black & {
-		color: $white;
+  .black &,
+  .blue-dark & {
+    color: $white;
 
-		&:after {
-			background-color: $white;
-		}
-	}
+    &:after {
+      background-color: $white;
+    }
+  }
 }
 
 .button--cta {
-	margin-top: $gutter * 4;
+  margin-top: $gutter * 4;
 }

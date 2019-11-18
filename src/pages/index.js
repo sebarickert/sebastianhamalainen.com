@@ -19,7 +19,7 @@ const IndexPage = () => (
       <FrontpageBlock blockComponent={PortfolioLiftupListing} blockComponentClass="listing--one-liner">
         Latest portfolio showcases
       </FrontpageBlock>
-      <FrontpageBlock blockComponent={BlogLiftupListing} blockComponentClass="listing--one-liner">
+      <FrontpageBlock blockComponent={BlogLiftupListing} blockComponentClass="listing--one-liner blue-dark">
         Latest blog posts
       </FrontpageBlock>
     </div>
