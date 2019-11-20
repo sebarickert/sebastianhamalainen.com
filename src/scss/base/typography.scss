@@ -218,6 +218,10 @@ p a {
 
 .main-subheading {
   margin-bottom: $gutter * 4;
+
+  @media screen and (min-width: $bp-wide) {
+    margin-bottom: $gutter * 6;
+  }
 }
 
 .main-subheading-lead {
