@@ -51,11 +51,7 @@ const BlogListingPage = () => {
       </Hero>
       <Container>
         <h2 className="main-subheading">All blog posts</h2>
-        <Listing
-          arrayOfContent={data.allMarkdownRemark.edges}
-          listingComponent={BlogTeaser}
-          listingClass="listing--col-2"
-        />
+        <Listing arrayOfContent={data.allMarkdownRemark.edges} listingComponent={BlogTeaser} />
       </Container>
     </Layout>
   );
