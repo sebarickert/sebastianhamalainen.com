@@ -7,6 +7,9 @@
   border-radius: 3px;
   font-family: $heading-font-family;
   position: relative;
+  background-color: transparent;
+  border: 0;
+  line-height: $gutter * 1.5;
 
   &:hover,
   &:focus {

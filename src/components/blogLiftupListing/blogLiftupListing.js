@@ -11,7 +11,7 @@ const BlogLiftupListing = () => {
       allMarkdownRemark(
         sort: { fields: [frontmatter___date], order: DESC }
         filter: { frontmatter: { type: { eq: "blog" } } }
-        limit: 2
+        limit: 3
       ) {
         edges {
           node {
@@ -40,11 +40,7 @@ const BlogLiftupListing = () => {
 
   return (
     <React.Fragment>
-      <Listing
-        arrayOfContent={data.allMarkdownRemark.edges}
-        listingComponent={BlogTeaser}
-        listingClass="listing--col-2"
-      />
+      <Listing arrayOfContent={data.allMarkdownRemark.edges} listingComponent={BlogTeaser} />
       <Button linkTo="/blog" buttonClass="button--cta">
         See all blog posts
       </Button>

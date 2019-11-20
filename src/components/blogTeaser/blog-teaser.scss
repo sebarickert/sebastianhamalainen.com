@@ -3,8 +3,6 @@
 .blog-teaser {
   border-radius: 6px;
   overflow: hidden;
-  background-color: $alabaster;
-  border: 1px solid $gallery;
   height: 100%;
 
   .black & {
@@ -15,6 +13,15 @@
 
   .blue-dark & {
     border: 0;
+
+    .blog-teaser__heading {
+      color: $white;
+    }
+
+    .blog-teaser__published,
+    .blog-teaser__lead {
+      color: $silver;
+    }
   }
 }
 
@@ -23,9 +30,10 @@
 
   &:hover,
   &:focus {
-    .blog-teaser__overlay {
-      opacity: 1;
-      visibility: visible;
+    .blog-teaser__heading,
+    .blog-teaser__published,
+    .blog-teaser__lead {
+      opacity: .25;
     }
   }
 }
@@ -33,10 +41,12 @@
 .blog-teaser__published {
   @include font-size(18px);
   color: $scorpion;
+  transition: inherit;
 }
 
 .blog-teaser__heading {
   @include font-size(20px);
+  transition: inherit;
 
   @media screen and (min-width: $bp-small) {
     @include font-size(26px);
@@ -45,39 +55,19 @@
 
 .blog-teaser__lead {
   @include font-size(20px);
+  transition: inherit;
   margin-top: $gutter;
   margin-bottom: 0;
   font-weight: 400;
   color: $scorpion;
-  transition: color 0.25s ease-in-out;
 }
 
 .blog-teaser__container {
   position: relative;
 }
 
-.blog-teaser__content {
-  border-top: 1px solid $gallery;
-  padding: $gutter * 2;
-}
-
 .blog-teaser__image {
   width: 100%;
-}
-
-.blog-teaser__overlay {
-  position: absolute;
-  background: rgba($black, .95);
-  height: 100%;
-  width: 100%;
-  top: 0;
-  left: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  opacity: 0;
-  transition: all .2s ease-in-out;
-  visibility: hidden;
 }
 
 .blog-teaser__icon {
