@@ -17,6 +17,8 @@ type: "uses"
 - Spotify
 - Sequel Pro
 - Adobe Photoshop
+- Adobe XD
+- Adobe Illustrator
 - Sketch
 
 ## VSCode Extensions
@@ -28,6 +30,7 @@ type: "uses"
 - Gitlens – Git supercharged
 - JavaScript Booster
 - Material Icon Theme
+- Polacode
 - Prettier Now
 - Trailing Spaces
 - Twig Language 2
