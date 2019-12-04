@@ -4,11 +4,21 @@
   border-radius: 6px;
   overflow: hidden;
   height: 100%;
-  transition: opacity .25s;
 
   .black & {
     .blog-teaser__heading {
       color: $white;
+    }
+
+    .blog-teaser__link {
+      &:hover,
+      &:focus {
+        color: $white;
+      }
+
+      span:after {
+        background-color: $white;
+      }
     }
   }
 
@@ -19,6 +29,10 @@
       &:hover,
       &:focus {
         color: $white;
+      }
+
+      span:after {
+        background-color: $white;
       }
     }
 
@@ -31,23 +45,37 @@
       color: $silver;
     }
   }
-
-  &:hover,
-  &:focus {
-    cursor: pointer;
-
-    .blog-teaser__heading,
-    .blog-teaser__published,
-    .blog-teaser__lead {
-      opacity: .25;
-    }
-  }
 }
 
 .blog-teaser__published {
   @include font-size(18px);
   color: $scorpion;
   transition: inherit;
+}
+
+.blog-teaser__link {
+  position: relative;
+
+  &:hover,
+  &:focus {
+    span:after {
+      width: 100%;
+    }
+  }
+
+  span {
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: -0.35rem;
+      width: 0;
+      height: 2px;
+      background-color: $black;
+      left: 0;
+      right: 0;
+      transition: width 0.2s ease-in-out;
+    }
+  }
 }
 
 .blog-teaser__heading {
