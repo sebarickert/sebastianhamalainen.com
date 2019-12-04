@@ -48,11 +48,13 @@ const Blog = ({ data }) => {
             Go back to Blog
           </LinkContainerLink>
         </LinkContainer>
-        <h1 className="blog__heading">{title}</h1>
-        <span className="blog__published">
-          {date} – {timeToRead} min read
-        </span>
-        <div className="blog__content" dangerouslySetInnerHTML={{ __html: html }} />
+        <article>
+          <h1 className="blog__heading">{title}</h1>
+          <span className="blog__published">
+            {date} – {timeToRead} min read
+          </span>
+          <div className="blog__content" dangerouslySetInnerHTML={{ __html: html }} />
+        </article>
       </Container>
     </Layout>
   );
