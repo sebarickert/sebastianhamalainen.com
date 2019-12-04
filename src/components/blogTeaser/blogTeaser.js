@@ -8,15 +8,15 @@ const BlogTeaser = ({ data }) => {
   const { frontmatter, fields, excerpt } = node;
   const { title, date } = frontmatter;
   return (
-    <div className="blog-teaser">
-      <Link to={`/blog/${fields.slug}`} className="blog-teaser__link">
-        <h2 className="blog-teaser__heading">
+    <article className="blog-teaser">
+      <h1 className="blog-teaser__heading">
+        <Link to={`/blog/${fields.slug}`} className="blog-teaser__link">
           <span>{title}</span>
-        </h2>
-        <span className="blog-teaser__published">{date}</span>
-        <p className="blog-teaser__lead">{excerpt}</p>
-      </Link>
-    </div>
+        </Link>
+      </h1>
+      <span className="blog-teaser__published">{date}</span>
+      <p className="blog-teaser__lead">{excerpt}</p>
+    </article>
   );
 };
 

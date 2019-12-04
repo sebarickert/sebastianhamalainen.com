@@ -4,6 +4,7 @@
   border-radius: 6px;
   overflow: hidden;
   height: 100%;
+  transition: opacity .25s;
 
   .black & {
     .blog-teaser__heading {
@@ -14,6 +15,13 @@
   .blue-dark & {
     border: 0;
 
+    .blog-teaser__link {
+      &:hover,
+      &:focus {
+        color: $white;
+      }
+    }
+
     .blog-teaser__heading {
       color: $white;
     }
@@ -23,13 +31,11 @@
       color: $silver;
     }
   }
-}
-
-.blog-teaser__link {
-  display: block;
 
   &:hover,
   &:focus {
+    cursor: pointer;
+
     .blog-teaser__heading,
     .blog-teaser__published,
     .blog-teaser__lead {
