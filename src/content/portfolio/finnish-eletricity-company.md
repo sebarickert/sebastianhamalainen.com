@@ -12,9 +12,11 @@ url_web: ""
 
 Website maintenance work with a team consisting of 4 people in total.
 
-Refactored legacy CSS code into modern CSS.
+Refactored legacy CSS code to modern CSS.
 
 Rebuilt the Frontpage with a new design and created a custom "Welcome" landing page.
+
+Improved the websites major accessibility issues; you weren't able to use the website with keyboard only (menu and its submenu, mobile hamburger menu and search). Improved screen reader readability as well.
 
 
 ## Tech stack used in this project
@@ -23,4 +25,4 @@ Not allowed to tell.
 
 ## What I learned
 
-I learned how to work with another stack of technologies than normally. As well learning about being more vocal with the customer.
+I learned how to work with another stack of technologies than normally. As well learning about being more vocal with the customer. I learned more about improving accessibility issues on websites.
