@@ -172,46 +172,39 @@ q {
 }
 
 pre {
-  @include font-size(16px);
-  padding: $gutter * 2;
-  background-color: $gallery;
   line-height: 1.6;
-  max-width: 100%;
-  overflow: auto;
   border-radius: 3px;
-
-  @media screen and (min-width: $bp-medium-wide) {
-    @include font-size(18px);
-  }
+  background-color: $mine-shaft;
+  color: $white;
 
   code {
-    @include font-size(16px);
+    display: block;
+    padding: $gutter * 2;
+    overflow-x: auto;
+    font-weight: normal;
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
     background-color: transparent;
-    border: 0;
-    display: inline;
-    line-height: inherit;
-    margin: 0;
-    overflow: visible;
-    padding: 0;
-    word-wrap: normal;
+    line-height: 1.75;
   }
 }
 
-code {
+code,
+p a {
   font-size: inherit;
+  font-family: inherit;
   background-color: $gallery;
   border-radius: 3px;
   margin: 0;
-  padding: $gutter * .25 $gutter * .5;
+  padding: $gutter * .05 $gutter * .5;
+
+  @media screen and (min-width: $bp-wide) {
+    padding: $gutter * .1 $gutter * .5;
+  }
 }
 
 p a {
-  font-size: inherit;
-  background-color: rgba(27, 31, 35, .05);
-  border-radius: 3px;
-  margin: 0;
-  padding: .2em .4em;
-  &:hover {
+  &:hover,
+  &:focus {
     opacity: .5;
   }
 }
