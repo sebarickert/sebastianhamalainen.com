@@ -188,8 +188,7 @@ pre {
   }
 }
 
-code,
-p a {
+code {
   font-size: inherit;
   font-family: inherit;
   background-color: $gallery;
@@ -215,10 +214,7 @@ p code {
 }
 
 p a {
-  &:hover,
-  &:focus {
-    opacity: .5;
-  }
+  color: $mariner;
 }
 
 .main-subheading {
