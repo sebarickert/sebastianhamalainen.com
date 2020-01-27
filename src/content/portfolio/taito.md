@@ -20,7 +20,7 @@ Added a very nicely working slider for the product pages. It works differently d
 
 Drupal 8 with commerce. Custom theme uses the basics, such as plain vanilla JavaScript and a gulp compiler for the SCSS (and of course the custom JavaScript).
 
-Created custom button twig templates initializing it before in the `.theme` file. Drupal submit buttons are `input` tags with `type="submit"` and I wanted them to be semantic HTML buttons.
+Wanted to try out proper custom submit buttons, so I created custom button twig templates initializing it before in the `.theme` file. Regular drupal submit buttons are `input` elements that have `type="submit"` attributes. I wanted them to be semantic HTML buttons.
 
 ## What I learned
 
