@@ -172,19 +172,16 @@ q {
 }
 
 pre {
-  line-height: 1.6;
-  border-radius: 3px;
-  background-color: $mine-shaft;
-  color: $white;
+  line-height: 1.6 !important;
+  border-radius: 3px !important;
+  padding: 0 !important;
 
   code {
     display: block;
-    padding: $gutter * 2;
+    padding: $gutter * 2 !important;
     overflow-x: auto;
     font-weight: normal;
-    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-    background-color: transparent;
-    line-height: 1.75;
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace !important;
   }
 }
 

@@ -12,7 +12,7 @@ Then I started to google and of course found the answer on [StackOverflow](https
 
 This is the code you need to add for it to work on IOS devices like it should.
 
-```
+```scss
 input {
   -webkit-appearance: none;
   -moz-appearance: none;

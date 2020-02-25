@@ -19,13 +19,6 @@ const BlogLiftupListing = () => {
               title
               date(formatString: "MMMM DD, YYYY")
               type
-              image {
-                childImageSharp {
-                  fluid(maxWidth: 1000, maxHeight: 450, quality: 100) {
-                    src
-                  }
-                }
-              }
             }
             id
             excerpt

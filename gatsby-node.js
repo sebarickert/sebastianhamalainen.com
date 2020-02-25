@@ -34,7 +34,7 @@ module.exports.createPages = async ({ graphql, actions }) => {
 					}
 				}
 			}
-		}	
+		}
   `);
 
 	res.data.allMarkdownRemark.edges.forEach((e) => {
