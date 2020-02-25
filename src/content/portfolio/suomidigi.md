@@ -3,7 +3,7 @@ title: "Suomidigi"
 date: 2019-07-18
 type: "portfolio"
 teaser_image: "../images/portfolio/portfolio-showcase-suomidigi.jpg"
-lead: "Website rebuild on the newly released Drupal 8 platform and brand re-design."
+lead: "Clean website build from the ground up using Drupal 8 and heavy use of the contrib Paragraphs-module."
 url_source: "https://github.com/vrk-kpa/suomidigi"
 url_web: "https://www.suomidigi.fi/"
 showcase_image: "../images/portfolio/showcase/ss-suomidigi.jpg"
@@ -11,9 +11,16 @@ showcase_image: "../images/portfolio/showcase/ss-suomidigi.jpg"
 
 ## What did I do?
 
+I worked on this project with a Scrum-team consisting of people from different organisations. I was part of the development team with a couple of my colleagues from work.
+
+My role primarily was to create very functional Paragraphs-module block variations for the very differing content and to make content pages styles very appealing. Accessibility played a major role, because the law mandates public sector websites to meet the mininum criteria of WCAG 2.1 level AA.
 
 ## Tech stack used in this project
 
+This project uses the latest version of Drupal 8. It has a custom theme that uses the basics, such as plain vanilla JavaScript and a gulp compiler for the SCSS (and of course the custom JavaScript).
+
+Heavy use of the Paragraph-module from Drupal 8 to be able to create very differing content pages.
 
 ## What I learned
 
+I learned a lot about the Paragraph-module and how much you can actually make your custom Paragraph-blocks functional with different checkboxes and such. I was also able to get my hands a bit dirty with PHP to get more comfortable with language.
