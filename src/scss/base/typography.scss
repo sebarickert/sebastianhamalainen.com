@@ -186,16 +186,13 @@ pre {
 }
 
 code {
+  color: rgb(34, 36, 38);
+  padding: 2px 4px;
+  background: $white-lilac;
+  border-radius: 3px;
   font-size: inherit;
   font-family: inherit;
-  background-color: $gallery;
-  border-radius: 3px;
   margin: 0;
-  padding: $gutter * .05 $gutter * .5;
-
-  @media screen and (min-width: $bp-wide) {
-    padding: $gutter * .1 $gutter * .5;
-  }
 }
 
 p code {
