@@ -51,7 +51,16 @@ module.exports = {
               noIframeBorder: true //Optional: Disable insertion of <style> border: 0
             }
           },
-          'gatsby-remark-responsive-iframe'
+          'gatsby-remark-responsive-iframe',
+          {
+            resolve: `gatsby-remark-prismjs`,
+            options: {
+              classPrefix: "language-",
+              inlineCodeMarker: null,
+              aliases: { javavascript: "js"},
+              noInlineHighlight: true,
+            },
+          },
         ]
       }
     },
@@ -102,6 +111,6 @@ module.exports = {
           include: /assets/
         }
       }
-    }
+    },
   ]
 };
