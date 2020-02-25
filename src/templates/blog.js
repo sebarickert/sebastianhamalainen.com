@@ -14,13 +14,6 @@ export const query = graphql`
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")
-        image {
-          childImageSharp {
-            fluid(maxWidth: 1600, maxHeight: 600, quality: 100) {
-              src
-            }
-          }
-        }
       }
       html
       timeToRead
@@ -32,16 +25,10 @@ export const query = graphql`
 const Blog = ({ data }) => {
   const { markdownRemark } = data;
   const { frontmatter, excerpt, timeToRead, html } = markdownRemark;
-  const { title, date, image } = frontmatter;
-  const imageSource = image ? image.childImageSharp.fluid.src : '';
+  const { title, date } = frontmatter;
   return (
     <Layout>
-      <SEO title={`${title} | Blog`} description={excerpt} image={imageSource} />
-      <Container>
-        <div className="blog__image">
-          <img src={imageSource} alt="" role="presentation" />
-        </div>
-      </Container>
+      <SEO title={`${title} | Blog`} description={excerpt} />
       <Container containerClass="container--small">
         <LinkContainer>
           <LinkContainerLink linkTarget="/blog" linkContainerLinkClass="">

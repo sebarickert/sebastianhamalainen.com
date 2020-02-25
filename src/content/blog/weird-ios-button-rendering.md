@@ -2,7 +2,6 @@
 title: "Weird iOS Button Rendering Fix"
 date: 2018-07-29
 type: "blog"
-image: "../images/blog/apple-phone.jpg"
 ---
 
 I launched my newly built website happily and everything seemed to be okay, but then I noticed that on IOS devices my contact form submit button is not rendering correctly, so I started to investigate.

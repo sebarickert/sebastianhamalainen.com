@@ -2,7 +2,6 @@
 title: "Updating the maximum upload file size in your php.ini"
 date: 2018-07-26
 type: "blog"
-image: "../images/blog/php-code.jpg"
 ---
 
 I'll show you how to update the `upload_file_size` and `post_max_size` in your php.ini file!
