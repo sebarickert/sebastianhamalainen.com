@@ -26,11 +26,15 @@ type: "uses"
 - Auto Rename Tag
 - Beautify
 - Bracket Pair Colorizer
-- DarkCode Theme Adopted Python and Markdown
+- ESLint
 - Gitlens – Git supercharged
 - JavaScript Booster
 - Material Icon Theme
+- Night Owl
+- PHP IntelliSense
 - Polacode
+- Prettier - Code formatter
+- Prettier Eslint
 - Prettier Now
 - Trailing Spaces
 - Twig Language 2
@@ -39,10 +43,10 @@ type: "uses"
 - axe
 - ColorZilla
 - Hover Zoom+
+- Pesticide (a must for web developing)
 - JSON Viewer
 - LastPass
 - Lorem Ipsum Generator
-- Pesticide (a must for web developing)
 - React Developer Tools
 - SVG Export
 - WhatFont
