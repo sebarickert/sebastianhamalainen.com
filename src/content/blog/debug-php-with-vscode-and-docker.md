@@ -6,6 +6,8 @@ type: "blog"
 
 Debugging PHP with Xdebug using VS Code as your IDE. These are the step-by-step instructions on how I got Xdebug working with VS Code and Docker.
 
+This [stackoverflow comment](https://stackoverflow.com/a/52805763/5562316) was really helpful getting this to work.
+
 ## Install Xdebug
 
 You need to have Xdebug installed on your machine. Official installation guide can be found on [Xdebug's official website](https://xdebug.org/docs/install).
