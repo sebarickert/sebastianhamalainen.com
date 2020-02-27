@@ -1,0 +1,90 @@
+---
+title: "Jest React tests with Drupal's global Drupal.t function"
+date: 2020-02-27
+type: "blog"
+---
+
+I have been tasked to develop on an existing codebase which uses React and Drupal together. On the React side, it has a lot of different tests for its React components using Jest. I have never wrote any tests myself using Jest (or tests in general).
+
+I've now investigated and read a bit on about Jest & its documentation and it seems to be very straight forward.
+
+## React and using Drupal translations
+
+In my React components I have several bits of dynamic or static strings that need to be able to be translated through Drupal's interface translations.
+
+Drupal has a global `Drupal.t()` function that can be used with React. You are able to wrap your strings like this:
+
+```jsx
+const Card = () => {
+  return (
+    <div className="card">
+      <h2 className="card__heading">
+        {`${Drupal.t('Drupal translations')}`}
+      </h2>
+    </div>
+  )
+};
+```
+
+In Drupal you should now be able to see `Drupal translations` to be translatable in the user interface translation section.
+
+## Testing React components with Jest
+
+Jest is really straight forward with how to test a component:
+
+1. Create `.spec.js` file
+2. Import React
+3. Import your React component you want to create tests for
+4. Write and create the test
+
+That's the basic gist of it.
+
+```jsx
+import React from 'react';
+import { Card } from './Card';
+
+describe('<Card />', () => {
+  it('renders without error', () => {
+    expect(<Card />).toBeTruthy();
+  });
+}
+```
+
+That's the test. Easy isn't it?
+
+**Oh no. The tests have failed. Why you ask?**
+
+```
+ReferenceError: Drupal is not defined
+```
+
+We need to somehow define `Drupal` to Jest for the tests to pass. This is where I hit a wall with Jest tests with React and Drupal.
+
+I didn't find anything related to this issue by googling for it, until I found the correct search query: "jest ignore drupal". I don't know why I didn't think of that earlier.
+
+I found a post from Elendev about ["React, TypeScript, Jest and global variables"](https://medium.com/@elendev/react-typescript-jest-and-global-variables-2d128d1e9b00) which helped me get my tests to pass.
+
+## Creating global Jest variables
+
+I followed Elendev's post and created myself a global variable for `Drupal` and its `t()` function. This is the line you need:
+
+```jsx
+global.Drupal = { t: text => text };
+```
+
+This is the final React component structure which will pass with using `Drupal.t()` function:
+
+```jsx
+import React from 'react';
+import { Card } from './Card';
+
+describe('<Card />', () => {
+  it('renders without error', () => {
+    global.Drupal = { t: text => text }; // Create global variable.
+    expect(<Card />).toBeTruthy();
+    delete global.Drupal; // Remove the created global variable after the test.
+  });
+}
+```
+
+**Happy coding!**
