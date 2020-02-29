@@ -10,27 +10,23 @@ import SEO from '../components/seo';
 
 const BlogListingPage = () => {
   const data = useStaticQuery(graphql`
-    {
-      allMarkdownRemark(
-        sort: { fields: [frontmatter___date], order: DESC }
-        filter: { frontmatter: { type: { eq: "blog" } } }
-      ) {
-        edges {
-          node {
-            frontmatter {
-              title
-              date(formatString: "MMMM DD, YYYY")
-              type
-            }
-            id
-            excerpt
-            fields {
-              slug
-            }
+  {
+    allMdx(filter: {fileAbsolutePath: {regex: "//content/blog//"}}, sort: {order: DESC, fields: [frontmatter___date]}) {
+      edges {
+        node {
+          frontmatter {
+            title
+            date(formatString: "MMMM DD, YYYY")
+          }
+          id
+          excerpt
+          fields {
+            slug
           }
         }
       }
     }
+  }
   `);
 
   return (
@@ -44,7 +40,7 @@ const BlogListingPage = () => {
       </Hero>
       <Container>
         <h2 className="main-subheading">All blog posts</h2>
-        <Listing arrayOfContent={data.allMarkdownRemark.edges} listingComponent={BlogTeaser} />
+        <Listing arrayOfContent={data.allMdx.edges} listingComponent={BlogTeaser} />
       </Container>
     </Layout>
   );
