@@ -1,19 +1,19 @@
 @import 'lib';
 
 .container {
-	margin-left: auto;
-	margin-right: auto;
-	max-width: $bp-ultra-wide;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: $bp-ultra-wide;
 
-	&--inset {
-		padding: 0 $gutter * 1.25;
+  &--inset {
+    padding: 0 $gutter * 1.25;
 
-		@media screen and (min-width: $bp-small) {
-			padding: 0 $gutter * 2;
-		}
-	}
+    @media screen and (min-width: $bp-small) {
+      padding: 0 $gutter * 2;
+    }
+  }
 
-	&--small {
-		max-width: $bp-medium-wide;
-	}
+  &--small {
+    max-width: $bp-content;
+  }
 }
