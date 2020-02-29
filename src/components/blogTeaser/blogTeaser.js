@@ -3,8 +3,7 @@ import { Link } from 'gatsby';
 
 import './blog-teaser.scss';
 
-const BlogTeaser = ({ node }) => {
-  const { frontmatter, fields, excerpt } = node;
+const BlogTeaser = ({ frontmatter, fields, excerpt }) => {
   const { title, date } = frontmatter;
   return (
     <article className="blog-teaser">

@@ -8,7 +8,7 @@ const Listing = ({ listingComponent, arrayOfContent, listingClass }) => {
 		<ul className={`listing ${listingClass ? listingClass : ''}`}>
 			{arrayOfContent.map((props) => (
 				<li className="listing__item" key={props.node.id}>
-					<ListingComponent {...props} />
+					<ListingComponent {...props.node} />
 				</li>
 			))}
 		</ul>

@@ -10,33 +10,30 @@ import SEO from '../components/seo';
 
 const PortfolioListingPage = () => {
   const data = useStaticQuery(graphql`
-    {
-      allMarkdownRemark(
-        sort: { fields: [frontmatter___date], order: DESC }
-        filter: { frontmatter: { type: { eq: "portfolio" } } }
-      ) {
-        edges {
-          node {
-            frontmatter {
-              title
-              lead
-              date(formatString: "MMMM DD, YYYY")
-              teaser_image {
-                childImageSharp {
-                  fluid(quality: 100) {
-                    src
-                  }
+  {
+    allMdx(filter: {fileAbsolutePath: {regex: "//content/portfolio//"}}, sort: {order: DESC, fields: [frontmatter___date]}) {
+      edges {
+        node {
+          frontmatter {
+            title
+            lead
+            date(formatString: "MMMM DD, YYYY")
+            teaser_image {
+              childImageSharp {
+                fluid(quality: 100) {
+                  src
                 }
               }
             }
-            id
-            fields {
-              slug
-            }
+          }
+          id
+          fields {
+            slug
           }
         }
       }
     }
+  }
   `);
 
   return (
@@ -52,7 +49,7 @@ const PortfolioListingPage = () => {
       <Container>
         <h2 className="main-subheading">All portfolio showcases</h2>
         <Listing
-          arrayOfContent={data.allMarkdownRemark.edges}
+          arrayOfContent={data.allMdx.edges}
           listingComponent={PortfolioTeaser}
           listingClass="listing--col-3"
         />
