@@ -24,7 +24,7 @@ function onCreateMdxNode({ node, getNode, actions }) {
   }
 
   if (node.fileAbsolutePath.includes("content/portfolio/")) {
-    slug = `/portfolio/${node.frontmatter.slug}`
+    slug = `/portfolio/${node.frontmatter.slug || slugify(parentNode.relativeDirectory)}`;
   }
 
   if (node.fileAbsolutePath.includes("content/misc/")) {
@@ -98,6 +98,19 @@ function createMiscPages({ data, actions }) {
   return null
 }
 
+const createPortfolioPosts = (createPage, edges) => {
+  edges.forEach(({ node }) => {
+    createPage({
+      path: node.fields.slug,
+      component: path.resolve(`./src/templates/portfolio.js`),
+      context: {
+        id: node.id,
+        slug: node.fields.slug,
+      },
+    })
+  })
+}
+
 function createPortfolioPages({ data, actions }) {
   if (!data.edges.length) {
     throw new Error("There are no posts!")
@@ -105,7 +118,7 @@ function createPortfolioPages({ data, actions }) {
 
   const { edges } = data
   const { createPage } = actions
-  createPosts(createPage, edges)
+  createPortfolioPosts(createPage, edges)
   return null
 }
 
@@ -137,6 +150,13 @@ exports.createPages = async ({ actions, graphql }) => {
         }
       }
     }
+    portfolio: allMdx(filter: {fileAbsolutePath: {regex: "//content/portfolio//"}}, sort: {order: DESC, fields: [frontmatter___date]}) {
+      edges {
+        node {
+          ...PostDetails
+        }
+      }
+    }
   }
   `)
 
@@ -144,7 +164,7 @@ exports.createPages = async ({ actions, graphql }) => {
     return Promise.reject(errors)
   }
 
-  const { blog, misc } = data
+  const { blog, misc, portfolio } = data
 
   createBlogPages({
     blogPath: "/blog",
@@ -158,9 +178,9 @@ exports.createPages = async ({ actions, graphql }) => {
     actions,
   })
 
-  // createPortfolioPages({
-  //   blogPath: '/portfolio',
-  //   data: portfolio,
-  //   actions,
-  // })
+  createPortfolioPages({
+    blogPath: '/portfolio',
+    data: portfolio,
+    actions,
+  })
 }

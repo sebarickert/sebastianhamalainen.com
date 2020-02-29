@@ -13,7 +13,6 @@ export const postQuery = graphql`
     mdx(id: { eq: $id }) {
       fields {
         title
-        slug
         type
         date(formatString: "MMMM DD, YYYY")
         description
