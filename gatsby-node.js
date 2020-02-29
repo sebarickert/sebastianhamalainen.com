@@ -1,59 +1,132 @@
-const path = require('path');
+const path = require("path")
+const slugify = require('@sindresorhus/slugify')
+const { createFilePath } = require("gatsby-source-filesystem")
 
-module.exports.onCreateNode = ({ node, actions }) => {
-	const { createNodeField } = actions;
+exports.onCreateNode = (...args) => {
+  if (args[0].node.internal.type === "Mdx") {
+    onCreateMdxNode(...args)
+  }
+}
 
-	if (node.internal.type === 'MarkdownRemark') {
-		const slug = path.basename(node.fileAbsolutePath, '.md');
+function onCreateMdxNode({ node, getNode, actions }) {
+  const parentNode = getNode(node.parent)
+  const { createNodeField } = actions
 
-		createNodeField({
-			node,
-			name: 'slug',
-			value: slug
-		});
-	}
-};
+  const { date, description, title } = node.frontmatter
+  let slug =
+    node.frontmatter.slug ||
+    createFilePath({ node, getNode, basePath: `content` })
 
-module.exports.createPages = async ({ graphql, actions }) => {
-	const { createPage } = actions;
+  if (node.fileAbsolutePath.includes("content/blog/")) {
+    slug = `/blog/${node.frontmatter.slug || slugify(parentNode.relativeDirectory)}`
+  }
 
-	const blogTemplate = path.resolve('./src/templates/blog.js');
-	const portfolioTemplate = path.resolve('./src/templates/portfolio.js');
+  if (node.fileAbsolutePath.includes("content/portfolio/")) {
+    slug = `/portfolio/${node.frontmatter.slug}`
+  }
 
-	const res = await graphql(`
-		{
-			allMarkdownRemark {
-				edges {
-					node {
-						frontmatter {
-							type
-						}
-						fields {
-							slug
-						}
-					}
-				}
-			}
-		}
-  `);
+  createNodeField({
+    name: "slug",
+    node,
+    value: slug,
+  })
 
-	res.data.allMarkdownRemark.edges.forEach((e) => {
-		if (e.node.frontmatter.type === 'blog') {
-			createPage({
-				component: blogTemplate,
-				path: `/blog/${e.node.fields.slug}`,
-				context: {
-					slug: e.node.fields.slug
-				}
-			});
-		} else if (e.node.frontmatter.type === 'portfolio') {
-			createPage({
-				component: portfolioTemplate,
-				path: `/portfolio/${e.node.fields.slug}`,
-				context: {
-					slug: e.node.fields.slug
-				}
-			});
-		}
-	});
-};
+  createNodeField({
+    name: "title",
+    node,
+    value: title,
+  })
+
+  createNodeField({
+    name: "date",
+    node,
+    value: date,
+  })
+
+  createNodeField({
+    name: "description",
+    node,
+    value: description,
+  })
+}
+
+const createPosts = (createPage, edges) => {
+  edges.forEach(({ node }) => {
+    createPage({
+      path: node.fields.slug,
+      component: path.resolve(`./src/templates/post.js`),
+      context: {
+        id: node.id,
+        slug: node.fields.slug,
+      },
+    })
+  })
+}
+
+function createBlogPages({ data, actions }) {
+  if (!data.edges.length) {
+    throw new Error("There are no posts!")
+  }
+
+  const { edges } = data
+  const { createPage } = actions
+  createPosts(createPage, edges)
+  return null
+}
+
+function createPortfolioPages({ data, actions }) {
+  if (!data.edges.length) {
+    throw new Error("There are no posts!")
+  }
+
+  const { edges } = data
+  const { createPage } = actions
+  createPosts(createPage, edges)
+  return null
+}
+
+exports.createPages = async ({ actions, graphql }) => {
+  const { data, errors } = await graphql(`
+    fragment PostDetails on Mdx {
+      fileAbsolutePath
+      id
+      fields {
+        title
+        slug
+        date
+        description
+      }
+    }
+
+    {
+      blog: allMdx(
+        filter: { fileAbsolutePath: { regex: "//content/blog//" } }
+        sort: { order: DESC, fields: [frontmatter___date] }
+      ) {
+        edges {
+          node {
+            ...PostDetails
+          }
+        }
+      }
+    }
+  `)
+
+  if (errors) {
+    return Promise.reject(errors)
+  }
+
+  const { blog } = data
+
+  createBlogPages({
+    blogPath: "/blog",
+    data: blog,
+    actions,
+  })
+
+  // createPortfolioPages({
+  //   blogPath: '/portfolio',
+  //   data: portfolio,
+  //   actions,
+  // })
+}
