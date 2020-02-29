@@ -1,0 +1,30 @@
+@import "lib";
+
+.post__heading {
+  @include font-size(32px);
+  margin: $gutter * 2 0;
+
+  @media screen and (min-width: $bp-wide) {
+    @include font-size(48px);
+  }
+
+  @media screen and (max-width: $bp-small) {
+    @include font-size(28px);
+  }
+}
+
+.post__date {
+  @include font-size(18px);
+  color: $scorpion;
+}
+
+.post__content {
+  > h2:first-child {
+    @include font-size(24px);
+    margin-bottom: $gutter * 2;
+
+    @media screen and (min-width: $bp-medium) {
+      @include font-size(32px);
+    }
+  }
+}
