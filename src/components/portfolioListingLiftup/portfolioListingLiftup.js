@@ -1,16 +1,16 @@
-import React from 'react';
-import { graphql, useStaticQuery } from 'gatsby';
+import React from "react"
+import { graphql, useStaticQuery } from "gatsby"
 
-import PortfolioTeaser from '../portfolioTeaser/portfolioTeaser';
-import Listing from '../listing/listing';
-import Button from '../button/button';
+import PortfolioTeaser from "../portfolioTeaser/portfolioTeaser"
+import Listing from "../listing/listing"
+import Button from "../button/button"
 
 const PortfolioListingLiftup = () => {
   const data = useStaticQuery(graphql`
     {
-      allMarkdownRemark(
-        sort: { fields: [frontmatter___date], order: DESC }
-        filter: { frontmatter: { type: { eq: "portfolio" } } }
+      allMdx(
+        filter: { fileAbsolutePath: { regex: "//content/portfolio//" } }
+        sort: { order: DESC, fields: [frontmatter___date] }
         limit: 3
       ) {
         edges {
@@ -35,12 +35,12 @@ const PortfolioListingLiftup = () => {
         }
       }
     }
-  `);
+  `)
 
   return (
     <React.Fragment>
       <Listing
-        arrayOfContent={data.allMarkdownRemark.edges}
+        arrayOfContent={data.allMdx.edges}
         listingComponent={PortfolioTeaser}
         listingClass="listing--col-3"
       />
@@ -48,7 +48,7 @@ const PortfolioListingLiftup = () => {
         See all portfolio showcases
       </Button>
     </React.Fragment>
-  );
-};
+  )
+}
 
-export default PortfolioListingLiftup;
+export default PortfolioListingLiftup
