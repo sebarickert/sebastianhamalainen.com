@@ -5,7 +5,7 @@ import './menu-main.scss';
 import './hamburger.scss';
 
 const Menu = () => {
-  const [ isOpen, setIsOpen ] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
   const toggle = () => setIsOpen(!isOpen);
 
   useEffect(() => {
@@ -37,17 +37,17 @@ const Menu = () => {
             </Link>
           </li>
           <li className="menu-main__item">
-            <Link to="/about" className="menu-main__link" activeClassName="is-active" partiallyActive={true}>
+            <Link to="/about" className="menu-main__link" activeClassName="is-active" partiallyActive>
               <span>About</span>
             </Link>
           </li>
           <li className="menu-main__item">
-            <Link to="/portfolio" className="menu-main__link" activeClassName="is-active" partiallyActive={true}>
+            <Link to="/portfolio" className="menu-main__link" activeClassName="is-active" partiallyActive>
               <span>Portfolio</span>
             </Link>
           </li>
           <li className="menu-main__item">
-            <Link to="/blog" className="menu-main__link" activeClassName="is-active" partiallyActive={true}>
+            <Link to="/blog" className="menu-main__link" activeClassName="is-active" partiallyActive>
               <span>Blog</span>
             </Link>
           </li>

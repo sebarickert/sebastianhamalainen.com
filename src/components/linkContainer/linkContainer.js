@@ -2,8 +2,6 @@ import React from 'react';
 
 import './link-container.scss';
 
-const LinkContainer = ({ linkContainerClass, children }) => {
-	return <div className={`link-container ${linkContainerClass ? linkContainerClass : ''}`}>{children}</div>;
-};
+const LinkContainer = ({ linkContainerClass, children }) => <div className={`link-container ${linkContainerClass || ''}`}>{children}</div>;
 
 export default LinkContainer;

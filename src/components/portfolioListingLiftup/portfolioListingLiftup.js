@@ -1,9 +1,9 @@
-import React from "react"
-import { graphql, useStaticQuery } from "gatsby"
+import React from 'react';
+import { graphql, useStaticQuery } from 'gatsby';
 
-import PortfolioTeaser from "../portfolioTeaser/portfolioTeaser"
-import Listing from "../listing/listing"
-import Button from "../button/button"
+import PortfolioTeaser from '../portfolioTeaser/portfolioTeaser';
+import Listing from '../listing/listing';
+import Button from '../button/button';
 
 const PortfolioListingLiftup = () => {
   const data = useStaticQuery(graphql`
@@ -35,7 +35,7 @@ const PortfolioListingLiftup = () => {
         }
       }
     }
-  `)
+  `);
 
   return (
     <React.Fragment>
@@ -48,7 +48,7 @@ const PortfolioListingLiftup = () => {
         See all portfolio showcases
       </Button>
     </React.Fragment>
-  )
-}
+  );
+};
 
-export default PortfolioListingLiftup
+export default PortfolioListingLiftup;

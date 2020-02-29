@@ -1,9 +1,9 @@
-import React from "react"
-import { graphql, useStaticQuery } from "gatsby"
+import React from 'react';
+import { graphql, useStaticQuery } from 'gatsby';
 
-import BlogTeaser from "../blogTeaser/blogTeaser"
-import Listing from "../listing/listing"
-import Button from "../button/button"
+import BlogTeaser from '../blogTeaser/blogTeaser';
+import Listing from '../listing/listing';
+import Button from '../button/button';
 
 const BlogLiftupListing = () => {
   const data = useStaticQuery(graphql`
@@ -28,7 +28,7 @@ const BlogLiftupListing = () => {
         }
       }
     }
-  `)
+  `);
 
   return (
     <React.Fragment>
@@ -40,7 +40,7 @@ const BlogLiftupListing = () => {
         See all blog posts
       </Button>
     </React.Fragment>
-  )
-}
+  );
+};
 
-export default BlogLiftupListing
+export default BlogLiftupListing;
