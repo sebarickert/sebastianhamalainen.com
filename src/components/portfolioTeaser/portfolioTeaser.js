@@ -4,17 +4,14 @@ import { Link } from 'gatsby';
 import './portfolio-teaser.scss';
 import ArrowRightIcon from '../../assets/right-arrow.svg';
 
-const PortfolioTeaser = ({ data }) => {
-	const { node } = data;
-	const { frontmatter, fields } = node;
+const PortfolioTeaser = ({ frontmatter, fields }) => {
 	const { title, teaser_image, lead, date } = frontmatter;
-	const { childImageSharp } = teaser_image;
-	const { fluid } = childImageSharp;
+	const { src: imageSrc } = teaser_image.childImageSharp.fluid;
 	return (
 		<div className="portfolio-teaser">
-			<Link to={`/portfolio/${fields.slug}`} className="portfolio-teaser__link">
+			<Link to={fields.slug} className="portfolio-teaser__link">
 				<div className="portfolio-teaser__container">
-					<img className="portfolio-teaser__image" src={fluid.src} alt="" role="presentation" />
+					<img className="portfolio-teaser__image" src={imageSrc} alt="" role="presentation" />
 					<div className="portfolio-teaser__overlay">
 						<ArrowRightIcon className="portfolio-teaser__icon" />
 					</div>
