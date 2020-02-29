@@ -25,6 +25,10 @@ function onCreateMdxNode({ node, getNode, actions }) {
     slug = `/portfolio/${node.frontmatter.slug}`
   }
 
+  if (node.fileAbsolutePath.includes("content/misc/")) {
+    slug = `/${node.frontmatter.slug || slugify(parentNode.relativeDirectory)}`
+  }
+
   createNodeField({
     name: "slug",
     node,
@@ -74,6 +78,17 @@ function createBlogPages({ data, actions }) {
   return null
 }
 
+function createMiscPages({ data, actions }) {
+  if (!data.edges.length) {
+    throw new Error("There are no posts!")
+  }
+
+  const { edges } = data
+  const { createPage } = actions
+  createPosts(createPage, edges)
+  return null
+}
+
 function createPortfolioPages({ data, actions }) {
   if (!data.edges.length) {
     throw new Error("There are no posts!")
@@ -87,40 +102,49 @@ function createPortfolioPages({ data, actions }) {
 
 exports.createPages = async ({ actions, graphql }) => {
   const { data, errors } = await graphql(`
-    fragment PostDetails on Mdx {
-      fileAbsolutePath
-      id
-      fields {
-        title
-        slug
-        date
-        description
-      }
+  fragment PostDetails on Mdx {
+    fileAbsolutePath
+    id
+    fields {
+      title
+      slug
+      date
+      description
     }
-
-    {
-      blog: allMdx(
-        filter: { fileAbsolutePath: { regex: "//content/blog//" } }
-        sort: { order: DESC, fields: [frontmatter___date] }
-      ) {
-        edges {
-          node {
-            ...PostDetails
-          }
+  }
+  {
+    blog: allMdx(filter: {fileAbsolutePath: {regex: "//content/blog//"}}, sort: {order: DESC, fields: [frontmatter___date]}) {
+      edges {
+        node {
+          ...PostDetails
         }
       }
     }
+    misc: allMdx(filter: {fileAbsolutePath: {regex: "//content/misc//"}}, sort: {order: DESC, fields: [frontmatter___date]}) {
+      edges {
+        node {
+          ...PostDetails
+        }
+      }
+    }
+  }
   `)
 
   if (errors) {
     return Promise.reject(errors)
   }
 
-  const { blog } = data
+  const { blog, misc } = data
 
   createBlogPages({
     blogPath: "/blog",
     data: blog,
+    actions,
+  })
+
+  createMiscPages({
+    miscPath: "/",
+    data: misc,
     actions,
   })
 
