@@ -13,12 +13,14 @@ function onCreateMdxNode({ node, getNode, actions }) {
   const { createNodeField } = actions
 
   const { date, description, title } = node.frontmatter
+  let type;
   let slug =
     node.frontmatter.slug ||
     createFilePath({ node, getNode, basePath: `content` })
 
   if (node.fileAbsolutePath.includes("content/blog/")) {
-    slug = `/blog/${node.frontmatter.slug || slugify(parentNode.relativeDirectory)}`
+    slug = `/blog/${node.frontmatter.slug || slugify(parentNode.relativeDirectory)}`;
+    type = 'blog';
   }
 
   if (node.fileAbsolutePath.includes("content/portfolio/")) {
@@ -27,12 +29,19 @@ function onCreateMdxNode({ node, getNode, actions }) {
 
   if (node.fileAbsolutePath.includes("content/misc/")) {
     slug = `/${node.frontmatter.slug || slugify(parentNode.relativeDirectory)}`
+    type = 'misc';
   }
 
   createNodeField({
     name: "slug",
     node,
     value: slug,
+  })
+
+  createNodeField({
+    name: "type",
+    node,
+    value: type,
   })
 
   createNodeField({
@@ -108,6 +117,7 @@ exports.createPages = async ({ actions, graphql }) => {
     fields {
       title
       slug
+      type
       date
       description
     }
