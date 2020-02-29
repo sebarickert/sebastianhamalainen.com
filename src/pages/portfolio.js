@@ -40,8 +40,7 @@ const PortfolioListingPage = () => {
     <Layout>
       <SEO
         title="Portfolio"
-        description="Below I've compiled a list of stuff that I have created over the years, professional and free-time
-				projects."
+        description="Below I've compiled a list of stuff that I have created over the years, professional and free-time projects."
       />
       <Hero title="Portfolio">
         Here you’ll find a curated selection of my work over the years, including professional work and side projects.

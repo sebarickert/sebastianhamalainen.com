@@ -1,125 +1,124 @@
-const path = require("path")
-const slugify = require('@sindresorhus/slugify')
-const { createFilePath } = require("gatsby-source-filesystem")
-
-exports.onCreateNode = (...args) => {
-  if (args[0].node.internal.type === "Mdx") {
-    onCreateMdxNode(...args)
-  }
-}
+const path = require('path');
+const slugify = require('@sindresorhus/slugify');
+const { createFilePath } = require('gatsby-source-filesystem');
 
 function onCreateMdxNode({ node, getNode, actions }) {
-  const parentNode = getNode(node.parent)
-  const { createNodeField } = actions
+  const parentNode = getNode(node.parent);
+  const { createNodeField } = actions;
 
-  const { date, description, title } = node.frontmatter
+  const { date, description, title } = node.frontmatter;
   let type;
-  let slug =
-    node.frontmatter.slug ||
-    createFilePath({ node, getNode, basePath: `content` })
+  let slug = node.frontmatter.slug
+    || createFilePath({ node, getNode, basePath: 'content' });
 
-  if (node.fileAbsolutePath.includes("content/blog/")) {
+  if (node.fileAbsolutePath.includes('content/blog/')) {
     slug = `/blog/${node.frontmatter.slug || slugify(parentNode.relativeDirectory)}`;
     type = 'blog';
   }
 
-  if (node.fileAbsolutePath.includes("content/portfolio/")) {
+  if (node.fileAbsolutePath.includes('content/portfolio/')) {
     slug = `/portfolio/${node.frontmatter.slug || slugify(parentNode.relativeDirectory)}`;
   }
 
-  if (node.fileAbsolutePath.includes("content/misc/")) {
-    slug = `/${node.frontmatter.slug || slugify(parentNode.relativeDirectory)}`
+  if (node.fileAbsolutePath.includes('content/misc/')) {
+    slug = `/${node.frontmatter.slug || slugify(parentNode.relativeDirectory)}`;
     type = 'misc';
   }
 
   createNodeField({
-    name: "slug",
+    name: 'slug',
     node,
     value: slug,
-  })
+  });
 
   createNodeField({
-    name: "type",
+    name: 'type',
     node,
     value: type,
-  })
+  });
 
   createNodeField({
-    name: "title",
+    name: 'title',
     node,
     value: title,
-  })
+  });
 
   createNodeField({
-    name: "date",
+    name: 'date',
     node,
     value: date,
-  })
+  });
 
   createNodeField({
-    name: "description",
+    name: 'description',
     node,
     value: description,
-  })
+  });
 }
+
+exports.onCreateNode = (...args) => {
+  if (args[0].node.internal.type === 'Mdx') {
+    onCreateMdxNode(...args);
+  }
+};
 
 const createPosts = (createPage, edges) => {
   edges.forEach(({ node }) => {
     createPage({
       path: node.fields.slug,
-      component: path.resolve(`./src/templates/post.js`),
+      component: path.resolve('./src/templates/post.js'),
       context: {
         id: node.id,
         slug: node.fields.slug,
       },
-    })
-  })
-}
+    });
+  });
+};
 
 function createBlogPages({ data, actions }) {
   if (!data.edges.length) {
-    throw new Error("There are no posts!")
+    throw new Error('There are no posts!');
   }
 
-  const { edges } = data
-  const { createPage } = actions
-  createPosts(createPage, edges)
-  return null
+  const { edges } = data;
+  const { createPage } = actions;
+  createPosts(createPage, edges);
+  return null;
 }
 
 function createMiscPages({ data, actions }) {
   if (!data.edges.length) {
-    throw new Error("There are no posts!")
+    throw new Error('There are no posts!');
   }
 
-  const { edges } = data
-  const { createPage } = actions
-  createPosts(createPage, edges)
-  return null
+  const { edges } = data;
+  const { createPage } = actions;
+  createPosts(createPage, edges);
+  return null;
 }
 
 const createPortfolioPosts = (createPage, edges) => {
   edges.forEach(({ node }) => {
     createPage({
       path: node.fields.slug,
-      component: path.resolve(`./src/templates/portfolio.js`),
+      component: path.resolve('./src/templates/portfolio.js'),
       context: {
         id: node.id,
         slug: node.fields.slug,
       },
-    })
-  })
-}
+    });
+  });
+};
 
 function createPortfolioPages({ data, actions }) {
   if (!data.edges.length) {
-    throw new Error("There are no posts!")
+    throw new Error('There are no posts!');
   }
 
-  const { edges } = data
-  const { createPage } = actions
-  createPortfolioPosts(createPage, edges)
-  return null
+  const { edges } = data;
+  const { createPage } = actions;
+  createPortfolioPosts(createPage, edges);
+  return null;
 }
 
 exports.createPages = async ({ actions, graphql }) => {
@@ -158,29 +157,30 @@ exports.createPages = async ({ actions, graphql }) => {
       }
     }
   }
-  `)
+  `);
 
   if (errors) {
-    return Promise.reject(errors)
+    return Promise.reject(errors);
   }
 
-  const { blog, misc, portfolio } = data
+  const { blog, misc, portfolio } = data;
 
   createBlogPages({
-    blogPath: "/blog",
+    blogPath: '/blog',
     data: blog,
     actions,
-  })
+  });
 
   createMiscPages({
-    miscPath: "/",
+    miscPath: '/',
     data: misc,
     actions,
-  })
+  });
 
   createPortfolioPages({
-    blogPath: '/portfolio',
+    portfolioPath: '/portfolio',
     data: portfolio,
     actions,
-  })
-}
+  });
+  return null;
+};

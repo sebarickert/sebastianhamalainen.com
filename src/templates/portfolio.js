@@ -1,6 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import MDXRenderer from "gatsby-plugin-mdx/mdx-renderer"
+import MDXRenderer from 'gatsby-plugin-mdx/mdx-renderer';
 
 import Layout from '../components/layout/layout';
 import Container from '../components/container/container';
@@ -40,12 +40,14 @@ query($id: String!) {
 `;
 
 const Portfolio = ({ data: { mdx } }) => {
-  const { url_web, url_source, title, lead, teaser_image, showcase_image } = mdx.frontmatter;
-  const teaserImage = teaser_image ? teaser_image.childImageSharp.fluid.src : '';
-  const showcaseImage = showcase_image ? showcase_image.childImageSharp.fluid.src : '';
+  const {
+    url_web: urlWeb, url_source: urlSource, title, lead, teaser_image: teaserImage, showcase_image: showcaseImage,
+  } = mdx.frontmatter;
+  const teaserImageSrc = teaserImage ? teaserImage.childImageSharp.fluid.src : '';
+  const showcaseImageSrc = showcaseImage ? showcaseImage.childImageSharp.fluid.src : '';
   return (
     <Layout>
-      <SEO title={`${title} | Portfolio`} description={mdx.excerpt} image={teaserImage} />
+      <SEO title={`${title} | Portfolio`} description={mdx.excerpt} image={teaserImageSrc} />
       <article>
         <Hero title={title}>{lead}</Hero>
         <Container>
@@ -57,10 +59,10 @@ const Portfolio = ({ data: { mdx } }) => {
           <div className="portfolio__content">
             <MDXRenderer>{mdx.body}</MDXRenderer>
           </div>
-          {url_web || url_source ? (
+          {urlWeb || urlSource ? (
             <LinkContainer>
-              {url_web ? <LinkContainerLink linkTarget={url_web}>Visit site</LinkContainerLink> : ''}
-              {url_source ? <LinkContainerLink linkTarget={url_source}>Visit source code</LinkContainerLink> : ''}
+              {urlWeb ? <LinkContainerLink linkTarget={urlWeb}>Visit site</LinkContainerLink> : ''}
+              {urlSource ? <LinkContainerLink linkTarget={urlSource}>Visit source code</LinkContainerLink> : ''}
             </LinkContainer>
           ) : (
             ''
@@ -69,7 +71,7 @@ const Portfolio = ({ data: { mdx } }) => {
         {showcaseImage ? (
           <div className="portfolio__showcase" role="presentation">
             <Container>
-              <img src={showcaseImage} alt="" className="portfolio__showcase-image" />
+              <img src={showcaseImageSrc} alt="" className="portfolio__showcase-image" />
             </Container>
           </div>
         ) : (
