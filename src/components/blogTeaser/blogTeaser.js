@@ -3,14 +3,13 @@ import { Link } from 'gatsby';
 
 import './blog-teaser.scss';
 
-const BlogTeaser = ({ data }) => {
-  const { node } = data;
+const BlogTeaser = ({ node }) => {
   const { frontmatter, fields, excerpt } = node;
   const { title, date } = frontmatter;
   return (
     <article className="blog-teaser">
       <h1 className="blog-teaser__heading">
-        <Link to={`/blog/${fields.slug}`} className="blog-teaser__link">
+        <Link to={fields.slug} className="blog-teaser__link">
           <span>{title}</span>
         </Link>
       </h1>
