@@ -4,6 +4,10 @@
   border-radius: 6px;
   overflow: hidden;
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: baseline;
 
   .black & {
     .blog-teaser__heading {
@@ -83,6 +87,7 @@
 .blog-teaser__heading {
   @include font-size(20px);
   transition: inherit;
+  margin: 0;
 
   @media screen and (min-width: $bp-small) {
     @include font-size(26px);
