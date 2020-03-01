@@ -7,6 +7,7 @@
   "scripts": {
     "build": "gatsby build",
     "develop": "env-cmd -f .env.development gatsby develop",
+    "debug": "node --nolazy --inspect-brk node_modules/gatsby/dist/bin/gatsby develop",
     "format": "prettier --write src/**/*.{js,jsx}",
     "start": "npm run develop",
     "serve": "gatsby serve",
