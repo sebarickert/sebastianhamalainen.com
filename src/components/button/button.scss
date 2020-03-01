@@ -43,3 +43,28 @@
 .button--cta {
   margin-top: $gutter * 4;
 }
+
+.button-container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: baseline;
+
+  @media screen and (min-width: $bp-medium-wide) {
+    flex-direction: row;
+  }
+
+  .button {
+    margin-bottom: $gutter;
+
+    @media screen and (min-width: $bp-medium-wide) {
+      margin-bottom: 0;
+      margin-right: $gutter;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+      margin-right: 0;
+    }
+  }
+}
