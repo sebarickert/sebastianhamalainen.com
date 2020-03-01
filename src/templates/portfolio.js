@@ -62,7 +62,7 @@ const Portfolio = ({ data: { mdx } }) => {
           ) : (
             ''
           )}
-          <Button linkTo="/portfolio" buttonClass="mt--4">
+          <Button linkTo="/portfolio" buttonClass="mt--1">
             Go back to Portfolio
           </Button>
         </Container>

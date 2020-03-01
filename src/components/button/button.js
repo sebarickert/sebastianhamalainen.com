@@ -7,8 +7,10 @@ const Button = ({
   linkTo, buttonClass, linkTargetType, children,
 }) => (
   linkTargetType !== 'external' ? (
-    <Link to={linkTo} className={`button ${buttonClass || ''}`}>
-      {children}
+    <Link to={linkTo} className={`button ${buttonClass || ''}`} title={children}>
+      <span className="button__inner">
+        {children}
+      </span>
     </Link>
   ) : (
     <a
@@ -16,7 +18,9 @@ const Button = ({
       className={`button ${buttonClass || ''}`}
       title={children}
     >
-      {children}
+      <span className="button__inner">
+        {children}
+      </span>
     </a>
   )
 );
