@@ -4,38 +4,30 @@
   @include font-size(16px);
   display: inline-block;
   padding: 0;
-  border-radius: 3px;
   font-family: $heading-font-family;
   position: relative;
   background-color: transparent;
-  border: 0;
+  border: 2px solid $black;
+  border-radius: 9999px;
+  padding: $gutter * .5 $gutter;
   line-height: $gutter * 1.5;
 
   &:hover,
   &:focus {
-    &:after {
-      width: 100%;
-    }
-  }
-
-  &:after {
-    content: '';
-    position: absolute;
-    bottom: -0.15rem;
-    width: 0;
-    height: 2px;
+    outline: none;
     background-color: $black;
-    left: 0;
-    right: 0;
-    transition: width 0.2s ease-in-out;
+    color: $white;
   }
 
   .black &,
   .blue-dark & {
+    border-color: $white;
     color: $white;
 
-    &:after {
+    &:hover,
+    &:focus {
       background-color: $white;
+      color: $black;
     }
   }
 }
