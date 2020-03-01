@@ -33,18 +33,18 @@ const Footer = () => {
         <div className="footer__item footer__item--bottom container container--inset">
           <ul className="menu-footer">
             <li className="menu-footer__item">
-              <a href={data.site.siteMetadata.twitter} className="footer__link button">
-                Twitter
+              <a href={data.site.siteMetadata.twitter} className="menu-footer__link">
+                <span>Twitter</span>
               </a>
             </li>
             <li className="menu-footer__item">
-              <a href={data.site.siteMetadata.github} className="footer__link button">
-                Github
+              <a href={data.site.siteMetadata.github} className="menu-footer__link">
+                <span>Github</span>
               </a>
             </li>
             <li className="menu-footer__item">
-              <a href={data.site.siteMetadata.linkedin} className="footer__link button">
-                LinkedIn
+              <a href={data.site.siteMetadata.linkedin} className="menu-footer__link">
+                <span>LinkedIn</span>
               </a>
             </li>
           </ul>
