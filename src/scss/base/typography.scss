@@ -149,6 +149,12 @@ ol {
   }
 }
 
+li {
+  > a {
+    color: $mariner;
+  }
+}
+
 blockquote,
 q {
   border-left: 5px solid $black;
