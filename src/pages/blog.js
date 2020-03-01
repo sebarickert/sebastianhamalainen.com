@@ -6,6 +6,7 @@ import Container from '../components/container/container';
 import BlogTeaser from '../components/blogTeaser/blogTeaser';
 import Hero from '../components/hero/hero';
 import Listing from '../components/listing/listing';
+import Heading from '../components/heading/heading';
 import SEO from '../components/seo';
 
 const BlogListingPage = () => {
@@ -40,7 +41,7 @@ const BlogListingPage = () => {
         Here I'll dabble into different kind of topics, but most likely relating to tech and web development.
       </Hero>
       <Container>
-        <h2 className="main-subheading">All blog posts</h2>
+        <Heading>All blog posts</Heading>
         <Listing arrayOfContent={data.allMdx.edges} listingComponent={BlogTeaser} listingClass="listing--col-2" />
       </Container>
     </Layout>

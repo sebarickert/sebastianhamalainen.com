@@ -1,24 +1,22 @@
 import React from 'react';
 
 import Container from '../container/container';
+import Heading from '../heading/heading';
+import Button from '../button/button';
 import './frontpage-block.scss';
 
 const FrontpageBlock = ({
-  blockComponent, blockComponentClass, blockHeadingClass, blockSubHeadingLead, children,
+  blockComponent, blockComponentClass, blockHeadingClass, moreButton, children,
 }) => {
   const BlockComponent = blockComponent;
 
   return (
     <div className={`frontpage-block ${blockComponentClass || ''}`}>
       <Container>
-        <h2 className={`main-subheading ${blockHeadingClass || ''}`}>{children}</h2>
-        {blockSubHeadingLead ? (
-          <h3 className={`main-subheading-lead ${blockHeadingClass || ''}`} role="presentation">
-            {blockSubHeadingLead}
-          </h3>
-        ) : (
-          ''
-        )}
+        <div className="frontpage-block__header">
+          <Heading className={blockHeadingClass}>{children}</Heading>
+          <Button linkTo={moreButton.url}>{moreButton.text}</Button>
+        </div>
         <BlockComponent />
       </Container>
     </div>

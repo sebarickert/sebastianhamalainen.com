@@ -6,6 +6,7 @@ import Container from '../components/container/container';
 import PortfolioTeaser from '../components/portfolioTeaser/portfolioTeaser';
 import Hero from '../components/hero/hero';
 import Listing from '../components/listing/listing';
+import Heading from '../components/heading/heading';
 import SEO from '../components/seo';
 
 const PortfolioListingPage = () => {
@@ -46,7 +47,7 @@ const PortfolioListingPage = () => {
         Here you’ll find a curated selection of my work over the years, including professional work and side projects.
       </Hero>
       <Container>
-        <h2 className="main-subheading">All portfolio showcases</h2>
+        <Heading>All portfolio showcases</Heading>
         <Listing
           arrayOfContent={data.allMdx.edges}
           listingComponent={PortfolioTeaser}
