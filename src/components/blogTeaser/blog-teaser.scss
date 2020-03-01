@@ -58,6 +58,8 @@
 
   &:hover,
   &:focus {
+    outline: none;
+
     span:after {
       width: 100%;
     }

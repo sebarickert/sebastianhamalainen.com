@@ -41,7 +41,7 @@ const BlogListingPage = () => {
       </Hero>
       <Container>
         <h2 className="main-subheading">All blog posts</h2>
-        <Listing arrayOfContent={data.allMdx.edges} listingComponent={BlogTeaser} />
+        <Listing arrayOfContent={data.allMdx.edges} listingComponent={BlogTeaser} listingClass="listing--col-2" />
       </Container>
     </Layout>
   );
