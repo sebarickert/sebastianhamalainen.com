@@ -6,8 +6,8 @@ import Layout from '../components/layout/layout';
 import Container from '../components/container/container';
 import Hero from '../components/hero/hero';
 import SEO from '../components/seo';
-import LinkContainer from '../components/linkContainer/linkContainer';
-import LinkContainerLink from '../components/linkContainer/linkContainer.link';
+import Button from '../components/button/button';
+import ButtonContainer from '../components/button/button.container';
 import '../scss/templates/portfolio.scss';
 
 export const query = graphql`
@@ -51,22 +51,20 @@ const Portfolio = ({ data: { mdx } }) => {
       <article>
         <Hero title={title}>{lead}</Hero>
         <Container>
-          <LinkContainer>
-            <LinkContainerLink linkTarget="/portfolio" linkContainerLinkClass="mb--2">
-              Go back to Portfolio
-            </LinkContainerLink>
-          </LinkContainer>
           <div className="portfolio__content">
             <MDXRenderer>{mdx.body}</MDXRenderer>
           </div>
           {urlWeb || urlSource ? (
-            <LinkContainer>
-              {urlWeb ? <LinkContainerLink linkTarget={urlWeb}>Visit site</LinkContainerLink> : ''}
-              {urlSource ? <LinkContainerLink linkTarget={urlSource}>Visit source code</LinkContainerLink> : ''}
-            </LinkContainer>
+            <ButtonContainer buttonContainerClass="mt--4">
+              {urlWeb ? <Button linkTo={urlWeb} linkTargetType="external">Visit site</Button> : ''}
+              {urlSource ? <Button linkTo={urlSource} linkTargetType="external">Visit source code</Button> : ''}
+            </ButtonContainer>
           ) : (
             ''
           )}
+          <Button linkTo="/portfolio" buttonClass="mt--4">
+            Go back to Portfolio
+          </Button>
         </Container>
         {showcaseImage ? (
           <div className="portfolio__showcase" role="presentation">
