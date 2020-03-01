@@ -3,7 +3,6 @@ import { graphql, useStaticQuery } from 'gatsby';
 
 import PortfolioTeaser from '../portfolioTeaser/portfolioTeaser';
 import Listing from '../listing/listing';
-import Button from '../button/button';
 
 const PortfolioListingLiftup = () => {
   const data = useStaticQuery(graphql`
@@ -44,9 +43,6 @@ const PortfolioListingLiftup = () => {
         listingComponent={PortfolioTeaser}
         listingClass="listing--col-3"
       />
-      <Button linkTo="/portfolio" buttonClass="button--cta">
-        See all portfolio showcases
-      </Button>
     </React.Fragment>
   );
 };
