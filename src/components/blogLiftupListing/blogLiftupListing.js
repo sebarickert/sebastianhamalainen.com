@@ -3,7 +3,6 @@ import { graphql, useStaticQuery } from 'gatsby';
 
 import BlogTeaser from '../blogTeaser/blogTeaser';
 import Listing from '../listing/listing';
-import Button from '../button/button';
 
 const BlogLiftupListing = () => {
   const data = useStaticQuery(graphql`
@@ -11,7 +10,7 @@ const BlogLiftupListing = () => {
       allMdx(
         filter: { fileAbsolutePath: { regex: "//content/blog//" } }
         sort: { order: DESC, fields: [frontmatter___date] }
-        limit: 3
+        limit: 2
       ) {
         edges {
           node {
@@ -31,15 +30,11 @@ const BlogLiftupListing = () => {
   `);
 
   return (
-    <React.Fragment>
-      <Listing
-        arrayOfContent={data.allMdx.edges}
-        listingComponent={BlogTeaser}
-      />
-      <Button linkTo="/blog" buttonClass="button--cta">
-        See all blog posts
-      </Button>
-    </React.Fragment>
+    <Listing
+      arrayOfContent={data.allMdx.edges}
+      listingComponent={BlogTeaser}
+      listingClass="listing--col-2"
+    />
   );
 };
 

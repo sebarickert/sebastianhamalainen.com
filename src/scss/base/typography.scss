@@ -238,8 +238,16 @@ p a {
   margin-bottom: $gutter * 2 !important;
 }
 
+.mr--2 {
+  margin-right: $gutter * 2 !important;
+}
+
 .mt--1 {
   margin-top: $gutter !important;
+}
+
+.mt--2 {
+  margin-top: $gutter * 2 !important;
 }
 
 .mt--4 {
