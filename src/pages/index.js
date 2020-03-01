@@ -8,6 +8,9 @@ import FrontpageBlock from '../components/frontpageBlock/frontpageBlock';
 import Hero from '../components/hero/hero';
 import '../scss/base.scss';
 
+const portfolioMoreButton = { text: 'See all portfolio showcases', url: '/portfolio' };
+const blogMoreButton = { text: 'See all blog posts', url: '/blog' };
+
 const IndexPage = () => (
   <Layout>
     <SEO title="Front-end Developer, Web Design and JS enthusiast" />
@@ -16,10 +19,10 @@ const IndexPage = () => (
       to play around with CSS.
     </Hero>
     <div className="frontpage-block-container">
-      <FrontpageBlock blockComponent={PortfolioLiftupListing} blockComponentClass="listing--one-liner">
+      <FrontpageBlock blockComponent={PortfolioLiftupListing} blockComponentClass="listing--one-liner" blockHeadingClass="heading--no-margin" moreButton={portfolioMoreButton}>
         Latest portfolio showcases
       </FrontpageBlock>
-      <FrontpageBlock blockComponent={BlogLiftupListing} blockComponentClass="listing--one-liner blue-dark">
+      <FrontpageBlock blockComponent={BlogLiftupListing} blockComponentClass="listing--one-liner blue-dark" blockHeadingClass="heading--no-margin" moreButton={blogMoreButton}>
         Latest blog posts
       </FrontpageBlock>
     </div>

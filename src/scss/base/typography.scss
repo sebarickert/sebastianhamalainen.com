@@ -222,20 +222,6 @@ p a {
   color: $mariner;
 }
 
-.main-subheading {
-  margin-bottom: $gutter * 4;
-
-  @media screen and (min-width: $bp-wide) {
-    margin-bottom: $gutter * 6;
-  }
-}
-
-.main-subheading-lead {
-  margin-top: calc(-#{$gutter} * 4 + #{$gutter});
-  margin-bottom: $gutter * 4;
-  color: $scorpion;
-}
-
 .text--center {
   text-align: center;
 }

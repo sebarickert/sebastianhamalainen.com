@@ -29,6 +29,32 @@
   }
 }
 
+.frontpage-block__header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  margin-bottom: $gutter * 6;
+
+  @media screen and (min-width: $bp-medium-wide) {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  @media screen and (min-width: $bp-wide) {
+    margin-bottom: $gutter * 6;
+  }
+
+  .heading {
+    @media screen and (max-width: $bp-medium-wide) {
+      text-align: center;
+      margin-bottom: $gutter * 2;
+    }
+  }
+}
+
 .frontpage-block-container {
   margin-top: -$gutter * 6;
 
