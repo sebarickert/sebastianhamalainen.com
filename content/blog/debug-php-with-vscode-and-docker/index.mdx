@@ -13,27 +13,26 @@ This [stackoverflow comment](https://stackoverflow.com/a/52805763/5562316) was r
 You need to have Xdebug installed on your machine. Official installation guide can be found on [Xdebug's official website](https://xdebug.org/docs/install).
 You can install Xdebug through PECL on Linux & macOS. You can install Xdebug with PECL with:
 
-```bash
-  pecl install xdebug
+```shell
+pecl install xdebug
 ```
-
 ## Configure your php.ini file
 
 When you have installed Xdebug, you need to configure your `php.ini` to use Xdebug.
 These are the exact settings for Xdebug in my `php.ini` file:
 
 ```php
-  [xdebug]
-  zend_extension=/usr/local/Cellar/php/7.3.7/pecl/20180731/xdebug.so
-  xdebug.default_enable=1
-  xdebug.remote_enable=1
-  xdebug.remote_port=9000
-  xdebug.remote_handler=dbgp
-  xdebug.remote_connect_back=0
-  xdebug.remote_host=host.docker.internal
-  xdebug.idekey=VSCODE
-  xdebug.remote_autostart=1
-  xdebug.remote_log=/usr/local/etc/php/xdebug.log
+[xdebug]
+zend_extension=/usr/local/Cellar/php/7.3.7/pecl/20180731/xdebug.so
+xdebug.default_enable=1
+xdebug.remote_enable=1
+xdebug.remote_port=9000
+xdebug.remote_handler=dbgp
+xdebug.remote_connect_back=0
+xdebug.remote_host=host.docker.internal
+xdebug.idekey=VSCODE
+xdebug.remote_autostart=1
+xdebug.remote_log=/usr/local/etc/php/xdebug.log
 ```
 
 Most importantly you need to add the location of your `xdebug.so` file. Without it this will not work at all.
@@ -47,20 +46,20 @@ You need to install [PHP Debug](https://marketplace.visualstudio.com/items?itemN
 These are the exact settings for debuggin PHP with docker and VS Code in my `launch.json` file:
 
 ```json
-    {
-      "name": "Listen for XDebug",
-      "type": "php",
-      "request": "launch",
-      "port": 9000,
-      "log": true,
-      "externalConsole": false,
-      "pathMappings": {
-          "/app": "${workspaceFolder}",
-      },
-      "ignore": [
-          "**/vendor/**/*.php"
-      ]
-    },
+{
+  "name": "Listen for XDebug",
+  "type": "php",
+  "request": "launch",
+  "port": 9000,
+  "log": true,
+  "externalConsole": false,
+  "pathMappings": {
+      "/app": "${workspaceFolder}",
+  },
+  "ignore": [
+      "**/vendor/**/*.php"
+  ]
+},
 ```
 
 Most importantly you need to map your docker path in `pathMappings`.
