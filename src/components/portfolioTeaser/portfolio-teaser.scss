@@ -2,6 +2,7 @@
 
 .portfolio-teaser {
   @include box-shadow();
+  background-color: $white;
   display: flex;
   flex-direction: column;
   border-radius: $gutter * .25;
@@ -16,6 +17,12 @@
       margin-left: -$gutter;
       margin-right: $gutter;
     }
+
+    .portfolio-teaser__image {
+      @media screen and (min-width: $bp-medium-wide) {
+        clip-path: polygon(0 0, 100% 0, 95% 100%, 0 100%);
+      }
+    }
   }
 
   .listing__item:nth-child(even) & {
@@ -27,6 +34,12 @@
     .portfolio-teaser__section:first-child {
       @media screen and (min-width: $bp-medium-wide) {
         order: 2;
+      }
+    }
+
+    .portfolio-teaser__image {
+      @media screen and (min-width: $bp-medium-wide) {
+        clip-path: polygon(5% 0, 100% 0, 100% 100%, 0 100%);
       }
     }
   }
