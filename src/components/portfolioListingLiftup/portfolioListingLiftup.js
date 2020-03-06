@@ -41,7 +41,6 @@ const PortfolioListingLiftup = () => {
       <Listing
         arrayOfContent={data.allMdx.edges}
         listingComponent={PortfolioTeaser}
-        listingClass="listing--col-3"
       />
     </React.Fragment>
   );
