@@ -47,11 +47,10 @@ const PortfolioListingPage = () => {
         Here you’ll find a curated selection of my work over the years, including professional work and side projects.
       </Hero>
       <Container>
-        <Heading>All portfolio showcases</Heading>
+        <Heading className="heading--center">All portfolio showcases</Heading>
         <Listing
           arrayOfContent={data.allMdx.edges}
           listingComponent={PortfolioTeaser}
-          listingClass="listing--col-3"
         />
       </Container>
     </Layout>
