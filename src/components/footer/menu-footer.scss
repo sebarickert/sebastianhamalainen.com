@@ -6,7 +6,6 @@
   display: flex;
   justify-content: flex-start;
   max-width: none;
-  margin-right: $gutter;
 }
 
 .menu-footer__item {
@@ -21,7 +20,7 @@
 
 .menu-footer__link {
   @include font-size(14px);
-  color: $scorpion;
+  color: $silver;
 
   @media screen and (min-width: $bp-wide) {
     @include font-size(16px);
@@ -36,7 +35,7 @@
       bottom: -0.15rem;
       width: 0;
       height: 2px;
-      background-color: $scorpion;
+      background-color: $silver;
       left: 0;
       right: 0;
       transition: width 0.2s ease-in-out;
@@ -49,7 +48,7 @@
 
   &:focus,
   &:hover {
-    color: $scorpion;
+    color: $silver;
 
     span:after {
       width: 100%;
