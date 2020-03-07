@@ -4,10 +4,10 @@ import { Link } from 'gatsby';
 import './button.scss';
 
 const Button = ({
-  linkTo, buttonClass, linkTargetType, children,
+  linkTo, className, linkTargetType, children,
 }) => (
   linkTargetType !== 'external' ? (
-    <Link to={linkTo} className={`button ${buttonClass || ''}`} title={children}>
+    <Link to={linkTo} className={`button ${className || ''}`} title={children}>
       <span className="button__inner">
         {children}
       </span>
@@ -15,7 +15,7 @@ const Button = ({
   ) : (
     <a
       href={linkTo}
-      className={`button ${buttonClass || ''}`}
+      className={`button ${className || ''}`}
       title={children}
     >
       <span className="button__inner">

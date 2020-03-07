@@ -121,6 +121,31 @@ function createPortfolioPages({ data, actions }) {
   return null;
 }
 
+function createPortfolioListingPages({ data, actions }) {
+  if (!data.edges.length) {
+    throw new Error('There are no posts!');
+  }
+
+  const { edges: posts } = data;
+  const { createPage } = actions;
+  const postsPerPage = 5;
+  const numPages = Math.ceil(posts.length / postsPerPage);
+
+  Array.from({ length: numPages }).forEach((_, i) => {
+    createPage({
+      path: i === 0 ? 'portfolio/' : `portfolio/${i + 1}`,
+      component: path.resolve('./src/templates/portfolio-list.js'),
+      context: {
+        limit: postsPerPage,
+        skip: i * postsPerPage,
+        numPages,
+        currentPage: i + 1,
+        contentType: 'portfolio',
+      },
+    });
+  });
+}
+
 exports.createPages = async ({ actions, graphql }) => {
   const { data, errors } = await graphql(`
   fragment PostDetails on Mdx {
@@ -182,5 +207,12 @@ exports.createPages = async ({ actions, graphql }) => {
     data: portfolio,
     actions,
   });
+
+  createPortfolioListingPages({
+    portfolioListingPath: '/portfolio',
+    data: portfolio,
+    actions,
+  });
+
   return null;
 };
