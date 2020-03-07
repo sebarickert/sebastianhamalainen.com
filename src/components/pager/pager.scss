@@ -1,0 +1,14 @@
+@import "lib";
+
+.pager {
+  margin-top: $gutter * 4;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.pager__item {
+  &--last {
+    margin-left: auto;
+  }
+}
