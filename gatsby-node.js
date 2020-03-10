@@ -6,7 +6,9 @@ function onCreateMdxNode({ node, getNode, actions }) {
   const parentNode = getNode(node.parent);
   const { createNodeField } = actions;
 
-  const { date, description, title } = node.frontmatter;
+  const {
+    date, description, title,
+  } = node.frontmatter;
   let type;
   let slug = node.frontmatter.slug
     || createFilePath({ node, getNode, basePath: 'content' });

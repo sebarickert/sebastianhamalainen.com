@@ -20,4 +20,15 @@
   &--small {
     max-width: $bp-medium-wide;
   }
+
+  &--forty-sixty {
+    display: grid;
+    grid-row-gap: $gutter * 2;
+
+    @media screen and (min-width: $bp-medium-wide) {
+      grid-template-columns: 1fr 2fr;
+      grid-row-gap: 0;
+      grid-column-gap: $gutter * 2;
+    }
+  }
 }
