@@ -1,0 +1,21 @@
+@import 'lib';
+
+.filter__heading {
+  @include font-size(20px);
+  margin-bottom: $gutter;
+
+  @media screen and (min-width: $bp-small) {
+    @include font-size(26px);
+    margin-bottom: $gutter * 1.5;
+  }
+}
+
+.filter-listing {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.filter__item {
+  margin-right: $gutter * .5;
+  margin-bottom: $gutter * .5;
+}

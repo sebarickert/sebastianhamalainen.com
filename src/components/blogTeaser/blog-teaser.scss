@@ -1,13 +1,16 @@
 @import "lib";
 
 .blog-teaser {
-  border-radius: 6px;
+  @include box-shadow();
+  border-radius: $gutter * .5;
+  padding: $gutter * 2;
   overflow: hidden;
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: baseline;
+  background-color: $white;
 
   .black & {
     .blog-teaser__heading {
@@ -57,37 +60,11 @@
   transition: inherit;
 }
 
-.blog-teaser__link {
-  position: relative;
-
-  &:hover,
-  &:focus {
-    outline: none;
-
-    span:after {
-      width: 100%;
-    }
-  }
-
-  span {
-    &:after {
-      content: '';
-      position: absolute;
-      bottom: -0.35rem;
-      width: 0;
-      height: 2px;
-      background-color: $black;
-      left: 0;
-      right: 0;
-      transition: width 0.2s ease-in-out;
-    }
-  }
-}
-
 .blog-teaser__heading {
   @include font-size(20px);
   transition: inherit;
   margin: 0;
+  max-width: 500px;
 
   @media screen and (min-width: $bp-small) {
     @include font-size(26px);

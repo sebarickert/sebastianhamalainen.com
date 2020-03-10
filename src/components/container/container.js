@@ -2,8 +2,8 @@ import React from 'react';
 
 import './container.scss';
 
-const Container = ({ children, containerClass }) => (
-  <div className={`container container--inset ${containerClass || ''}`}>{children}</div>
+const Container = ({ children, className, useInset }) => (
+  <div className={`container ${useInset !== false ? 'container--inset' : ''} ${className || ''}`}>{children}</div>
 );
 
 export default Container;

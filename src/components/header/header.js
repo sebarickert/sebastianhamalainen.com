@@ -8,7 +8,7 @@ import './header.scss';
 
 const Header = () => (
   <header className="header" role="banner">
-    <Container containerClass="header__content">
+    <Container className="header__content">
       <Logo />
       <Menu />
     </Container>

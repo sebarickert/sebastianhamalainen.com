@@ -17,6 +17,7 @@
     outline: none;
     background-color: $black;
     color: $white;
+    cursor: pointer;
   }
 
   .black &,
@@ -29,6 +30,11 @@
       background-color: $white;
       color: $black;
     }
+  }
+
+  &.active {
+    background-color: $black;
+    color: $white;
   }
 }
 

@@ -1,28 +1,24 @@
 import React from 'react';
-import { Link } from 'gatsby';
 
+import ButtonInternal from './button.internal';
+import ButtonExternal from './button.external';
+import ButtonPlain from './button.plain';
 import './button.scss';
 
 const Button = ({
-  linkTo, className, linkTargetType, children,
-}) => (
-  linkTargetType !== 'external' ? (
-    <Link to={linkTo} className={`button ${className || ''}`} title={children}>
-      <span className="button__inner">
-        {children}
-      </span>
-    </Link>
-  ) : (
-    <a
-      href={linkTo}
-      className={`button ${className || ''}`}
-      title={children}
-    >
-      <span className="button__inner">
-        {children}
-      </span>
-    </a>
-  )
-);
+  linkTo, className, linkTargetType, children, noLink, onClick,
+}) => {
+  const buttonProps = {
+    linkTo, className, children, onClick,
+  };
+
+  if (linkTargetType === 'external') {
+    return <ButtonExternal {...buttonProps} />;
+  } if (linkTargetType !== 'external' && !noLink) {
+    return <ButtonInternal {...buttonProps} />;
+  }
+
+  return <ButtonPlain {...buttonProps} />;
+};
 
 export default Button;

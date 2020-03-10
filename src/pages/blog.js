@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 
 import Layout from '../components/layout/layout';
@@ -7,6 +7,7 @@ import BlogTeaser from '../components/blogTeaser/blogTeaser';
 import Hero from '../components/hero/hero';
 import Listing from '../components/listing/listing';
 import Heading from '../components/heading/heading';
+import Filter from '../components/filter/filter';
 import SEO from '../components/seo';
 
 const BlogListingPage = () => {
@@ -30,6 +31,10 @@ const BlogListingPage = () => {
   }
   `);
 
+  const { edges: posts } = data.allMdx;
+  const postYears = [...new Set(posts.map(({ node: post }) => new Date(post.frontmatter.date).getFullYear()))];
+  const [activeYear, setActiveYear] = useState(postYears);
+
   return (
     <Layout>
       <SEO
@@ -42,7 +47,10 @@ const BlogListingPage = () => {
       </Hero>
       <Container>
         <Heading>All blog posts</Heading>
-        <Listing arrayOfContent={data.allMdx.edges} listingComponent={BlogTeaser} listingClass="listing--col-2" />
+        <Container className="container--forty-sixty" useInset={false}>
+          <Filter filterItems={postYears} activeFilter={activeYear} setActiveYear={setActiveYear} />
+          <Listing arrayOfContent={posts.filter(({ node: post }) => activeYear.indexOf(new Date(post.frontmatter.date).getFullYear()) > -1)} listingComponent={BlogTeaser} />
+        </Container>
       </Container>
     </Layout>
   );
