@@ -8,6 +8,7 @@
   border-radius: $gutter * .25;
   overflow: hidden;
   min-height: 400px;
+  border: 1px solid $gallery;
 
   @media screen and (min-width: $bp-medium-wide) {
     flex-direction: row;
