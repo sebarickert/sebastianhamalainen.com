@@ -66,6 +66,12 @@ Most importantly you need to map your docker path in `pathMappings`.
 
 **Example**: My app resides in the `/app` directory in the docker container. `${workspaceFolder}` is the path of the folder opened in VS Code, meaning the project root path.
 
+## Browser extension: Xdebug helper
+
+> A must have for everyone thats debugging, profiling and tracing PHP code with Xdebug. This extension will help you to enable/disable debugging, profiling and tracing easily, instead of juggling around with POST/GET variables or cookies.
+
+[Chrome](https://chrome.google.com/webstore/detail/xdebug-helper/eadndfjplgieldjbigjakmdgkmoaaaoc) and [Firefox](https://addons.mozilla.org/fi/firefox/addon/xdebug-helper-for-firefox/) versions available.
+
 ## Configuring docker
 
 I needed to add `XDEBUG_ENABLE` and `DOCKERHOST` lines under `x-environment` in my `docker-compose.yml` file. Like this:
