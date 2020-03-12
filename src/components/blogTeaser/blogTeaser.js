@@ -19,7 +19,6 @@ const BlogTeaser = ({
     <footer className="mt--2">
       <span className="blog-teaser__published">{date}</span>
     </footer>
-    <Button linkTo={slug} className="mt--2">Read more</Button>
   </article>
 );
 export default BlogTeaser;

@@ -36,7 +36,7 @@ const BlogListingPage = () => {
   const [activeYear, setActiveYear] = useState(postYears);
 
   return (
-    <Layout>
+    <Layout className="gray-light">
       <SEO
         title="Blog"
         description="Here I'll dabble into different kind of topics, but most likely relating to tech and web development."

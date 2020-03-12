@@ -22,7 +22,7 @@ const IndexPage = () => (
       <FrontpageBlock blockComponent={PortfolioLiftupListing} blockComponentClass="listing--one-liner" blockHeadingClass="heading--no-margin" moreButton={portfolioMoreButton}>
         Latest portfolio showcases
       </FrontpageBlock>
-      <FrontpageBlock blockComponent={BlogLiftupListing} blockComponentClass="listing--one-liner blue-dark" blockHeadingClass="heading--no-margin" moreButton={blogMoreButton}>
+      <FrontpageBlock blockComponent={BlogLiftupListing} blockComponentClass="listing--one-liner gray-light" blockHeadingClass="heading--no-margin" moreButton={blogMoreButton}>
         Latest blog posts
       </FrontpageBlock>
     </div>

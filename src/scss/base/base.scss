@@ -31,7 +31,7 @@ dl {
 }
 
 body {
-  background-color: $alabaster;
+  background-color: $black-white;
   color: $black;
   height: 100%;
   margin: 0;
@@ -50,5 +50,9 @@ main {
 
   @media screen and (min-width: $bp-wide) {
     padding: calc(105px + calc(#{$gutter} * 4)) 0 calc(#{$gutter} * 8);
+  }
+
+  &.gray-light {
+    background-color: $alabaster;
   }
 }

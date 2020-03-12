@@ -5,11 +5,11 @@ import Footer from '../footer/footer';
 
 import './layout.scss';
 
-const Layout = ({ children }) => (
+const Layout = ({ className, children }) => (
   <React.Fragment>
     <div className="sticky-footer">
       <Header />
-      <main>{children}</main>
+      <main className={className}>{children}</main>
       <Footer />
     </div>
   </React.Fragment>
