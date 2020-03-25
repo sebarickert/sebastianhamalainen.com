@@ -1,118 +1,104 @@
 @import 'lib';
 
 .overlay-menu {
-	@media screen and (max-width: $bp-wide) {
-		width: 100%;
-		background-color: $concrete;
-		height: 100%;
-		margin-left: auto;
-		position: fixed;
-		right: 0;
-		top: 0;
-		width: 100%;
-		transform: translateX(100%);
-		padding: 72px $gutter $gutter $gutter;
-		transition: transform 0.35s;
-	}
+  @media screen and (max-width: $bp-wide) {
+    width: 100%;
+    background-color: $primary-color;
+    height: 100%;
+    margin-left: auto;
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 100%;
+    transform: translateX(100%);
+    padding: 72px $gutter $gutter $gutter;
+    transition: transform 0.35s;
+  }
 
-	@media screen and (min-width: $bp-small) and (max-width: $bp-wide) {
-		max-width: 350px;
-	}
+  @media screen and (min-width: $bp-small) and (max-width: $bp-wide) {
+    max-width: 350px;
+  }
 
-	&.is-open {
-		@media screen and (max-width: $bp-wide) {
-			transform: translate3d(0, 0, 0);
-		}
-	}
+  &.is-open {
+    @media screen and (max-width: $bp-wide) {
+      transform: translate3d(0, 0, 0);
+    }
+  }
 }
 
 .menu-main {
-	padding: 0;
-	list-style: none;
-	display: flex;
-	flex-direction: column;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
 
-	@media screen and (min-width: $bp-wide) {
-		justify-content: center;
-		align-items: center;
-		flex-direction: row;
-	}
+  @media screen and (min-width: $bp-wide) {
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+  }
 }
 
 .menu-main__item {
-	margin-right: $gutter;
+  margin-right: $gutter * 1.5;
 
-	&:last-child {
-		margin-right: 0;
-	}
+  &:last-child {
+    margin-right: 0;
+  }
 
-	@media screen and (max-width: $bp-wide) {
-		margin: 0 $gutter;
+  @media screen and (max-width: $bp-wide) {
+    margin: 0 $gutter;
 
-		&:last-child {
-			margin-right: $gutter;
-		}
-	}
+    &:last-child {
+      margin-right: $gutter;
+    }
+  }
 }
 
 .menu-main__link {
-	@include font-size(16px);
-	position: relative;
-	font-family: $heading-font-family;
-	color: $white;
+  @include font-size(18px);
+  position: relative;
+  font-family: $base-font-family;
+  font-weight: 500;
+  color: $white;
 
-	span {
-		padding: $gutter * .25;
-		position: relative;
+  span {
+    padding: $gutter * .25;
+    position: relative;
 
-		&:after {
-			content: '';
-			position: absolute;
-			bottom: -0.15rem;
-			width: 0;
-			height: 2px;
-			background-color: $white;
-			left: 0;
-			right: 0;
-			transition: width 0.2s ease-in-out;
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: -0.15rem;
+      width: 0;
+      height: 2px;
+      background-color: $accent-color;
+      left: 0;
+      right: 0;
+      transition: width 0.2s ease-in-out;
+    }
+  }
 
-			@media screen and (max-width: $bp-wide) {
-				background-color: $black;
-			}
-		}
-	}
+  &:focus,
+  &:hover {
+    color: $white;
 
-	&:focus,
-	&:hover {
-		color: $white;
+    span:after {
+      width: 100%;
+    }
+  }
 
-		span:after {
-			width: 100%;
-		}
+  &.is-active {
+    color: $white;
 
-		@media screen and (max-width: $bp-wide) {
-			color: $black;
-		}
-	}
+    span:after {
+      width: 100%;
+    }
+  }
 
-	&.is-active {
-		color: $white;
-
-		span:after {
-			width: 100%;
-		}
-
-		@media screen and (max-width: $bp-wide) {
-			color: $black;
-		}
-	}
-
-	@media screen and (max-width: $bp-wide) {
-		@include font-size(18px);
-		color: $black;
-		padding: $gutter * .5 0;
-		margin-bottom: $gutter * .5;
-		width: 100%;
-		display: block;
-	}
+  @media screen and (max-width: $bp-wide) {
+    padding: $gutter * .5 0;
+    margin-bottom: $gutter * .5;
+    display: inline-block;
+  }
 }
