@@ -1,8 +1,6 @@
 // http://chir.ag/projects/name-that-color/#6195ED
 // Use this website naming colors.
 
-$white: #ffffff;
-$black: #000000;
 $cod-gray: #111111;
 $crimson: #ee1c25;
 $alabaster: #f8f8f8;
@@ -16,3 +14,14 @@ $mine-shaft: #222222;
 $mariner: #345ed6;
 $white-lilac: #f4f3fa;
 $pale-sky: #6b7280;
+
+// NEW
+$white: #ffffff;
+$black: #000000;
+$woodsmoke: #0b0c0f;
+$woodsmoke-light: #0e0f13;
+$mandy: #e95378;
+
+$primary-color: $woodsmoke;
+$secondary-color: $woodsmoke-light;
+$accent-color: $mandy;

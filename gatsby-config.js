@@ -87,14 +87,19 @@ module.exports = {
       options: {
         fonts: [
           {
-            family: 'Rubik',
-            variants: ['400', '500'],
-          },
-          {
             family: 'Lexend Deca',
             variants: ['400'],
           },
         ],
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-google-fonts',
+      options: {
+        fonts: [
+          'Inter:300,400,500,600',
+        ],
+        display: 'swap',
       },
     },
     {

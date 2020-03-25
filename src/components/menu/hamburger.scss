@@ -5,121 +5,121 @@ $hamburger-dash-height: 0.125rem;
 $hamburger-width: 2rem;
 
 .overlay-toggle-container {
-	display: flex;
-	align-items: center;
+  display: flex;
+  align-items: center;
 
-	@media screen and (min-width: $bp-wide) {
-		display: none;
-	}
+  @media screen and (min-width: $bp-wide) {
+    display: none;
+  }
 
-	&.is-active {
-		.hamburger,
-		.hamburger:before,
-		.hamburger:after {
-			background-color: $black !important;
-		}
+  &.is-active {
+    .hamburger,
+    .hamburger:before,
+    .hamburger:after {
+      background-color: $accent-color !important;
+    }
 
-		.overlay-toggle-label {
-			color: $black;
-		}
-	}
+    .overlay-toggle-label {
+      color: $white;
+    }
+  }
 }
 
 .overlay-toggle-label {
-	@include font-size(14px);
-	margin-right: 0.5rem;
-	color: $white;
-	display: inline-block;
-	position: relative;
-	text-decoration: none;
-	font-weight: 300;
-	text-transform: uppercase;
-	line-height: 100%;
-	letter-spacing: 0.125rem;
-	z-index: 20;
-	font-weight: 500;
+  @include font-size(14px);
+  margin-right: 0.5rem;
+  color: $white;
+  display: inline-block;
+  position: relative;
+  text-decoration: none;
+  font-weight: 300;
+  text-transform: uppercase;
+  line-height: 100%;
+  letter-spacing: 0.125rem;
+  z-index: 20;
+  font-weight: 500;
 }
 
 .overlay-toggle {
-	-webkit-appearance: none;
-	-webkit-tap-highlight-color: transparent;
-	background: none;
-	border: none;
-	cursor: pointer;
-	height: $hamburger-height;
-	margin: 0;
-	outline: none;
-	padding: 0;
-	position: relative;
-	width: $hamburger-width;
-	z-index: 20;
+  -webkit-appearance: none;
+  -webkit-tap-highlight-color: transparent;
+  background: none;
+  border: none;
+  cursor: pointer;
+  height: $hamburger-height;
+  margin: 0;
+  outline: none;
+  padding: 0;
+  position: relative;
+  width: $hamburger-width;
+  z-index: 20;
 
-	@media screen and (min-width: $bp-wide) {
-		display: none;
-	}
+  @media screen and (min-width: $bp-wide) {
+    display: none;
+  }
 
-	&:hover,
-	&:focus {
-		cursor: pointer;
-	}
+  &:hover,
+  &:focus {
+    cursor: pointer;
+  }
 
-	&:focus {
-		box-shadow: 0 0 2px 2px #51a7e8; /* keyboard-only focus styles */
-	}
+  &:focus {
+    box-shadow: 0 0 2px 2px #51a7e8; /* keyboard-only focus styles */
+  }
 
-	.hamburger,
-	.hamburger:before,
-	.hamburger:after {
-		background-color: $white;
-		border-radius: 2px;
-		height: $hamburger-dash-height;
-		transition-duration: 0.15s;
-		transition-property: transform;
-		transition-timing-function: ease;
-		width: $hamburger-width;
-	}
+  .hamburger,
+  .hamburger:before,
+  .hamburger:after {
+    background-color: $white;
+    border-radius: 2px;
+    height: $hamburger-dash-height;
+    transition-duration: 0.15s;
+    transition-property: transform;
+    transition-timing-function: ease;
+    width: $hamburger-width;
+  }
 
-	.hamburger {
-		transition-duration: 75ms;
-		transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  .hamburger {
+    transition-duration: 75ms;
+    transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
 
-		&:after,
-		&:before {
-			position: absolute;
-			content: '';
-			display: block;
-		}
+    &:after,
+    &:before {
+      position: absolute;
+      content: '';
+      display: block;
+    }
 
-		&:before {
-			top: 0;
-			transition: top 75ms ease 0.12s, opacity 75ms ease;
-		}
+    &:before {
+      top: 0;
+      transition: top 75ms ease 0.12s, opacity 75ms ease;
+    }
 
-		&:after {
-			bottom: 0;
-			transition: bottom 75ms ease 0.12s, transform 75ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
-		}
-	}
+    &:after {
+      bottom: 0;
+      transition: bottom 75ms ease 0.12s, transform 75ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    }
+  }
 
-	&.is-active {
-		.hamburger {
-			background-color: $white;
-			transform: rotate(45deg);
-			transition-delay: 0.12s;
-			transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  &.is-active {
+    .hamburger {
+      background-color: $white;
+      transform: rotate(45deg);
+      transition-delay: 0.12s;
+      transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
 
-			&:before {
-				opacity: 0;
-				top: 0;
-				transition: top 75ms ease, opacity 75ms ease 0.12s;
-			}
+      &:before {
+        opacity: 0;
+        top: 0;
+        transition: top 75ms ease, opacity 75ms ease 0.12s;
+      }
 
-			&:after {
-				background-color: $white;
-				bottom: 0;
-				transition: bottom 75ms ease, transform 75ms cubic-bezier(0.215, 0.61, 0.355, 1) 0.12s;
-				transform: rotate(-90deg);
-			}
-		}
-	}
+      &:after {
+        background-color: $white;
+        bottom: 0;
+        transition: bottom 75ms ease, transform 75ms cubic-bezier(0.215, 0.61, 0.355, 1) 0.12s;
+        transform: rotate(-90deg);
+      }
+    }
+  }
 }
