@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'gatsby';
 
-import Button from '../button/button';
 import './blog-teaser.scss';
 
 const BlogTeaser = ({
