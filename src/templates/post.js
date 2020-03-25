@@ -30,7 +30,7 @@ const Post = ({ data: { mdx } }) => {
   return (
     <Layout>
       <SEO title={type !== 'misc' ? `${title} | Blog` : title} description={description} />
-      <Container className="container--small">
+      <Container variation="small">
         <article>
           <h1 className="post__heading">{title}</h1>
           {title.toLowerCase() !== 'about' && (
