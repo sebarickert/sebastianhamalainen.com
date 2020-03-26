@@ -91,6 +91,7 @@ p {
   @include font-size(18px);
   word-break: break-word;
   max-width: 700px;
+  font-weight: 300;
 
   @media screen and (min-width: $bp-medium) {
     @include font-size(20px);
@@ -150,12 +151,6 @@ ol {
   }
 }
 
-// li {
-//   > a {
-//     color: $mariner;
-//   }
-// }
-
 blockquote,
 q {
   border-left: 5px solid $black;
@@ -198,17 +193,34 @@ pre {
 }
 
 code {
-  color: rgb(34, 36, 38);
-  padding: 2px 4px;
-  background: $white-lilac;
-  border-radius: 3px;
   font-size: inherit;
   font-family: inherit;
-  margin: 0;
+}
+
+blockquote,
+q {
+  border-color: $secondary-accent-color;
+}
+
+li code {
+  white-space: nowrap;
+  font-weight: 500;
+
+  &:before {
+    content: "-> ";
+    color: $secondary-accent-color;
+  }
+
+  &:after {
+    content: " <-";
+    color: $secondary-accent-color;
+  }
 }
 
 p code {
   @include font-size(16px);
+  white-space: nowrap;
+  font-weight: 500;
 
   @media screen and (min-width: $bp-medium) {
     @include font-size(18px);
@@ -217,11 +229,17 @@ p code {
   @media screen and (min-width: $bp-wide) {
     @include font-size(20px);
   }
-}
 
-// p a {
-//   color: $mariner;
-// }
+  &:before {
+    content: "-> ";
+    color: $secondary-accent-color;
+  }
+
+  &:after {
+    content: " <-";
+    color: $secondary-accent-color;
+  }
+}
 
 .text--center {
   text-align: center;
