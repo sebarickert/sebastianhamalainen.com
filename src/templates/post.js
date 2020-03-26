@@ -36,9 +36,9 @@ const Post = ({ data: { mdx } }) => {
           <article>
             <h1 className="post__heading">{title}</h1>
             {title.toLowerCase() !== 'about' && (
-            <span className="post__date">
+            <p className="post__date">
               {type === 'misc' ? `Modified on ${date}` : `Published on ${date}`}
-            </span>
+            </p>
             )}
             <div className="post__content">
               <MDXRenderer>{mdx.body}</MDXRenderer>
