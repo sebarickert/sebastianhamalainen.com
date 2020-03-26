@@ -1,26 +1,10 @@
 @import "lib";
 
 .hero {
-  padding: $gutter * 10 0;
-  margin-top: -$gutter * 2 + -72px;
-  border-top: 1px solid $concrete;
-  border-bottom: 1px solid $concrete;
-  margin-bottom: $gutter * 6;
-  background-color: $black-pearl;
-
-  @media screen and (min-width: $bp-wide) {
-    margin-top: -$gutter * 4 + -105px;
-    margin-bottom: $gutter * 8;
-    padding: $gutter * 16 0 $gutter * 16;
-  }
-
-  // @media screen and (max-width: $bp-small) {
-  //   padding: $gutter * 6 0;
-  // }
+  background-color: $black;
 }
 
 .hero__title {
-  color: $white;
   margin-bottom: $gutter * 2;
 
   @media screen and (min-width: $bp-wide) {
@@ -33,12 +17,7 @@
 }
 
 .hero__lead {
-  color: $white;
-  max-width: 800px;
-  padding-right: $gutter * 2;
   font-weight: 400;
-  font-family: $base-font-family;
-  display: inline-block;
   line-height: 1.35;
 
   @media screen and (min-width: $bp-small) {

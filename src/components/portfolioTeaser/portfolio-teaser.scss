@@ -108,6 +108,7 @@
   @include font-size(16px);
   margin-top: 0;
   margin-bottom: auto;
+  color: $silver;
 
   @media screen and (min-width: $bp-small) {
     @include font-size(18px);
