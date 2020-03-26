@@ -24,7 +24,7 @@ const PortfolioTeaser = ({
           </header>
           <p className="portfolio-teaser__lead">{lead}</p>
           <footer>
-            <Button primary linkTo={slug} className="mt--2">
+            <Button secondary linkTo={slug} className="mt--2">
               {'Read more -->'}
             </Button>
           </footer>

@@ -40,23 +40,23 @@
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  margin-bottom: $gutter * 6;
+  // margin-bottom: $gutter * 6;
 
-  @media screen and (min-width: $bp-wide) {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-  }
+  // @media screen and (min-width: $bp-wide) {
+  //   flex-direction: row;
+  //   justify-content: space-between;
+  //   align-items: center;
+  // }
 
-  @media screen and (min-width: $bp-wide) {
-    margin-bottom: $gutter * 6;
-  }
+  // @media screen and (min-width: $bp-wide) {
+  //   margin-bottom: $gutter * 6;
+  // }
 
   .heading {
-    @media screen and (max-width: $bp-wide - 1px) {
-      margin-bottom: $gutter * 2;
-      text-align: center;
-    }
+    // @media screen and (max-width: $bp-wide - 1px) {
+    //   margin-bottom: $gutter * 2;
+    //   text-align: center;
+    // }
   }
 }
 
