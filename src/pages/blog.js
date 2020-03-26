@@ -7,6 +7,7 @@ import BlogTeaser from '../components/blogTeaser/blogTeaser';
 import Hero from '../components/hero/hero';
 import Listing from '../components/listing/listing';
 import Heading from '../components/heading/heading';
+import Spacer from '../components/spacer/spacer';
 import Filter from '../components/filter/filter';
 import SEO from '../components/seo';
 
@@ -45,12 +46,12 @@ const BlogListingPage = () => {
         {/* eslint-disable-next-line react/no-unescaped-entities */}
         Here I'll dabble into different kind of topics, but most likely relating to tech and web development.
       </Hero>
-      <Container>
-        <Heading>All blog posts</Heading>
-        <Container className="container--forty-sixty" useInset={false}>
+      <Container variation="small">
+        <Spacer>
+          <Heading>All blog posts</Heading>
           <Filter filterItems={postYears} activeFilter={activeYear} setActiveYear={setActiveYear} />
           <Listing arrayOfContent={posts.filter(({ node: post }) => activeYear.indexOf(new Date(post.frontmatter.date).getFullYear()) > -1)} listingComponent={BlogTeaser} />
-        </Container>
+        </Spacer>
       </Container>
     </Layout>
   );
