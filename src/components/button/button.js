@@ -6,11 +6,20 @@ import ButtonPlain from './button.plain';
 import './button.scss';
 
 const Button = ({
-  linkTo, className, linkTargetType, children, noLink, onClick,
+  linkTo, className, linkTargetType, children, noLink, onClick, primary, secondary,
 }) => {
+  if (primary) {
+    className += ' button--primary';
+  }
+
+  if (secondary) {
+    className += ' button--secondary';
+  }
+
   const buttonProps = {
     linkTo, className, children, onClick,
   };
+
 
   if (linkTargetType === 'external') {
     return <ButtonExternal {...buttonProps} />;

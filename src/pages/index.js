@@ -8,8 +8,8 @@ import FrontpageBlock from '../components/frontpageBlock/frontpageBlock';
 import Hero from '../components/hero/hero';
 import '../scss/base.scss';
 
-const portfolioMoreButton = { text: 'See all portfolio showcases', url: '/portfolio' };
-const blogMoreButton = { text: 'See all blog posts', url: '/blog' };
+const portfolioMoreButton = { text: 'See portfolio showcases -->', url: '/portfolio' };
+const blogMoreButton = { text: 'See blog posts -->', url: '/blog' };
 
 const IndexPage = () => (
   <Layout>

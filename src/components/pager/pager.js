@@ -14,10 +14,10 @@ const Pager = ({
   return (
     <div className="pager">
       {!isFirst && (
-        <Button linkTo={prevPage} className="pager__item pager__item--first">Previous</Button>
+        <Button linkTo={prevPage} secondary className="pager__item pager__item--first">{'<-- Previous'}</Button>
       )}
       {!isLast && (
-        <Button linkTo={nextPage} className="pager__item pager__item--last">Next</Button>
+        <Button linkTo={nextPage} secondary className="pager__item pager__item--last">{'Next -->'}</Button>
       )}
     </div>
   );
