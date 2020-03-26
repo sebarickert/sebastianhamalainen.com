@@ -9,6 +9,7 @@ import Hero from '../components/hero/hero';
 import Listing from '../components/listing/listing';
 import Heading from '../components/heading/heading';
 import Pager from '../components/pager/pager';
+import Spacer from '../components/spacer/spacer';
 import SEO from '../components/seo';
 
 export const PortfolioListingPageQuery = graphql`
@@ -56,12 +57,14 @@ const PortfolioListingPage = ({ data: { allMdx }, pageContext }) => {
         including professional work and side projects.
       </Hero>
       <Container>
-        <Heading className="heading--center">All portfolio showcases</Heading>
-        <Listing
-          arrayOfContent={posts}
-          listingComponent={PortfolioTeaser}
-        />
-        <Pager {...pageContext} />
+        <Spacer>
+          <Heading className="heading--center">All portfolio showcases</Heading>
+          <Listing
+            arrayOfContent={posts}
+            listingComponent={PortfolioTeaser}
+          />
+          <Pager {...pageContext} />
+        </Spacer>
       </Container>
     </Layout>
   );
