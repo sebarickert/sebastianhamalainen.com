@@ -3,38 +3,57 @@
 .button {
   @include font-size(16px);
   display: inline-block;
-  padding: 0;
   font-family: $heading-font-family;
   position: relative;
-  background-color: transparent;
+  padding: $gutter * .75 $gutter * 2;
   border: 2px solid $black;
-  border-radius: 9999px;
-  padding: $gutter * .5 $gutter;
-  line-height: $gutter * 1.5;
+  background-color: transparent;
+  color: $black;
+  border-radius: 3px;
+  font-weight: 600;
+  text-align: center;
+  transition: all .2s ease-in-out;
 
   &:hover,
   &:focus {
     outline: none;
-    background-color: $black;
-    color: $white;
     cursor: pointer;
   }
 
-  .black &,
-  .blue-dark & {
-    border-color: $white;
+  &--primary {
+    background-color: $primary-accent-color;
+    border-color: $primary-accent-color;
     color: $white;
 
     &:hover,
     &:focus {
-      background-color: $white;
-      color: $black;
+      background-color: $primary-accent-color--hover;
+      border-color: $primary-accent-color--hover;
+      color: $white;
+    }
+
+    &.active {
+      background-color: $primary-accent-color--hover;
+      border-color: $primary-accent-color--hover;
     }
   }
 
-  &.active {
-    background-color: $black;
-    color: $white;
+  &--secondary {
+    background-color: $secondary-accent-color;
+    border-color: $secondary-accent-color;
+    color: $black;
+
+    &:hover,
+    &:focus {
+      background-color: $secondary-accent-color--hover;
+      border-color: $secondary-accent-color--hover;
+      color: $black;
+    }
+
+    &.active {
+      background-color: $secondary-accent-color--hover;
+      border-color: $secondary-accent-color--hover;
+    }
   }
 }
 

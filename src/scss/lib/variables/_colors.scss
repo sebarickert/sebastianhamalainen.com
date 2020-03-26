@@ -1,5 +1,7 @@
 // http://chir.ag/projects/name-that-color/#6195ED
 // Use this website naming colors.
+// https://maketintsandshades.com/
+// Use this website for generating tints and shades of colors.
 
 $cod-gray: #111111;
 $crimson: #ee1c25;
@@ -21,7 +23,13 @@ $black: #000000;
 $woodsmoke: #0b0c0f;
 $woodsmoke-light: #0e0f13;
 $mandy: #e95378;
+$blush: #ba4260;
+$shamrock: #27d771;
+$mountain-meadow: #1fac5a;
 
 $primary-color: $woodsmoke;
 $secondary-color: $woodsmoke-light;
-$accent-color: $mandy;
+$primary-accent-color: $mandy;
+$primary-accent-color--hover: $blush;
+$secondary-accent-color: $shamrock;
+$secondary-accent-color--hover: $mountain-meadow;

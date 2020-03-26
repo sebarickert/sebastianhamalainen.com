@@ -56,14 +56,14 @@ const Portfolio = ({ data: { mdx } }) => {
           </div>
           {urlWeb || urlSource ? (
             <ButtonContainer buttonContainerClass="mt--4">
-              {urlWeb ? <Button linkTo={urlWeb} linkTargetType="external">Visit site</Button> : ''}
-              {urlSource ? <Button linkTo={urlSource} linkTargetType="external">Visit source code</Button> : ''}
+              {urlWeb ? <Button primary linkTo={urlWeb} linkTargetType="external">Visit site</Button> : ''}
+              {urlSource ? <Button primary linkTo={urlSource} linkTargetType="external">Visit source code</Button> : ''}
             </ButtonContainer>
           ) : (
             ''
           )}
-          <Button linkTo="/portfolio" buttonClass="mt--1">
-            Go back to Portfolio
+          <Button secondary linkTo="/portfolio" className="mt--1">
+            {'<-- Go back to Portfolio'}
           </Button>
         </Container>
         {showcaseImage ? (

@@ -15,7 +15,7 @@ const FrontpageBlock = ({
       <Container>
         <div className="frontpage-block__header">
           <Heading className={blockHeadingClass}>{children}</Heading>
-          <Button linkTo={moreButton.url}>{moreButton.text}</Button>
+          <Button primary linkTo={moreButton.url}>{moreButton.text}</Button>
         </div>
         <BlockComponent />
       </Container>
