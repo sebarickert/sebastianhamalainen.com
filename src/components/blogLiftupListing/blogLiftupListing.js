@@ -8,6 +8,8 @@ import Container from '../container/container';
 import Heading from '../heading/heading';
 import Button from '../button/button';
 
+import './blogLiftupListing.scss';
+
 const BlogLiftupListing = () => {
   const data = useStaticQuery(graphql`
     {
