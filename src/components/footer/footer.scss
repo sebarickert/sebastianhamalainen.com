@@ -1,7 +1,8 @@
 @import "lib";
 
 .footer {
-  background-color: $secondary-color;
+  border-top: 1px solid $woodsmoke-dark;
+  background-color: $black;
   padding-top: $gutter * 4;
   padding-bottom: $gutter * 4;
   color: $white;

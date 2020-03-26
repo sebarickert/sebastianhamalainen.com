@@ -9,12 +9,12 @@ body {
 
 a {
   transition: all .2s ease-in-out;
-  color: $black;
+  color: $secondary-accent-color;
   text-decoration: none;
 
   &:hover,
   &:focus {
-    color: lighten($black, 5);
+    color: $secondary-accent-color--hover;
   }
 }
 
@@ -150,11 +150,11 @@ ol {
   }
 }
 
-li {
-  > a {
-    color: $mariner;
-  }
-}
+// li {
+//   > a {
+//     color: $mariner;
+//   }
+// }
 
 blockquote,
 q {
@@ -219,9 +219,9 @@ p code {
   }
 }
 
-p a {
-  color: $mariner;
-}
+// p a {
+//   color: $mariner;
+// }
 
 .text--center {
   text-align: center;
