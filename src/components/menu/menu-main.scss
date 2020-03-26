@@ -37,6 +37,12 @@
     align-items: center;
     flex-direction: row;
   }
+
+  &--vertical {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
 }
 
 .menu-main__item {
@@ -52,6 +58,11 @@
     &:last-child {
       margin-right: $gutter;
     }
+  }
+
+  .menu-main--vertical & {
+    margin-left: 0;
+    margin-right: 0;
   }
 }
 

@@ -3,8 +3,8 @@ import { Link } from 'gatsby';
 
 import './page-logo.scss';
 
-const Logo = () => (
-  <span className="page-logo">
+const Logo = ({ className, center }) => (
+  <span className={`page-logo ${center ? 'page-logo--center' : ''} ${className || ''}`}>
     <Link to="/" className="page-logo__link">
       <svg viewBox="0 0 380 750">
         <title>Home</title>

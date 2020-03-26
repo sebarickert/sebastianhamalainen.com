@@ -1,51 +1,59 @@
 @import "lib";
 
 .footer {
-  background-color: $black-pearl;
-  padding-top: $gutter * 8;
-  padding-bottom: $gutter * 8;
-}
-
-.footer__header {
-  margin-bottom: $gutter * 2;
-}
-
-.footer__heading {
-  @include font-size(28px);
-  margin: 0;
-  text-align: center;
+  background-color: $secondary-color;
+  padding-top: $gutter * 4;
+  padding-bottom: $gutter * 4;
   color: $white;
 
-  @media screen and (min-width: $bp-small) {
-    @include font-size(32px);
+  @media screen and (min-width: $bp-wide) {
+    padding-top: $gutter * 6;
+    padding-bottom: $gutter * 6;
+  }
+}
+
+.footer__container {
+  display: grid;
+  grid-row-gap: $gutter * 4;
+  grid-template-rows: auto;
+
+  @media screen and (min-width: $bp-wide) {
+    grid-template-rows: none;
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-column-gap: $gutter * 4;
+    grid-row-gap: 0;
+  }
+}
+
+.footer__item {
+  &:first-child {
+    @media screen and (max-width: $bp-wide) {
+      order: 2;
+    }
   }
 
-  @media screen and (min-width: $bp-medium) {
-    @include font-size(36px);
-  }
-
-  .footer__link {
-    &:hover,
-    &:focus {
-      color: $silver;
+  &:last-child {
+    @media screen and (max-width: $bp-wide) {
+      order: 3;
     }
   }
 }
 
-.footer__content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.footer__heading {
+  @include font-size(22px);
+  margin-bottom: $gutter * 2;
+  color: $white;
+  padding-bottom: $gutter * .25;
+  border-bottom: 3px solid $accent-color;
+  display: inline-block;
+
+  + p {
+    margin-top: 0;
+  }
 }
 
-.footer__copyright {
-  @include font-size(14px);
-  color: $silver;
-  font-family: $heading-font-family;
-  margin-top: $gutter;
-  text-align: center;
-
-  @media screen and (min-width: $bp-wide) {
-    @include font-size(16px);
+.footer__text {
+  p {
+    @include font-size(18px);
   }
 }
