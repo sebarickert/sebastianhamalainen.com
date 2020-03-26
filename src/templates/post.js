@@ -5,6 +5,7 @@ import MDXRenderer from 'gatsby-plugin-mdx/mdx-renderer';
 import SEO from '../components/seo';
 import Layout from '../components/layout/layout';
 import Container from '../components/container/container';
+import Spacer from '../components/spacer/spacer';
 
 import '../scss/templates/post.scss';
 
@@ -31,17 +32,19 @@ const Post = ({ data: { mdx } }) => {
     <Layout>
       <SEO title={type !== 'misc' ? `${title} | Blog` : title} description={description} />
       <Container variation="small">
-        <article>
-          <h1 className="post__heading">{title}</h1>
-          {title.toLowerCase() !== 'about' && (
+        <Spacer>
+          <article>
+            <h1 className="post__heading">{title}</h1>
+            {title.toLowerCase() !== 'about' && (
             <span className="post__date">
               {type === 'misc' ? `Modified on ${date}` : `Published on ${date}`}
             </span>
-          )}
-          <div className="post__content">
-            <MDXRenderer>{mdx.body}</MDXRenderer>
-          </div>
-        </article>
+            )}
+            <div className="post__content">
+              <MDXRenderer>{mdx.body}</MDXRenderer>
+            </div>
+          </article>
+        </Spacer>
       </Container>
     </Layout>
   );

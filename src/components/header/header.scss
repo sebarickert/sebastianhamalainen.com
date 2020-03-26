@@ -2,14 +2,12 @@
 
 .header {
   background-color: $secondary-color;
-  left: 0;
   padding-bottom: $gutter * 1.25;
   padding-top: $gutter * 1.25;
-  position: fixed;
-  top: 0;
   width: 100%;
   z-index: 100;
   transition: box-shadow .2s;
+  border-bottom: 1px solid $woodsmoke-dark;
 
   @media screen and (min-width: $bp-wide) {
     padding-top: $gutter * 2;
