@@ -1,0 +1,21 @@
+@import "lib";
+
+.introduction {
+  background-color: $black;
+  padding: $gutter * 8 0;
+  color: $white;
+}
+
+.introduction__lead {
+  margin-top: $gutter * 4;
+}
+
+.introduction__link {
+  border-bottom: 4px solid transparent;
+
+  &:hover,
+  &:focus {
+    color: $white;
+    border-color: $primary-accent-color;
+  }
+}

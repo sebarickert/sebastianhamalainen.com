@@ -5,7 +5,7 @@ import SEO from '../components/seo';
 import BlogLiftupListing from '../components/blogLiftupListing/blogLiftupListing';
 import PortfolioLiftupListing from '../components/portfolioListingLiftup/portfolioListingLiftup';
 import FrontpageBlock from '../components/frontpageBlock/frontpageBlock';
-import Hero from '../components/hero/hero';
+import Introduction from '../components/introduction/introduction';
 import '../scss/base.scss';
 
 const portfolioMoreButton = { text: 'See portfolio showcases -->', url: '/portfolio' };
@@ -14,10 +14,7 @@ const blogMoreButton = { text: 'See blog posts -->', url: '/blog' };
 const IndexPage = () => (
   <Layout>
     <SEO title="Front-end Developer, Web Design and JS enthusiast" />
-    <Hero title="Hi, I'm Sebastian">
-      Front-end Developer located in Helsinki, Finland. Web Design and JS enthusiast, also a so-called gym rat. I like
-      to play around with CSS.
-    </Hero>
+    <Introduction />
     <div className="frontpage-block-container">
       <FrontpageBlock blockComponent={PortfolioLiftupListing} blockComponentClass="listing--one-liner" blockHeadingClass="heading--no-margin" moreButton={portfolioMoreButton}>
         Latest portfolio showcases
