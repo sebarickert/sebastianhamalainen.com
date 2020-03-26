@@ -2,7 +2,13 @@ import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 
 import PortfolioTeaser from '../portfolioTeaser/portfolioTeaser';
+import Spacer from '../spacer/spacer';
 import Listing from '../listing/listing';
+import Container from '../container/container';
+import Heading from '../heading/heading';
+import Button from '../button/button';
+
+import './portfolioListingLiftup.scss';
 
 const PortfolioListingLiftup = () => {
   const data = useStaticQuery(graphql`
@@ -37,12 +43,18 @@ const PortfolioListingLiftup = () => {
   `);
 
   return (
-    <React.Fragment>
-      <Listing
-        arrayOfContent={data.allMdx.edges}
-        listingComponent={PortfolioTeaser}
-      />
-    </React.Fragment>
+    <div className="portfolio-liftup">
+      <Container>
+        <Spacer>
+          <Heading center>Latest showcases</Heading>
+          <Listing
+            arrayOfContent={data.allMdx.edges}
+            listingComponent={PortfolioTeaser}
+          />
+          <Button primary center linkTo="/portfolio" className="mt--4">{'See portfolio showcases -->'}</Button>
+        </Spacer>
+      </Container>
+    </div>
   );
 };
 

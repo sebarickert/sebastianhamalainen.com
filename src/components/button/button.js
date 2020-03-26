@@ -6,7 +6,7 @@ import ButtonPlain from './button.plain';
 import './button.scss';
 
 const Button = ({
-  linkTo, className, linkTargetType, children, noLink, onClick, primary, secondary,
+  linkTo, className, linkTargetType, children, noLink, onClick, primary, secondary, center,
 }) => {
   if (primary) {
     className += ' button--primary';
@@ -14,6 +14,10 @@ const Button = ({
 
   if (secondary) {
     className += ' button--secondary';
+  }
+
+  if (center) {
+    className += ' button--center';
   }
 
   const buttonProps = {
