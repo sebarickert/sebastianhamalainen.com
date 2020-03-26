@@ -8,6 +8,8 @@ import Hero from '../components/hero/hero';
 import SEO from '../components/seo';
 import Button from '../components/button/button';
 import ButtonContainer from '../components/button/button.container';
+import Spacer from '../components/spacer/spacer';
+import Separator from '../components/separator/separator';
 import '../scss/templates/portfolio.scss';
 
 export const query = graphql`
@@ -50,26 +52,31 @@ const Portfolio = ({ data: { mdx } }) => {
       <SEO title={`${title} | Portfolio`} description={mdx.excerpt} image={teaserImageSrc} />
       <article>
         <Hero title={title}>{lead}</Hero>
-        <Container>
-          <div className="portfolio__content">
-            <MDXRenderer>{mdx.body}</MDXRenderer>
-          </div>
-          {urlWeb || urlSource ? (
-            <ButtonContainer buttonContainerClass="mt--4">
-              {urlWeb ? <Button primary linkTo={urlWeb} linkTargetType="external">Visit site</Button> : ''}
-              {urlSource ? <Button primary linkTo={urlSource} linkTargetType="external">Visit source code</Button> : ''}
-            </ButtonContainer>
-          ) : (
-            ''
-          )}
-          <Button secondary linkTo="/portfolio" className="mt--1">
-            {'<-- Go back to Portfolio'}
-          </Button>
+        <Container variation="small">
+          <Spacer>
+            <div className="portfolio__content">
+              <MDXRenderer>{mdx.body}</MDXRenderer>
+            </div>
+            {urlWeb || urlSource ? (
+              <ButtonContainer buttonContainerClass="mt--4">
+                {urlWeb ? <Button primary linkTo={urlWeb} linkTargetType="external">Visit site</Button> : ''}
+                {urlSource ? <Button primary linkTo={urlSource} linkTargetType="external">Visit source code</Button> : ''}
+              </ButtonContainer>
+            ) : (
+              ''
+            )}
+            <Button secondary linkTo="/portfolio" className="mt--1">
+              {'<-- Go back to Portfolio'}
+            </Button>
+          </Spacer>
         </Container>
+        <Separator />
         {showcaseImage ? (
           <div className="portfolio__showcase" role="presentation">
             <Container>
-              <img src={showcaseImageSrc} alt="" className="portfolio__showcase-image" />
+              <Spacer>
+                <img src={showcaseImageSrc} alt="" className="portfolio__showcase-image" />
+              </Spacer>
             </Container>
           </div>
         ) : (
