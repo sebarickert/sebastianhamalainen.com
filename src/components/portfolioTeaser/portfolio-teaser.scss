@@ -2,7 +2,7 @@
 
 .portfolio-teaser {
   @include box-shadow();
-  background-color: $woodsmoke-dark;
+  background-color: $woodsmoke-light;
   display: flex;
   flex-direction: column;
   border-radius: $gutter * .25;
@@ -55,7 +55,7 @@
 
 .portfolio-teaser__content {
   height: 100%;
-  background-color: $woodsmoke-dark;
+  background-color: $woodsmoke-light;
   padding: $gutter * 1.5;
   display: flex;
   flex-direction: column;

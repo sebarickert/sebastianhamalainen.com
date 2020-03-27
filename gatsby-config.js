@@ -83,21 +83,10 @@ module.exports = {
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
     {
-      resolve: 'gatsby-plugin-prefetch-google-fonts',
-      options: {
-        fonts: [
-          {
-            family: 'Lexend Deca',
-            variants: ['400'],
-          },
-        ],
-      },
-    },
-    {
       resolve: 'gatsby-plugin-google-fonts',
       options: {
         fonts: [
-          'Inter:300,400,500,600,700,800',
+          'Inter:300,600,700',
         ],
         display: 'swap',
       },
