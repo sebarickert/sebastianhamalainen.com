@@ -1,6 +1,7 @@
 @import "lib";
 
 .hero {
+  @include background-pattern();
   background-color: $black;
 }
 
