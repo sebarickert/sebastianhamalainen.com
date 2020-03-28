@@ -1,0 +1,10 @@
+@import "lib";
+
+.cta {
+  &--primary {
+    @include background-pattern();
+    border-top: 1px solid $black;
+    background-color: $woodsmoke-light;
+    border-bottom: 1px solid $black;
+  }
+}
