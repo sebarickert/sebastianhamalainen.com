@@ -27,6 +27,11 @@ function onCreateMdxNode({ node, getNode, actions }) {
     type = 'misc';
   }
 
+  if (node.fileAbsolutePath.includes('content/snippets/')) {
+    slug = `/snippets/${node.frontmatter.slug || slugify(parentNode.relativeDirectory)}`;
+    type = 'snippets';
+  }
+
   createNodeField({
     name: 'slug',
     node,
@@ -89,6 +94,17 @@ function createBlogPages({ data, actions }) {
 }
 
 function createMiscPages({ data, actions }) {
+  if (!data.edges.length) {
+    throw new Error('There are no posts!');
+  }
+
+  const { edges } = data;
+  const { createPage } = actions;
+  createPosts(createPage, edges);
+  return null;
+}
+
+function createSnippetsPages({ data, actions }) {
   if (!data.edges.length) {
     throw new Error('There are no posts!');
   }
@@ -183,6 +199,13 @@ exports.createPages = async ({ actions, graphql }) => {
         }
       }
     }
+    snippets: allMdx(filter: {fileAbsolutePath: {regex: "//content/snippets//"}}, sort: {order: DESC, fields: [frontmatter___date]}) {
+      edges {
+        node {
+          ...PostDetails
+        }
+      }
+    }
   }
   `);
 
@@ -190,7 +213,9 @@ exports.createPages = async ({ actions, graphql }) => {
     return Promise.reject(errors);
   }
 
-  const { blog, misc, portfolio } = data;
+  const {
+    blog, misc, portfolio, snippets,
+  } = data;
 
   createBlogPages({
     blogPath: '/blog',
@@ -201,6 +226,12 @@ exports.createPages = async ({ actions, graphql }) => {
   createMiscPages({
     miscPath: '/',
     data: misc,
+    actions,
+  });
+
+  createSnippetsPages({
+    snippetsPath: '/snippets',
+    data: snippets,
     actions,
   });
 

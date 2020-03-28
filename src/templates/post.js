@@ -6,6 +6,7 @@ import SEO from '../components/seo';
 import Layout from '../components/layout/layout';
 import Container from '../components/container/container';
 import Spacer from '../components/spacer/spacer';
+import Button from '../components/button/button';
 
 import '../scss/templates/post.scss';
 
@@ -37,12 +38,22 @@ const Post = ({ data: { mdx } }) => {
             <h1 className="post__heading">{title}</h1>
             {title.toLowerCase() !== 'about' && (
             <p className="post__date">
-              {type === 'misc' ? `Modified on ${date}` : `Published on ${date}`}
+              {type === 'misc' || type === 'snippets' ? `Last updated on ${date}` : `Published on ${date}`}
             </p>
             )}
             <div className="post__content">
               <MDXRenderer>{mdx.body}</MDXRenderer>
             </div>
+            {type === 'blog' && (
+            <Button secondary linkTo="/blog" className="mt--2">
+              {'<-- Go back to Blog'}
+            </Button>
+            )}
+            {type === 'snippets' && (
+            <Button secondary linkTo="/snippets" className="mt--2">
+              {'<-- Go back to Snippets'}
+            </Button>
+            )}
           </article>
         </Spacer>
       </Container>
