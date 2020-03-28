@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 
 import Layout from '../components/layout/layout';
@@ -7,6 +7,7 @@ import SnippetTeaser from '../components/snippetTeaser/snippetTeaser';
 import Hero from '../components/hero/hero';
 import Listing from '../components/listing/listing';
 import Spacer from '../components/spacer/spacer';
+import Filter from '../components/filter/filter';
 import SEO from '../components/seo';
 
 const SnippetsListingPage = () => {
@@ -33,6 +34,8 @@ const SnippetsListingPage = () => {
   `);
 
   const { edges: posts } = data.allMdx;
+  const categories = [...new Set(posts.map(({ node: post }) => post.frontmatter.category))];
+  const [category, setCategory] = useState(categories);
 
   return (
     <Layout className="gray-light">
@@ -46,7 +49,9 @@ const SnippetsListingPage = () => {
       </Hero>
       <Container variation="small">
         <Spacer>
-          <Listing arrayOfContent={posts} listingComponent={SnippetTeaser} className="listing--no-margin" />
+          {categories.length > 1
+          && <Filter filterItems={categories} activeFilter={category} setActiveYear={setCategory} /> }
+          <Listing arrayOfContent={posts.filter(({ node: post }) => category.indexOf(post.frontmatter.category) > -1)} listingComponent={SnippetTeaser} className="listing--no-margin" />
         </Spacer>
       </Container>
     </Layout>
