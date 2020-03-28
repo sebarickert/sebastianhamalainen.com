@@ -48,8 +48,8 @@ const BlogListingPage = () => {
       </Hero>
       <Container variation="small">
         <Spacer>
-          <Heading>All blog posts</Heading>
-          <Filter filterItems={postYears} activeFilter={activeYear} setActiveYear={setActiveYear} />
+          {postYears.length > 1
+          && <Filter filterItems={postYears} activeFilter={activeYear} setActiveYear={setActiveYear} /> }
           <Listing arrayOfContent={posts.filter(({ node: post }) => activeYear.indexOf(new Date(post.frontmatter.date).getFullYear()) > -1)} listingComponent={BlogTeaser} />
         </Spacer>
       </Container>
