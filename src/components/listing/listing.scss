@@ -13,6 +13,10 @@
   &:last-child {
     margin-bottom: 0;
   }
+
+  .listing--no-margin & {
+    margin-bottom: 0;
+  }
 }
 
 .listing--col-2 {

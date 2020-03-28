@@ -2,10 +2,10 @@ import React from 'react';
 
 import './listing.scss';
 
-const Listing = ({ listingComponent, arrayOfContent, listingClass }) => {
+const Listing = ({ listingComponent, arrayOfContent, className }) => {
   const ListingComponent = listingComponent;
   return (
-    <ul className={`listing ${listingClass || ''}`}>
+    <ul className={`listing ${className || ''}`}>
       {arrayOfContent.map(({
         node: {
           frontmatter, fields, id, excerpt = '',

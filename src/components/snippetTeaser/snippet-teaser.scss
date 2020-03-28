@@ -1,0 +1,68 @@
+@import "lib";
+
+.snippet-teaser {
+  padding: $gutter * 2 0;
+  border-bottom: 1px solid $woodsmoke-light;
+
+  @media screen and (min-width: $bp-medium-wide) {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-column-gap: $gutter * 2;
+    align-items: center;
+  }
+
+  header {
+    margin-bottom: $gutter;
+
+    @media screen and (min-width: $bp-medium-wide) {
+      margin-bottom: 0;
+    }
+  }
+
+  footer {
+    @media screen and (min-width: $bp-medium-wide) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-column-gap: $gutter;
+    }
+  }
+}
+
+.snippet-teaser__published {
+  display: flex;
+  flex-direction: column;
+
+  span {
+    &:first-child {
+      @include font-size(16px);
+      color: $secondary-accent-color;
+    }
+  }
+}
+
+.snippet-teaser__category {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: $gutter;
+
+  @media screen and (min-width: $bp-medium-wide) {
+    margin-bottom: 0;
+  }
+
+  span {
+    &:first-child {
+      @include font-size(16px);
+      color: $secondary-accent-color;
+    }
+  }
+}
+
+.snippet-teaser__heading {
+  @include font-size(20px);
+  transition: inherit;
+  margin: 0;
+
+  @media screen and (min-width: $bp-small) {
+    @include font-size(26px);
+  }
+}

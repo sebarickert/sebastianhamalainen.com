@@ -23,6 +23,11 @@ const MenuMain = ({ vertical }) => (
         <span>Blog</span>
       </Link>
     </li>
+    <li className="menu-main__item">
+      <Link to="/snippets" className="menu-main__link" activeClassName="is-active" partiallyActive>
+        <span>Snippets</span>
+      </Link>
+    </li>
   </ul>
 );
 
