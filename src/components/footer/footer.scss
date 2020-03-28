@@ -26,20 +26,6 @@
   }
 }
 
-.footer__item {
-  &:first-child {
-    @media screen and (max-width: $bp-wide) {
-      order: 2;
-    }
-  }
-
-  &:last-child {
-    @media screen and (max-width: $bp-wide) {
-      order: 3;
-    }
-  }
-}
-
 .footer__heading {
   @include font-size(22px);
   margin-bottom: $gutter * 2;
