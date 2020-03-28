@@ -1,0 +1,114 @@
+---
+title: "Beautiful Buttons"
+category: "CSS / SCSS"
+keywords: ['button', 'btn', 'css', 'scss']
+date: '2020-03-28'
+description: "Creating a visually appealing and good looking button can be tough. I've had my fair share of bad looking buttons that I thought looked good at the time, but then I find a website doing them much better."
+---
+
+import Button from '../../../src/components/button/button';
+
+Creating a visually appealing and good looking button can be tough. I've had my fair share of bad looking buttons that I thought looked good at the time, but then I find a website doing them much better. **Rinse and repeat**.
+
+That is why I've shared below the **current** best looking button _in my opinion, and opinions may wary a lot_.
+
+## Syntax
+
+When creating a button (or any component with variations), you need to first specify the default values for it.
+
+I've noticed that the padding amount is crucial for a button to be very appealing or not. A nice transition for the hover effect makes a big difference as well and should be considered.
+
+_Note: In these examples I'm using SCSS and not vanilla CSS._
+
+```scss
+.button {
+  background-color: transparent;
+  border-radius: 3px;
+  border: 2px solid #000000;
+  color: #000000;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 12px 32px;
+  position: relative;
+  text-align: center;
+  transition: all .2s ease-in-out;
+
+  &:hover,
+  &:focus {
+    cursor: pointer;
+    outline: none;
+  }
+}
+```
+
+### Creating variations on top of the default button
+
+For the variation buttons you add a flag on the element. Use them to change appearance or behavior. The flag is e.g. `--{YOUR VARIATION NAME}`.
+
+This method comes from the [BEM methology](http://getbem.com/introduction/).
+
+```scss
+.button--primary {
+  background-color: #e95378;
+  border-color: #e95378;
+  color: #ffffff;
+
+  &:hover,
+  &:focus {
+    background-color: #ba4260;
+    border-color: #ba4260;
+    color: #ffffff;
+  }
+}
+
+.button--secondary {
+  background-color: #27d771;
+  border-color: #27d771;
+  color: #000000;
+
+  &:hover,
+  &:focus {
+    background-color: #1fac5a;
+    border-color: #1fac5a;
+    color: #000000;
+  }
+}
+```
+
+As you can see, you only change some smaller things on the variations to create a whole new button style. You can have infinite amount of variations, the only limit is your mind.
+
+## Demo
+
+On my personal website I have a primary button and a secondary button variation. They only differ by color.
+
+### Default button
+
+The default button only has very basic styles added to it and looks dull, but this is the fallback if the variations don't work for some odd reason.
+
+<Button noLink>
+  I'm the default button!
+</Button>
+
+The default button has no hover effect as well, they are added on the variations.
+
+### Primary button
+
+The primary button has a background color similar to pink with white text. Like this:
+
+
+<Button primary noLink>
+  I'm the primary button!
+</Button>
+
+### Secondary button
+
+The secondary button has a background color of light green with black text, to be accessible of course. Like this:
+
+<Button secondary noLink>
+  I'm the secondary button variation!
+</Button>
+
+## Conclusion
+
+These buttons look very awesome and can be used anywhere. That's about it. See you in the next one.

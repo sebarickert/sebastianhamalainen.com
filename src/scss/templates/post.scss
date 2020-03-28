@@ -26,6 +26,24 @@
       @include font-size(32px);
     }
   }
+
+  h2 {
+    @include font-size(24px);
+    margin: $gutter * 2 0;
+
+    @media screen and (min-width: $bp-medium) {
+      @include font-size(32px);
+    }
+  }
+
+  h3 {
+    @include font-size(18px);
+    margin: $gutter * 2 0;
+
+    @media screen and (min-width: $bp-medium) {
+      @include font-size(26px);
+    }
+  }
 }
 
 .post__content {
