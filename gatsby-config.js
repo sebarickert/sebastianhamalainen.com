@@ -131,5 +131,11 @@ module.exports = {
         },
       },
     },
+    {
+      resolve: `gatsby-plugin-polyfill-io`,
+      options: {
+         features: [`String.prototype.endsWith`, `fetch`, `es6`]
+    },
+   },
   ],
 };
