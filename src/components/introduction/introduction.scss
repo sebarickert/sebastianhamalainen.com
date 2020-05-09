@@ -1,7 +1,6 @@
 @import "lib";
 
 .introduction {
-  @include background-pattern();
   background-color: $black;
   color: $white;
 }

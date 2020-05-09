@@ -1,7 +1,6 @@
 @import 'lib';
 
 .header {
-  @include background-pattern();
   background-color: $black;
   padding-bottom: $gutter * 1.25;
   padding-top: $gutter * 1.25;
