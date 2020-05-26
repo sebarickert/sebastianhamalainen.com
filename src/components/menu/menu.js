@@ -17,19 +17,17 @@ const Menu = () => {
 
   return (
     <React.Fragment>
-      <div className={`overlay-toggle-container js-overlay-toggle-container ${isOpen ? 'is-active' : ''}`}>
-        <span className="overlay-toggle-label js-overlay-toggle-label">{isOpen ? 'Close' : 'Menu'}</span>
-        <button
-          className={`overlay-toggle js-overlay-toggle ${isOpen ? 'is-active' : ''}`}
-          aria-label="menu"
-          type="button"
-          onClick={toggle}
-        >
-          <span tabIndex="-1">
-            <div className="hamburger" />
-          </span>
-        </button>
-      </div>
+      <button
+        className="overlay-toggle"
+        aria-label="menu"
+        type="button"
+        onClick={toggle}
+      >
+        <span className="overlay-toggle__label">{isOpen ? 'Close' : 'Menu'}</span>
+        <span className={`overlay-toggle__hamburger js-overlay-toggle ${isOpen ? 'is-active' : ''}`}>
+          <span className="hamburger" />
+        </span>
+      </button>
       <nav className={`overlay-menu js-overlay-menu ${isOpen ? 'is-open' : ''}`} aria-label="Main Navigation">
         <MenuMain />
       </nav>

@@ -1,12 +1,10 @@
 @import 'lib';
 
 .header {
-  background-color: $black;
   padding-bottom: $gutter * 1.25;
   padding-top: $gutter * 1.25;
   width: 100%;
   z-index: 100;
-  transition: box-shadow .2s;
 
   @media screen and (min-width: $bp-wide) {
     padding-top: $gutter * 2;

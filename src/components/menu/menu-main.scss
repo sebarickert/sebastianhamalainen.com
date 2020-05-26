@@ -3,7 +3,7 @@
 .overlay-menu {
   @media screen and (max-width: $bp-wide) {
     width: 100%;
-    background-color: $primary-color;
+    background-color: $color-gray-1;
     height: 100%;
     margin-left: auto;
     position: fixed;
@@ -15,8 +15,28 @@
     transition: transform 0.35s;
   }
 
-  @media screen and (min-width: $bp-small) and (max-width: $bp-wide) {
-    max-width: 350px;
+  .menu-main {
+    padding-left: $spacing-tiny;
+
+    @media screen and (min-width: $bp-small) {
+      padding-left: $spacing-medium;
+    }
+
+    @media screen and (min-width: $bp-medium-wide) {
+      padding-left: $spacing-large;
+    }
+  }
+
+  .menu-main__item {
+    @media screen and (max-width: $bp-wide) {
+      margin-left: 0;
+    }
+  }
+
+  .menu-main__link {
+    @media screen and (max-width: $bp-wide) {
+      @include font-size(26px);
+    }
   }
 
   &.is-open {
@@ -70,7 +90,8 @@
   @include font-size(18px);
   position: relative;
   font-weight: 600;
-  color: $white;
+  color: $color-text;
+  opacity: .5;
 
   span {
     padding-bottom: $gutter * .25;
@@ -82,7 +103,7 @@
       bottom: -0.15rem;
       width: 0;
       height: 2px;
-      background-color: $primary-accent-color;
+      background-color: $color-red-1;
       left: 0;
       right: 0;
       transition: width 0.2s ease-in-out;
@@ -91,7 +112,8 @@
 
   &:focus,
   &:hover {
-    color: $white;
+    color: $color-text;
+    opacity: 1;
 
     span:after {
       width: 100%;
@@ -99,7 +121,8 @@
   }
 
   &.is-active {
-    color: $white;
+    color: $color-text;
+    opacity: 1;
 
     span:after {
       width: 100%;

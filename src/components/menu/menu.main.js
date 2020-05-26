@@ -1,33 +1,14 @@
 import React from 'react';
-import { Link } from 'gatsby';
+
+import MenuMainItem from './menu.main.item';
 
 const MenuMain = ({ vertical }) => (
   <ul className={`menu-main ${vertical ? 'menu-main--vertical' : ''}`}>
-    <li className="menu-main__item">
-      <Link to="/" className="menu-main__link" activeClassName="is-active">
-        <span>Home</span>
-      </Link>
-    </li>
-    <li className="menu-main__item">
-      <Link to="/about" className="menu-main__link" activeClassName="is-active" partiallyActive>
-        <span>About</span>
-      </Link>
-    </li>
-    <li className="menu-main__item">
-      <Link to="/portfolio" className="menu-main__link" activeClassName="is-active" partiallyActive>
-        <span>Portfolio</span>
-      </Link>
-    </li>
-    <li className="menu-main__item">
-      <Link to="/blog" className="menu-main__link" activeClassName="is-active" partiallyActive>
-        <span>Blog</span>
-      </Link>
-    </li>
-    <li className="menu-main__item">
-      <Link to="/snippets" className="menu-main__link" activeClassName="is-active" partiallyActive>
-        <span>Snippets</span>
-      </Link>
-    </li>
+    <MenuMainItem link="/" className="is-home">Home</MenuMainItem>
+    <MenuMainItem link="/about" className="is-misc">About</MenuMainItem>
+    <MenuMainItem link="/portfolio" className="is-portfolio">Portfolio</MenuMainItem>
+    <MenuMainItem link="/blog" className="is-blog">Blog</MenuMainItem>
+    <MenuMainItem link="/snippets" className="is-snippets">Snippets</MenuMainItem>
   </ul>
 );
 

@@ -8,9 +8,9 @@ import './layout.scss';
 const Layout = ({ className, children }) => (
   <React.Fragment>
     <div className="sticky-footer">
-      {/* <Header /> */}
+      <Header />
       <main className={className}>{children}</main>
-      {/* <Footer /> */}
+      <Footer />
     </div>
   </React.Fragment>
 );
