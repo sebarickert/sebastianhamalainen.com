@@ -28,7 +28,7 @@
   .d,
   .e,
   .f {
-    fill: $white;
+    fill: $color-black;
     transition: all 200ms linear;
   }
 
@@ -46,7 +46,7 @@
     .d,
     .e,
     .f {
-      fill: $primary-accent-color;
+      fill: $color-red-1;
     }
   }
 }
