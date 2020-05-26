@@ -51,7 +51,7 @@ const Portfolio = ({ data: { mdx } }) => {
     <Layout>
       <SEO title={`${title} | Portfolio`} description={mdx.excerpt} image={teaserImageSrc} />
       <article>
-        <Hero title={title}>{lead}</Hero>
+        <Hero title={title} className="hero--portfolio">{lead}</Hero>
         <Container variation="small">
           <Spacer>
             <div className="portfolio__content">
