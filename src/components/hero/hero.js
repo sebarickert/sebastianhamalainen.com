@@ -6,7 +6,7 @@ import Spacer from '../spacer/spacer';
 import './hero.scss';
 
 const Hero = ({ title, children, className }) => (
-  <Spacer>
+  <Spacer slimMobile>
     <Container className={`hero ${className || ''}`} variation="medium">
       <h1 className="hero__title">
         <span>{title}</span>

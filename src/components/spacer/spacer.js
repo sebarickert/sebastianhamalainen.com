@@ -3,7 +3,7 @@ import React from 'react';
 import './spacer.scss';
 
 const Spacer = ({
-  children,
-}) => <div className="spacer">{children}</div>;
+  children, slimMobile, onlyBottom,
+}) => <div className={`spacer ${slimMobile ? 'spacer--slim' : ''} ${onlyBottom ? 'spacer--bottom' : ''}`}>{children}</div>;
 
 export default Spacer;
