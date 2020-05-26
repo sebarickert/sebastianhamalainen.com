@@ -136,6 +136,30 @@
     }
   }
 
+  &.is-home {
+    span:after {
+      display: none;
+    }
+  }
+
+  &.is-portfolio {
+    span:after {
+      background-color: $color-blue-1;
+    }
+  }
+
+  &.is-blog {
+    span:after {
+      background-color: $color-green-1;
+    }
+  }
+
+  &.is-snippets {
+    span:after {
+      background-color: $color-red-2;
+    }
+  }
+
   .menu-main--footer &,
   .menu-main--some & {
     @include font-size(16px);

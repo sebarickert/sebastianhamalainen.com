@@ -4,10 +4,13 @@
   padding-top: $spacing-extra-large;
   padding-bottom: $spacing-extra-large;
   margin-bottom: $spacing-extra-large;
-  background-color: $color-blue-1;
+
+  .post--blog & {
+    background-color: $color-green-1;
+  }
 
   .post--snippets & {
-    background-color: $color-green-1;
+    background-color: $color-red-2;
   }
 
   .post--misc & {

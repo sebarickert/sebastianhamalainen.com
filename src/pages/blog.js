@@ -42,7 +42,7 @@ const BlogListingPage = () => {
         title="Blog"
         description="Here I'll dabble into different kind of topics, but most likely relating to tech and web development."
       />
-      <Hero title="Blog">
+      <Hero title="Blog" className="hero--blog">
         {/* eslint-disable-next-line react/no-unescaped-entities */}
         Here I'll dabble into different kind of topics, but most likely relating to tech and web development.
       </Hero>

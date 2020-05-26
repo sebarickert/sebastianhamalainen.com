@@ -43,7 +43,7 @@ const SnippetsListingPage = () => {
         title="Snippets"
         description="Here I'll dabble into different kind of topics, but most likely relating to tech and web development."
       />
-      <Hero title="Snippets">
+      <Hero title="Snippets" className="hero--snippets">
         {/* eslint-disable-next-line react/no-unescaped-entities */}
         Here you’ll find a curated selection of code snippets for various web components and functions that I thought looked good or work very well.
       </Hero>
