@@ -3,7 +3,6 @@
 .button {
   @include font-size(16px);
   display: inline-block;
-  font-family: $heading-font-family;
   position: relative;
   padding: $gutter * .75 $gutter * 2;
   border: 2px solid $white;

@@ -17,9 +17,7 @@ const PortfolioTeaser = ({
         <div className="portfolio-teaser__content">
           <header>
             <h2 className="portfolio-teaser__heading">
-              <Link to={slug}>
-                <span>{title}</span>
-              </Link>
+              <span>{title}</span>
             </h2>
           </header>
           <p className="portfolio-teaser__lead">{lead}</p>

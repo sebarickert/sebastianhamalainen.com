@@ -14,6 +14,34 @@ $shamrock: #27d771;
 $mountain-meadow: #1fac5a;
 $silver: #cccccc;
 
+// NEW COLORS
+$color-white: #ffffff;
+$color-black: #000000;
+
+// Gray Color Variables
+$color-gray-1: #f5f5f5;
+$color-gray-2: #e5e5e5;
+$color-gray-3: #111111;
+
+// Red Color Variables
+$color-red-1: #e95378;
+$color-red-2: #ce2026;
+$color-red-3: #ba4260;
+$color-red-4: #a51a1e;
+
+// Blue Color Variables
+$color-blue-1: #345ed6;
+$color-blue-2: #2a4bab;
+
+// Green Color Variables
+$color-green-1: #1ca084;
+$color-green-2: #16806a;
+
+// Color Base Configuration Variables
+$color-link: $color-blue-1;
+$color-link--hover: $color-blue-2;
+$color-text: $color-gray-3;
+
 $primary-color: $woodsmoke;
 $secondary-color: $woodsmoke-light;
 $primary-accent-color: $mandy;
