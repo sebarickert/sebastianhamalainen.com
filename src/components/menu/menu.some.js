@@ -2,7 +2,7 @@ import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 
 
-const MenuSome = ({ vertical }) => {
+const MenuSome = () => {
   const data = useStaticQuery(graphql`
   {
     site {
@@ -20,7 +20,7 @@ const MenuSome = ({ vertical }) => {
   } = data.site.siteMetadata;
 
   return (
-    <ul className={`menu-main ${vertical ? 'menu-main--vertical' : ''}`}>
+    <ul className="menu-main menu-main--some">
       <li className="menu-main__item">
         <a href={twitter} className="menu-main__link"><span>Twitter</span></a>
       </li>

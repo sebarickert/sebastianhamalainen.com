@@ -58,7 +58,13 @@
     flex-direction: row;
   }
 
-  &--vertical {
+  &--some {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  &--footer {
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
@@ -80,7 +86,8 @@
     }
   }
 
-  .menu-main--vertical & {
+  .menu-main--footer &,
+  .menu-main--some & {
     margin-left: 0;
     margin-right: 0;
   }
@@ -126,6 +133,27 @@
 
     span:after {
       width: 100%;
+    }
+  }
+
+  .menu-main--footer &,
+  .menu-main--some & {
+    @include font-size(16px);
+    opacity: 1;
+    font-weight: normal;
+    margin: 0;
+
+    &:hover,
+    &:focus {
+      color: $color-link;
+    }
+
+    &.is-active {
+      color: $color-link;
+    }
+
+    span:after {
+      display: none;
     }
   }
 

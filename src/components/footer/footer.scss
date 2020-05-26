@@ -1,11 +1,9 @@
 @import "lib";
 
 .footer {
-  border-top: 1px solid $primary-color;
-  background-color: $black;
   padding-top: $gutter * 4;
   padding-bottom: $gutter * 4;
-  color: $white;
+  background: linear-gradient($color-gray-1 0, $color-white 25%);
 
   @media screen and (min-width: $bp-wide) {
     padding-top: $gutter * 6;
@@ -14,33 +12,44 @@
 }
 
 .footer__container {
-  display: grid;
-  grid-row-gap: $gutter * 4;
-  grid-template-rows: auto;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
 
-  @media screen and (min-width: $bp-wide) {
-    grid-template-rows: none;
-    grid-template-columns: 2fr 1fr 1fr;
-    grid-column-gap: $gutter * 4;
-    grid-row-gap: 0;
+  @media screen and (min-width: $bp-medium-wide) {
+    flex-direction: row;
+  }
+}
+
+.footer__item {
+  &.footer__item--first {
+    width: 100%;
+    margin-bottom: $spacing-medium;
+    padding-bottom: $spacing-medium;
+    border-bottom: 1px solid $color-gray-2;
+
+    .footer__text {
+      max-width: 700px;
+    }
+  }
+
+  &:not(.footer__item--first) {
+    @media screen and (min-width: $bp-medium-wide) {
+      flex: 0 1 300px;
+    }
+  }
+
+  &.footer__item--last {
+    @media screen and (max-width: $bp-medium-wide - 1px) {
+      margin-top: $spacing-medium;
+      padding-top: $spacing-medium;
+      border-top: 1px solid $color-gray-2;
+    }
   }
 }
 
 .footer__heading {
-  @include font-size(22px);
-  margin-bottom: $gutter * 2;
-  color: $white;
-  padding-bottom: $gutter * .25;
-  border-bottom: 3px solid $primary-accent-color;
-  display: inline-block;
-
-  + p {
-    margin-top: 0;
-  }
-}
-
-.footer__text {
-  p {
-    @include font-size(18px);
+  .footer__item:not(:first-child) & {
+    margin-bottom: $spacing;
   }
 }
