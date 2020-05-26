@@ -32,15 +32,17 @@ const Post = ({ data: { mdx } }) => {
   return (
     <Layout>
       <SEO title={type !== 'misc' ? `${title} | Blog` : title} description={description} />
-      <Spacer>
-        <article className={`post post--${type}`}>
+      <article className={`post post--${type}`}>
+        <Spacer slimMobile>
           <Container className="post__header" variation="small">
             <h1 className="post__heading">{title}</h1>
             <p className="post__date">
               {type === 'misc' || type === 'snippets' ? `Last updated on ${date}` : `Published on ${date}`}
             </p>
           </Container>
-          <Container variation="small">
+        </Spacer>
+        <Container variation="small">
+          <Spacer onlyBottom>
             <div className="post__content">
               <MDXRenderer>{mdx.body}</MDXRenderer>
             </div>
@@ -54,9 +56,9 @@ const Post = ({ data: { mdx } }) => {
                 {'<-- Go back to Snippets'}
               </Button>
             )}
-          </Container>
-        </article>
-      </Spacer>
+          </Spacer>
+        </Container>
+      </article>
     </Layout>
   );
 };
