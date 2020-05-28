@@ -17,6 +17,12 @@
   .listing--no-margin & {
     margin-bottom: 0;
   }
+
+  .listing--spacing-large & {
+    @media screen and (min-width: $bp-medium-wide) {
+      margin-bottom: $spacing-large * 2;
+    }
+  }
 }
 
 .listing--col-2 {

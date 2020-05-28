@@ -58,10 +58,10 @@ const PortfolioListingPage = ({ data: { allMdx }, pageContext }) => {
       </Hero>
       <Container>
         <Spacer>
-          <Heading className="heading--center">All portfolio showcases</Heading>
           <Listing
             arrayOfContent={posts}
             listingComponent={PortfolioTeaser}
+            spacingLarge
           />
           <Pager {...pageContext} />
         </Spacer>

@@ -2,10 +2,12 @@ import React from 'react';
 
 import './listing.scss';
 
-const Listing = ({ listingComponent, arrayOfContent, className }) => {
+const Listing = ({
+  listingComponent, arrayOfContent, className, spacingLarge,
+}) => {
   const ListingComponent = listingComponent;
   return (
-    <ul className={`listing ${className || ''}`}>
+    <ul className={`listing ${className || ''} ${spacingLarge ? 'listing--spacing-large' : ''}`}>
       {arrayOfContent.map(({
         node: {
           frontmatter, fields, id, excerpt = '',
