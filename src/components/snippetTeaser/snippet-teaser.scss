@@ -2,7 +2,7 @@
 
 .snippet-teaser {
   padding: $gutter * 2 0;
-  border-bottom: 1px solid $woodsmoke-light;
+  border-bottom: 1px solid $color-gray-3;
 
   @media screen and (min-width: $bp-medium-wide) {
     display: grid;
@@ -35,7 +35,7 @@
   span {
     &:first-child {
       @include font-size(16px);
-      color: $secondary-accent-color;
+      color: $color-red-2;
     }
   }
 }
@@ -52,7 +52,7 @@
   span {
     &:first-child {
       @include font-size(16px);
-      color: $secondary-accent-color;
+      color: $color-red-2;
     }
   }
 }
