@@ -47,12 +47,12 @@ const Post = ({ data: { mdx } }) => {
               <MDXRenderer>{mdx.body}</MDXRenderer>
             </div>
             {type === 'blog' && (
-              <Button secondary linkTo="/blog" className="mt--2">
+              <Button secondary linkTo="/blog">
                 {'<-- Go back to Blog'}
               </Button>
             )}
             {type === 'snippets' && (
-              <Button secondary linkTo="/snippets" className="mt--2">
+              <Button secondary linkTo="/snippets">
                 {'<-- Go back to Snippets'}
               </Button>
             )}

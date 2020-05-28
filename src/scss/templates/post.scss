@@ -3,7 +3,6 @@
 .post__header {
   padding-top: $spacing-extra-large;
   padding-bottom: $spacing-extra-large;
-  // margin-bottom: $spacing-extra-large;
 
   .post--blog & {
     background-color: $color-green-1;
@@ -30,8 +29,72 @@
 }
 
 .post__content {
+  margin-bottom: $spacing-extra-large;
+
   .gatsby-highlight {
     margin-left: -$spacing-extra-large;
     margin-right: -$spacing-extra-large;
+  }
+
+  * {
+    + h2 {
+      margin-top: $spacing-medium;
+    }
+
+    + h3 {
+      margin-top: $spacing-medium;
+    }
+
+    + h4 {
+      margin-top: $spacing-medium;
+    }
+  }
+
+  h2 {
+    @include font-size(24px);
+    line-height: 2rem;
+    margin-bottom: $spacing-medium;
+
+    @media screen and (min-width: $bp-medium-wide) {
+      @include font-size(32px);
+      line-height: 2.5rem;
+    }
+
+    @media screen and (min-width: $bp-extra-wide) {
+      @include font-size(40px);
+      line-height: 3rem;
+    }
+  }
+
+  h3 {
+    @include font-size(24px);
+    line-height: 2rem;
+    margin-bottom: $spacing-medium;
+
+    @media screen and (min-width: $bp-medium-wide) {
+      @include font-size(28px);
+      line-height: 2.25rem;
+    }
+
+    @media screen and (min-width: $bp-extra-wide) {
+      @include font-size(32px);
+      line-height: 2.5rem;
+    }
+  }
+
+  h4 {
+    @include font-size(20px);
+    line-height: 1.75rem;
+    margin-bottom: $spacing-medium;
+
+    @media screen and (min-width: $bp-medium-wide) {
+      @include font-size(22px);
+      line-height: 1.875rem;
+    }
+
+    @media screen and (min-width: $bp-extra-wide) {
+      @include font-size(24px);
+      line-height: 2rem;
+    }
   }
 }

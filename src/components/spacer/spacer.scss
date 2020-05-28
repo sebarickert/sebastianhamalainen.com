@@ -13,7 +13,7 @@
 .spacer--slim {
   padding-top: 0;
 
-  @media screen and (min-width: $bp-wide) {
+  @media screen and (min-width: $bp-extra-wide) {
     padding-top: $spacing-extra-large;
     padding-bottom: $spacing-extra-large;
   }
