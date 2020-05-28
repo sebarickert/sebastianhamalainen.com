@@ -65,12 +65,11 @@ const Portfolio = ({ data: { mdx } }) => {
             ) : (
               ''
             )}
-            <Button secondary linkTo="/portfolio" className="mt--1">
+            <Button secondary linkTo="/portfolio">
               {'<-- Go back to Portfolio'}
             </Button>
           </Spacer>
         </Container>
-        <Separator />
         {showcaseImage ? (
           <div className="portfolio__showcase" role="presentation">
             <Container>
