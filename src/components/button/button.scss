@@ -20,38 +20,38 @@
   }
 
   &--primary {
-    background-color: $primary-accent-color;
-    border-color: $primary-accent-color;
+    background-color: $color-blue-1;
+    border-color: $color-blue-1;
     color: $white;
 
     &:hover,
     &:focus {
-      background-color: $primary-accent-color--hover;
-      border-color: $primary-accent-color--hover;
+      background-color: $color-blue-2;
+      border-color: $color-blue-2;
       color: $white;
     }
 
     &.active {
-      background-color: $primary-accent-color--hover;
-      border-color: $primary-accent-color--hover;
+      background-color: $color-blue-2;
+      border-color: $color-blue-2;
     }
   }
 
   &--secondary {
-    background-color: $secondary-accent-color;
-    border-color: $secondary-accent-color;
-    color: $black;
+    background-color: $color-red-1;
+    border-color: $color-red-1;
+    color: $white;
 
     &:hover,
     &:focus {
-      background-color: $secondary-accent-color--hover;
-      border-color: $secondary-accent-color--hover;
-      color: $black;
+      background-color: $color-red-3;
+      border-color: $color-red-3;
+      color: $white;
     }
 
     &.active {
-      background-color: $secondary-accent-color--hover;
-      border-color: $secondary-accent-color--hover;
+      background-color: $color-red-3;
+      border-color: $color-red-3;
     }
   }
 
