@@ -11,10 +11,10 @@ const CtaBlock = ({
 }) => (
   <div className={`cta-block ${className || ''}`}>
     <Container variation="small">
-      <Spacer>
+      <Spacer large>
         <div className="cta-block__content">
           <Heading center noMargin>{children}</Heading>
-          <Button linkTo={linkTo} className="mt--4" primary center>{linkToText}</Button>
+          <Button linkTo={linkTo} className="cta-block__button" primary center>{linkToText}</Button>
         </div>
       </Spacer>
     </Container>
