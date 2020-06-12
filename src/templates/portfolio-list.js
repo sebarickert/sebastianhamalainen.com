@@ -7,7 +7,6 @@ import Container from '../components/container/container';
 import PortfolioTeaser from '../components/portfolioTeaser/portfolioTeaser';
 import Hero from '../components/hero/hero';
 import Listing from '../components/listing/listing';
-import Heading from '../components/heading/heading';
 import Pager from '../components/pager/pager';
 import Spacer from '../components/spacer/spacer';
 import SEO from '../components/seo';

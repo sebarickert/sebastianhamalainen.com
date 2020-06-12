@@ -95,3 +95,22 @@
     }
   }
 }
+
+.listing--col-3-overflow {
+  display: flex;
+  // flex-wrap: wrap;
+  // justify-content: space-between;
+  overflow-x: scroll visible;
+  scroll-snap-type: x mandatory;
+
+  .listing__item {
+    // width: calc(100% / 3 - calc(#{$gutter * 1.35}));
+    flex: 0 0 33%;
+    margin-bottom: 0;
+
+    &:nth-child(3n + 2) {
+      margin-left: $gutter * 2;
+      margin-right: $gutter * 2;
+    }
+  }
+}

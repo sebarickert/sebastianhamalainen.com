@@ -38,7 +38,7 @@ h6 {
   font-family: $default-font-family;
   font-weight: bold;
   margin-top: 0;
-  margin-top: 0;
+  margin-bottom: $spacing-medium;
 
   a {
     color: inherit;
@@ -51,7 +51,6 @@ h1,
 .h1 {
   @include font-size(40px);
   line-height: 3rem;
-  margin-bottom: $spacing-medium;
 
   @media screen and (min-width: $bp-medium-wide) {
     @include font-size(52px);
@@ -68,7 +67,6 @@ h2,
 .h2 {
   @include font-size(32px);
   line-height: 2.5rem;
-  margin-bottom: $spacing-medium;
 
   @media screen and (min-width: $bp-medium-wide) {
     @include font-size(40px);
@@ -85,7 +83,6 @@ h3,
 .h3 {
   @include font-size(24px);
   line-height: 2rem;
-  margin-bottom: $spacing-medium;
 
   @media screen and (min-width: $bp-medium-wide) {
     @include font-size(32px);
@@ -102,7 +99,6 @@ h4,
 .h4 {
   @include font-size(24px);
   line-height: 2rem;
-  margin-bottom: $spacing-medium;
 
   @media screen and (min-width: $bp-medium-wide) {
     @include font-size(28px);
@@ -119,7 +115,6 @@ h5,
 .h5 {
   @include font-size(20px);
   line-height: 1.75rem;
-  margin-bottom: $spacing-medium;
 
   @media screen and (min-width: $bp-medium-wide) {
     @include font-size(22px);
