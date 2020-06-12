@@ -3,3 +3,7 @@
 .introduction {
   background: linear-gradient($color-white 0, $color-gray-1 75%);
 }
+
+.introduction__lead {
+  margin-top: $gutter * 4;
+}
