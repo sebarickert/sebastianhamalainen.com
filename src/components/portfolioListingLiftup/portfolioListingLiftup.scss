@@ -1,5 +1,9 @@
 @import "lib";
 
-.portfolio-liftup {
-  background-color: $primary-color;
+.portfolio-liftup__button {
+  margin-top: $gutter * 4;
+
+  @media screen and (min-width: $bp-wide) {
+    margin-top: $gutter * 6;
+  }
 }

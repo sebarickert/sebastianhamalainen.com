@@ -45,13 +45,13 @@ const PortfolioListingLiftup = () => {
   return (
     <div className="portfolio-liftup">
       <Container>
-        <Spacer>
+        <Spacer large>
           <Heading center>Latest showcases</Heading>
           <Listing
             arrayOfContent={data.allMdx.edges}
             listingComponent={PortfolioTeaser}
           />
-          <Button primary center linkTo="/portfolio" className="mt--4">{'See portfolio showcases -->'}</Button>
+          <Button primary center linkTo="/portfolio" className="portfolio-liftup__button">{'See portfolio showcases -->'}</Button>
         </Spacer>
       </Container>
     </div>
