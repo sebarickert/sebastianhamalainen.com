@@ -1,20 +1,5 @@
 @import "lib";
 
 .introduction {
-  background-color: $black;
-  color: $white;
-}
-
-.introduction__lead {
-  margin-top: $gutter * 4;
-}
-
-.introduction__link {
-  border-bottom: 4px solid transparent;
-
-  &:hover,
-  &:focus {
-    color: $white;
-    border-color: $primary-accent-color;
-  }
+  background: linear-gradient($color-white 0, $color-gray-1 75%);
 }
