@@ -8,9 +8,7 @@
 
 .blog-teaser__heading {
   @include font-size(26px);
-  line-height: normal;
   margin-bottom: $spacing;
-  line-height: 1.4;
 }
 
 .blog-teaser__lead {
