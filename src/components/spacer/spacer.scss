@@ -10,6 +10,16 @@
   }
 }
 
+.spacer--large {
+  padding-top: $spacing-extra-large;
+  padding-bottom: $spacing-extra-large;
+
+  @media screen and (min-width: $bp-wide) {
+    padding-top: $spacing-extra-large * 2;
+    padding-bottom: $spacing-extra-large * 2;
+  }
+}
+
 .spacer--slim {
   padding-top: 0;
 

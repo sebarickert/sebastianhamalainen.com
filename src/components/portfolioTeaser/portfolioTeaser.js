@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'gatsby';
 
 import Button from '../button/button';
 import './portfolio-teaser.scss';

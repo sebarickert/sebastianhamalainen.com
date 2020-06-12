@@ -6,7 +6,6 @@ import Container from '../components/container/container';
 import BlogTeaser from '../components/blogTeaser/blogTeaser';
 import Hero from '../components/hero/hero';
 import Listing from '../components/listing/listing';
-import Heading from '../components/heading/heading';
 import Spacer from '../components/spacer/spacer';
 import Filter from '../components/filter/filter';
 import SEO from '../components/seo';
@@ -20,6 +19,13 @@ const BlogListingPage = () => {
           frontmatter {
             title
             date(formatString: "MMMM DD, YYYY")
+            teaser_image {
+              childImageSharp {
+                fixed(width: 600, height: 429, quality: 100) {
+                  src
+                }
+              }
+            }
           }
           id
           excerpt
@@ -46,11 +52,11 @@ const BlogListingPage = () => {
         {/* eslint-disable-next-line react/no-unescaped-entities */}
         Here I'll dabble into different kind of topics, but most likely relating to tech and web development.
       </Hero>
-      <Container variation="small">
+      <Container>
         <Spacer>
           {postYears.length > 1
           && <Filter filterItems={postYears} activeFilter={activeYear} setActiveYear={setActiveYear} /> }
-          <Listing arrayOfContent={posts.filter(({ node: post }) => activeYear.indexOf(new Date(post.frontmatter.date).getFullYear()) > -1)} listingComponent={BlogTeaser} />
+          <Listing col3 arrayOfContent={posts.filter(({ node: post }) => activeYear.indexOf(new Date(post.frontmatter.date).getFullYear()) > -1)} listingComponent={BlogTeaser} />
         </Spacer>
       </Container>
     </Layout>

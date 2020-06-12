@@ -1,21 +1,18 @@
 @import "lib";
 
-.blog-teaser__heading {
-  @include font-size(20px);
-  transition: inherit;
-  margin: 0;
-  max-width: 500px;
+.blog-teaser__image {
+  border-radius: 6px;
+  margin-bottom: $spacing-medium;
+  width: 100%;
+}
 
-  @media screen and (min-width: $bp-small) {
-    @include font-size(26px);
-  }
+.blog-teaser__heading {
+  @include font-size(26px);
+  line-height: normal;
+  margin-bottom: $spacing;
+  line-height: 1.4;
 }
 
 .blog-teaser__lead {
-  color: $silver;
-}
-
-.blog-teaser__published {
-  color: $silver;
-  font-weight: 300;
+  @include font-size(18px);
 }

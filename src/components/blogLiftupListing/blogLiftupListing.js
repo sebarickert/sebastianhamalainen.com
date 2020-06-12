@@ -2,7 +2,6 @@ import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 
 import BlogTeaser from '../blogTeaser/blogTeaser';
-import Listing from '../listing/listing';
 import Spacer from '../spacer/spacer';
 import Container from '../container/container';
 import Heading from '../heading/heading';
@@ -16,13 +15,19 @@ const BlogLiftupListing = () => {
       allMdx(
         filter: { fileAbsolutePath: { regex: "//content/blog//" } }
         sort: { order: DESC, fields: [frontmatter___date] }
-        limit: 2
+        limit: 3
       ) {
         edges {
           node {
             frontmatter {
               title
-              date(formatString: "MMMM DD, YYYY")
+              teaser_image {
+                childImageSharp {
+                  fixed(width: 600, height: 429, quality: 100) {
+                    src
+                  }
+                }
+              }
             }
             id
             excerpt
@@ -37,16 +42,25 @@ const BlogLiftupListing = () => {
 
   return (
     <div className="blog-liftup">
-      <Container variation="small">
-        <Spacer>
+      <Spacer large>
+        <Container>
           <Heading>Latest blog posts</Heading>
-          <Listing
-            arrayOfContent={data.allMdx.edges}
-            listingComponent={BlogTeaser}
-          />
-          <Button primary center linkTo="/blog" className="mt--4">{'See blog posts -->'}</Button>
-        </Spacer>
-      </Container>
+        </Container>
+        <div className="slider">
+          <Container>
+            <ul className="slider__list">
+              {data.allMdx.edges.map(({
+                node: {
+                  frontmatter, fields, id, excerpt = '',
+                },
+              }) => <li className="slider__item" key={id}><BlogTeaser key={id} excerpt={excerpt} {...frontmatter} {...fields} /></li>)}
+            </ul>
+          </Container>
+        </div>
+        <Container>
+          <Button primary center linkTo="/blog" className="blog-liftup__button">{'See blog posts -->'}</Button>
+        </Container>
+      </Spacer>
     </div>
   );
 };
