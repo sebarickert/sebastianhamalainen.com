@@ -15,7 +15,7 @@ const IndexPage = () => (
     <Introduction />
     <PortfolioLiftupListing />
     <Cta linkTo="/snippets" linkToText="Go check them out -->" primary>
-      {'I\'ve created a list of code snippets for ease of use, just for you.'}
+      {'I\'ve created a list of code snippets, just for you.'}
     </Cta>
     <BlogLiftupListing />
   </Layout>
