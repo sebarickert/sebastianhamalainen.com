@@ -163,11 +163,15 @@ blockquote {
   }
 }
 
+pre,
+code {
+  font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
 code {
   @include font-size(14px);
   background-color: $color-gray-2;
   border-radius: 3px;
-  font-family: Consolas, Monaco, Andale Mono, Ubuntu Mono, monospace !important;
   padding: $spacing-tiny / 2 $spacing-tiny;
 
   @media screen and (min-width: $bp-small) {
