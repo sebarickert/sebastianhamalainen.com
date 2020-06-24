@@ -15,7 +15,7 @@ In my React components I have several bits of dynamic or static strings that nee
 
 Drupal has a global `Drupal.t()` function that can be used with React. You are able to wrap your strings like this:
 
-```jsx
+```js
 const Card = () => {
   return (
     <div className="card">
@@ -40,7 +40,7 @@ Jest is really straight forward with how to test a component:
 
 That's the basic gist of it.
 
-```jsx
+```js
 import React from 'react';
 import { Card } from './Card';
 
@@ -55,7 +55,7 @@ That's the test. Easy isn't it?
 
 **Oh no. The tests have failed. Why you ask?**
 
-```
+```bash
 ReferenceError: Drupal is not defined
 ```
 
@@ -69,13 +69,13 @@ I found a post from Elendev about ["React, TypeScript, Jest and global variables
 
 I followed Elendev's post and created myself a global variable for `Drupal` and its `t()` function. This is the line you need:
 
-```jsx
+```js
 global.Drupal = { t: text => text };
 ```
 
 This is the final React component structure which will pass with using `Drupal.t()` function:
 
-```jsx
+```js
 import React from 'react';
 import { Card } from './Card';
 

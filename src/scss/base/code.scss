@@ -1,0 +1,38 @@
+@import "lib";
+
+.code-block {
+  border-radius: 6px;
+  margin-left: -$spacing-medium;
+  margin-right: -$spacing-medium;
+  overflow: auto;
+
+  @media screen and (min-width: $bp-small) {
+    margin-left: -$spacing-large;
+    margin-right: -$spacing-large;
+  }
+
+  @media screen and (min-width: $bp-medium-wide) {
+    margin-left: -$spacing-medium;
+    margin-right: -$spacing-medium;
+  }
+
+  @media screen and (min-width: $bp-wide) {
+    margin-left: -$spacing-large;
+    margin-right: -$spacing-large;
+  }
+}
+
+.code-block__pre {
+  margin: 0;
+  padding: $spacing;
+  float: left;
+  min-width: 100%;
+  overflow: initial;
+}
+
+.code-block__line-number {
+  display: inline-block;
+  opacity: 0.3;
+  user-select: none;
+  width: $spacing-medium;
+}

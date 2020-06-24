@@ -14,7 +14,7 @@ This [stackoverflow comment](https://stackoverflow.com/a/52805763/5562316) was r
 You need to have Xdebug installed on your machine. Official installation guide can be found on [Xdebug's official website](https://xdebug.org/docs/install).
 You can install Xdebug through PECL on Linux & macOS. You can install Xdebug with PECL with:
 
-```shell
+```bash
 pecl install xdebug
 ```
 ## Configure your php.ini file
@@ -22,7 +22,7 @@ pecl install xdebug
 When you have installed Xdebug, you need to configure your `php.ini` to use Xdebug.
 These are the exact settings for Xdebug in my `php.ini` file:
 
-```php
+```bash
 [xdebug]
 zend_extension=/usr/local/Cellar/php/7.3.7/pecl/20180731/xdebug.so
 xdebug.default_enable=1

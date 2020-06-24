@@ -74,15 +74,6 @@ module.exports = {
             },
           },
           'gatsby-remark-responsive-iframe',
-          {
-            resolve: 'gatsby-remark-prismjs',
-            options: {
-              classPrefix: 'language-',
-              inlineCodeMarker: null,
-              aliases: { javavascript: 'js' },
-              noInlineHighlight: true,
-            },
-          },
         ],
       },
     },
@@ -132,10 +123,10 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-polyfill-io`,
+      resolve: 'gatsby-plugin-polyfill-io',
       options: {
-         features: [`String.prototype.endsWith`, `fetch`, `es6`]
+        features: ['String.prototype.endsWith', 'fetch', 'es6'],
+      },
     },
-   },
   ],
 };
