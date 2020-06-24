@@ -6,7 +6,6 @@ import Container from '../components/container/container';
 import SnippetTeaser from '../components/snippetTeaser/snippetTeaser';
 import Hero from '../components/hero/hero';
 import Listing from '../components/listing/listing';
-import Spacer from '../components/spacer/spacer';
 import Filter from '../components/filter/filter';
 import SEO from '../components/seo';
 
@@ -47,12 +46,15 @@ const SnippetsListingPage = () => {
         {/* eslint-disable-next-line react/no-unescaped-entities */}
         Here you’ll find a curated selection of code snippets for various web components and functions that I thought looked good or work very well.
       </Hero>
-      <Container variation="small">
-        <Spacer>
-          {categories.length > 1
+      {categories.length > 1
           && <Filter filterItems={categories} activeFilter={category} setActiveYear={setCategory} /> }
-          <Listing arrayOfContent={posts.filter(({ node: post }) => category.indexOf(post.frontmatter.category) > -1)} listingComponent={SnippetTeaser} className="listing--no-margin" />
-        </Spacer>
+      <Container>
+        <Listing
+          arrayOfContent={posts.filter(({ node: post }) => category.indexOf(post.frontmatter.category) > -1)}
+          listingComponent={SnippetTeaser}
+          col3
+          baseSpacing
+        />
       </Container>
     </Layout>
   );

@@ -7,6 +7,7 @@ import Layout from '../components/layout/layout';
 import Container from '../components/container/container';
 import Spacer from '../components/spacer/spacer';
 import Button from '../components/button/button';
+import IconArrowLeft from '../assets/icon--arrow--left.svg';
 
 import '../scss/templates/post.scss';
 
@@ -31,29 +32,33 @@ const Post = ({ data: { mdx } }) => {
 
   return (
     <Layout>
-      <SEO title={type !== 'misc' ? `${title} | Blog` : title} description={description} />
+      <SEO title={type !== 'misc' ? `${title} | ${type}` : title} description={description} />
       <article className={`post post--${type}`}>
-        <Spacer slimMobile>
-          <Container className="post__header" variation="small">
-            <h1 className="post__heading">{title}</h1>
-            <p className="post__date">
-              {type === 'misc' || type === 'snippets' ? `Last updated on ${date}` : `Published on ${date}`}
-            </p>
+        <div className="post__header">
+          <Container medium>
+            <Spacer large>
+              <h1 className="post__heading">{title}</h1>
+              <p className="post__date">
+                {type === 'misc' || type === 'snippets' ? `Last updated on ${date}` : `Published on ${date}`}
+              </p>
+            </Spacer>
           </Container>
-        </Spacer>
-        <Container variation="small">
-          <Spacer onlyBottom>
+        </div>
+        <Container small>
+          <Spacer>
             <div className="post__content">
               <MDXRenderer>{mdx.body}</MDXRenderer>
             </div>
             {type === 'blog' && (
               <Button secondary linkTo="/blog">
-                {'<-- Go back to Blog'}
+                <IconArrowLeft />
+                Go back to Blog
               </Button>
             )}
             {type === 'snippets' && (
               <Button secondary linkTo="/snippets">
-                {'<-- Go back to Snippets'}
+                <IconArrowLeft />
+                Go back to Snippets
               </Button>
             )}
           </Spacer>

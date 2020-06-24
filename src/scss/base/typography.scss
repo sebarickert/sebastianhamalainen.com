@@ -1,26 +1,17 @@
 @import "lib";
 
 body {
-  @include font-size(18px);
   color: $color-text;
   font-family: $default-font-family;
+  font-size: $base-font-size;
   font-weight: normal;
   line-height: $base-line-height;
-
-  @media screen and (min-width: $bp-medium) {
-    @include font-size(20px);
-  }
-
-  @media screen and (min-width: $bp-wide) {
-    @include font-size(22px);
-  }
 }
 
 a {
   color: $color-link;
   font-weight: inherit;
   text-decoration: none;
-  transition: all .2s ease-in-out;
 
   &:hover,
   &:focus {
@@ -28,17 +19,15 @@ a {
   }
 }
 
-// ########## Headings ########## //
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-  font-family: $default-font-family;
+  color: $color-black;
   font-weight: bold;
-  margin-top: 0;
-  margin-bottom: $spacing-medium;
+  line-height: 1.5;
 
   a {
     color: inherit;
@@ -49,70 +38,85 @@ h6 {
 
 h1,
 .h1 {
-  @include font-size(40px);
-  line-height: 1.35;
+  @include font-size(26px);
 
-  @media screen and (min-width: $bp-medium-wide) {
-    @include font-size(52px);
+  @media screen and (min-width: $bp-small) {
+    @include font-size(32px);
   }
 
-  @media screen and (min-width: $bp-extra-wide) {
-    @include font-size(64px);
+  @media screen and (min-width: $bp-medium-wide) {
+    @include font-size(38px);
+  }
+
+  @media screen and (min-width: $bp-wide) {
+    @include font-size(48px);
   }
 }
 
 h2,
 .h2 {
-  @include font-size(32px);
-  line-height: 1.5;
+  @include font-size(22px);
 
-  @media screen and (min-width: $bp-medium-wide) {
-    @include font-size(40px);
+  @media screen and (min-width: $bp-small) {
+    @include font-size(26px);
   }
 
-  @media screen and (min-width: $bp-extra-wide) {
-    @include font-size(48px);
+  @media screen and (min-width: $bp-medium-wide) {
+    @include font-size(32px);
+  }
+
+  @media screen and (min-width: $bp-wide) {
+    @include font-size(38px);
   }
 }
 
 h3,
 .h3 {
-  @include font-size(24px);
-  line-height: 1.45;
+  @include font-size(18px);
 
-  @media screen and (min-width: $bp-medium-wide) {
-    @include font-size(32px);
+  @media screen and (min-width: $bp-small) {
+    @include font-size(20px);
   }
 
-  @media screen and (min-width: $bp-extra-wide) {
-    @include font-size(40px);
+  @media screen and (min-width: $bp-medium-wide) {
+    @include font-size(26px);
+  }
+
+  @media screen and (min-width: $bp-wide) {
+    @include font-size(32px);
   }
 }
 
 h4,
 .h4 {
-  @include font-size(24px);
-  line-height: 1.45;
+  @include font-size(16px);
 
-  @media screen and (min-width: $bp-medium-wide) {
-    @include font-size(28px);
+  @media screen and (min-width: $bp-small) {
+    @include font-size(18px);
   }
 
-  @media screen and (min-width: $bp-extra-wide) {
-    @include font-size(32px);
+  @media screen and (min-width: $bp-medium-wide) {
+    @include font-size(24px);
+  }
+
+  @media screen and (min-width: $bp-wide) {
+    @include font-size(28px);
   }
 }
 
 h5,
 .h5 {
-  @include font-size(20px);
-  line-height: 1.45;
+  @include font-size(16px);
+
+  @media screen and (min-width: $bp-small) {
+    @include font-size(18px);
+  }
 
   @media screen and (min-width: $bp-medium-wide) {
     @include font-size(22px);
   }
 
-  @media screen and (min-width: $bp-extra-wide) {
+  @media screen and (min-width: $bp-wide) {
     @include font-size(24px);
   }
 }
@@ -122,93 +126,55 @@ strong {
 }
 
 p {
-  margin-bottom: $spacing;
-  margin-top: 0;
   word-break: break-word;
 
-  a {
-    text-decoration: none;
+  @media screen and (min-width: $bp-small) {
+    @include font-size(22px);
   }
 
-  code {
-    font-weight: 600;
-    white-space: nowrap;
-  }
-}
-
-p,
-ul,
-ol,
-.gatsby-highlight {
-  + h2 {
-    margin-top: $spacing-medium;
-  }
-
-  + h3 {
-    margin-top: $spacing-medium;
-  }
-
-  + h4 {
-    margin-top: $spacing-medium;
+  @media screen and (min-width: $bp-medium-wide) {
+    @include font-size(24px);
   }
 }
 
 ul,
 ol {
+  @extend p;
   list-style-position: inside;
   margin: 0;
   padding: 0;
-
-  ul,
-  ol {
-    margin-top: $spacing;
-  }
-
-  + p {
-    margin-top: $spacing;
-  }
 }
 
-pre {
-  border-radius: 3px !important;
-  line-height: 1.6 !important;
-  padding: 0 !important;
+blockquote {
+  margin: 0 0;
+  quotes: "“" "”";
 
-  code {
-    display: block;
-    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace !important;
-    font-size: 18px !important;
+  p {
+    @extend .h3;
     font-weight: normal;
-    overflow-x: auto;
-    padding: $gutter * 2 !important;
+
+    &:before {
+      content: open-quote;
+    }
+
+    &:after {
+      content: close-quote;
+    }
   }
 }
 
 code {
-  font-family: inherit;
-  font-size: inherit;
-}
+  @include font-size(14px);
+  background-color: $color-gray-2;
+  border-radius: 3px;
+  font-family: Consolas, Monaco, Andale Mono, Ubuntu Mono, monospace !important;
+  padding: $spacing-tiny / 2 $spacing-tiny;
 
-blockquote {
-  @include font-size(20px);
-  border-left: 5px solid $color-blue-1;
-  line-height: 1.45;
-  margin: $spacing-medium 0;
-  padding: $spacing $spacing-medium;
+  @media screen and (min-width: $bp-small) {
+    @include font-size(16px);
+  }
 
   @media screen and (min-width: $bp-medium-wide) {
-    @include font-size(22px);
-  }
-
-  @media screen and (min-width: $bp-extra-wide) {
-    @include font-size(24px);
-  }
-
-  p {
-    font-weight: normal;
-
-    &:last-child {
-      margin: 0;
-    }
+    @include font-size(18px);
   }
 }

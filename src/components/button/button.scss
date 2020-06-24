@@ -2,67 +2,127 @@
 
 .button {
   @include font-size(16px);
-  display: inline-block;
-  position: relative;
-  padding: $gutter * .75 $gutter * 2;
-  border: 2px solid $color-gray-4;
   background-color: transparent;
   border-radius: 3px;
+  border: 0;
+  cursor: pointer;
+  display: inline-flex;
   font-weight: 600;
-  text-align: center;
-  transition: all .2s ease-in-out;
+  letter-spacing: .25px;
+  line-height: normal;
+  padding: $spacing $spacing-small;
+  text-indent: .25px;
 
-  &:hover,
-  &:focus {
-    outline: none;
-    cursor: pointer;
+  .button__inner {
+    align-items: center;
+    display: inline-flex;
+    justify-content: center;
+
+    span {
+      + svg {
+        margin-left: $spacing-tiny;
+      }
+    }
+
+    svg {
+      height: 25px;
+      width: 25px;
+      flex-shrink: 0;
+
+      + span {
+        margin-left: $spacing-tiny;
+      }
+    }
+  }
+
+  &.button--large {
+    @include font-size(18px);
+    padding: $spacing * 1.125 $spacing-small * 1.125;
+
+    @media screen and (min-width: $bp-medium-wide) {
+      @include font-size(20px);
+      padding: $spacing * 1.25 $spacing-small * 1.25;
+    }
   }
 
   &--primary {
     background-color: $color-blue-1;
     border-color: $color-blue-1;
-    color: $white;
+    color: $color-white;
 
     &:hover,
     &:focus {
       background-color: $color-blue-2;
       border-color: $color-blue-2;
-      color: $white;
+      color: $color-white;
     }
 
     &.active {
       background-color: $color-blue-2;
       border-color: $color-blue-2;
+    }
+
+    svg {
+      fill: $color-white;
     }
   }
 
   &--secondary {
-    background-color: $color-red-1;
-    border-color: $color-red-1;
-    color: $white;
+    background-color: transparent;
+    border: 2px solid $color-blue-1;
+    color: $color-link;
+    padding: calc(#{$spacing} - 2px) $spacing-small;
 
     &:hover,
     &:focus {
-      background-color: $color-red-3;
-      border-color: $color-red-3;
-      color: $white;
+      background-color: $color-link;
+      border-color: $color-link;
+      color: $color-white;
+
+      svg {
+        fill: $color-white;
+      }
     }
 
     &.active {
-      background-color: $color-red-3;
-      border-color: $color-red-3;
+      background-color: $color-link;
+      border-color: $color-link;
+      color: $color-white;
+
+      svg {
+        fill: $color-white;
+      }
+    }
+
+    svg {
+      fill: $color-link;
+    }
+
+    &.button--large {
+      padding: calc(#{$spacing * 1.125} - 2px) $spacing-small * 1.125;
+
+      @media screen and (min-width: $bp-medium-wide) {
+        padding: calc(#{$spacing * 1.25} - 2px) $spacing-small * 1.125;
+      }
     }
   }
 
-  &--center {
-    margin-left: auto;
-    margin-right: auto;
-    display: table;
-  }
-}
+  &--filter {
+    align-items: center;
+    background-color: $color-gray-2;
+    color: $color-text;
 
-.button--cta {
-  margin-top: $gutter * 4;
+    &:hover,
+    &:focus {
+      background-color: $color-link;
+      color: $color-white;
+    }
+
+    &.active {
+      background-color: $color-link;
+      color: $color-white;
+    }
+  }
 }
 
 .button-container {
@@ -76,14 +136,15 @@
   }
 
   .button {
-    margin-bottom: $gutter;
-
-    @media screen and (min-width: $bp-medium-wide) {
-      margin-bottom: 0;
-      margin-right: $gutter;
+    @media screen and (max-width: $bp-medium-wide - 1px) {
+      margin-bottom: $spacing;
     }
 
-    &:last-child {
+    @media screen and (min-width: $bp-medium-wide) {
+      margin-right: $spacing;
+    }
+
+    &:last-of-type {
       margin-bottom: 0;
       margin-right: 0;
     }

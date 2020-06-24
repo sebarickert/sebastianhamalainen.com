@@ -12,17 +12,6 @@ html {
   height: 100%;
 }
 
-html,
-html a {
-  @include fontsmoothing();
-}
-
-*:active,
-*:hover {
-  outline: 0;
-}
-
-.menu,
 ul,
 ol,
 dl {
@@ -42,44 +31,4 @@ img {
   height: auto;
   max-width: 100%;
   display: block;
-}
-
-main {
-  display: block;
-}
-
-.slider {
-  @media screen and (max-width: $bp-extra-wide - 1px) {
-    overflow-x: scroll;
-    scroll-snap-type: x mandatory;
-  }
-}
-
-.slider__list {
-  list-style: none;
-  display: flex;
-
-  @media screen and (max-width: $bp-extra-wide - 1px) {
-    overflow-x: visible;
-  }
-}
-
-.slider__item {
-  @media screen and (max-width: $bp-extra-wide - 1px) {
-    scroll-snap-align: center;
-    display: inline-flex;
-    max-width: 400px;
-    margin-right: $gutter * 2;
-    flex: 0 0 90%;
-  }
-
-  @media screen and (min-width: $bp-extra-wide) {
-    width: calc(100% / 3 - #{$spacing});
-  }
-
-  & + & {
-    @media screen and (min-width: $bp-extra-wide) {
-      margin-left: $spacing-medium;
-    }
-  }
 }

@@ -1,9 +1,12 @@
 @import "lib";
 
 .portfolio-liftup__button {
-  margin-top: $gutter * 4;
+  display: table;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: $spacing-extra-large;
 
   @media screen and (min-width: $bp-wide) {
-    margin-top: $gutter * 6;
+    margin-top: $spacing-extra-large * 1.5;
   }
 }

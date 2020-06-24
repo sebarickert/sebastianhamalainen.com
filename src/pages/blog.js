@@ -6,7 +6,6 @@ import Container from '../components/container/container';
 import BlogTeaser from '../components/blogTeaser/blogTeaser';
 import Hero from '../components/hero/hero';
 import Listing from '../components/listing/listing';
-import Spacer from '../components/spacer/spacer';
 import Filter from '../components/filter/filter';
 import SEO from '../components/seo';
 
@@ -43,7 +42,7 @@ const BlogListingPage = () => {
   const [activeYear, setActiveYear] = useState(postYears);
 
   return (
-    <Layout className="gray-light">
+    <Layout>
       <SEO
         title="Blog"
         description="Here I'll dabble into different kind of topics, but most likely relating to tech and web development."
@@ -52,12 +51,14 @@ const BlogListingPage = () => {
         {/* eslint-disable-next-line react/no-unescaped-entities */}
         Here I'll dabble into different kind of topics, but most likely relating to tech and web development.
       </Hero>
-      <Container>
-        <Spacer>
-          {postYears.length > 1
+      {postYears.length > 1
           && <Filter filterItems={postYears} activeFilter={activeYear} setActiveYear={setActiveYear} /> }
-          <Listing col3 arrayOfContent={posts.filter(({ node: post }) => activeYear.indexOf(new Date(post.frontmatter.date).getFullYear()) > -1)} listingComponent={BlogTeaser} />
-        </Spacer>
+      <Container>
+        <Listing
+          arrayOfContent={posts.filter(({ node: post }) => activeYear.indexOf(new Date(post.frontmatter.date).getFullYear()) > -1)}
+          listingComponent={BlogTeaser}
+          col3
+        />
       </Container>
     </Layout>
   );

@@ -5,7 +5,6 @@ import MenuMainFooter from '../menu/menu.main.footer';
 import MenuSome from '../menu/menu.some';
 
 import './footer.scss';
-import './menu-footer.scss';
 
 const Footer = () => (
   <footer id="contact" className="footer">

@@ -1,25 +1,48 @@
 @import 'lib';
 
 .filter {
-  margin-bottom: $gutter * 4;
+  margin-bottom: $spacing-extra-large;
 }
 
 .filter__heading {
   @include font-size(20px);
-  margin-bottom: $gutter;
+  align-items: center;
+  display: flex;
+  margin-top: 0;
 
   @media screen and (min-width: $bp-small) {
     @include font-size(26px);
-    margin-bottom: $gutter * 1.5;
+  }
+
+  > svg {
+    height: 30px;
+    margin-right: $spacing-tiny;
+    width: 30px;
+  }
+}
+
+.filter-slider {
+  @media screen and (max-width: $bp-wide - 1px) {
+    overflow-x: scroll;
   }
 }
 
 .filter-listing {
   display: flex;
-  flex-wrap: wrap;
+
+  @media screen and (max-width: $bp-wide - 1px) {
+    overflow-x: visible;
+  }
+
+  @media screen and (min-width: $bp-wide) {
+    flex-wrap: wrap;
+  }
 }
 
 .filter__item {
-  margin-right: $gutter * .5;
-  margin-bottom: $gutter * .5;
+  margin-right: $spacing-tiny;
+
+  @media screen and (min-width: $bp-wide) {
+    margin-bottom: $spacing-tiny;
+  }
 }

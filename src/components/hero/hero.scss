@@ -1,25 +1,28 @@
 @import "lib";
 
-.hero {
-  padding-top: $spacing-extra-large;
-  padding-bottom: $spacing-extra-large;
+.hero__title {
+  @include font-size(40px);
+  margin-top: 0;
 
-  &.hero--blog {
-    background-color: $color-green-1;
-    color: $color-white;
+  @media screen and (min-width: $bp-medium-wide) {
+    @include font-size(52px);
   }
 
-  &.hero--portfolio {
-    background-color: $color-blue-1;
-    color: $color-white;
-  }
-
-  &.hero--snippets {
-    background-color: $color-red-2;
-    color: $color-white;
+  @media screen and (min-width: $bp-extra-wide) {
+    @include font-size(64px);
   }
 }
 
 .hero__lead {
+  @include font-size(32px);
   font-weight: normal;
+  margin-top: 0;
+
+  @media screen and (min-width: $bp-medium-wide) {
+    @include font-size(40px);
+  }
+
+  @media screen and (min-width: $bp-extra-wide) {
+    @include font-size(48px);
+  }
 }

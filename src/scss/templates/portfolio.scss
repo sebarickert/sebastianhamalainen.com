@@ -1,70 +1,8 @@
 @import "lib";
 
 .portfolio__content {
-  margin-bottom: $spacing-large;
-
   + .button-container {
+    margin-top: $spacing-extra-large;
     margin-bottom: $spacing;
   }
-
-  * {
-    + h2 {
-      margin-top: $spacing-medium;
-    }
-
-    + h3 {
-      margin-top: $spacing-medium;
-    }
-
-    + h4 {
-      margin-top: $spacing-medium;
-    }
-  }
-
-  h2 {
-    @include font-size(24px);
-    margin-bottom: $spacing-medium;
-
-    @media screen and (min-width: $bp-medium-wide) {
-      @include font-size(32px);
-    }
-
-    @media screen and (min-width: $bp-extra-wide) {
-      @include font-size(40px);
-    }
-  }
-
-  h3 {
-    @include font-size(24px);
-    margin-bottom: $spacing-medium;
-
-    @media screen and (min-width: $bp-medium-wide) {
-      @include font-size(28px);
-    }
-
-    @media screen and (min-width: $bp-extra-wide) {
-      @include font-size(32px);
-    }
-  }
-
-  h4 {
-    @include font-size(20px);
-    margin-bottom: $spacing-medium;
-
-    @media screen and (min-width: $bp-medium-wide) {
-      @include font-size(22px);
-    }
-
-    @media screen and (min-width: $bp-extra-wide) {
-      @include font-size(24px);
-    }
-  }
-}
-
-.portfolio__showcase {
-  background-color: $color-gray-4;
-}
-
-.portfolio__showcase-image {
-  width: 100%;
 }

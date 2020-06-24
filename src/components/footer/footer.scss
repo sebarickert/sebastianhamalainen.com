@@ -1,8 +1,8 @@
 @import "lib";
 
 .footer {
-  padding-top: $gutter * 4;
-  padding-bottom: $gutter * 4;
+  padding-top: $spacing-large;
+  padding-bottom: $spacing-large;
   background: linear-gradient($color-gray-1 0, $color-white 25%);
 
   @media screen and (min-width: $bp-wide) {
@@ -49,6 +49,8 @@
 }
 
 .footer__heading {
+  margin-top: 0;
+
   .footer__item:not(:first-child) & {
     margin-bottom: $spacing;
   }

@@ -1,22 +1,4 @@
-//
-// @file
-// This file includes all mixins related to the typography
-//
-
-@mixin fontsmoothing($smooting: antialiased, $uses-text-shadow: false) {
-  -webkit-font-smoothing: $smooting;
-  -moz-osx-font-smoothing: grayscale;
-  -moz-font-smoothing: $smooting;
-  -ms-font-smoothing: $smooting;
-  font-smoothing: $smooting;
-
-  @if $uses-text-shadow {
-    text-shadow: $text-shadow-light;
-  }
-}
-
 @mixin font-size($font-size, $desired-mobile-size: '') {
-  // @include mobile {
   @media screen and (max-width: $bp-medium) {
     @if $desired-mobile-size != '' {
       font-size: ($desired-mobile-size / $base-font-size) * 1rem;

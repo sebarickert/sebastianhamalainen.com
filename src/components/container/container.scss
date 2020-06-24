@@ -5,11 +5,11 @@ $container--medium: 900px;
 $container--large: 1400px;
 
 .container {
-  width: 100%;
   margin-left: auto;
   margin-right: auto;
-  max-width: calc(#{$container--large} + calc(#{$spacing-small} * 2));
-  padding: 0 $spacing-small;
+  max-width: calc(#{$container--large} + calc(#{$spacing-medium} * 2));
+  padding: 0 $spacing-medium;
+  width: 100%;
 
   @media screen and (min-width: $bp-small) {
     max-width: calc(#{$container--large} + calc(#{$spacing-large} * 2));

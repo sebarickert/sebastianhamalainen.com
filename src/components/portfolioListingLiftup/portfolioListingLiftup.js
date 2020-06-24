@@ -7,6 +7,7 @@ import Listing from '../listing/listing';
 import Container from '../container/container';
 import Heading from '../heading/heading';
 import Button from '../button/button';
+import IconArrowRight from '../../assets/icon--arrow--right.svg';
 
 import './portfolioListingLiftup.scss';
 
@@ -16,7 +17,7 @@ const PortfolioListingLiftup = () => {
       allMdx(
         filter: { fileAbsolutePath: { regex: "//content/portfolio//" } }
         sort: { order: DESC, fields: [frontmatter___date] }
-        limit: 3
+        limit: 1
       ) {
         edges {
           node {
@@ -24,6 +25,7 @@ const PortfolioListingLiftup = () => {
               title
               lead
               date(formatString: "MMMM DD, YYYY")
+              stack
               teaser_image {
                 childImageSharp {
                   fluid(quality: 100) {
@@ -46,12 +48,15 @@ const PortfolioListingLiftup = () => {
     <div className="portfolio-liftup">
       <Container>
         <Spacer large>
-          <Heading center>Latest showcases</Heading>
+          <Heading className="h1">Latest showcase</Heading>
           <Listing
             arrayOfContent={data.allMdx.edges}
             listingComponent={PortfolioTeaser}
           />
-          <Button primary center linkTo="/portfolio" className="portfolio-liftup__button">{'See portfolio showcases -->'}</Button>
+          <Button primary linkTo="/portfolio" className="portfolio-liftup__button">
+            See portfolio showcases
+            <IconArrowRight />
+          </Button>
         </Spacer>
       </Container>
     </div>

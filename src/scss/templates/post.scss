@@ -1,91 +1,44 @@
 @import "lib";
 
-.post__header {
-  padding-top: $spacing-extra-large;
-  padding-bottom: $spacing-extra-large;
+.post__content {
+  + .button {
+    margin-top: $spacing-extra-large;
+  }
+}
 
+.post__header {
   .post--blog & {
-    background-color: $color-green-1;
+    background-color: $color-blue-2;
+
+    * {
+      color: $color-white;
+    }
   }
 
   .post--snippets & {
-    background-color: $color-red-2;
-  }
-
-  .post--misc & {
     background-color: $color-red-1;
+
+    * {
+      color: $color-white;
+    }
   }
 }
 
 .post__heading {
+  @include font-size(40px);
   margin: 0;
-  color: $color-white;
+  text-align: center;
+
+  @media screen and (min-width: $bp-medium-wide) {
+    @include font-size(52px);
+  }
+
+  @media screen and (min-width: $bp-extra-wide) {
+    @include font-size(64px);
+  }
 }
 
 .post__date {
-  color: $color-white;
   margin-bottom: 0;
-  margin-top: $spacing;
-}
-
-.post__content {
-  margin-bottom: $spacing-extra-large;
-
-  .gatsby-highlight {
-    margin-left: -$spacing-extra-large;
-    margin-right: -$spacing-extra-large;
-  }
-
-  * {
-    + h2 {
-      margin-top: $spacing-medium;
-    }
-
-    + h3 {
-      margin-top: $spacing-medium;
-    }
-
-    + h4 {
-      margin-top: $spacing-medium;
-    }
-  }
-
-  h2 {
-    @include font-size(24px);
-    margin-bottom: $spacing-medium;
-
-    @media screen and (min-width: $bp-medium-wide) {
-      @include font-size(32px);
-    }
-
-    @media screen and (min-width: $bp-extra-wide) {
-      @include font-size(40px);
-    }
-  }
-
-  h3 {
-    @include font-size(24px);
-    margin-bottom: $spacing-medium;
-
-    @media screen and (min-width: $bp-medium-wide) {
-      @include font-size(28px);
-    }
-
-    @media screen and (min-width: $bp-extra-wide) {
-      @include font-size(32px);
-    }
-  }
-
-  h4 {
-    @include font-size(20px);
-    margin-bottom: $spacing-medium;
-
-    @media screen and (min-width: $bp-medium-wide) {
-      @include font-size(22px);
-    }
-
-    @media screen and (min-width: $bp-extra-wide) {
-      @include font-size(24px);
-    }
-  }
+  text-align: center;
 }

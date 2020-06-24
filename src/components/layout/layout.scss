@@ -2,10 +2,15 @@
 
 .sticky-footer {
   display: flex;
-  min-height: 100vh;
   flex-direction: column;
+  min-height: 100vh;
 
   > main {
     flex-grow: 1;
+    padding-bottom: $spacing-extra-large;
+
+    @media screen and (min-width: $bp-wide) {
+      padding-bottom: $spacing-extra-large * 2;
+    }
   }
 }

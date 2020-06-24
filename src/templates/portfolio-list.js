@@ -8,7 +8,6 @@ import PortfolioTeaser from '../components/portfolioTeaser/portfolioTeaser';
 import Hero from '../components/hero/hero';
 import Listing from '../components/listing/listing';
 import Pager from '../components/pager/pager';
-import Spacer from '../components/spacer/spacer';
 import SEO from '../components/seo';
 
 export const PortfolioListingPageQuery = graphql`
@@ -25,6 +24,7 @@ export const PortfolioListingPageQuery = graphql`
             title
             lead
             date(formatString: "MMMM DD, YYYY")
+            stack
             teaser_image {
               childImageSharp {
                 fluid(quality: 100) {
@@ -56,14 +56,12 @@ const PortfolioListingPage = ({ data: { allMdx }, pageContext }) => {
         including professional work and side projects.
       </Hero>
       <Container>
-        <Spacer>
-          <Listing
-            arrayOfContent={posts}
-            listingComponent={PortfolioTeaser}
-            spacingLarge
-          />
-          <Pager {...pageContext} />
-        </Spacer>
+        <Listing
+          arrayOfContent={posts}
+          listingComponent={PortfolioTeaser}
+          large
+        />
+        <Pager {...pageContext} />
       </Container>
     </Layout>
   );

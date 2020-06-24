@@ -3,18 +3,6 @@
 // https://maketintsandshades.com/
 // Use this website for generating tints and shades of colors.
 
-$white: #ffffff;
-$black: #000000;
-$mariner: #345ed6;
-$woodsmoke: #07080a;
-$woodsmoke-light: #0e0f13;
-$mandy: #e95378;
-$blush: #ba4260;
-$shamrock: #27d771;
-$mountain-meadow: #1fac5a;
-$silver: #cccccc;
-
-// NEW COLORS
 $color-white: #ffffff;
 $color-black: #000000;
 
@@ -22,30 +10,16 @@ $color-black: #000000;
 $color-gray-1: #fafafa;
 $color-gray-2: #f5f5f5;
 $color-gray-3: #e5e5e5;
-$color-gray-4: #111111;
+$color-gray-4: #222222;
+$color-gray-5: #111111;
 
 // Red Color Variables
-$color-red-1: #e95378;
-$color-red-2: #ce2026;
-$color-red-3: #ba4260;
-$color-red-4: #a51a1e;
+$color-red-1: #a51a1e;
 
 // Blue Color Variables
-$color-blue-1: #345ed6;
-$color-blue-2: #2a4bab;
-
-// Green Color Variables
-$color-green-1: #1fac5a;
-$color-green-2: #198a48;
+$color-blue-1: #0069ff;
+$color-blue-2: #0054cc;
 
 // Color Base Configuration Variables
 $color-link: $color-blue-1;
-$color-link--hover: $color-blue-2;
 $color-text: $color-gray-4;
-
-$primary-color: $woodsmoke;
-$secondary-color: $woodsmoke-light;
-$primary-accent-color: $mandy;
-$primary-accent-color--hover: $blush;
-$secondary-accent-color: $shamrock;
-$secondary-accent-color--hover: $mountain-meadow;

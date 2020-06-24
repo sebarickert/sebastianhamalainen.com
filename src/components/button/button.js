@@ -6,7 +6,7 @@ import ButtonPlain from './button.plain';
 import './button.scss';
 
 const Button = ({
-  linkTo, className, linkTargetType, children, noLink, onClick, primary, secondary, center,
+  linkTo, className = '', linkTargetType, children, noLink, onClick, primary, secondary, large, filter,
 }) => {
   if (primary) {
     className += ' button--primary';
@@ -16,14 +16,28 @@ const Button = ({
     className += ' button--secondary';
   }
 
-  if (center) {
-    className += ' button--center';
+  if (large) {
+    className += ' button--large';
+  }
+
+  if (filter) {
+    className += ' button--filter';
+  }
+  // const links = document.querySelectorAll('a');
+  // [...links].forEach((link) => {
+  //   link.style.color = 'pink';
+  // });
+
+  let cleanButtonText;
+
+  if (Array.isArray(children)) {
+    // eslint-disable-next-line prefer-destructuring
+    cleanButtonText = children[0];
   }
 
   const buttonProps = {
-    linkTo, className, children, onClick,
+    linkTo, className, children, onClick, cleanButtonText,
   };
-
 
   if (linkTargetType === 'external') {
     return <ButtonExternal {...buttonProps} />;

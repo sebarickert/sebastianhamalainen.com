@@ -8,8 +8,8 @@ import Hero from '../components/hero/hero';
 import SEO from '../components/seo';
 import Button from '../components/button/button';
 import ButtonContainer from '../components/button/button.container';
-import Spacer from '../components/spacer/spacer';
-import Separator from '../components/separator/separator';
+import IconLaunchExternal from '../assets/icon--launch--external.svg';
+import IconArrowLeft from '../assets/icon--arrow--left.svg';
 import '../scss/templates/portfolio.scss';
 
 export const query = graphql`
@@ -27,13 +27,6 @@ query($id: String!) {
           }
         }
       }
-      showcase_image {
-        childImageSharp {
-          fluid(maxWidth: 1200, quality: 100) {
-            src
-          }
-        }
-      }
     }
     body
     excerpt
@@ -43,44 +36,41 @@ query($id: String!) {
 
 const Portfolio = ({ data: { mdx } }) => {
   const {
-    url_web: urlWeb, url_source: urlSource, title, lead, teaser_image: teaserImage, showcase_image: showcaseImage,
+    url_web: urlWeb, url_source: urlSource, title, lead, teaser_image: teaserImage,
   } = mdx.frontmatter;
   const teaserImageSrc = teaserImage ? teaserImage.childImageSharp.fluid.src : '';
-  const showcaseImageSrc = showcaseImage ? showcaseImage.childImageSharp.fluid.src : '';
   return (
     <Layout>
       <SEO title={`${title} | Portfolio`} description={mdx.excerpt} image={teaserImageSrc} />
       <article>
-        <Hero title={title} className="hero--portfolio">{lead}</Hero>
-        <Container variation="small">
-          <Spacer>
-            <div className="portfolio__content">
-              <MDXRenderer>{mdx.body}</MDXRenderer>
-            </div>
-            {urlWeb || urlSource ? (
-              <ButtonContainer buttonContainerClass="mt--4">
-                {urlWeb ? <Button primary linkTo={urlWeb} linkTargetType="external">Visit site</Button> : ''}
-                {urlSource ? <Button primary linkTo={urlSource} linkTargetType="external">Visit source code</Button> : ''}
-              </ButtonContainer>
-            ) : (
-              ''
-            )}
-            <Button secondary linkTo="/portfolio">
-              {'<-- Go back to Portfolio'}
-            </Button>
-          </Spacer>
-        </Container>
-        {showcaseImage ? (
-          <div className="portfolio__showcase" role="presentation">
-            <Container>
-              <Spacer>
-                <img src={showcaseImageSrc} alt="" className="portfolio__showcase-image" />
-              </Spacer>
-            </Container>
+        <Hero title={title}>{lead}</Hero>
+        <Container small>
+          <div className="portfolio__content">
+            <MDXRenderer>{mdx.body}</MDXRenderer>
           </div>
-        ) : (
-          ''
-        )}
+          {urlWeb || urlSource ? (
+            <ButtonContainer>
+              {urlWeb ? (
+                <Button primary linkTo={urlWeb} linkTargetType="external">
+                  Visit site
+                  <IconLaunchExternal />
+                </Button>
+              ) : ''}
+              {urlSource ? (
+                <Button primary linkTo={urlSource} linkTargetType="external">
+                  Visit source code
+                  <IconLaunchExternal />
+                </Button>
+              ) : ''}
+            </ButtonContainer>
+          ) : (
+            ''
+          )}
+          <Button secondary linkTo="/portfolio">
+            <IconArrowLeft />
+            Go back to Portfolio
+          </Button>
+        </Container>
       </article>
     </Layout>
   );
