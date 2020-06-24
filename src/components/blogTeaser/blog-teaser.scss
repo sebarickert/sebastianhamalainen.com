@@ -19,4 +19,16 @@
 
 .blog-teaser__lead {
   @include font-size(18px);
+  color: $color-text;
+}
+
+.blog-teaser__link {
+  display: block;
+
+  &:hover,
+  &:focus {
+    .blog-teaser__heading {
+      color: $color-link;
+    }
+  }
 }
