@@ -24,21 +24,15 @@ _Note: In these examples I'm using SCSS and not vanilla CSS._
 .button {
   background-color: transparent;
   border-radius: 3px;
-  border: 2px solid #000000;
-  color: #000000;
-  display: inline-block;
+  border: 0;
+  cursor: pointer;
+  display: inline-flex;
   font-size: 16px;
   font-weight: 600;
-  padding: 12px 32px;
-  position: relative;
-  text-align: center;
-  transition: all .2s ease-in-out;
-
-  &:hover,
-  &:focus {
-    cursor: pointer;
-    outline: none;
-  }
+  letter-spacing: .25px;
+  line-height: normal;
+  padding: 16px 24px;
+  text-indent: .25px;
 }
 ```
 
@@ -50,28 +44,29 @@ This method comes from the [BEM methology](http://getbem.com/introduction/).
 
 ```scss
 .button--primary {
-  background-color: #e95378;
-  border-color: #e95378;
+  background-color: #0069ff;
+  border-color: #0069ff;
   color: #ffffff;
 
   &:hover,
   &:focus {
-    background-color: #ba4260;
-    border-color: #ba4260;
+    background-color: #0069ff;
+    border-color: #0069ff;
     color: #ffffff;
   }
 }
 
 .button--secondary {
-  background-color: #27d771;
-  border-color: #27d771;
-  color: #000000;
+  background-color: transparent;
+  border: 2px solid #0069ff;
+  color: #0069ff;
+  padding: 14px 24px;
 
   &:hover,
   &:focus {
-    background-color: #1fac5a;
-    border-color: #1fac5a;
-    color: #000000;
+    background-color: #0069ff;
+    border-color: #0069ff;
+    color: #ffffff;
   }
 }
 ```
@@ -88,26 +83,34 @@ The default button only has very basic styles added to it and looks dull, but th
 
 The default button has no hover effect as well, they are added on the variations.
 
-<Button noLink>
-  I'm the default button!
-</Button>
-
-
 ### Primary button
 
-The primary button has a background color similar to pink with white text. Like this:
-
+The primary button has a background color of blue with white text. Like this:
 
 <Button primary noLink>
-  I'm the primary button!
+  Primary
+</Button>
+
+It also has a large variation, which has a larger font size and a bit more padding.
+
+<Button primary large noLink>
+  Primary large
 </Button>
 
 ### Secondary button
 
-The secondary button has a background color of light green with black text, to be accessible of course. Like this:
+The secondary button has a transparent background color and with blue text.
+
+When hovered of focused it will fill it background with a blue color and change the text color to white. Like this:
 
 <Button secondary noLink>
-  I'm the secondary button variation!
+  Secondary
+</Button>
+
+It also has a large variation, which has a larger font size and a bit more padding.
+
+<Button secondary large noLink>
+  Secondary large
 </Button>
 
 ## Conclusion

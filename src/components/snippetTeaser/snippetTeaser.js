@@ -1,29 +1,40 @@
 import React from 'react';
 import { Link } from 'gatsby';
 
+import IconLabelImportant from '../../assets/icon--label--important.svg';
+import IconPen from '../../assets/icon--pen.svg';
 import './snippet-teaser.scss';
 
 const SnippetTeaser = ({
-  title, date, slug, category,
+  title, date, slug, category, excerpt,
 }) => (
   <article className="snippet-teaser">
-    <header>
-      <h2 className="snippet-teaser__heading">
-        <Link to={slug} className="snippet-teaser__link">
+    <Link to={slug} className="snippet-teaser__link">
+      <header>
+        <h2 className="snippet-teaser__heading">
           <span>{title}</span>
-        </Link>
-      </h2>
-    </header>
-    <footer>
-      <div className="snippet-teaser__category">
-        <span>Category</span>
-        <span>{category}</span>
-      </div>
-      <div className="snippet-teaser__published">
-        <span>Last updated</span>
-        <span>{date}</span>
-      </div>
-    </footer>
+        </h2>
+      </header>
+      <p className="snippet-teaser__description">
+        {excerpt}
+      </p>
+      <footer>
+        <ul className="snippet-teaser__details">
+          <li className="snippet-teaser__detail">
+            <span aria-label="Category">
+              <IconLabelImportant />
+              {category}
+            </span>
+          </li>
+          <li className="snippet-teaser__detail">
+            <span aria-label="Last modified">
+              <IconPen />
+              {date}
+            </span>
+          </li>
+        </ul>
+      </footer>
+    </Link>
   </article>
 );
 export default SnippetTeaser;

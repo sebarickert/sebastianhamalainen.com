@@ -5,16 +5,19 @@ import Spacer from '../spacer/spacer';
 
 import './hero.scss';
 
-const Hero = ({ title, children, className }) => (
-  <Spacer slimMobile>
-    <Container className={`hero ${className || ''}`} variation="medium">
-      <h1 className="hero__title">
-        <span>{title}</span>
-      </h1>
-      <h2 className="hero__lead" dangerouslySetInnerHTML={{ __html: children }} />
+const Hero = ({
+  title, children, className,
+}) => (
+  <div className={`hero ${className || ''}`}>
+    <Container>
+      <Spacer large>
+        <h1 className="hero__title">
+          <span>{title}</span>
+        </h1>
+        <h2 className="hero__lead" dangerouslySetInnerHTML={{ __html: children }} />
+      </Spacer>
     </Container>
-  </Spacer>
-
+  </div>
 );
 
 export default Hero;

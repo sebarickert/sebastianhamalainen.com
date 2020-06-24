@@ -1,68 +1,46 @@
 @import "lib";
 
 .snippet-teaser {
-  padding: $gutter * 2 0;
-  border-bottom: 1px solid $color-gray-3;
-
-  @media screen and (min-width: $bp-medium-wide) {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    grid-column-gap: $gutter * 2;
-    align-items: center;
-  }
-
-  header {
-    margin-bottom: $gutter;
-
-    @media screen and (min-width: $bp-medium-wide) {
-      margin-bottom: 0;
-    }
-  }
-
-  footer {
-    @media screen and (min-width: $bp-medium-wide) {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      grid-column-gap: $gutter;
-    }
-  }
+  background-color: $color-gray-1;
+  border-radius: 6px;
+  overflow: hidden;
 }
 
-.snippet-teaser__published {
-  display: flex;
-  flex-direction: column;
+.snippet-teaser__link {
+  display: block;
+  padding: $spacing-medium;
 
-  span {
-    &:first-child {
-      @include font-size(16px);
-      color: $color-red-2;
-    }
-  }
-}
-
-.snippet-teaser__category {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: $gutter;
-
-  @media screen and (min-width: $bp-medium-wide) {
-    margin-bottom: 0;
-  }
-
-  span {
-    &:first-child {
-      @include font-size(16px);
-      color: $color-red-2;
-    }
+  &:hover,
+  &:focus {
+    background-color: $color-gray-2;
   }
 }
 
 .snippet-teaser__heading {
-  @include font-size(20px);
-  transition: inherit;
-  margin: 0;
+  @include font-size(26px);
+  margin-top: 0;
+}
 
-  @media screen and (min-width: $bp-small) {
-    @include font-size(26px);
+.snippet-teaser__description {
+  @include font-size(18px);
+  color: $color-text;
+}
+
+.snippet-teaser__details {
+  list-style: none;
+}
+
+.snippet-teaser__detail {
+  span {
+    @include font-size(18px);
+    align-items: center;
+    color: $color-text;
+    display: flex;
+
+    svg {
+      height: 25px;
+      margin-right: $spacing-tiny;
+      width: 25px;
+    }
   }
 }

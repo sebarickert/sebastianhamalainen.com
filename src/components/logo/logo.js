@@ -1,11 +1,11 @@
 import React from 'react';
 import { Link } from 'gatsby';
 
-import './page-logo.scss';
+import './logo.scss';
 
-const Logo = ({ className, center }) => (
-  <span className={`page-logo ${center ? 'page-logo--center' : ''} ${className || ''}`}>
-    <Link to="/" className="page-logo__link">
+const Logo = ({ className }) => (
+  <span className={`logo ${className || ''}`}>
+    <Link to="/" className="logo__link">
       <svg viewBox="0 0 380 750">
         <title>Home</title>
         <rect className="a" y="50" width="60" height="500" />

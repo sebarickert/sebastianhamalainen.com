@@ -1,6 +1,5 @@
 import React from 'react';
 
-
-const ButtonContainer = ({ buttonContainerClass, children }) => <div className={`button-container ${buttonContainerClass || ''}`}>{children}</div>;
+const ButtonContainer = ({ className, children }) => <div className={`button-container ${className || ''}`}>{children}</div>;
 
 export default ButtonContainer;

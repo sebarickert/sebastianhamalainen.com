@@ -1,18 +1,42 @@
 @import 'lib';
 
+.overlay-toggle {
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+  height: 35px;
+  padding: 0;
+  width: 35px;
+  z-index: 20;
+
+  svg {
+    height: 100%;
+    width: 100%;
+  }
+
+  &:focus {
+    outline-offset: $spacing-tiny / 2;
+    outline: 2px solid $color-link;
+  }
+
+  @media screen and (min-width: $bp-wide) {
+    display: none;
+  }
+}
+
 .overlay-menu {
   @media screen and (max-width: $bp-wide) {
-    width: 100%;
-    background-color: $color-gray-1;
+    background-color: $color-white;
     height: 100%;
     margin-left: auto;
+    padding: 128px $spacing $spacing $spacing;
     position: fixed;
     right: 0;
     top: 0;
-    width: 100%;
     transform: translateX(100%);
-    padding: 72px $gutter $gutter $gutter;
     transition: transform 0.35s;
+    width: 100%;
+    width: 100%;
   }
 
   .menu-main {
@@ -27,18 +51,6 @@
     }
   }
 
-  .menu-main__item {
-    @media screen and (max-width: $bp-wide) {
-      margin-left: 0;
-    }
-  }
-
-  .menu-main__link {
-    @media screen and (max-width: $bp-wide) {
-      @include font-size(26px);
-    }
-  }
-
   &.is-open {
     @media screen and (max-width: $bp-wide) {
       transform: translate3d(0, 0, 0);
@@ -47,143 +59,91 @@
 }
 
 .menu-main {
-  padding: 0;
-  list-style: none;
   display: flex;
   flex-direction: column;
+  list-style: none;
+  padding: 0;
 
-  @media screen and (min-width: $bp-wide) {
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-  }
-
-  &--some {
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-  }
-
-  &--footer {
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
+  &:not(.menu-main--footer):not(.menu-main--some) {
+    @media screen and (min-width: $bp-wide) {
+      align-items: center;
+      flex-direction: row;
+    }
   }
 }
 
 .menu-main__item {
-  margin-right: $gutter * 1.5;
+  & + & {
+    @media screen and (max-width: $bp-wide - 1px) {
+      margin-top: $spacing;
+    }
 
-  &:last-child {
-    margin-right: 0;
-  }
-
-  @media screen and (max-width: $bp-wide) {
-    margin: 0 $gutter;
-
-    &:last-child {
-      margin-right: $gutter;
+    @media screen and (min-width: $bp-wide) {
+      margin-left: $spacing-tiny;
     }
   }
 
   .menu-main--footer &,
   .menu-main--some & {
-    margin-left: 0;
-    margin-right: 0;
+    margin: 0;
   }
 }
 
 .menu-main__link {
-  @include font-size(18px);
-  position: relative;
-  font-weight: 600;
+  border-radius: 3px;
   color: $color-text;
+  font-weight: 600;
   opacity: .5;
+  padding: $spacing * .75 $spacing;
 
-  span {
-    padding-bottom: $gutter * .25;
-    position: relative;
+  @media screen and (max-width: $bp-wide - 1px) {
+    @include font-size(26px);
 
-    &:after {
-      content: '';
-      position: absolute;
-      bottom: -0.15rem;
-      width: 0;
-      height: 2px;
-      background-color: $color-red-1;
-      left: 0;
-      right: 0;
-      transition: width 0.2s ease-in-out;
+    &:focus {
+      color: $color-text;
+      opacity: 1;
+      outline-offset: $spacing-tiny / 2;
+      outline: 2px auto $color-text;
     }
   }
 
-  &:focus,
-  &:hover {
-    color: $color-text;
-    opacity: 1;
+  @media screen and (min-width: $bp-wide) {
+    @include font-size(18px);
 
-    span:after {
-      width: 100%;
+    &:hover,
+    &:focus {
+      background-color: $color-gray-2;
+      color: $color-text;
+      opacity: 1;
+      outline: 0;
     }
   }
 
   &.is-active {
-    color: $color-text;
     opacity: 1;
-
-    span:after {
-      width: 100%;
-    }
-  }
-
-  &.is-home {
-    span:after {
-      display: none;
-    }
-  }
-
-  &.is-portfolio {
-    span:after {
-      background-color: $color-blue-1;
-    }
-  }
-
-  &.is-blog {
-    span:after {
-      background-color: $color-green-1;
-    }
-  }
-
-  &.is-snippets {
-    span:after {
-      background-color: $color-red-2;
-    }
   }
 
   .menu-main--footer &,
   .menu-main--some & {
     @include font-size(16px);
-    opacity: 1;
     font-weight: normal;
     margin: 0;
+    opacity: 1;
+    padding: 0;
 
     &:hover,
     &:focus {
+      background-color: transparent;
       color: $color-link;
+    }
+
+    &:focus {
+      outline-offset: $spacing-tiny / 2;
+      outline: 2px solid $color-link;
     }
 
     &.is-active {
       color: $color-link;
     }
-
-    span:after {
-      display: none;
-    }
-  }
-
-  @media screen and (max-width: $bp-wide) {
-    padding: $gutter * .5 0;
-    margin-bottom: $gutter * .5;
-    display: inline-block;
   }
 }

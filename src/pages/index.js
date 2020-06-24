@@ -5,7 +5,6 @@ import SEO from '../components/seo';
 import BlogLiftupListing from '../components/blogLiftupListing/blogLiftupListing';
 import PortfolioLiftupListing from '../components/portfolioListingLiftup/portfolioListingLiftup';
 import Introduction from '../components/introduction/introduction';
-import Cta from '../components/cta/cta';
 
 import '../scss/base.scss';
 
@@ -14,9 +13,6 @@ const IndexPage = () => (
     <SEO title="Front-end Developer, Web Design and JS enthusiast" />
     <Introduction />
     <PortfolioLiftupListing />
-    <Cta linkTo="/snippets" linkToText="Go check them out -->" primary>
-      {'I\'ve created a list of code snippets, just for you.'}
-    </Cta>
     <BlogLiftupListing />
   </Layout>
 );

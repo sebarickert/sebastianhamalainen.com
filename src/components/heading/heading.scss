@@ -1,10 +1,11 @@
 @import "lib";
 
 .heading {
-  margin-bottom: $gutter * 4;
+  margin-top: 0;
+  margin-bottom: $spacing-extra-large;
 
   @media screen and (min-width: $bp-wide) {
-    margin-bottom: $gutter * 6;
+    margin-bottom: $spacing-extra-large * 1.5;
   }
 }
 

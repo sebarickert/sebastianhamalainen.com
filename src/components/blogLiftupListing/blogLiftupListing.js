@@ -5,7 +5,9 @@ import BlogTeaser from '../blogTeaser/blogTeaser';
 import Spacer from '../spacer/spacer';
 import Container from '../container/container';
 import Heading from '../heading/heading';
+import Listing from '../listing/listing';
 import Button from '../button/button';
+import IconArrowRight from '../../assets/icon--arrow--right.svg';
 
 import './blogLiftupListing.scss';
 
@@ -40,25 +42,26 @@ const BlogLiftupListing = () => {
     }
   `);
 
+  const { edges: posts } = data.allMdx;
+
   return (
     <div className="blog-liftup">
       <Spacer large>
         <Container>
-          <Heading>Latest blog posts</Heading>
+          <Heading className="h1">Latest blog posts</Heading>
         </Container>
-        <div className="slider">
-          <Container>
-            <ul className="slider__list">
-              {data.allMdx.edges.map(({
-                node: {
-                  frontmatter, fields, id, excerpt = '',
-                },
-              }) => <li className="slider__item" key={id}><BlogTeaser key={id} excerpt={excerpt} {...frontmatter} {...fields} /></li>)}
-            </ul>
-          </Container>
-        </div>
         <Container>
-          <Button primary center linkTo="/blog" className="blog-liftup__button">{'See blog posts -->'}</Button>
+          <Listing
+            arrayOfContent={posts}
+            listingComponent={BlogTeaser}
+            col3
+          />
+        </Container>
+        <Container>
+          <Button primary linkTo="/blog" className="blog-liftup__button">
+            See blog posts
+            <IconArrowRight />
+          </Button>
         </Container>
       </Spacer>
     </div>
