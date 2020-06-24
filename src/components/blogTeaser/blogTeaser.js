@@ -9,15 +9,15 @@ const BlogTeaser = ({
   const imageSrc = teaserImage ? teaserImage.childImageSharp.fixed.src : '';
   return (
     <article className="blog-teaser">
-      {teaserImage ? <img className="blog-teaser__image" src={imageSrc} alt="" role="presentation" /> : <div className="blog-teaser__image blog-teaser__image--empty" />}
-      <header>
-        <h2 className="blog-teaser__heading">
-          <Link to={slug} className="blog-teaser__link">
+      <Link to={slug} className="blog-teaser__link">
+        {teaserImage ? <img className="blog-teaser__image" src={imageSrc} alt="" role="presentation" /> : <div className="blog-teaser__image blog-teaser__image--empty" />}
+        <header>
+          <h2 className="blog-teaser__heading">
             <span>{title}</span>
-          </Link>
-        </h2>
-      </header>
-      <p className="blog-teaser__lead">{excerpt}</p>
+          </h2>
+        </header>
+        <p className="blog-teaser__lead">{excerpt}</p>
+      </Link>
     </article>
   );
 };
