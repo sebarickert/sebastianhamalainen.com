@@ -87,7 +87,10 @@
 
   .menu-main--footer &,
   .menu-main--some & {
-    margin: 0;
+    line-height: 32px;
+    margin-bottom: $spacing-tiny;
+    margin-left: 0;
+    margin-top: 0;
   }
 }
 
