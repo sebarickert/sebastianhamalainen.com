@@ -8,6 +8,11 @@ url_web: "https://arvi.taito.fi/fi"
 showcase_image: "./images/ss-taito.jpg"
 stack: ['Drupal', 'Drupal Commerce', 'JavaScript', 'CSS / SCSS']
 ---
+
+import WidgetImage from '../../../src/components/widget/image/image';
+
+<WidgetImage src="./images/ss-taito.jpg" alt="A screenshot of the showcases website" />
+
 ## What did I do?
 
 Initialized the Drupal 8  with commerce installations custom theme and built the whole front-end. It took me just under a week to finish building.
@@ -21,6 +26,7 @@ Added a very nicely working slider for the product pages. It works differently d
 Drupal 8 with commerce. Custom theme uses the basics, such as plain vanilla JavaScript and a gulp compiler for the SCSS (and of course the custom JavaScript).
 
 Wanted to try out proper custom submit buttons, so I created custom button twig templates initializing it before in the `.theme` file. Regular drupal submit buttons are `input` elements that have `type="submit"` attributes. I wanted them to be semantic HTML buttons.
+
 
 ## What I learned
 
