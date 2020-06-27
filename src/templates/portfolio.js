@@ -10,6 +10,7 @@ import Button from '../components/button/button';
 import ButtonContainer from '../components/button/button.container';
 import IconLaunchExternal from '../assets/icon--launch--external.svg';
 import IconArrowLeft from '../assets/icon--arrow--left.svg';
+import PostNavigation from '../components/postNavigation/postNavigation';
 import '../scss/templates/portfolio.scss';
 
 export const query = graphql`
@@ -34,11 +35,14 @@ query($id: String!) {
 }
 `;
 
-const Portfolio = ({ data: { mdx } }) => {
+const Portfolio = ({ data: { mdx }, pageContext }) => {
   const {
     url_web: urlWeb, url_source: urlSource, title, lead, teaser_image: teaserImage,
   } = mdx.frontmatter;
   const teaserImageSrc = teaserImage ? teaserImage.childImageSharp.fluid.src : '';
+
+  const { next, previous } = pageContext;
+
   return (
     <Layout>
       <SEO title={`${title} | Portfolio`} description={mdx.excerpt} image={teaserImageSrc} />
@@ -70,6 +74,7 @@ const Portfolio = ({ data: { mdx } }) => {
             <IconArrowLeft />
             Go back to Portfolio
           </Button>
+          {(next || previous) && <PostNavigation {...pageContext} type="portfolio" />}
         </Container>
       </article>
     </Layout>

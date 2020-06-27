@@ -6,7 +6,17 @@ import IconArrowRight from '../../assets/icon--arrow--right.svg';
 const PostNavigationLink = ({
   title, slug, next, previous, type,
 }) => {
-  type = type === 'blog' ? 'post' : 'snippet';
+  switch (type) {
+    case 'portfolio':
+      type = 'showcase';
+      break;
+    case 'snippets':
+      type = 'snippet';
+      break;
+    default:
+      type = 'post';
+  }
+
   return (
     <a className="post-navigation__link" href={slug} title={next ? `Go to next ${type}` : `Go to previous ${type}`} aria-label={next ? `Go to next ${type}` : `Go to previous ${type}`}>
       <div className="post-navigation__content">
