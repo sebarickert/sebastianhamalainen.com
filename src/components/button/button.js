@@ -23,16 +23,11 @@ const Button = ({
   if (filter) {
     className += ' button--filter';
   }
-  // const links = document.querySelectorAll('a');
-  // [...links].forEach((link) => {
-  //   link.style.color = 'pink';
-  // });
 
   let cleanButtonText;
 
   if (Array.isArray(children)) {
-    // eslint-disable-next-line prefer-destructuring
-    cleanButtonText = children[0];
+    cleanButtonText = children.filter(child => typeof child === 'string' && child);
   }
 
   const buttonProps = {
