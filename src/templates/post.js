@@ -52,7 +52,6 @@ const Post = ({ data: { mdx }, pageContext }) => {
             <div className="post__content">
               <MDXRenderer>{mdx.body}</MDXRenderer>
             </div>
-            {(next || previous) && <PostNavigation {...pageContext} type={type} />}
             {type === 'blog' && (
               <Button secondary linkTo="/blog">
                 <IconArrowLeft />
@@ -65,6 +64,7 @@ const Post = ({ data: { mdx }, pageContext }) => {
                 Go back to Snippets
               </Button>
             )}
+            {(next || previous) && <PostNavigation {...pageContext} type={type} />}
           </Spacer>
         </Container>
       </article>

@@ -4,5 +4,9 @@
   + .button-container {
     margin-top: $spacing-extra-large;
     margin-bottom: $spacing;
+
+    + .button {
+      margin-bottom: $spacing-medium;
+    }
   }
 }

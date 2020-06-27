@@ -118,13 +118,15 @@ function createSnippetsPages({ data, actions }) {
 }
 
 const createPortfolioPosts = (createPage, edges) => {
-  edges.forEach(({ node }) => {
+  edges.forEach(({ node, next, previous }) => {
     createPage({
       path: node.fields.slug,
       component: path.resolve('./src/templates/portfolio.js'),
       context: {
         id: node.id,
         slug: node.fields.slug,
+        next,
+        previous,
       },
     });
   });
@@ -210,6 +212,12 @@ exports.createPages = async ({ actions, graphql }) => {
       edges {
         node {
           ...PostDetails
+        }
+        next {
+          ...PostNextPreviousDetails
+        }
+        previous {
+          ...PostNextPreviousDetails
         }
       }
     }
