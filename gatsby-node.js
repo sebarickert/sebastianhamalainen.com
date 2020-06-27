@@ -70,13 +70,15 @@ exports.onCreateNode = (...args) => {
 };
 
 const createPosts = (createPage, edges) => {
-  edges.forEach(({ node }) => {
+  edges.forEach(({ node, next, previous }) => {
     createPage({
       path: node.fields.slug,
       component: path.resolve('./src/templates/post.js'),
       context: {
         id: node.id,
         slug: node.fields.slug,
+        next,
+        previous,
       },
     });
   });
@@ -177,11 +179,23 @@ exports.createPages = async ({ actions, graphql }) => {
       description
     }
   }
+  fragment PostNextPreviousDetails on Mdx {
+    fields {
+      title
+      slug
+    }
+  }
   {
     blog: allMdx(filter: {fileAbsolutePath: {regex: "//content/blog//"}}, sort: {order: DESC, fields: [frontmatter___date]}) {
       edges {
         node {
           ...PostDetails
+        }
+        next {
+          ...PostNextPreviousDetails
+        }
+        previous {
+          ...PostNextPreviousDetails
         }
       }
     }
@@ -203,6 +217,12 @@ exports.createPages = async ({ actions, graphql }) => {
       edges {
         node {
           ...PostDetails
+        }
+        next {
+          ...PostNextPreviousDetails
+        }
+        previous {
+          ...PostNextPreviousDetails
         }
       }
     }
