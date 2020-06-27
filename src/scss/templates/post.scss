@@ -1,6 +1,11 @@
 @import "lib";
 
 .post__content {
+  + .post-navigation {
+    margin-top: $spacing-extra-large;
+    margin-bottom: $spacing-large;
+  }
+
   + .button {
     margin-top: $spacing-extra-large;
   }

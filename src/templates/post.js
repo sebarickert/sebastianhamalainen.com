@@ -7,6 +7,7 @@ import Layout from '../components/layout/layout';
 import Container from '../components/container/container';
 import Spacer from '../components/spacer/spacer';
 import Button from '../components/button/button';
+import PostNavigation from '../components/postNavigation/postNavigation';
 import IconArrowLeft from '../assets/icon--arrow--left.svg';
 
 import '../scss/templates/post.scss';
@@ -25,10 +26,12 @@ export const postQuery = graphql`
   }
 `;
 
-const Post = ({ data: { mdx } }) => {
+const Post = ({ data: { mdx }, pageContext }) => {
   const {
     title, date, description, type,
   } = mdx.fields;
+
+  const { next, previous } = pageContext;
 
   return (
     <Layout>
@@ -49,6 +52,7 @@ const Post = ({ data: { mdx } }) => {
             <div className="post__content">
               <MDXRenderer>{mdx.body}</MDXRenderer>
             </div>
+            {(next || previous) && <PostNavigation {...pageContext} type={type} />}
             {type === 'blog' && (
               <Button secondary linkTo="/blog">
                 <IconArrowLeft />
