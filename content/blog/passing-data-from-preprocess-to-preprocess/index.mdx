@@ -1,0 +1,111 @@
+---
+title: "Passing data between different Drupal hooks"
+date: '2020-07-03'
+description: "In Drupal, hooks are one of the ways to interact with Drupal. Hooks can be used to alter Drupal's core behaviour as well as contrib modules behaviour."
+teaser_image: './images/data.jpg'
+---
+
+In Drupal, hooks are one of the ways to interact with Drupal. Hooks can be used to alter Drupal's core behaviour as well as contrib modules behaviour.
+
+As an example, propably the most used way how Drupal's hooks are used is by adding classes to DOM elements. Hooks are also used for passing down data as variables directly to specific twig templates.
+
+```php
+function THEME_preprocess_html(&$variables) {
+  global $base_secure_url;
+  $variables['theme_path'] = file_create_url($base_secure_url . '/' . drupal_get_path('theme', 'THEME'));
+}
+```
+
+In the first code example, we are passing down the variable `theme_path` to the template `html.html.twig` via the `THEME_preprocess_html()` hook.
+
+```twig
+{{ theme_path }}
+```
+
+Now the `html.html.twig` template can use the `theme_path` variable we just created by rendering it in the template in parentheses.
+
+## Passing data to another hook
+
+Passing variables to twig templates is simple enough and usually doesn't bring any trouble.
+
+But it gets tricky when you need to use specific data, that you can only obtain in a specific hook, but need to use the data in another hook, where you are passing it down to a template.
+
+As an example, you have a paragraph item which uses entity reference items with an unlimited amount. You need to get the entities total amount and pass it down to each entities node template. The problem is you can only obtain the amount of entities in the `hook` of the paragraph item.
+
+### Solution
+
+It took me a while to find a working solution, but luckily I found it at [StackOverflow](https://drupal.stackexchange.com/questions/281031/passing-data-from-outer-preprocess-to-inner-template) (like any other solution).
+
+The solution is to add your data into an `object` item, which then can be fetched in the entities `hook`.
+
+In this example the data we want is in the `THEME_preprocess_paragraph()` hook.
+
+```php
+use Drupal\node\Entity\Node;
+
+function THEME_preprocess_paragraph(&$variables) {
+  $paragraph = $variables['paragraph'];
+  $paragraphType = $paragraph->bundle();
+
+  switch ($paragraphType) {
+     case 'your_paragraph_id':
+      // Check if the paragraph has your field.
+      if ($paragraph->hasField('your_field')) {
+        // This is an array with 0-n items.
+        $yourField = $paragraph->get('your_field');
+
+        // Here we iterate over every item in the array.
+        foreach ($yourField as $key => $value) {
+          // Get the id from the node and load it.
+          // After that, you'll create new object item
+          // with the node's parent paragraph's data.
+          $nodeId = $value->getValue()['target_id'];
+          $node = Node::load($nodeId);
+          $node->field_parent_paragraph = $paragraph;
+        }
+      }
+
+      break;
+  }
+}
+```
+
+After passing the data down to the entity, the data can be fetched in the `THEME_preprocess_node()` hook.
+
+```php
+function THEME_preprocess_node(&$variables) {
+  $node = $variables['node'];
+
+  switch ($node->getType()) {
+    case 'your_node_type':
+      // Here we check if the node has the created object item.
+      if (isset($node->field_parent_paragraph)) {
+        $paragraph = $node->field_parent_paragraph;
+        // The field is a ReferencedEntity class, which has handy functions to get data.
+        $paragraphEntities = $paragraph->get('your_field')->referencedEntities();
+        $paragraphEntitiesCount = [];
+
+        // Do whatever you want with the data.
+        // In this case, I want to create an array, which has the node ID's in it.
+        foreach ($paragraphEntities as $key => $node) {
+          array_push($paragraphEntitiesCount, $node->id());
+        }
+
+        // Pass the wanted data to the template.
+        $variables['paragraphEntitiesCount'] = $paragraphEntitiesCount;
+      }
+
+      break;
+  }
+}
+```
+
+Now the data has been passed down to the template where it can be rendered and can be used how you like.
+
+```twig
+{% for nodeID in paragraphEntitiesCount %}
+  // Do stuff ...
+{% endfor %}
+```
+
+And we are done!
