@@ -10,28 +10,9 @@
   }
 }
 
-.post__header {
-  .post--blog & {
-    background-color: $color-blue-2;
-
-    * {
-      color: $color-white;
-    }
-  }
-
-  .post--snippets & {
-    background-color: $color-red-1;
-
-    * {
-      color: $color-white;
-    }
-  }
-}
-
 .post__heading {
   @include font-size(40px);
   margin: 0;
-  text-align: center;
 
   @media screen and (min-width: $bp-medium-wide) {
     @include font-size(52px);
@@ -44,5 +25,4 @@
 
 .post__date {
   margin-bottom: 0;
-  text-align: center;
 }

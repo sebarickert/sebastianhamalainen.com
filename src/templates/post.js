@@ -38,8 +38,8 @@ const Post = ({ data: { mdx }, pageContext }) => {
       <SEO title={type !== 'misc' ? `${title} | ${type}` : title} description={description} />
       <article className={`post post--${type}`}>
         <div className="post__header">
-          <Container medium>
-            <Spacer large>
+          <Container small>
+            <Spacer>
               <h1 className="post__heading">{title}</h1>
               <p className="post__date">
                 {type === 'misc' || type === 'snippets' ? `Last updated on ${date}` : `Published on ${date}`}
@@ -48,24 +48,22 @@ const Post = ({ data: { mdx }, pageContext }) => {
           </Container>
         </div>
         <Container small>
-          <Spacer>
-            <div className="post__content">
-              <MDXRenderer>{mdx.body}</MDXRenderer>
-            </div>
-            {type === 'blog' && (
-              <Button secondary linkTo="/blog">
-                <IconArrowLeft />
-                Go back to Blog
-              </Button>
-            )}
-            {type === 'snippets' && (
-              <Button secondary linkTo="/snippets">
-                <IconArrowLeft />
-                Go back to Snippets
-              </Button>
-            )}
-            {(next || previous) && <PostNavigation {...pageContext} type={type} />}
-          </Spacer>
+          <div className="post__content">
+            <MDXRenderer>{mdx.body}</MDXRenderer>
+          </div>
+          {type === 'blog' && (
+          <Button secondary linkTo="/blog">
+            <IconArrowLeft />
+            Go back to Blog
+          </Button>
+          )}
+          {type === 'snippets' && (
+          <Button secondary linkTo="/snippets">
+            <IconArrowLeft />
+            Go back to Snippets
+          </Button>
+          )}
+          {(next || previous) && <PostNavigation {...pageContext} type={type} />}
         </Container>
       </article>
     </Layout>
