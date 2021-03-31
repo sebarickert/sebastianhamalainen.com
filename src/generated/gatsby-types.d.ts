@@ -590,8 +590,8 @@ type ImageSharpResize = {
 
 type MdxFrontmatter = {
   readonly title: Scalars['String'];
-  readonly date: Maybe<Scalars['Date']>;
   readonly description: Maybe<Scalars['String']>;
+  readonly date: Maybe<Scalars['Date']>;
   readonly teaser_image: Maybe<File>;
   readonly lead: Maybe<Scalars['String']>;
   readonly url_source: Maybe<Scalars['String']>;
@@ -1208,8 +1208,8 @@ type MdxFilterInput = {
 
 type MdxFrontmatterFilterInput = {
   readonly title: Maybe<StringQueryOperatorInput>;
-  readonly date: Maybe<DateQueryOperatorInput>;
   readonly description: Maybe<StringQueryOperatorInput>;
+  readonly date: Maybe<DateQueryOperatorInput>;
   readonly teaser_image: Maybe<FileFilterInput>;
   readonly lead: Maybe<StringQueryOperatorInput>;
   readonly url_source: Maybe<StringQueryOperatorInput>;
@@ -1505,8 +1505,8 @@ type FileFieldsEnum =
   | 'childrenMdx.rawBody'
   | 'childrenMdx.fileAbsolutePath'
   | 'childrenMdx.frontmatter.title'
-  | 'childrenMdx.frontmatter.date'
   | 'childrenMdx.frontmatter.description'
+  | 'childrenMdx.frontmatter.date'
   | 'childrenMdx.frontmatter.teaser_image.sourceInstanceName'
   | 'childrenMdx.frontmatter.teaser_image.absolutePath'
   | 'childrenMdx.frontmatter.teaser_image.relativePath'
@@ -1648,8 +1648,8 @@ type FileFieldsEnum =
   | 'childMdx.rawBody'
   | 'childMdx.fileAbsolutePath'
   | 'childMdx.frontmatter.title'
-  | 'childMdx.frontmatter.date'
   | 'childMdx.frontmatter.description'
+  | 'childMdx.frontmatter.date'
   | 'childMdx.frontmatter.teaser_image.sourceInstanceName'
   | 'childMdx.frontmatter.teaser_image.absolutePath'
   | 'childMdx.frontmatter.teaser_image.relativePath'
@@ -2841,8 +2841,8 @@ type MdxFieldsEnum =
   | 'rawBody'
   | 'fileAbsolutePath'
   | 'frontmatter.title'
-  | 'frontmatter.date'
   | 'frontmatter.description'
+  | 'frontmatter.date'
   | 'frontmatter.teaser_image.sourceInstanceName'
   | 'frontmatter.teaser_image.absolutePath'
   | 'frontmatter.teaser_image.relativePath'
