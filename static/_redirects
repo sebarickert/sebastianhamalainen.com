@@ -1,7 +1,0 @@
-# Redirect domain aliases to primary domain
-https://hamse.fi/* https://sebastianhamalainen.com/:splat 301!
-https://www.hamse.fi/* https://sebastianhamalainen.com/:splat 301!
-
-# Optional: Redirect default Netlify subdomain to primary domain
-https://shcom.netlify.com/* https://sebastianhamalainen.com/:splat 301!
-

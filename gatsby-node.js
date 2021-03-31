@@ -1,70 +1,76 @@
-const path = require('path');
-const slugify = require('@sindresorhus/slugify');
-const { createFilePath } = require('gatsby-source-filesystem');
+/* eslint-disable @typescript-eslint/no-var-requires */
+const path = require("path");
+const slugify = require("@sindresorhus/slugify");
+const { createFilePath } = require("gatsby-source-filesystem");
 
 function onCreateMdxNode({ node, getNode, actions }) {
   const parentNode = getNode(node.parent);
   const { createNodeField } = actions;
 
-  const {
-    date, description, title,
-  } = node.frontmatter;
+  const { date, description, title } = node.frontmatter;
   let type;
-  let slug = node.frontmatter.slug
-    || createFilePath({ node, getNode, basePath: 'content' });
+  let slug =
+    node.frontmatter.slug ||
+    createFilePath({ node, getNode, basePath: "content" });
 
-  if (node.fileAbsolutePath.includes('content/blog/')) {
-    slug = `/blog/${node.frontmatter.slug || slugify(parentNode.relativeDirectory)}`;
-    type = 'blog';
+  if (node.fileAbsolutePath.includes("content/blog/")) {
+    slug = `/blog/${
+      node.frontmatter.slug || slugify(parentNode.relativeDirectory)
+    }`;
+    type = "blog";
   }
 
-  if (node.fileAbsolutePath.includes('content/portfolio/')) {
-    slug = `/portfolio/${node.frontmatter.slug || slugify(parentNode.relativeDirectory)}`;
+  if (node.fileAbsolutePath.includes("content/portfolio/")) {
+    slug = `/portfolio/${
+      node.frontmatter.slug || slugify(parentNode.relativeDirectory)
+    }`;
   }
 
-  if (node.fileAbsolutePath.includes('content/misc/')) {
+  if (node.fileAbsolutePath.includes("content/misc/")) {
     slug = `/${node.frontmatter.slug || slugify(parentNode.relativeDirectory)}`;
-    type = 'misc';
+    type = "misc";
   }
 
-  if (node.fileAbsolutePath.includes('content/snippets/')) {
-    slug = `/snippets/${node.frontmatter.slug || slugify(parentNode.relativeDirectory)}`;
-    type = 'snippets';
+  if (node.fileAbsolutePath.includes("content/snippets/")) {
+    slug = `/snippets/${
+      node.frontmatter.slug || slugify(parentNode.relativeDirectory)
+    }`;
+    type = "snippets";
   }
 
   createNodeField({
-    name: 'slug',
+    name: "slug",
     node,
     value: slug,
   });
 
   createNodeField({
-    name: 'type',
+    name: "type",
     node,
     value: type,
   });
 
   createNodeField({
-    name: 'title',
+    name: "title",
     node,
     value: title,
   });
 
   createNodeField({
-    name: 'date',
+    name: "date",
     node,
     value: date,
   });
 
   createNodeField({
-    name: 'description',
+    name: "description",
     node,
     value: description,
   });
 }
 
 exports.onCreateNode = (...args) => {
-  if (args[0].node.internal.type === 'Mdx') {
+  if (args[0].node.internal.type === "Mdx") {
     onCreateMdxNode(...args);
   }
 };
@@ -73,7 +79,7 @@ const createPosts = (createPage, edges) => {
   edges.forEach(({ node, next, previous }) => {
     createPage({
       path: node.fields.slug,
-      component: path.resolve('./src/templates/post.js'),
+      component: path.resolve("./src/templates/post.tsx"),
       context: {
         id: node.id,
         slug: node.fields.slug,
@@ -86,7 +92,7 @@ const createPosts = (createPage, edges) => {
 
 function createBlogPages({ data, actions }) {
   if (!data.edges.length) {
-    throw new Error('There are no posts!');
+    throw new Error("There are no posts!");
   }
 
   const { edges } = data;
@@ -97,7 +103,7 @@ function createBlogPages({ data, actions }) {
 
 function createMiscPages({ data, actions }) {
   if (!data.edges.length) {
-    throw new Error('There are no posts!');
+    throw new Error("There are no posts!");
   }
 
   const { edges } = data;
@@ -108,7 +114,7 @@ function createMiscPages({ data, actions }) {
 
 function createSnippetsPages({ data, actions }) {
   if (!data.edges.length) {
-    throw new Error('There are no posts!');
+    throw new Error("There are no posts!");
   }
 
   const { edges } = data;
@@ -121,7 +127,7 @@ const createPortfolioPosts = (createPage, edges) => {
   edges.forEach(({ node, next, previous }) => {
     createPage({
       path: node.fields.slug,
-      component: path.resolve('./src/templates/portfolio.js'),
+      component: path.resolve("./src/templates/portfolio.tsx"),
       context: {
         id: node.id,
         slug: node.fields.slug,
@@ -134,7 +140,7 @@ const createPortfolioPosts = (createPage, edges) => {
 
 function createPortfolioPages({ data, actions }) {
   if (!data.edges.length) {
-    throw new Error('There are no posts!');
+    throw new Error("There are no posts!");
   }
 
   const { edges } = data;
@@ -145,7 +151,7 @@ function createPortfolioPages({ data, actions }) {
 
 function createPortfolioListingPages({ data, actions }) {
   if (!data.edges.length) {
-    throw new Error('There are no posts!');
+    throw new Error("There are no posts!");
   }
 
   const { edges: posts } = data;
@@ -155,14 +161,14 @@ function createPortfolioListingPages({ data, actions }) {
 
   Array.from({ length: numPages }).forEach((_, i) => {
     createPage({
-      path: i === 0 ? 'portfolio/' : `portfolio/${i + 1}`,
-      component: path.resolve('./src/templates/portfolio-list.js'),
+      path: i === 0 ? "portfolio/" : `portfolio/${i + 1}`,
+      component: path.resolve("./src/templates/portfolio-list.tsx"),
       context: {
         limit: postsPerPage,
         skip: i * postsPerPage,
         numPages,
         currentPage: i + 1,
-        contentType: 'portfolio',
+        contentType: "portfolio",
       },
     });
   });
@@ -170,107 +176,117 @@ function createPortfolioListingPages({ data, actions }) {
 
 exports.createPages = async ({ actions, graphql }) => {
   const { data, errors } = await graphql(`
-  fragment PostDetails on Mdx {
-    fileAbsolutePath
-    id
-    fields {
-      title
-      slug
-      type
-      date
-      description
+    fragment PostDetails on Mdx {
+      fileAbsolutePath
+      id
+      fields {
+        title
+        slug
+        type
+        date
+        description
+      }
     }
-  }
-  fragment PostNextPreviousDetails on Mdx {
-    fields {
-      title
-      slug
+    fragment PostNextPreviousDetails on Mdx {
+      fields {
+        title
+        slug
+      }
     }
-  }
-  {
-    blog: allMdx(filter: {fileAbsolutePath: {regex: "//content/blog//"}}, sort: {order: DESC, fields: [frontmatter___date]}) {
-      edges {
-        node {
-          ...PostDetails
+    {
+      blog: allMdx(
+        filter: { fileAbsolutePath: { regex: "//content/blog//" } }
+        sort: { order: DESC, fields: [frontmatter___date] }
+      ) {
+        edges {
+          node {
+            ...PostDetails
+          }
+          next {
+            ...PostNextPreviousDetails
+          }
+          previous {
+            ...PostNextPreviousDetails
+          }
         }
-        next {
-          ...PostNextPreviousDetails
+      }
+      misc: allMdx(
+        filter: { fileAbsolutePath: { regex: "//content/misc//" } }
+        sort: { order: DESC, fields: [frontmatter___date] }
+      ) {
+        edges {
+          node {
+            ...PostDetails
+          }
         }
-        previous {
-          ...PostNextPreviousDetails
+      }
+      portfolio: allMdx(
+        filter: { fileAbsolutePath: { regex: "//content/portfolio//" } }
+        sort: { order: DESC, fields: [frontmatter___date] }
+      ) {
+        edges {
+          node {
+            ...PostDetails
+          }
+          next {
+            ...PostNextPreviousDetails
+          }
+          previous {
+            ...PostNextPreviousDetails
+          }
+        }
+      }
+      snippets: allMdx(
+        filter: { fileAbsolutePath: { regex: "//content/snippets//" } }
+        sort: { order: DESC, fields: [frontmatter___date] }
+      ) {
+        edges {
+          node {
+            ...PostDetails
+          }
+          next {
+            ...PostNextPreviousDetails
+          }
+          previous {
+            ...PostNextPreviousDetails
+          }
         }
       }
     }
-    misc: allMdx(filter: {fileAbsolutePath: {regex: "//content/misc//"}}, sort: {order: DESC, fields: [frontmatter___date]}) {
-      edges {
-        node {
-          ...PostDetails
-        }
-      }
-    }
-    portfolio: allMdx(filter: {fileAbsolutePath: {regex: "//content/portfolio//"}}, sort: {order: DESC, fields: [frontmatter___date]}) {
-      edges {
-        node {
-          ...PostDetails
-        }
-        next {
-          ...PostNextPreviousDetails
-        }
-        previous {
-          ...PostNextPreviousDetails
-        }
-      }
-    }
-    snippets: allMdx(filter: {fileAbsolutePath: {regex: "//content/snippets//"}}, sort: {order: DESC, fields: [frontmatter___date]}) {
-      edges {
-        node {
-          ...PostDetails
-        }
-        next {
-          ...PostNextPreviousDetails
-        }
-        previous {
-          ...PostNextPreviousDetails
-        }
-      }
-    }
-  }
   `);
 
   if (errors) {
     return Promise.reject(errors);
   }
 
-  const {
-    blog, misc, portfolio, snippets,
-  } = data;
+  const { blog, misc, portfolio, snippets } = data;
 
   createBlogPages({
-    blogPath: '/blog',
+    blogPath: "/blog",
     data: blog,
     actions,
   });
 
   createMiscPages({
-    miscPath: '/',
+    miscPath: "/",
     data: misc,
     actions,
   });
 
   createSnippetsPages({
-    snippetsPath: '/snippets',
+    snippetsPath: "/snippets",
     data: snippets,
     actions,
   });
 
   createPortfolioPages({
-    portfolioPath: '/portfolio',
+    portfolioPath: "/portfolio",
     data: portfolio,
     actions,
   });
 
   createPortfolioListingPages({
-    portfolioListingPath: '/portfolio',
+    portfolioListingPath: "/portfolio",
     data: portfolio,
     actions,
   });

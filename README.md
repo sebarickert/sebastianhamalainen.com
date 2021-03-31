@@ -1,26 +1,48 @@
-[![Netlify Status](https://api.netlify.com/api/v1/badges/43085e2a-22a6-4950-8ab5-eb0b9575babf/deploy-status)](https://app.netlify.com/sites/lucid-babbage-8076bb/deploys)
+<p align="center">
+  <a href="https://www.gatsbyjs.com/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter">
+    <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
+  </a>
+</p>
+<h1 align="center">
+  Gatsby minimal starter
+</h1>
 
 ## 🚀 Quick start
 
-1.  **Set up local development environment**
+1.  **Create a Gatsby site.**
 
-    Clone this repository
+    Use the Gatsby CLI to create a new site, specifying the minimal starter.
 
-    ```sh
-    # If you haven't set up ssh, use https
-    git clone git@github.com:shamalainen/sebastianhamalainen.com.git
+    ```shell
+    # create a new Gatsby site using the minimal starter
+    npm init gatsby
     ```
 
-2.  **Start developing**
+2.  **Start developing.**
 
     Navigate into your new site’s directory and start it up.
 
-    ```sh
-    cd sebastianhamalainen.com/
-    yarn install
-    yarn run develop
+    ```shell
+    cd my-gatsby-site/
+    npm run develop
     ```
 
-    Your site is now running at `http://localhost:8000`!
+3.  **Open the code and start customizing!**
 
-    Note: You'll also see a second link: _`http://localhost:8000/___graphql`_. This is a tool you can use to experiment with querying your data.
+    Your site is now running at http://localhost:8000!
+
+    Edit `src/pages/index.js` to see your site update in real-time!
+
+4.  **Learn more**
+
+    - [Documentation](https://www.gatsbyjs.com/docs/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+
+    - [Tutorials](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+
+    - [Guides](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+
+    - [API Reference](https://www.gatsbyjs.com/docs/api-reference/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+
+    - [Plugin Library](https://www.gatsbyjs.com/plugins?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+
+    - [Cheat Sheet](https://www.gatsbyjs.com/docs/cheat-sheet/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)

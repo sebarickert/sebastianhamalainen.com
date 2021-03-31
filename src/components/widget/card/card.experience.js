@@ -1,9 +1,11 @@
-import React from 'react';
-
-import './card-experience.scss';
+import React from "react";
 
 const WidgetCardExperience = ({
-  children, title, organization, timeframe, link,
+  children,
+  title,
+  organization,
+  timeframe,
+  link,
 }) => (
   <div className="card card--experience">
     <h3 className="card__title">{title}</h3>
@@ -12,14 +14,12 @@ const WidgetCardExperience = ({
         <a href={link} className="card__link">
           {organization}
         </a>
-      ) : organization}
+      ) : (
+        organization
+      )}
     </p>
     <p className="card__timeframe">{timeframe}</p>
-    {children ? (
-      <p className="card__content">
-        {children}
-      </p>
-    ) : ''}
+    {children ? <p className="card__content">{children}</p> : ""}
   </div>
 );
 export default WidgetCardExperience;

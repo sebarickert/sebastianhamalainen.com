@@ -1,11 +1,11 @@
-import React from 'react';
-import theme from 'prism-react-renderer/themes/nightOwl';
-import Highlight, { defaultProps } from 'prism-react-renderer';
+import React from "react";
+import theme from "prism-react-renderer/themes/nightOwl";
+import Highlight, { defaultProps } from "prism-react-renderer";
 
-import '../scss/base/code.scss';
+// import "../scss/base/code.scss";
 
 const Code = ({ children, className }) => {
-  const language = className ? className.replace(/language-/, '') : '';
+  const language = className ? className.replace(/language-/, "") : "";
 
   return (
     <Highlight
@@ -16,7 +16,11 @@ const Code = ({ children, className }) => {
     >
       {({
         // eslint-disable-next-line no-shadow
-        className, style, tokens, getLineProps, getTokenProps,
+        className,
+        style,
+        tokens,
+        getLineProps,
+        getTokenProps,
       }) => (
         <div className="code-block">
           <pre className={`${className} code-block__pre`} style={style}>
@@ -27,12 +31,10 @@ const Code = ({ children, className }) => {
                 {...getLineProps({
                   line,
                   key: i,
-                  className: 'code-block__line',
+                  className: "code-block__line",
                 })}
               >
-                <span className="code-block__line-number">
-                  {i + 1}
-                </span>
+                <span className="code-block__line-number">{i + 1}</span>
                 {line.map((token, key) => (
                   // eslint-disable-next-line react/no-array-index-key
                   <span key={key} {...getTokenProps({ token, key })} />

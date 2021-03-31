@@ -1,8 +1,0 @@
-@mixin font-size($font-size, $desired-mobile-size: '') {
-  @media screen and (max-width: $bp-medium) {
-    @if $desired-mobile-size != '' {
-      font-size: ($desired-mobile-size / $base-font-size) * 1rem;
-    }
-  }
-  font-size: ($font-size / $base-font-size) * 1rem;
-}
