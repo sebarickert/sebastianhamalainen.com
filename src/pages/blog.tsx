@@ -9,7 +9,7 @@ import HeroLead from "../components/hero/hero.lead";
 import BlogTeaser from "../components/blogTeaser/blogTeaser";
 import Spacer from "../components/spacer/spacer";
 
-interface BlogProps {
+export interface BlogProps {
   node: {
     id: string;
     fields: {

@@ -1,4 +1,5 @@
 import * as React from "react";
+import BlogLiftup from "../components/blogLiftup/blogLiftup";
 import Button from "../components/button/button";
 import Hero from "../components/hero/hero";
 import HeroLead from "../components/hero/hero.lead";
@@ -24,6 +25,7 @@ const IndexPage = (): JSX.Element => (
         </Button>
       </Hero>
       <PortfolioLiftup />
+      <BlogLiftup />
     </Layout>
   </>
 );

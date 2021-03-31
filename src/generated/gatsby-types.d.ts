@@ -3537,4 +3537,15 @@ type GatsbyImageSharpFluid_noBase64Fragment = Pick<ImageSharpFluid, 'aspectRatio
 
 type GatsbyImageSharpFluid_withWebp_noBase64Fragment = Pick<ImageSharpFluid, 'aspectRatio' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp' | 'sizes'>;
 
+type homecoderdevsebastianhamalainenComsrccomponentsblogLiftupblogLiftupTsx2547046377QueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type homecoderdevsebastianhamalainenComsrccomponentsblogLiftupblogLiftupTsx2547046377Query = { readonly allMdx: { readonly edges: ReadonlyArray<{ readonly node: (
+        Pick<Mdx, 'id' | 'excerpt'>
+        & { readonly frontmatter: Maybe<(
+          Pick<MdxFrontmatter, 'title'>
+          & { readonly teaser_image: Maybe<{ readonly childImageSharp: Maybe<Pick<ImageSharp, 'gatsbyImageData'>> }> }
+        )>, readonly fields: Maybe<Pick<MdxFields, 'slug'>> }
+      ) }> } };
+
 }
