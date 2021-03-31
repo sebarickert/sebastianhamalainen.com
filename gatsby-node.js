@@ -273,11 +273,11 @@ exports.createPages = async ({ actions, graphql }) => {
     actions,
   });
 
-  createSnippetsPages({
-    snippetsPath: "/snippets",
-    data: snippets,
-    actions,
-  });
+  // createSnippetsPages({
+  //   snippetsPath: "/snippets",
+  //   data: snippets,
+  //   actions,
+  // });
 
   createPortfolioPages({
     portfolioPath: "/portfolio",

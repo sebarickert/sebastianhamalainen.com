@@ -15,10 +15,6 @@ const mainMenuLinks = [
     label: "Blog",
     url: "/blog",
   },
-  {
-    label: "Snippets",
-    url: "/snippets",
-  },
 ];
 
 export default mainMenuLinks;
