@@ -1,6 +1,6 @@
 <p>
     <a href="https://sebastianhamalainen.com" target="_blank">
-      <img alt="Tailwind CSS" width="350" src="https://user-images.githubusercontent.com/22739952/113188752-1e239c80-9263-11eb-899b-b59bba3afca4.png">
+      <img alt="Tailwind CSS" width="100" src="https://user-images.githubusercontent.com/22739952/113188752-1e239c80-9263-11eb-899b-b59bba3afca4.png">
     </a><br>
     Personal website for Sebastian Hämäläinen.
 </p>
