@@ -1,12 +1,10 @@
 ---
 title: "About"
-date: '2021-03-23'
+date: '2021-03-31'
 description: "Frontend developer from Finland with a passion for creating amazing looking websites with accessibility in mind."
 ---
-
-import WidgetCardList from '../../../src/components/widget/card/card.list';
-import WidgetCardExperience from '../../../src/components/widget/card/card.experience';
-
+import InfoBlockContainer from '../../../src/components/widget/infoBlock/infoBlock.container';
+import InfoBlock from '../../../src/components/widget/infoBlock/infoBlock';
 
 ## Introduction
 
@@ -20,12 +18,14 @@ Here you'll find bits and pieces of information about me, my past professional e
 
 ## Experience
 
-<WidgetCardList>
-  <WidgetCardExperience title="Drupal Developer" organization="Druid" timeframe="Jan 2018 to present" link="https://www.druid.fi/" />
-  <WidgetCardExperience title="Junior Drupal Developer" organization="Druid" timeframe="Oct 2015 to Dec 2016" link="https://www.druid.fi/">
+<InfoBlockContainer>
+  <InfoBlock title="Drupal Developer" organization="Druid" timeframe="Jan 2018 to present" isTimeframeActive>
+    Worked straight with customers from projects in varying sizes, small to large. Used the Scrum framework extensively and worked with multiple different teams, and sometimes alone. Projects consisted of different tech stacks, such as Drupal, PHP, React, Vue, SCSS and different JavaScript task runners (Webpack & Gulp). And the occasional REST API.
+  </InfoBlock>
+  <InfoBlock title="Junior Drupal Developer" organization="Druid" timeframe="Oct 2015 to Dec 2016">
     Started as an Intern and mostly worked on internal stuff. Druid appreciated my work and offered a position as a Junior Drupal Developer for the rest of the year in the Spring of 2016.
-  </WidgetCardExperience>
-</WidgetCardList>
+  </InfoBlock>
+</InfoBlockContainer>
 
 I have been specializing in Frontend development since 2013 and around that time my passion for development has started.
 
@@ -40,19 +40,22 @@ I have extensive knowledge of working with CMS systems and experience in large-s
 
 ## Education
 
-<WidgetCardList>
-  <WidgetCardExperience title="Business Information Technology (BBA)" organization="Laurea University of Applied Sciences" timeframe="Aug 2018 to Jun 2020" link="https://www.laurea.fi/"/>
-  <WidgetCardExperience title="Vocational Qualification in Business Information Technology" organization="Helsinki Business College" timeframe="Aug 2013 to Jun 2016" link="https://www.bc.fi/">
+<InfoBlockContainer>
+  <InfoBlock title="Business Information Technology (BBA)" organization="Laurea University of Applied Sciences" timeframe="Aug 2018 to Jun 2020" >
+    Wrote my thesis about Identifying Good Practices from the Scrum Framework.
+  </InfoBlock>
+  <InfoBlock title="Vocational Qualification in Business Information Technology" organization="Helsinki Business College" timeframe="Aug 2013 to Jun 2016">
     While attending Helsinki Business College, I participated in the Taitaja -competition in 2015 and 2016, making it to the finals in 2016
-  </WidgetCardExperience>
-</WidgetCardList>
+  </InfoBlock>
+</InfoBlockContainer>
 
 ## Certifications
 
-<WidgetCardList>
-  <WidgetCardExperience title="Acquia Certified Front End Specialist - Drupal 8" organization="Acquia" timeframe="May 2020" link="https://certification.acquia.com/user/9271"/>
-  <WidgetCardExperience title="Certified ScrumMaster (CSM)" organization="Scrum.org" timeframe="December 2019" link="https://www.scrum.org/certificates/479490" />
-</WidgetCardList>
+
+<InfoBlockContainer>
+  <InfoBlock title="Acquia Certified Front End Specialist - Drupal 8" organization="Acquia" timeframe="May 2020"/>
+  <InfoBlock title="Certified ScrumMaster (CSM)" organization="Scrum.org" timeframe="December 2019" />
+</InfoBlockContainer>
 
 ## What tools do I use?
 
