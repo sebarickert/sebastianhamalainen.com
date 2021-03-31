@@ -39,7 +39,7 @@ const PagerItem = ({
   }
 
   if (isActive) {
-    elementClasses.push("bg-blue-600 text-white");
+    elementClasses.push("!bg-blue-600 text-white");
   }
 
   if (disabled) {
