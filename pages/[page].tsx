@@ -54,7 +54,7 @@ export async function getStaticPaths() {
   const data = await getSanityContent({
     query: `
       query AllPages {
-        allPage {
+        allPage(where: { slug: { current: { nin: ["portfolio", "blog"] } } }) {
           slug {
             current
           }
