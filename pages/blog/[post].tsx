@@ -11,16 +11,32 @@ interface BlogPostProps {
   publishedAt: Date;
 }
 
-export default function BlogPost({ title, lead, content, publishedAt }: BlogPostProps) {
-  return (
-    <>
-      <SEO title={title} description={lead} />
-      <Post title={title} lead={lead} content={content} date={publishedAt} backLinkUrl="/blog" />
-    </>
-  );
-}
+export const getStaticPaths = async () => {
+  const data = await getSanityContent({
+    query: `
+      query AllPosts {
+        allPost {
+          slug {
+            current
+          }
+        }
+      }
+    `,
+  });
 
-export async function getStaticProps({ params }) {
+  const paths = data.allPost.map(({ slug: { current } }) => {
+    return {
+      params: { post: current },
+    };
+  });
+
+  return {
+    paths,
+    fallback: false,
+  };
+};
+
+export const getStaticProps = async ({ params }) => {
   const data = await getSanityContent({
     query: `
       query PostBySlug($slug: String!) {
@@ -46,25 +62,13 @@ export async function getStaticProps({ params }) {
       publishedAt,
     },
   };
-}
+};
 
-export async function getStaticPaths() {
-  const data = await getSanityContent({
-    query: `
-      query AllPosts {
-        allPost {
-          slug {
-            current
-          }
-        }
-      }
-    `,
-  });
-
-  const pages = data.allPost;
-
-  return {
-    paths: pages.map((p) => `/blog/${p.slug.current}`),
-    fallback: false,
-  };
+export default function BlogPost({ title, lead, content, publishedAt }: BlogPostProps) {
+  return (
+    <>
+      <SEO title={title} description={lead} />
+      <Post title={title} lead={lead} content={content} date={publishedAt} backLinkUrl="/blog" />
+    </>
+  );
 }

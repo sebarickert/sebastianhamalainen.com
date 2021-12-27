@@ -11,16 +11,32 @@ interface PageProps {
   lastUpdated: Date;
 }
 
-export default function Page({ title, lead, content, lastUpdated }: PageProps) {
-  return (
-    <>
-      <SEO title={title} description={lead} />
-      <Post title={title} lead={lead} content={content} date={lastUpdated} dateUpdated />;
-    </>
-  );
-}
+export const getStaticPaths = async () => {
+  const data = await getSanityContent({
+    query: `
+      query AllPages {
+        allPage(where: { slug: { current: { nin: ["portfolio", "blog"] } } }) {
+          slug {
+            current
+          }
+        }
+      }
+    `,
+  });
 
-export async function getStaticProps({ params }) {
+  const paths = data.allPage.map(({ slug: { current } }) => {
+    return {
+      params: { page: current },
+    };
+  });
+
+  return {
+    paths,
+    fallback: false,
+  };
+};
+
+export const getStaticProps = async ({ params }) => {
   const data = await getSanityContent({
     query: `
       query PageBySlug($slug: String!) {
@@ -48,25 +64,13 @@ export async function getStaticProps({ params }) {
       lastUpdated,
     },
   };
-}
+};
 
-export async function getStaticPaths() {
-  const data = await getSanityContent({
-    query: `
-      query AllPages {
-        allPage(where: { slug: { current: { nin: ["portfolio", "blog"] } } }) {
-          slug {
-            current
-          }
-        }
-      }
-    `,
-  });
-
-  const pages = data.allPage;
-
-  return {
-    paths: pages.map((p) => `/${p.slug.current}`),
-    fallback: false,
-  };
+export default function Page({ title, lead, content, lastUpdated }: PageProps) {
+  return (
+    <>
+      <SEO title={title} description={lead} />
+      <Post title={title} lead={lead} content={content} date={lastUpdated} dateUpdated />;
+    </>
+  );
 }

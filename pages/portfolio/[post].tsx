@@ -12,16 +12,32 @@ interface PortfolioPostProps {
   publishedAt: Date;
 }
 
-export default function PortfolioPost({ title, lead, content, image, publishedAt }: PortfolioPostProps) {
-  return (
-    <>
-      <SEO title={title} description={lead} image={image.url} />
-      <Post title={title} lead={lead} content={content} date={publishedAt} image={image} backLinkUrl="/portfolio" />;
-    </>
-  );
-}
+export const getStaticPaths = async () => {
+  const data = await getSanityContent({
+    query: `
+      query AllPortfolioPosts {
+        allPortfolio {
+          slug {
+            current
+          }
+        }
+      }
+    `,
+  });
 
-export async function getStaticProps({ params }) {
+  const paths = data.allPortfolio.map(({ slug: { current } }) => {
+    return {
+      params: { post: current },
+    };
+  });
+
+  return {
+    paths,
+    fallback: false,
+  };
+};
+
+export const getStaticProps = async ({ params }) => {
   const data = await getSanityContent({
     query: `
       query PortfolioPostBySlug($slug: String!) {
@@ -75,25 +91,13 @@ export async function getStaticProps({ params }) {
       image: { url, width: imageWidth, height: imageHeight },
     },
   };
-}
+};
 
-export async function getStaticPaths() {
-  const data = await getSanityContent({
-    query: `
-      query AllPortfolioPosts {
-        allPortfolio {
-          slug {
-            current
-          }
-        }
-      }
-    `,
-  });
-
-  const pages = data.allPortfolio;
-
-  return {
-    paths: pages.map((p) => `/portfolio/${p.slug.current}`),
-    fallback: false,
-  };
+export default function PortfolioPost({ title, lead, content, image, publishedAt }: PortfolioPostProps) {
+  return (
+    <>
+      <SEO title={title} description={lead} image={image.url} />
+      <Post title={title} lead={lead} content={content} date={publishedAt} image={image} backLinkUrl="/portfolio" />;
+    </>
+  );
 }
