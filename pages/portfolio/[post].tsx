@@ -63,6 +63,7 @@ export async function getStaticProps({ params }) {
       },
     },
   } = data.allPortfolio[0];
+
   const serializedContent = await serialize(contentRaw);
 
   return {
