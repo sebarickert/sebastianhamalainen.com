@@ -12,11 +12,11 @@ export const Footer = (): JSX.Element => (
             <Heading style="h2" className="mb-6 sm:!text-4xl">
               Contact
             </Heading>
-            <p className="text-2xl !leading-relaxed text-gray-500 tracking-normal max-w-screen-md mb-4">
+            <p className="text-xl !leading-relaxed text-gray-600 tracking-normal max-w-screen-sm mb-4">
               If you want to contact me, shoot me a message at contact@hamse.fi or find me on different social media
               platforms.
             </p>
-            <p className="text-2xl !leading-relaxed text-gray-500 tracking-normal max-w-screen-md">
+            <p className="text-xl !leading-relaxed text-gray-600 tracking-normal max-w-screen-sm">
               {`© ${new Date().getFullYear()} Sebastian. All Rights Reserved.`}
             </p>
           </div>

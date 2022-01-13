@@ -70,7 +70,7 @@ export default function Page({ title, lead, content, lastUpdated }: PageProps) {
   return (
     <>
       <SEO title={title} description={lead} />
-      <Post title={title} lead={lead} content={content} date={lastUpdated} dateUpdated />;
+      <Post title={title} lead={lead} content={content} date={lastUpdated} dateUpdated />
     </>
   );
 }

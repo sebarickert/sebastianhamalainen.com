@@ -37,9 +37,9 @@ export const Post = ({ title, lead, content, date: dateRaw, backLinkUrl, image, 
         )}
         <Container>
           <section className="prose prose-xl prose-blue mx-auto max-w-screen-md w-full">
-            <header className="mb-16 grid gap-8">
-              <h1 className="!mb-0 !leading-tight !font-bold tracking-tighter">{title}</h1>
-              <p className="!m-0 !text-2xl !leading-relaxed text-gray-500 tracking-normal">{lead}</p>
+            <header className="mb-16 grid">
+              <h1 className="!mb-4 !leading-tight !font-bold tracking-tighter !text-5xl sm:!text-[56px]">{title}</h1>
+              <p className="!mt-0 !mb-8 !text-2xl !leading-relaxed text-gray-500 tracking-normal">{lead}</p>
               {date && (
                 <time
                   dateTime={new Date(date).toLocaleDateString('en-CA')}

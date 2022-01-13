@@ -4,5 +4,5 @@ interface ContainerProps {
 }
 
 export const Container = ({ children, className = '' }: ContainerProps): JSX.Element => (
-  <div className={`mx-auto max-w-screen-xl px-6 md:px-10 ${className}`}>{children}</div>
+  <div className={`mx-auto max-w-screen-xl px-8 md:px-10 ${className}`}>{children}</div>
 );
