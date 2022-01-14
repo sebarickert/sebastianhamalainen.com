@@ -90,5 +90,6 @@ export async function getStaticProps() {
       blogPosts: data.allPost,
       portfolioPosts: data.allPortfolio,
     },
+    revalidate: 60,
   };
 }

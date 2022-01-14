@@ -112,5 +112,6 @@ export async function getStaticProps() {
       lead,
       posts: data.allPortfolio,
     },
+    revalidate: 60,
   };
 }

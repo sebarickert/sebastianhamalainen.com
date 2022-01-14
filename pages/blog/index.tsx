@@ -72,5 +72,6 @@ export async function getStaticProps() {
       lead,
       posts: data.allPost,
     },
+    revalidate: 60,
   };
 }
