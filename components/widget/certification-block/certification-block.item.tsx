@@ -11,14 +11,14 @@ export default function CertificationBlockItem({ organization, certification, da
 
   return (
     <li className="!p-0 !m-0 before:hidden">
-      <article className="bg-gray-50 p-6 md:rounded-lg border">
+      <article className="bg-gray-50 p-6 rounded-lg border">
         <header className="grid grid-cols-[1fr,auto] items-center gap-1">
           <h3 className="!m-0 !font-bold truncate !text-2xl">
             <span className="sr-only">Organization name</span>
             {organization}
           </h3>
           <p
-            className={`!m-0 text-right inline-flex justify-self-end px-2.5 py-0.5 rounded-md !text-sm font-medium uppercase whitespace-nowrap bg-gray-200 text-gray-800`}
+            className={`mt-1 mb-0 sm:m-0 text-right inline-flex justify-self-start sm:justify-self-end px-2.5 py-0.5 rounded-md !text-sm font-medium uppercase whitespace-nowrap order-3 sm:order-none col-span-full sm:col-auto bg-gray-200 text-gray-800`}
           >
             <span className="sr-only">Date obtained</span>
             {dateFormatted}

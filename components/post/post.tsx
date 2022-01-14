@@ -52,7 +52,7 @@ export const Post = ({ title, lead, content, date: dateRaw, backLinkUrl, image, 
               )}
             </header>
             {image && (
-              <figure className="!mt-0 !mb-16 -mx-6 md:-mx-10 lg:-mx-24 overflow-hidden prose:rounded-md border-2">
+              <figure className="!mt-0 !mb-16 -mx-8 md:-mx-10 lg:-mx-24 overflow-hidden prose:rounded-md border-t-2 border-b-2 prose:border-2">
                 <NextImage src={image.url} height={image.height} width={image.width} layout="responsive" />
               </figure>
             )}

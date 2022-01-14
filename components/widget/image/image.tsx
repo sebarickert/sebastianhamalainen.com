@@ -1,4 +1,4 @@
-import NextImage from 'next/image';
+/* eslint-disable @next/next/no-img-element */
 
 interface WidgetImageProps {
   src: string;
@@ -7,9 +7,9 @@ interface WidgetImageProps {
 
 export const WidgetImage = ({ src, alt = '' }: WidgetImageProps): JSX.Element => {
   return (
-    <div className="my-8 -mx-6 md:-mx-10 lg:-mx-24">
-      <figure className="relative aspect-w-16 aspect-h-10 overflow-hidden prose:rounded-md border-2">
-        <NextImage src={src} alt={alt} layout="fill" objectFit="contain" objectPosition="top" />
+    <div className="my-8 -mx-8 md:-mx-10 lg:-mx-24">
+      <figure className="relative prose:rounded-md overflow-hidden border-t-2 border-b-2 prose:border-2 max-w-full h-full">
+        <img src={src} alt={alt} />
       </figure>
     </div>
   );

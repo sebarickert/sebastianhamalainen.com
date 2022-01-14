@@ -49,7 +49,7 @@ export async function getStaticProps() {
           title
           lead
         }
-        allPost {
+        allPost(sort: { publishedAt: DESC }) {
           title
           publishedAt
           lead
