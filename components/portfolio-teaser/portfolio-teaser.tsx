@@ -27,10 +27,12 @@ export const PortfolioTeaser = ({ title, image, lead, slug, stack }: PortfolioTe
           <ul className="flex flex-wrap gap-2 mt-auto" aria-label="Project's tech stack list">
             {stack.length > 3 ? (
               <>
-                {stack.slice(0, 3).map((item) => (
+                {stack.slice(0, 3).map((item, index) => (
                   <li
                     key={item}
-                    className="bg-gray-100 leading-tight py-3 px-4 rounded text-base text-gray-500 font-medium"
+                    className={`bg-gray-100 leading-tight py-3 px-4 rounded text-base text-gray-500 font-medium ${
+                      index === 2 ? 'hidden sm:inline-block' : ''
+                    }`}
                   >
                     {item}
                   </li>
