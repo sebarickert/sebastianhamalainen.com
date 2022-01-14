@@ -8,11 +8,11 @@ import { PortfolioLiftup } from '../components/portfolio-liftup/portfolio-liftup
 import { SEO } from '../components/seo/seo';
 import { getSanityContent } from '../utils/getSanityContent';
 import { BlogPost } from './blog';
-import { PortfolioPost } from './portfolio';
+import { PortfolioPostTeaser } from './portfolio';
 
 interface FrontpageProps {
   frontpage_hero: { title: string; lead: string };
-  portfolioPosts: PortfolioPost[];
+  portfolioPosts: PortfolioPostTeaser[];
   blogPosts: BlogPost[];
 }
 
