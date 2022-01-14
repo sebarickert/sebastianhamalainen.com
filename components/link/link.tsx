@@ -8,7 +8,7 @@ type LinkProps = {
   activeClassName?: string;
 };
 
-export const Link = ({ href, children, className, activeClassName = '' }: LinkProps) => {
+export const Link = ({ href, children, className = '', activeClassName = '' }: LinkProps) => {
   const router = useRouter();
   const routerSlugBase = router.asPath.split('/').filter((item) => item)[0];
   const hrefSlugBase = href.split('/').filter((item) => item)[0];
@@ -16,7 +16,9 @@ export const Link = ({ href, children, className, activeClassName = '' }: LinkPr
 
   return (
     <NextLink href={href}>
-      <a className={`${className} ${router.asPath === href || isPartiallyActive ? activeClassName : ''}`}>{children}</a>
+      <a className={`inline-block ${className} ${router.asPath === href || isPartiallyActive ? activeClassName : ''}`}>
+        {children}
+      </a>
     </NextLink>
   );
 };

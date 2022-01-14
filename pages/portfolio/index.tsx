@@ -6,7 +6,7 @@ import { Container } from '../../components/container/container';
 import { PortfolioTeaser } from '../../components/portfolio-teaser/portfolio-teaser';
 import { SEO } from '../../components/seo/seo';
 
-export interface PortfolioPost {
+export interface PortfolioPostTeaser {
   title: string;
   lead: string;
   slug: { current: string };
@@ -17,7 +17,7 @@ export interface PortfolioPost {
 interface PortfolioMainPageProps {
   title: string;
   lead: string;
-  posts: PortfolioPost[];
+  posts: PortfolioPostTeaser[];
 }
 
 export default function Index({ title, lead, posts }: PortfolioMainPageProps) {
