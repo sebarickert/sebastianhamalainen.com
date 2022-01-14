@@ -1,11 +1,11 @@
-import { PortfolioPost } from '../../pages/portfolio';
+import { PortfolioPostTeaser } from '../../pages/portfolio';
 import { Container } from '../container/container';
 import { Heading } from '../heading/heading';
 import { PortfolioTeaser } from '../portfolio-teaser/portfolio-teaser';
 import { Spacer } from '../spacer/spacer';
 
 interface PortfolioLiftupProps {
-  posts: PortfolioPost[];
+  posts: PortfolioPostTeaser[];
 }
 
 export const PortfolioLiftup = ({ posts }: PortfolioLiftupProps): JSX.Element => {
