@@ -90,6 +90,7 @@ export const getStaticProps = async ({ params }) => {
       content: serializedContent,
       image: { url, width: imageWidth, height: imageHeight },
     },
+    revalidate: 60,
   };
 };
 

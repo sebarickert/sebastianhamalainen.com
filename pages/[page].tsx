@@ -63,6 +63,7 @@ export const getStaticProps = async ({ params }) => {
       content: serializedContent,
       lastUpdated,
     },
+    revalidate: 60,
   };
 };
 
