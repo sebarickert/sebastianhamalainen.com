@@ -1,8 +1,10 @@
 import { IconArrowLeft } from './icon.arrowLeft';
 import { IconArrowRight } from './icon.arrowRight';
+import { IconMoon } from './icon.moon';
 import { IconPencil } from './icon.pencil';
+import { IconSun } from './icon.sun';
 
-export type IconName = 'arrow-left' | 'arrow-right' | 'pencil' | 'external-link';
+export type IconName = 'arrow-left' | 'arrow-right' | 'pencil' | 'external-link' | 'moon' | 'sun';
 
 interface IconProps {
   type: IconName;
@@ -32,6 +34,12 @@ export const Icon = ({ type, className = '' }: IconProps): JSX.Element => {
 
     case 'external-link':
       return <IconPencil className={defaultIconClasses} />;
+
+    case 'moon':
+      return <IconMoon className={defaultIconClasses} />;
+
+    case 'sun':
+      return <IconSun className={defaultIconClasses} />;
 
     default:
       break;
