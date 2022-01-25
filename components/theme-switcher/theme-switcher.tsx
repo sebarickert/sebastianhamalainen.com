@@ -2,50 +2,76 @@ import { useEffect, useState } from 'react';
 import { classnames } from 'tailwindcss-classnames';
 import { Icon } from '../icon/icon';
 
-export const ThemeSwitcher = (): JSX.Element => {
-  const [currentTheme, setCurrentTheme] = useState<string | null>(null);
+const useLocalStorage = (value) => {
+  const [intialized, setIntialized] = useState(false);
 
-  const handleThemeUpdate = (theme) => {
-    localStorage.setItem('theme', theme);
-    setCurrentTheme(theme);
-  };
-
-  const handleClick = () => {
-    // console.log(localStorage.getItem('theme'));
-    if (localStorage.getItem('theme') === 'dark') {
-      localStorage.setItem('theme', 'light');
-      // handleThemeUpdate('light');
+  const [storedValue, setStoredValue] = useState(() => {
+    try {
+      const item = window.localStorage.getItem('theme');
+      return item || value;
+    } catch (error) {
+      return value;
+    } finally {
+      setIntialized(true);
     }
+  });
 
-    // if (localStorage.getItem('theme') === 'light') {
-    //   handleThemeUpdate('dark');
-    // }
-
-    // console.log(currentTheme);
-    // console.log(localStorage.getItem('theme'));
+  const setValue = (value) => {
+    try {
+      const valueToStore = value instanceof Function ? value(storedValue) : value;
+      setStoredValue(valueToStore);
+      window.localStorage.setItem('theme', valueToStore);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
-  console.log(currentTheme);
+  return [storedValue, setValue, intialized];
+};
+
+export const ThemeSwitcher = (): JSX.Element => {
+  const [isMounted, setIsMounted] = useState(false);
+  const [currentTheme, setCurrentTheme, isThemeLoaded] = useLocalStorage(undefined);
 
   useEffect(() => {
-    if (!localStorage.getItem('theme')) {
-      if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
-        localStorage.setItem('theme', 'light');
-      }
-
-      if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        localStorage.setItem('theme', 'dark');
-      }
-    }
+    setIsMounted(true);
   }, []);
 
-  // useEffect(() => {
-  //   if (localStorage.getItem('theme')) {
-  //     setCurrentTheme(localStorage.getItem('theme'));
-  //   }
-  // }, [currentTheme]);
+  const handleClick = () => {
+    if (currentTheme === 'dark') {
+      setCurrentTheme('light');
+    }
 
-  setCurrentTheme(localStorage.getItem('theme'));
+    if (currentTheme === 'light') {
+      setCurrentTheme('dark');
+    }
+  };
+
+  useEffect(() => {
+    if (typeof currentTheme !== 'undefined' || !isThemeLoaded) {
+      return;
+    }
+
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+      setCurrentTheme('light');
+    }
+
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      setCurrentTheme('dark');
+    }
+  }, [isThemeLoaded]);
+
+  const isLightTheme = typeof currentTheme === 'undefined' || currentTheme === 'light';
+
+  useEffect(() => {
+    if (isLightTheme) {
+      document.body.classList.remove('dark');
+    } else {
+      document.body.classList.add('dark');
+    }
+  }, [isLightTheme]);
+
+  if (!isMounted) return <span className="ml-8 h-12 w-12" aria-hidden="true" />;
 
   return (
     <button
@@ -58,15 +84,13 @@ export const ThemeSwitcher = (): JSX.Element => {
         'items-center',
         'justify-center',
         'rounded-full',
-        'border-black',
-        'bg-black'
-        // 'bg-white'
+        { ['bg-white']: !isLightTheme },
+        { ['bg-black']: isLightTheme }
       )}
-      title={`Switch to ${currentTheme === 'dark' ? 'light' : 'dark'} theme`}
+      title={`Switch to ${!isLightTheme ? 'light' : 'dark'} theme`}
     >
-      <Icon type="moon" className="fill-white stroke-white translate-x-px" />
-      {/* <Icon type="sun" /> */}
-      <span className="sr-only">{`Switch to ${currentTheme === 'dark' ? 'light' : 'dark'} theme`}</span>
+      {!isLightTheme ? <Icon type="sun" /> : <Icon type="moon" className={`fill-white stroke-white translate-x-px`} />}
+      <span className="sr-only">{`Switch to ${!isLightTheme ? 'light' : 'dark'} theme`}</span>
     </button>
   );
 };
