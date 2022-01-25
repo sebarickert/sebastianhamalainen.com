@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import { classnames } from 'tailwindcss-classnames';
 import { Icon } from '../icon/icon';
 
 const useLocalStorage = (value) => {
@@ -76,20 +75,12 @@ export const ThemeSwitcher = (): JSX.Element => {
   return (
     <button
       onClick={handleClick}
-      className={classnames(
-        'ml-8',
-        'h-12',
-        'w-12',
-        'inline-flex',
-        'items-center',
-        'justify-center',
-        'rounded-full',
-        { ['bg-white']: !isLightTheme },
-        { ['bg-black']: isLightTheme }
-      )}
+      className={`ml-8 inline-flex h-12 w-12 items-center justify-center rounded-full ${
+        isLightTheme ? 'bg-black' : 'bg-white'
+      }`}
       title={`Switch to ${!isLightTheme ? 'light' : 'dark'} theme`}
     >
-      {!isLightTheme ? <Icon type="sun" /> : <Icon type="moon" className={`fill-white stroke-white translate-x-px`} />}
+      {!isLightTheme ? <Icon type="sun" /> : <Icon type="moon" className={`translate-x-px fill-white stroke-white`} />}
       <span className="sr-only">{`Switch to ${!isLightTheme ? 'light' : 'dark'} theme`}</span>
     </button>
   );

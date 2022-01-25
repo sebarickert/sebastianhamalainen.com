@@ -14,7 +14,7 @@ export const PortfolioLiftup = ({ posts }: PortfolioLiftupProps): JSX.Element =>
       <Container>
         <Spacer>
           <Heading className="mb-8 lg:mb-12">Latest showcases</Heading>
-          <ul className="grid gap-y-12 md:gap-x-8 lg:gap-y-0 lg:gap-x-12 lg:grid-cols-2">
+          <ul className="grid gap-y-12 md:gap-x-8 lg:grid-cols-2 lg:gap-y-0 lg:gap-x-12">
             {posts.map(
               ({
                 title,

@@ -10,7 +10,7 @@ export const ButtonGroup = ({ children, label, className = '', isReverse }: Butt
 
   return (
     <div className={className}>
-      {label && <h2 className="text-2xl leading-9 font-bold tracking-tight text-gray-900 mb-2">{label}</h2>}
+      {label && <h2 className="mb-2 text-2xl font-bold leading-9 tracking-tight text-gray-900">{label}</h2>}
       <div className={`sm:inline-flex  ${isReverse ? 'sm:flex-row-reverse' : ''}`}>
         {children.map((child, index) => (
           <span className={`block ${index > 0 ? `mt-3 sm:mt-0 ${horizontalMargin}` : ''}`} key={`button-${index}`}>

@@ -12,25 +12,25 @@ interface PortfolioTeaserProps {
 
 export const PortfolioTeaser = ({ title, image, lead, slug, stack }: PortfolioTeaserProps): JSX.Element => {
   return (
-    <article className="grid grid-rows-[auto,1fr] gap-8 relative group h-full">
+    <article className="group relative grid h-full grid-rows-[auto,1fr] gap-8">
       {image && (
         <figure className="overflow-hidden rounded-lg border" role="presentation">
           <NextImage src={image.url} height={image.height} width={image.width} layout="responsive" />
         </figure>
       )}
-      <div className="w-full flex flex-col">
-        <h2 className="mb-4 font-semibold text-2xl sm:text-3xl group-hover:underline group-focus-within:underline">
+      <div className="flex w-full flex-col">
+        <h2 className="mb-4 text-2xl font-semibold group-focus-within:underline group-hover:underline sm:text-3xl">
           {title}
         </h2>
-        <p className="text-lg sm:text-xl !leading-relaxed text-gray-500 tracking-normal mb-6">{lead}</p>
+        <p className="mb-6 text-lg !leading-relaxed tracking-normal text-gray-500 sm:text-xl">{lead}</p>
         {stack && (
-          <ul className="flex flex-wrap gap-2 mt-auto" aria-label="Project's tech stack list">
+          <ul className="mt-auto flex flex-wrap gap-2" aria-label="Project's tech stack list">
             {stack.length > 3 ? (
               <>
                 {stack.slice(0, 3).map((item, index) => (
                   <li
                     key={item}
-                    className={`bg-gray-100 leading-tight py-3 px-4 rounded text-base text-gray-500 font-medium ${
+                    className={`rounded bg-gray-100 py-3 px-4 text-base font-medium leading-tight text-gray-500 ${
                       index === 2 ? 'hidden sm:inline-block' : ''
                     }`}
                   >
@@ -39,7 +39,7 @@ export const PortfolioTeaser = ({ title, image, lead, slug, stack }: PortfolioTe
                 ))}
                 <li
                   key="dummy-item"
-                  className="bg-gray-100 leading-tight py-3 px-4 rounded text-base text-gray-500 font-medium"
+                  className="rounded bg-gray-100 py-3 px-4 text-base font-medium leading-tight text-gray-500"
                   aria-hidden="true"
                   role="presentation"
                 >
@@ -50,7 +50,7 @@ export const PortfolioTeaser = ({ title, image, lead, slug, stack }: PortfolioTe
               stack.map((item) => (
                 <li
                   key={item}
-                  className="bg-gray-100 leading-tight py-3 px-4 rounded text-base text-gray-500 font-medium"
+                  className="rounded bg-gray-100 py-3 px-4 text-base font-medium leading-tight text-gray-500"
                 >
                   {item}
                 </li>
@@ -60,7 +60,7 @@ export const PortfolioTeaser = ({ title, image, lead, slug, stack }: PortfolioTe
         )}
         <Link href={slug}>
           <a
-            className="outline-none mt-6 text-base text-gray-500 font-medium inline-flex items-center gap-2 group-hover:ml-1 duration-200"
+            className="mt-6 inline-flex items-center gap-2 text-base font-medium text-gray-500 outline-none duration-200 group-hover:ml-1"
             aria-label={`Read showcase - ${title}`}
             title={`Read showcase - ${title}`}
           >

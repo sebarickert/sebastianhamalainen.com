@@ -33,22 +33,22 @@ export default function ExperienceBlockItem({
   }
 
   return (
-    <li className="!p-0 !m-0 before:hidden">
-      <article className="bg-gray-50 p-6 rounded-lg border">
+    <li className="!m-0 !p-0 before:hidden">
+      <article className="rounded-lg border bg-gray-50 p-6">
         <header className="grid grid-cols-[1fr,auto] items-center gap-1">
-          <h3 className="!m-0 !font-bold truncate !text-2xl">
+          <h3 className="!m-0 truncate !text-2xl !font-bold">
             <span className="sr-only">Organization name</span>
             {organization}
           </h3>
           <p
-            className={`mt-1 mb-0 sm:m-0 text-right inline-flex justify-self-start sm:justify-self-end px-2.5 py-0.5 rounded-md !text-sm font-medium uppercase whitespace-nowrap order-3 sm:order-none col-span-full sm:col-auto ${
+            className={`order-3 col-span-full mt-1 mb-0 inline-flex justify-self-start whitespace-nowrap rounded-md px-2.5 py-0.5 text-right !text-sm font-medium uppercase sm:order-none sm:col-auto sm:m-0 sm:justify-self-end ${
               isActive ? 'bg-blue-600 text-white' : 'bg-gray-200 text-gray-800'
             }`}
           >
             <span className="sr-only">Time period</span>
             {`${startDate} to ${isActive ? 'current' : endDate}`}
           </p>
-          <p className="!m-0 col-span-full text-gray-500 !text-lg">
+          <p className="col-span-full !m-0 !text-lg text-gray-500">
             <span className="sr-only">Job title</span>
             {title}
           </p>

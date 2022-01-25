@@ -31,7 +31,7 @@ export default function ExperienceBlock() {
   return items.length === 0 ? (
     <Loader />
   ) : (
-    <ul className="grid gap-2 md:gap-8 -mx-6 list-none p-0">
+    <ul className="-mx-6 grid list-none gap-2 p-0 md:gap-8">
       {items.map(({ title, organization, description, start_date, end_date }, index) => (
         <ExperienceBlockItem
           key={`${title}-${index}`}
