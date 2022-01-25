@@ -9,9 +9,9 @@ export interface PostBackLinkProps {
 export const PostBackLink = ({ backLinkUrl }: PostBackLinkProps) => {
   return (
     <Container className="mb-16">
-      <div className="max-w-screen-md w-full mx-auto">
+      <div className="mx-auto w-full max-w-screen-md">
         <Link href={backLinkUrl}>
-          <a className="font-semibold inline-flex items-center gap-4 hover:-ml-1 duration-200">
+          <a className="inline-flex items-center gap-4 font-semibold duration-200 hover:-ml-1">
             <Icon type="arrow-left" />
             <span>Back to overview</span>
           </a>

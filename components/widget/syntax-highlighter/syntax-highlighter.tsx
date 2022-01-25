@@ -20,13 +20,13 @@ export const SyntaxHighlighter = ({ children }: SyntaxHighlighterProps) => {
       {({ className, style, tokens, getLineProps, getTokenProps }) => (
         <div className="-mx-6 md:-mx-10 lg:-mx-24">
           <pre
-            className={`!rounded-none prose:!rounded overflow-x-auto scrollbar scrollbar-thin scrollbar scrollbar-thumb-gray-600 hover:scrollbar-thumb-gray-500 ${className}`}
+            className={`overflow-x-auto !rounded-none scrollbar scrollbar scrollbar-thin scrollbar-thumb-gray-600 hover:scrollbar-thumb-gray-500 prose:!rounded ${className}`}
             style={{ ...style }}
           >
             <code className="inline-block min-w-full">
               {tokens.slice(0, -1).map((line, i) => (
                 <div key={i} {...getLineProps({ line, key: i })}>
-                  <span className="inline-block opacity-30 w-8">{i + 1}</span>
+                  <span className="inline-block w-8 opacity-30">{i + 1}</span>
                   <span>
                     {line.map((token, key) => (
                       <span key={key} {...getTokenProps({ token, key })} />

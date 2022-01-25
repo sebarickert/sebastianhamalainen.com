@@ -5,10 +5,10 @@ import { Menu } from '../menu/menu';
 import { ThemeSwitcher } from '../theme-switcher/theme-switcher';
 
 export const Header = (): JSX.Element => (
-  <header className="bg-white z-10 relative">
-    <Container className="py-8 lg:py-12 flex justify-between items-center">
+  <header className="relative z-10 bg-white">
+    <Container className="flex items-center justify-between py-8 lg:py-12">
       <Link href="/">
-        <a className="inline-flex focus:outline-none focus:ring ring-offset-2 rounded mr-auto">
+        <a className="mr-auto inline-flex rounded ring-offset-2 focus:outline-none focus:ring">
           <Logo />
         </a>
       </Link>

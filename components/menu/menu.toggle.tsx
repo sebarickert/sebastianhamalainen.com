@@ -11,7 +11,7 @@ export const MenuToggle = ({ isMenuOpen, handleMenuToggle }: MenuToggleProps): J
 
   return (
     <button
-      className="fixed z-50 bottom-4 right-4 w-12 h-12 rounded-full bg-blue-600 shadow-md text-white block lg:hidden focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+      className="fixed bottom-4 right-4 z-50 block h-12 w-12 rounded-full bg-blue-600 text-white shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 lg:hidden"
       aria-label={isMenuOpen ? 'Close site navigation' : 'Open site navigation'}
       aria-expanded={!!isMenuOpen}
       type="button"

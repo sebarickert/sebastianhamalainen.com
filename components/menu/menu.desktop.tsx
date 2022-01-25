@@ -6,7 +6,7 @@ interface MenuDesktopBase {
 }
 
 const MenuDesktopBase = ({ children }: MenuDesktopBase): JSX.Element => {
-  return <div className={`hidden lg:block lg:-mr-4`}>{children}</div>;
+  return <div className={`hidden lg:-mr-4 lg:block`}>{children}</div>;
 };
 
 const MenuDesktopLinks = (): JSX.Element => {

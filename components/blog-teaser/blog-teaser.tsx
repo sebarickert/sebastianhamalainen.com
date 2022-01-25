@@ -15,20 +15,20 @@ export const BlogTeaser = ({ title, lead: leadRaw, slug, date }: BlogTeaserProps
   const lead = leadRaw.length > 140 ? leadRaw.slice(0, 140) + '...' : leadRaw;
 
   return (
-    <article className="bg-gray-50 hover:bg-gray-100 p-6 border relative group focus-within:ring-2 focus-within:ring-inset focus-within:ring-blue-600 rounded-lg duration-200 h-full flex flex-col">
+    <article className="group relative flex h-full flex-col rounded-lg border bg-gray-50 p-6 duration-200 focus-within:ring-2 focus-within:ring-inset focus-within:ring-blue-600 hover:bg-gray-100">
       <time
         dateTime={dateISOFormat}
-        className="mb-4 text-base text-gray-500 font-medium inline-flex items-center gap-2"
+        className="mb-4 inline-flex items-center gap-2 text-base font-medium text-gray-500"
       >
         <span className="sr-only">Published on</span>
         <Icon type="pencil" />
         <span>{formatDate(new Date(date))}</span>
       </time>
-      <h2 className="font-semibold text-2xl">{title}</h2>
+      <h2 className="text-2xl font-semibold">{title}</h2>
       <p className="mt-3 mb-auto text-base text-gray-700">{lead}</p>
       <Link href={slug}>
         <a
-          className="outline-none mt-6 text-base text-gray-500 font-medium inline-flex items-center gap-2 group-hover:ml-1 duration-200"
+          className="mt-6 inline-flex items-center gap-2 text-base font-medium text-gray-500 outline-none duration-200 group-hover:ml-1"
           aria-label={`Read post - ${title}`}
           title={`Read post - ${title}`}
         >

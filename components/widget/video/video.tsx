@@ -8,7 +8,7 @@ export const WidgetVideo = ({ src, className = '' }: WidgetVideoProps): JSX.Elem
   const youtubeEmbedUrl = `https://www.youtube.com/embed/${youtubeVideoID}`;
 
   return (
-    <div className="my-8 lg:my-16 -mx-6 md:-mx-10 lg:-mx-24">
+    <div className="my-8 -mx-6 md:-mx-10 lg:my-16 lg:-mx-24">
       <div className={`aspect-w-16 aspect-h-9 ${className}`}>
         <iframe
           src={youtubeEmbedUrl}

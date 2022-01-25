@@ -20,13 +20,13 @@ export interface PostProps {
 export const Post = ({ title, lead, content, date, backLinkUrl, image, dateUpdated, children }: PostProps) => {
   return (
     <Layout>
-      <article className="py-16 -mt-8 lg:mt-0">
+      <article className="-mt-8 py-16 lg:mt-0">
         {backLinkUrl && <PostBackLink backLinkUrl={backLinkUrl} />}
         <Container>
-          <section className="prose prose-xl prose-blue mx-auto max-w-screen-md w-full">
+          <section className="prose prose-xl prose-blue mx-auto w-full max-w-screen-md">
             <PostHeader title={title} lead={lead} date={date} dateUpdated={dateUpdated} />
             {image && (
-              <figure className="!mt-0 !mb-16 -mx-8 md:-mx-10 lg:-mx-24 overflow-hidden prose:rounded-md border-t-2 border-b-2 prose:border-2">
+              <figure className="-mx-8 !mt-0 !mb-16 overflow-hidden border-t-2 border-b-2 md:-mx-10 lg:-mx-24 prose:rounded-md prose:border-2">
                 <NextImage src={image.url} height={image.height} width={image.width} layout="responsive" />
               </figure>
             )}
