@@ -29,7 +29,7 @@ export default function Index({ title, lead, posts }: PortfolioMainPageProps) {
           <HeroLead>{lead}</HeroLead>
         </Hero>
         <Container>
-          <ul className="grid gap-y-12 md:gap-x-8 lg:gap-y-12 lg:gap-x-12 lg:grid-cols-2">
+          <ul className="grid gap-y-12 md:gap-x-8 lg:grid-cols-2 lg:gap-y-12 lg:gap-x-12">
             {posts.map(
               ({
                 title,

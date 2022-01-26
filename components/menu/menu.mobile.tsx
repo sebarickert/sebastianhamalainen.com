@@ -28,14 +28,14 @@ const MenuMobileBase = ({ isMenuOpen, children, handleMenuToggle }: MenuMobileBa
       className={`fixed inset-0 z-10 overflow-y-auto lg:hidden ${!isMenuOpen ? 'invisible' : ''}`}
       aria-hidden={!isMenuOpen}
     >
-      <div className="fixed inset-0 bg-gray-500 opacity-75"></div>
+      <div className="fixed inset-0 bg-gray-500 opacity-75 dark:bg-gray-800"></div>
       <div
         id="menuMobileBackdrop"
         className={`relative flex min-h-screen transform flex-col pb-20 transition duration-150 ${
           isMenuOpen ? 'translate-y-0' : '-translate-y-full'
         }`}
       >
-        <div id="menuMobileBase" className="rounded-b-lg bg-white shadow-xl">
+        <div id="menuMobileBase" className="rounded-b-lg bg-white shadow-xl dark:bg-neutral-900">
           {children}
         </div>
       </div>
@@ -46,7 +46,7 @@ const MenuMobileBase = ({ isMenuOpen, children, handleMenuToggle }: MenuMobileBa
 const MenuMobileHeader = (): JSX.Element => {
   return (
     <div className="mb-6">
-      <Container className="border-b border-gray-200 py-8">
+      <Container className="border-b border-gray-200 py-8 dark:border-neutral-800">
         <Logo />
       </Container>
     </div>

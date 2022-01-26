@@ -6,7 +6,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "format": "prettier --write components/**/*.ts{,x} && eslint components/**/*.ts{,x} --fix"
+    "format": "prettier --write components/**/*.ts{,x} pages/**/*.ts{,x} && eslint components/**/*.ts{,x} --fix"
   },
   "dependencies": {
     "@typescript-eslint/eslint-plugin": "^5.10.1",
