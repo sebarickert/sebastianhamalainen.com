@@ -9,6 +9,9 @@ module.exports = {
       fontFamily: {
         sans: ['Inter var'],
       },
+      colors: {
+        'neutral-850': '#202020',
+      },
     },
   },
   plugins: [require('@tailwindcss/typography'), require('@tailwindcss/aspect-ratio'), require('tailwind-scrollbar')],

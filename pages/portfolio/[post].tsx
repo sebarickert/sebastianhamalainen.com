@@ -125,16 +125,16 @@ export default function PortfolioPost({
       <SEO title={title} description={lead} image={image.url} />
       <Post title={title} lead={lead} content={content} date={publishedAt} image={image} backLinkUrl="/portfolio">
         {stack && (
-          <div className="bg-gray-50 p-6 border relative rounded-lg -mx-6 mt-8">
+          <div className="relative -mx-6 mt-8 rounded-lg border bg-gray-50 p-6 dark:border-neutral-900 dark:bg-neutral-850">
             <section>
-              <h2 className="mt-0 mb-4 text-2xl !leading-tight !font-semibold tracking-tight">
+              <h2 className="mt-0 mb-4 text-2xl !font-semibold !leading-tight tracking-tight">
                 Tech stack used in this project
               </h2>
-              <ul className="flex flex-wrap gap-2 mt-auto list-none pl-0" aria-label="Project's tech stack list">
+              <ul className="mt-auto flex list-none flex-wrap gap-2 pl-0" aria-label="Project's tech stack list">
                 {stack.map((item) => (
                   <li
                     key={item}
-                    className="!m-0 bg-gray-200 leading-tight py-3 px-4 rounded text-base text-gray-600 font-medium"
+                    className="!m-0 rounded bg-gray-200 py-3 px-4 text-base font-medium leading-tight text-gray-600 dark:bg-neutral-800 dark:text-gray-300"
                   >
                     {item}
                   </li>
@@ -144,13 +144,20 @@ export default function PortfolioPost({
           </div>
         )}
         {(url_source || url_website) && (
-          <section className="flex flex-col items-baseline mt-4 gap-2">
-            {url_source && <Link href={url_source}>Visit source</Link>}
-            {url_website && <Link href={url_website}>Visit website</Link>}
+          <section className="mt-4 flex flex-col items-baseline gap-2">
+            {url_source && (
+              <Link className="dark:text-white" href={url_source}>
+                Visit source
+              </Link>
+            )}
+            {url_website && (
+              <Link className="dark:text-white" href={url_website}>
+                Visit website
+              </Link>
+            )}
           </section>
         )}
       </Post>
-      ;
     </>
   );
 }
