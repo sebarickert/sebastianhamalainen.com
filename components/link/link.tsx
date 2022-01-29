@@ -9,16 +9,16 @@ type LinkProps = {
 };
 
 export const Link = ({ href, children, className = '', activeClassName = '' }: LinkProps) => {
-  const router = useRouter();
-  const routerSlugBase = router.asPath.split('/').filter((item) => item)[0];
+  const { asPath, pathname } = useRouter();
+  const routerSlugBase = asPath.split('/').filter((item) => item)[0];
   const hrefSlugBase = href.split('/').filter((item) => item)[0];
   const isPartiallyActive = routerSlugBase === hrefSlugBase;
 
+  const isLinkActive = asPath === href || pathname === href || isPartiallyActive;
+
   return (
     <NextLink href={href}>
-      <a className={`inline-block ${className} ${router.asPath === href || isPartiallyActive ? activeClassName : ''}`}>
-        {children}
-      </a>
+      <a className={`inline-block ${className} ${isLinkActive ? activeClassName : ''}`}>{children}</a>
     </NextLink>
   );
 };
